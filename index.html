@@ -180,9 +180,6 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
       <div class="nav-right">
         <span class="lang-flag" data-lang="en">🇺🇸</span>
         <span class="lang-flag" data-lang="ja">🇯🇵</span>
-        <span class="lang-flag" data-lang="pt">🇧🇷</span>
-        <span class="lang-flag" data-lang="es">🇪🇸</span>
-        <span class="lang-flag" data-lang="ko">🇰🇷</span>
       </div>
     </nav>
   
@@ -3629,5 +3626,7 @@ function loadMoveList() {
 
 
 <script src="/Dokidex-Preview/assets/js/yanoverse-selector.js" defer></script>
+<style>.lang-flag[data-lang]{border:2px solid transparent;border-radius:50%;padding:3px;cursor:pointer;transition:border-color .18s,background .18s}.lang-flag.active-language{border-color:#90c2ff;background:rgba(135,186,255,.17)}.lang-flag:focus-visible{outline:2px solid #90c2ff;outline-offset:3px}</style>
+<script src="/Dokidex-Preview/assets/js/yanoverse-i18n.js" defer></script>
 </body>
 </html>
