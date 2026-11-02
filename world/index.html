@@ -51,8 +51,19 @@
 </head>
 <body>
 
+  <div class="yanoverse-brand">YANOVERSE <span>MULTI-DEX</span></div>
+  <section class="yanoverse-game-picker" aria-label="Select a monster-taming game">
+    <div class="yanoverse-game-track" id="yanoverse-game-track">
+      <button type="button" class="yanoverse-game" data-game="dokimon2" aria-label="Dokimon 2"><span class="yanoverse-game-title">Dokimon 2</span><small>IN DEVELOPMENT</small></button>
+      <button type="button" class="yanoverse-game is-selected" data-game="quest" aria-pressed="true"><img src="/Dokidex-Preview/assets/images/dokimon_wiki_header.png" alt="Dokimon: Quest"><span class="yanoverse-game-title">Dokimon: Quest</span></button>
+      <button type="button" class="yanoverse-game" data-game="yami"><span class="yanoverse-game-title">Yami Kids</span></button>
+      <button type="button" class="yanoverse-game" data-game="nuumonsters"><span class="yanoverse-game-title">Nuumonsters</span></button>
+      <button type="button" class="yanoverse-game" data-game="tinymon"><span class="yanoverse-game-title">Tinymon</span></button>
+    </div>
+  </section>
+  <div id="yanoverse-game-notice" class="yanoverse-game-notice" hidden role="status"></div>
   <header class="site-header">
-    <div class="header-bg">
+    <div class="header-bg" style="display:none">
       <a href="/Dokidex-Preview/">
         <img src="/Dokidex-Preview/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
       </a>
@@ -520,5 +531,6 @@ function loadMoveList() {
 </script>
 
 
+<script src="/Dokidex-Preview/assets/js/yanoverse-selector.js" defer></script>
 </body>
 </html>
