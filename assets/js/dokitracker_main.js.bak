@@ -1,0 +1,94 @@
+const dokimonList = MONDEX_DATA; // already loaded from mondex_data.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const tableBody = document.getElementById("tracker-table-body");
+  const savedData = JSON.parse(localStorage.getItem("dokitracker") || "{}");
+
+  const dropdownOptions = [
+    "None", "Form 2", "Form 3", "Form 4", "Form 5", "Form 6", "Form 7", "Form 8"
+  ];
+
+  dokimonList.forEach(mon => {
+    const row = document.createElement("tr");
+
+    // Image
+    const imgCell = document.createElement("td");
+    const img = document.createElement("img");
+    img.src = `/assets/images/${mon.name.toLowerCase()}.png`; // ✅ updated path
+    img.alt = mon.name;
+    img.width = 24;
+    img.height = 24;
+    imgCell.appendChild(img);
+    row.appendChild(imgCell);
+
+    // Name
+    const nameCell = document.createElement("td");
+    nameCell.textContent = mon.name;
+    row.appendChild(nameCell);
+
+    // Caught & Dropdown
+    const caughtCell = document.createElement("td");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = savedData[mon.name]?.caught || false;
+
+    const dropdown = document.createElement("select");
+    dropdownOptions.forEach(opt => {
+      const option = document.createElement("option");
+      option.value = opt;
+      option.text = opt;
+      if (savedData[mon.name]?.rare === opt) option.selected = true;
+      dropdown.appendChild(option);
+    });
+
+    const rareImage = document.createElement("img");
+    rareImage.width = 24;
+    rareImage.height = 24;
+
+    if (savedData[mon.name]?.rare && savedData[mon.name].rare !== "None") {
+      const rareFormNumber = savedData[mon.name].rare.slice(-1);
+      rareImage.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${rareFormNumber}.png`;
+    }
+
+    caughtCell.appendChild(checkbox);
+    caughtCell.appendChild(dropdown);
+    caughtCell.appendChild(rareImage);
+    row.appendChild(caughtCell);
+
+    // Event listeners
+    checkbox.addEventListener("change", () => {
+      savedData[mon.name] = savedData[mon.name] || {};
+      savedData[mon.name].caught = checkbox.checked;
+      localStorage.setItem("dokitracker", JSON.stringify(savedData));
+      updateCounts(savedData);
+    });
+
+    dropdown.addEventListener("change", () => {
+      savedData[mon.name] = savedData[mon.name] || {};
+      savedData[mon.name].rare = dropdown.value;
+      if (dropdown.value !== "None") {
+        const rareFormNumber = dropdown.value.slice(-1);
+        rareImage.src = `/assets/images/forms/${mon.number}_${mon.name}/${mon.name}_${rareFormNumber}.png`;
+      } else {
+        rareImage.src = "";
+      }
+      localStorage.setItem("dokitracker", JSON.stringify(savedData));
+      updateCounts(savedData);
+    });
+
+    tableBody.appendChild(row);
+  });
+
+  function updateCounts(data) {
+    let caughtCount = 0;
+    let rareCount = 0;
+    Object.values(data).forEach(entry => {
+      if (entry.caught) caughtCount++;
+      if (entry.rare && entry.rare !== "None") rareCount++;
+    });
+    document.getElementById("caught-count").textContent = caughtCount;
+    document.getElementById("rare-count").textContent = rareCount;
+  }
+
+  updateCounts(savedData);
+});

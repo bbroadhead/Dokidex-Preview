@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dokimon Type Chart</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #0b0f1a;
+      color: white;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      margin: 2rem auto;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 6px 10px;
+      text-align: center;
+      min-width: 45px;
+      cursor: pointer;
+    }
+    th {
+      background-color: #1a1f2e;
+    }
+    td.highlight-row {
+      background-color: #2d3c5c;
+    }
+    td.highlight-col {
+      background-color: #2d3c5c;
+    }
+    td.selected-intersect {
+      border: 2px solid yellow;
+    }
+    .legend {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Type Match-Up Chart</h2>
+  <table id="typeChart"></table>
+  <div class="legend">
+    <p><strong>Legend:</strong> 1x = Normal, 2x = Super Effective, Half = Not Very Effective, Null = No Effect</p>
+  </div>
+
+  <script>
+    const types = ["Fire", "Grass", "Water", "Electric", "Dark", "Light", "Flying", "Fighting", "Poison", "Dragon", "Fairy", "Ghost", "Ice"];
+    const chart = [
+      ["1x","2x","Half","1x","1x","1x","1x","1x","1x","1x","Half","1x","2x"],
+      ["Half","1x","2x","2x","1x","2x","Half","1x","Half","1x","1x","1x","Half"],
+      ["2x","Half","1x","Half","1x","1x","1x","1x","2x","1x","1x","1x","Half"],
+      ["1x","Half","2x","Half","1x","1x","2x","1x","Half","1x","1x","1x","Half"],
+      ["2x","1x","1x","2x","1x","Half","1x","1x","1x","1x","Half","1x","1x"],
+      ["1x","Half","1x","Half","2x","1x","1x","1x","1x","Half","2x","1x","1x"],
+      ["1x","2x","1x","Half","Half","1x","1x","2x","1x","1x","1x","1x","Half"],
+      ["1x","1x","1x","1x","2x","2x","Half","1x","Half","1x","Half","Null","2x"],
+      ["1x","2x","1x","1x","1x","1x","1x","1x","Half","1x","2x","1x","Null"],
+      ["1x","1x","1x","1x","1x","1x","1x","1x","1x","2x","Half","1x","Half"],
+      ["2x","1x","1x","1x","1x","Half","1x","1x","2x","2x","Half","1x","1x"],
+      ["1x","1x","1x","1x","1x","1x","1x","Null","1x","1x","2x","2x","1x"],
+      ["Half","2x","Half","Half","1x","1x","2x","1x","1x","2x","1x","Half","Half"]
+    ];
+
+    const table = document.getElementById("typeChart");
+    let selectedRow = null;
+    let selectedCol = null;
+
+    // Build header
+    let header = '<tr><th></th>';
+    types.forEach(t => header += `<th>${t}</th>`);
+    header += '</tr>';
+    table.innerHTML += header;
+
+    // Build rows
+    types.forEach((type, i) => {
+      let row = `<tr><th>${type}</th>`;
+      chart[i].forEach((val, j) => {
+        row += `<td data-row="${i}" data-col="${j}">${val}</td>`;
+      });
+      row += '</tr>';
+      table.innerHTML += row;
+    });
+
+    table.addEventListener('click', e => {
+      if (e.target.tagName !== 'TD') return;
+      const row = parseInt(e.target.dataset.row);
+      const col = parseInt(e.target.dataset.col);
+
+      // Remove highlights
+      table.querySelectorAll('td').forEach(td => {
+        td.classList.remove('highlight-row', 'highlight-col', 'selected-intersect');
+      });
+
+      // Apply highlights
+      table.querySelectorAll(`td[data-row='${row}']`).forEach(td => td.classList.add('highlight-row'));
+      table.querySelectorAll(`td[data-col='${col}']`).forEach(td => td.classList.add('highlight-col'));
+
+      // Highlight intersect
+      const intersect = table.querySelector(`td[data-row='${row}'][data-col='${col}']`);
+      if (intersect) intersect.classList.add('selected-intersect');
+    });
+  </script>
+</body>
+</html>

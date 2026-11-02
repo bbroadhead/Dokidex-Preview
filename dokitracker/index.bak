@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Hide document until theme is applied
+  document.documentElement.style.visibility = 'hidden';
+
+  (function() {
+    const mode = localStorage.getItem('dark-mode');
+    const isDark = !mode || mode === 'enabled';
+
+    // Add class temporarily to <html> so styles apply early
+    if (isDark) {
+      document.documentElement.classList.add('pre-dark-mode');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Move the dark mode class to body
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      document.documentElement.classList.remove('pre-dark-mode');
+
+      // Set toggle switch
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) {
+        toggle.checked = isDark;
+      }
+
+      // Show page after theme is applied
+      document.documentElement.style.visibility = '';
+    });
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VWHRN2K6DG');
+</script>
+
+  <meta charset="UTF-8">
+  <title>Dokimon:Quest - Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-bg">
+      <a href="/">
+        <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+      </a>
+    </div>
+    
+    <nav class="site-nav">
+      <div class="nav-left">
+        <a href="/" class="nav-button tracker-link">Dex</a>
+        <a href="/world" class="nav-button tracker-link">World</a>
+        <div class="dropdown">
+          <button class="nav-button">Links ▾</button>
+          <div class="dropdown-content">
+            <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
+            <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
+            <a href="https://discord.com/invite/4YUaYNvVHD" target="_blank">Dokimon Discord</a>
+            <a href="https://www.yanakorpgs.com/monmae" target="_blank">MonMae (MonTamer Maker)</a>
+            <a href="https://discord.gg/fd62AcwAyY" target="_blank">MonMae Discord</a>
+            <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
+          </div>
+        </div>
+		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
+      </div>
+      <div class="nav-center">
+        <div class="search-and-toggle">
+		  <span style="color: white; margin-right: 8px;">Dark/Light Mode:</span>
+          <!--<input type="text" placeholder="Search..." class="search-bar">-->
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="dark-mode-toggle">
+              <input type="checkbox" id="dark-mode-toggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <span class="lang-flag" data-lang="en">🇺🇸</span>
+        <span class="lang-flag" data-lang="ja">🇯🇵</span>
+        <span class="lang-flag" data-lang="pt">🇧🇷</span>
+        <span class="lang-flag" data-lang="es">🇪🇸</span>
+        <span class="lang-flag" data-lang="ko">🇰🇷</span>
+      </div>
+    </nav>
+  
+  </header>
+
+<main class="page-content">
+
+    <div class="tracker-layout">
+  <div class="tracker-sidebar">
+  <div class="dokitracker-logo">
+    <img src="/assets/images/dokitracker_transparent.png" alt="DokiTracker Logo">
+  </div>
+    <div class="tracker-summary-box">
+    <p><strong>Dokimon caught:</strong> <span id="caught-count">0</span> <strong>/ 144</strong></p>
+    <p><strong>Rare forms caught:</strong> <span id="rare-count">0</span></p>
+  </div>
+  </div>
+  
+  <div class="tracker-main">
+  <table class="tracker-table">
+    <thead>
+      <tr>
+	    <th>Dex</th>
+        <th>Image</th>
+        <th>Name<br>
+		<span style="font-size: 0.75em; color: #888;">(click to open panel)</span>
+		</th>
+        <th>Caught?</th>
+		<th>Rare Forms<br>
+		<span style="font-size: 0.75em; color: #888;">(double-click to remove)</span>
+		</th>
+      </tr>
+    </thead>
+    <tbody id="tracker-table-body"></tbody>
+  </table>
+</div>
+<div class="tracker-settings-box data-box">
+  <h2 class="settings-title">
+  <span class="icon">⚙️</span> Settings
+</h2>
+  <button id="mark-all-caught">Mark all as caught</button>
+  <button id="remove-all-caught">Remove all as caught</button>
+  <button id="remove-all-rares">Remove all rare forms</button>
+  <button id="export-csv">Export as CSV</button>
+  <hr class="settings-separator">
+  <button id="filter-caught">Filter out caught Dokimon</button>
+  <button id="restore-filtered" disabled>Restore filtered Dokimon</button>
+</div>
+<div id="monster-profile-panel" class="profile-panel hidden">
+  <iframe id="monster-profile-frame" src="" frameborder="0"></iframe>
+  <button id="close-profile-panel" class="close-button">✖</button>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+.tracker-layout {
+  position: relative;
+  display: block;
+  gap: 2rem; /* spacing between sidebar and table */
+  margin: 2rem auto;
+  flex-wrap: wrap; /* optional: wrap on small screens */
+}
+.tracker-sidebar {
+  position: fixed;
+  left: calc(50% - 670px);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.dokitracker-logo {
+  text-align: center;
+}
+.dokitracker-logo img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  margin-bottom: 1rem;
+}
+.tracker-table td img {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+}
+.tracker-summary-box {
+  margin-left: 1rem;
+  border: 2px solid #888;
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--panel-bg, #f5f5f5);
+}
+body.dark-mode .tracker-summary-box {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #444;
+  }
+.tracker-table {
+  width: auto;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin-top: 1rem;
+}
+.tracker-table th,
+.tracker-table td {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  white-space: nowrap; /* prevents wrapping */
+}
+.rare-images img {
+  margin-right: 0.25rem;
+  cursor: pointer;
+}
+.image-dropdown img:hover {
+  outline: 2px solid #444;
+  border-radius: 4px;
+}
+.image-dropdown-wrapper button {
+  font-family: 'Press Start 2P', monospace; /* Or your pixel font */
+  font-size: 0.5rem;
+  image-rendering: pixelated;
+}
+.tracker-main {
+  width: fit-content;
+  margin: 0 auto; /* center horizontally */
+}
+.tracker-settings-box {
+  position: fixed;
+  right: calc(50% - 660px); /* adjust to mirror the sidebar */
+  top: 17rem; /* stay below navbar */
+  width: 200px;
+  padding: 1rem;
+  padding-top: 0.5rem;
+  border: 2px solid #888;
+  border-radius: 12px;
+  background: var(--panel-bg, #f5f5f5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.tracker-settings-box button {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 6px 8px;
+  border: 1px solid #999;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode .tracker-settings-box {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  border-color: #444;
+}
+
+body.dark-mode .tracker-settings-box button {
+  background-color: #2a2a2a;
+  color: #eee;
+  border-color: #666;
+}
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: -33.3333%; /* hidden by default */
+  width: 33.3333%;
+  height: 100%;
+  background: var(--box-background, #fff);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: right 0.4s ease-in-out;
+  border-left: 2px solid #888;
+}
+
+.profile-panel iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-panel.visible {
+  right: 0;
+}
+
+.profile-panel.hidden {
+  right: -33.3333%;
+}
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+.clickable-name {
+  cursor: pointer;
+  color: #3399ff;
+  text-decoration: underline;
+}
+
+.clickable-name:hover {
+  color: #66ccff;
+}
+.settings-separator {
+  border: 0;
+  border-top: 2px dashed #888;
+  margin: 1rem 0;
+}
+/* General disabled button style */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Fix for dark mode so disabled still looks greyed out */
+.dark-mode button:disabled {
+  opacity: 0.4;
+  color: #888;
+  background-color: #222;
+  border-color: #444;
+}
+.settings-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.9rem;
+  text-align: center;
+  margin: 0.5rem 0 1rem 0;
+  color: white;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #444;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* <-- keeps icon and text aligned vertically */
+  gap: 0.5rem;
+  line-height: 1.2;
+}
+
+.settings-title .icon {
+  position: relative;
+  top: -3px; /* Try values like 1px or -1px if needed */
+}
+
+.tracker-table th,
+.tracker-table td {
+  border: 2px solid #999;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: white;
+  color: black;
+
+  /* Metallic border illusion */
+  box-shadow:
+    inset 0 0 2px #bbb,       /* subtle bevel */
+    0 1px 0 #fff,              /* top highlight */
+    0 -1px 0 #aaa,             /* bottom shadow */
+    1px 0 0 #ccc,              /* right light edge */
+    -1px 0 0 #888;             /* left darker edge */
+}
+
+/* Optional: metallic border on the full table */
+.tracker-table {
+  border: 3px solid #aaa;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.tracker-table th,
+.tracker-table td {
+  border: 2px solid #999;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: white;
+  color: black;
+
+  /* Metallic border illusion */
+  box-shadow:
+    inset 0 0 2px #bbb,       /* subtle bevel */
+    0 1px 0 #fff,              /* top highlight */
+    0 -1px 0 #aaa,             /* bottom shadow */
+    1px 0 0 #ccc,              /* right light edge */
+    -1px 0 0 #888;             /* left darker edge */
+}
+
+/* Optional: metallic border on the full table */
+.tracker-table {
+  border: 3px solid #aaa;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+body.dark-mode .tracker-table th,
+body.dark-mode .tracker-table td {
+  background-color: #1c1c1c;
+  color: #eee;
+  border: 2px solid #555;
+  box-shadow:
+    inset 0 0 2px #333,
+    0 1px 0 #666,
+    0 -1px 0 #111,
+    1px 0 0 #444,
+    -1px 0 0 #222;
+}
+
+body.dark-mode .tracker-table {
+  border-color: #666;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+.tracker-table {
+  border: 6px solid #aaa;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow:
+    0 0 0 4px #666,               /* dark outer ring */
+    0 0 0 8px #ccc,               /* light outer ring */
+    inset 0 0 10px rgba(0,0,0,0.2); /* inner shine */
+}
+body.dark-mode .tracker-table {
+  background-color: #1a1a1a;
+  border-color: #555;
+  box-shadow:
+    0 0 0 4px #333,
+    0 0 0 8px #666,
+    inset 0 0 10px rgba(255,255,255,0.05);
+}
+@keyframes shine {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.tracker-table {
+  background-image: linear-gradient(
+    110deg,
+    rgba(255,255,255,0.1) 0%,
+    rgba(255,255,255,0.3) 40%,
+    rgba(255,255,255,0.1) 80%
+  );
+  background-size: 200% 100%;
+  animation: shine 2s linear infinite;
+}
+
+
+@media (max-width: 768px) {
+  .tracker-layout .tracker-main {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
+
+  
+
+<!-- Mini Map Insertion -->
+<!--
+
+
+
+
+
+
+
+
+
+-->
+</main>
+  <!-- Prevent Right Click on Images -->
+  <script>
+    document.addEventListener('contextmenu', event => {
+      if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+      }
+    });
+  </script>
+<script>
+  const toggleSwitch = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+
+  function applyTheme(isDark) {
+    body.classList.toggle('dark-mode', isDark);
+    toggleSwitch.checked = isDark;
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+  }
+
+  toggleSwitch.addEventListener('change', () => {
+    applyTheme(toggleSwitch.checked);
+    createRadarChart();
+  });
+
+// Default to dark mode unless user set to light
+if (!localStorage.getItem('dark-mode')) {
+  localStorage.setItem('dark-mode', 'enabled');
+}
+
+  // Load preference
+  const savedTheme = localStorage.getItem('dark-mode');
+  applyTheme(savedTheme === 'enabled');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.links-button');
+    const menu = document.querySelector('.dropdown-content');
+
+    if (button && menu) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
+<script>
+let radarChart;
+
+function createRadarChart() {
+  const canvas = document.getElementById('statRadarChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (radarChart) radarChart.destroy();
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['HP', 'ATK', 'DEF', 'M.ATK', 'M.DEF', 'SPD'],
+      datasets: [{
+        label: 'dokitracker.html.bak',
+        data: null,
+        backgroundColor: 'rgba(136, 136, 136, 0.2)', // light gray fill
+        borderColor: '#888', // neutral edge
+        pointBackgroundColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointBorderColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointRadius: 5,
+        pointHoverRadius: 6,
+        borderWidth: 2
+      }]
+    },
+options: {
+  responsive: false,
+  scales: {
+    r: {
+      suggestedMin: 0,
+      suggestedMax: 177,
+      ticks: {
+        backdropColor: 'transparent',
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        font: {
+          weight: 'bold'
+        }
+      },
+      pointLabels: {
+        font: {
+          weight: 'bold'
+        },
+        color: function(context) {
+          const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#3cba54'];
+          return colors[context.index];
+        }
+      },
+      grid: {
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#bbbbbb",
+      }
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
+  });
+}
+createRadarChart();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    if (tabs.length && contents.length) {
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+    }
+  });
+</script>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.remove('fade-out');
+    document.body.classList.add('fade-in');
+  });
+
+  // Fade out on arrow click
+document.querySelectorAll('.nav-arrow').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.href; // Correct for <a> elements
+    document.body.classList.remove('fade-in');
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImage = document.getElementById("main-monster-image");
+  const altImages = document.querySelectorAll(".forms-images img");
+  const lockButton = document.getElementById("lockImageBtn");
+  const resetButton = document.getElementById("resetToDefaultBtn");
+
+  if (!mainImage || !lockButton || !resetButton) {
+    return;
+  }
+
+  const monsterName = mainImage?.dataset?.name;
+  const defaultImage = mainImage?.dataset?.default;
+  const localStorageKey = `dokimon_locked_image_${monsterName}`;
+  const lockStateKey = `dokimon_lock_state_${monsterName}`;
+
+  function updateLockVisualState(isLocked) {
+    lockButton.textContent = isLocked ? '🔒' : '🔓';
+    lockButton.setAttribute('aria-pressed', isLocked);
+  }
+
+  // Load from localStorage on page load
+  const savedImage = localStorage.getItem(localStorageKey);
+  const savedLockState = localStorage.getItem(lockStateKey) === 'true';
+
+  if (savedImage) {
+    mainImage.src = savedImage;
+  }
+
+  updateLockVisualState(savedLockState);
+
+  // Click rare form images
+  altImages.forEach(img => {
+    img.addEventListener("click", () => {
+      const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+      if (isLocked) return;
+      mainImage.src = img.src;
+    });
+  });
+
+  // Toggle lock button
+  lockButton.addEventListener("click", () => {
+    const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+    const newLocked = !isLocked;
+
+    updateLockVisualState(newLocked);
+    localStorage.setItem(lockStateKey, newLocked);
+
+    if (newLocked) {
+      localStorage.setItem(localStorageKey, mainImage.src);
+    } else {
+      localStorage.removeItem(localStorageKey);
+    }
+  });
+
+  // Default reset
+  resetButton.addEventListener("click", () => {
+    mainImage.src = defaultImage;
+    localStorage.removeItem(localStorageKey);
+    localStorage.setItem(lockStateKey, false);
+    updateLockVisualState(false);
+  });
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    // Add 'in-panel' class to body for CSS control
+    document.body.classList.add('in-panel');
+
+    // Modify all internal links to preserve ?panel=1
+    document.querySelectorAll('a[href^="/dokimon/"]').forEach(link => {
+      if (!link.href.includes('panel=1')) {
+        link.href += link.href.includes('?') ? '&panel=1' : '?panel=1';
+      }
+    });
+  }
+  document.body.classList.add('loading');
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('loading');
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script src="/assets/js/movesets.js"></script>
+<script>
+const moveData = {
+  
+  
+};
+
+function toggleMoveList() {
+  const dropdown = document.getElementById("move-list-dropdown");
+  const button = document.querySelector(".move-toggle-btn");
+  const isOpen = dropdown.classList.toggle("show");
+
+  if (isOpen) {
+    dropdown.dataset.loaded = "true";
+    button.innerHTML = "Move List + Lvls ▲";
+    loadMoveList();
+  } else {
+    button.innerHTML = "Move List + Lvls ▼";
+  }
+}
+
+function loadMoveList() {
+  const monsterName = "dokitracker.html.bak";
+  const moveList = MOVESETS[monsterName];
+
+  if (!moveList) return;
+
+  const ul = document.getElementById("move-list-content");
+  moveList
+    .sort((a, b) => a.level - b.level)
+    .forEach(entry => {
+      const li = document.createElement("li");
+      const moveName = entry.move.replace(/_/g, " ");  // Replace underscores
+      li.textContent = `Lv ${entry.level}: ${moveName}`;
+      ul.appendChild(li);
+    });
+}
+</script>
+
+
+  <script src="/assets/js/mondex_data.js"></script>
+
+  <script src="/assets/js/dokitracker.js"></script>
+
+  <script src="/assets/js/dokitracker_settings.js"></script>
+
+
+
+</body>
+</html>

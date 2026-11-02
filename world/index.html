@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Hide document until theme is applied
+  document.documentElement.style.visibility = 'hidden';
+
+  (function() {
+    const mode = localStorage.getItem('dark-mode');
+    const isDark = !mode || mode === 'enabled';
+
+    // Add class temporarily to <html> so styles apply early
+    if (isDark) {
+      document.documentElement.classList.add('pre-dark-mode');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Move the dark mode class to body
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      document.documentElement.classList.remove('pre-dark-mode');
+
+      // Set toggle switch
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) {
+        toggle.checked = isDark;
+      }
+
+      // Show page after theme is applied
+      document.documentElement.style.visibility = '';
+    });
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VWHRN2K6DG');
+</script>
+
+  <meta charset="UTF-8">
+  <title>Dokimon:Quest - Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-bg">
+      <a href="/">
+        <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+      </a>
+    </div>
+    
+    <nav class="site-nav">
+      <div class="nav-left">
+        <a href="/" class="nav-button tracker-link">Dex</a>
+        <a href="/world" class="nav-button tracker-link">World</a>
+        <div class="dropdown">
+          <button class="nav-button">Links ▾</button>
+          <div class="dropdown-content">
+            <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
+            <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
+            <a href="https://discord.com/invite/4YUaYNvVHD" target="_blank">Dokimon Discord</a>
+            <a href="https://www.yanakorpgs.com/monmae" target="_blank">MonMae (MonTamer Maker)</a>
+            <a href="https://discord.gg/fd62AcwAyY" target="_blank">MonMae Discord</a>
+            <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
+          </div>
+        </div>
+		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
+      </div>
+      <div class="nav-center">
+        <div class="search-and-toggle">
+		  <span style="color: white; margin-right: 8px;">Dark/Light Mode:</span>
+          <!--<input type="text" placeholder="Search..." class="search-bar">-->
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="dark-mode-toggle">
+              <input type="checkbox" id="dark-mode-toggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <span class="lang-flag" data-lang="en">🇺🇸</span>
+        <span class="lang-flag" data-lang="ja">🇯🇵</span>
+        <span class="lang-flag" data-lang="pt">🇧🇷</span>
+        <span class="lang-flag" data-lang="es">🇪🇸</span>
+        <span class="lang-flag" data-lang="ko">🇰🇷</span>
+      </div>
+    </nav>
+  
+  </header>
+
+<main class="page-content">
+
+    <h1>Explore the World of Dokimon <small>(This contains spoilers!)</small></h1>
+
+<div class="tab-container">
+  <div class="tabs">
+    <button class="tab-button active" data-tab="story">Story</button>
+    <button class="tab-button" data-tab="characters">Characters</button>
+    <button class="tab-button" data-tab="maps">Maps</button>
+  </div>
+
+  <div id="story" class="tab-content active">
+
+<div class="story-text">
+  <p><strong>Dokimon: Quest – Story</strong></p>
+
+  <p>You play as a young adventurer in the peaceful town of Lillywood, alongside your childhood friends Ai and Koi. One day, the local professor is looking for you—you overslept! You’re quickly thrown into a journey with your first Dokimon, Whispurr, and are soon joined by Koi, who insists on giving you your first real battle.</p>
+
+  <p><strong>The Call to Adventure</strong></p>
+  
+  <p>You and your friends are driven by a deeper goal: to find Maiko, your long-lost childhood friend who vanished mysteriously 12 years ago. As the journey unfolds, strange dreams and visions suggest Maiko is still alive—but trapped somewhere beyond ordinary reach. Ai, who has emotional ties to Maiko, joins your party to help on this dangerous journey.</p>
+
+  <p><strong>Confronting the X’ers</strong></p>
+  
+  <p>A sinister organization called the X’ers begins to make moves in the shadows. They're conducting dangerous experiments involving "Bound Dokimon" and forging contracts with monstrous entities for power. You foil their early plans in several towns and uncover that they're attempting to re-create a godlike Dokimon through dark rituals.</p>
+
+  <p><strong>Mystics and Monsters</strong></p>
+  
+  <p>Along the way, you meet Aki, a sage with visions and spiritual powers, who confirms that Maiko is alive—but in grave danger, buried deep beneath the earth, surrounded by lava. Aki guides you through your path, eventually helping you infiltrate the X’er’s base using a disguise crafted by a surprisingly crafty sailor who enjoys knitting.</p>
+
+  <p>As you confront X’er generals and uncover dark secrets, Aki is struck down by an unknown force tied to the realm of darkness. You’re left to continue alone, burdened with more questions than answers.</p>
+
+  <p><strong>Enter the Shadow Realm</strong></p>
+  
+  <p>Venturing deeper into mystical and corrupted places, you begin experiencing disturbing visions and confrontations with a powerful entity that challenges your very purpose. You're eventually told that Maiko is imprisoned in the Shadow Realm by a being known as Gad’riel, the destroyer of worlds.</p>
+
+  <p><strong>Clash of Mythics</strong></p>
+  
+  <p>In a climactic series of battles, you confront Magma, a powerful Mythic Dokimon and the son of Gad’riel. Unlike his father, Magma still clings to his morality and agrees to help you—if you can defeat him in battle.</p>
+
+  <p>With Magma’s help, you find Maiko… but she is not the same. Years of exposure to the Shadow Realm have changed her. Gad’riel finally appears, challenging you directly.</p>
+
+  <p><strong>Final Confrontation</strong></p>
+  
+  <p>You defeat Gad’riel in a fierce battle. True to his word, he leaves the planet. But the victory comes at a cost—Maiko has been rescued, yet remains altered, her mind warped by darkness. Your quest is far from over.</p>
+
+  <p><strong>A New Beginning</strong></p>
+  
+  <p>With the truth revealed and Maiko back in the physical world, your next journey becomes clear: to restore her soul and identity. But that tale will be for another game...</p>
+</div>
+  </div>
+
+  <div id="characters" class="tab-content">
+<!-- Character Bios -->
+  <section class="character-bios">
+
+    <div class="character-card">
+      <h3>The Player</h3>
+      <p>You are a determined young adventurer setting out to become a Dokimon Ranger. You're brave, loyal, and driven by a personal mission—to find your lost childhood friend, Maiko. Over time, you uncover dark truths, battle a sinister organization, and push the boundaries between the natural and supernatural.</p>
+    </div>
+    <div class="character-card">
+      <h3>Ai</h3>
+      <p>Gentle, empathetic, and deeply affected by Maiko’s disappearance. Ai initially stays behind to recover from an incident, but later joins your party to support your journey. Though insecure in battle at first, she becomes a vital ally, capable of healing your team and growing stronger by your side. She later undergoes a spiritual transformation and gains renewed resolve.</p>
+    </div>
+    <div class="character-card">
+      <h3>Koi</h3>
+      <p>Energetic, protective, and your first rival. Koi has a strong bond with Dokimon and often provides motivation through friendly competition. She plays a key role in lifting spirits and remains an important support as the story progresses. Koi helps uncover secrets behind the X’ers and often leads efforts to move forward when the group feels lost.</p>
+    </div>
+    <div class="character-card">
+      <h3>Maiko</h3>
+      <p>Mysteriously disappeared 12 years ago. Maiko’s memory drives the main characters forward. As the story progresses, you discover she was taken into the Shadow Realm by Gad’riel and exposed to its corrupting influence. Though physically rescued, her mind and soul remain altered, hinting at a longer journey ahead to restore her fully.</p>
+    </div>
+    <div class="character-card">
+      <h3>Aki</h3>
+      <p>Wise and calm, Aki helps guide your journey using her spiritual connection to the world and its hidden forces. She helps you interpret visions, infiltrate enemy bases, and uncover Maiko’s location. Eventually, Aki is severely wounded during an encounter in a spiritual realm, putting her out of commission. Her recovery is left uncertain, but her guidance shapes the entire adventure.</p>
+    </div>
+    <div class="character-card">
+      <h3>Professor Rei</h3>
+      <p>Rei provides rational insight and technical support for your journey, including the D-Tech device. She is one of the few who understands both the science and supernatural elements of the Dokimon world. Rei also receives visions, though less frequently than Aki, and believes in your mission. She coordinates with Ai and Koi while you’re away.</p>
+    </div>
+    <div class="character-card">
+      <h3>The X’ers</h3>
+      <p>A chaotic group that binds Dokimon to their will, seeking power through contracts with dark forces. Their leader, Xe, is manipulative and power-hungry, attempting to recreate a godlike Dokimon. The X’ers are scattered across the world, interfering in towns and sacred areas, eventually leading to their confrontation with you and your allies.</p>
+    </div>
+    <div class="character-card">
+      <h3>Gad’riel</h3>
+      <p>A mythic being who once decimated planets and now resides in the Shadow Realm. He abducted Maiko for reasons even he has forgotten, having succumbed to endless destruction and despair. After your confrontation, he leaves the planet, but not without warning that Maiko’s mind may never fully recover.</p>
+    </div>
+    <div class="character-card">
+      <h3>Magma</h3>
+      <p>Trapped and nearly used in experiments by the X’ers, Magma resists their attempts to force a contract. He offers you a crucial battle—one that determines whether you're ready to face his father. Unlike his father, Magma still possesses compassion and helps point the way to Maiko.</p>
+    </div>
+    <div class="character-card">
+      <h3>Captain</h3>
+      <p>Tasked with helping you infiltrate the X’er base, the Captain sews a convincing disguise after you mention his hobby. Despite his tough exterior, he's a humorous and helpful ally.</p>
+    </div>
+    <div class="character-card">
+      <h3>Black Belt Bros</h3>
+      <p>They support your attack on the X’er base, helping create distractions and looking for ways to crack enemy codes. They are both comic relief and tactical backup.</p>
+    </div>
+  </section>
+  </div>
+
+  <div id="maps" class="tab-content">
+    <h2>World Maps</h2>
+
+    <img src="/assets/images/worldmap_labeled.jpg" alt="Labeled Map" style="max-width: 100%; margin-bottom: 1rem;" />
+    <img src="/assets/images/region_map_updated.png" alt="Pixel Map" style="max-width: 100%;" />
+  </div>
+</div>
+
+  
+
+<!-- Mini Map Insertion -->
+<!--
+
+
+
+
+
+
+
+
+
+-->
+</main>
+  <!-- Prevent Right Click on Images -->
+  <script>
+    document.addEventListener('contextmenu', event => {
+      if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+      }
+    });
+  </script>
+<script>
+  const toggleSwitch = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+
+  function applyTheme(isDark) {
+    body.classList.toggle('dark-mode', isDark);
+    toggleSwitch.checked = isDark;
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+  }
+
+  toggleSwitch.addEventListener('change', () => {
+    applyTheme(toggleSwitch.checked);
+    createRadarChart();
+  });
+
+// Default to dark mode unless user set to light
+if (!localStorage.getItem('dark-mode')) {
+  localStorage.setItem('dark-mode', 'enabled');
+}
+
+  // Load preference
+  const savedTheme = localStorage.getItem('dark-mode');
+  applyTheme(savedTheme === 'enabled');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.links-button');
+    const menu = document.querySelector('.dropdown-content');
+
+    if (button && menu) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
+<script>
+let radarChart;
+
+function createRadarChart() {
+  const canvas = document.getElementById('statRadarChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (radarChart) radarChart.destroy();
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['HP', 'ATK', 'DEF', 'M.ATK', 'M.DEF', 'SPD'],
+      datasets: [{
+        label: 'world.md',
+        data: null,
+        backgroundColor: 'rgba(136, 136, 136, 0.2)', // light gray fill
+        borderColor: '#888', // neutral edge
+        pointBackgroundColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointBorderColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointRadius: 5,
+        pointHoverRadius: 6,
+        borderWidth: 2
+      }]
+    },
+options: {
+  responsive: false,
+  scales: {
+    r: {
+      suggestedMin: 0,
+      suggestedMax: 177,
+      ticks: {
+        backdropColor: 'transparent',
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        font: {
+          weight: 'bold'
+        }
+      },
+      pointLabels: {
+        font: {
+          weight: 'bold'
+        },
+        color: function(context) {
+          const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#3cba54'];
+          return colors[context.index];
+        }
+      },
+      grid: {
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#bbbbbb",
+      }
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
+  });
+}
+createRadarChart();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    if (tabs.length && contents.length) {
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+    }
+  });
+</script>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.remove('fade-out');
+    document.body.classList.add('fade-in');
+  });
+
+  // Fade out on arrow click
+document.querySelectorAll('.nav-arrow').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.href; // Correct for <a> elements
+    document.body.classList.remove('fade-in');
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImage = document.getElementById("main-monster-image");
+  const altImages = document.querySelectorAll(".forms-images img");
+  const lockButton = document.getElementById("lockImageBtn");
+  const resetButton = document.getElementById("resetToDefaultBtn");
+
+  if (!mainImage || !lockButton || !resetButton) {
+    return;
+  }
+
+  const monsterName = mainImage?.dataset?.name;
+  const defaultImage = mainImage?.dataset?.default;
+  const localStorageKey = `dokimon_locked_image_${monsterName}`;
+  const lockStateKey = `dokimon_lock_state_${monsterName}`;
+
+  function updateLockVisualState(isLocked) {
+    lockButton.textContent = isLocked ? '🔒' : '🔓';
+    lockButton.setAttribute('aria-pressed', isLocked);
+  }
+
+  // Load from localStorage on page load
+  const savedImage = localStorage.getItem(localStorageKey);
+  const savedLockState = localStorage.getItem(lockStateKey) === 'true';
+
+  if (savedImage) {
+    mainImage.src = savedImage;
+  }
+
+  updateLockVisualState(savedLockState);
+
+  // Click rare form images
+  altImages.forEach(img => {
+    img.addEventListener("click", () => {
+      const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+      if (isLocked) return;
+      mainImage.src = img.src;
+    });
+  });
+
+  // Toggle lock button
+  lockButton.addEventListener("click", () => {
+    const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+    const newLocked = !isLocked;
+
+    updateLockVisualState(newLocked);
+    localStorage.setItem(lockStateKey, newLocked);
+
+    if (newLocked) {
+      localStorage.setItem(localStorageKey, mainImage.src);
+    } else {
+      localStorage.removeItem(localStorageKey);
+    }
+  });
+
+  // Default reset
+  resetButton.addEventListener("click", () => {
+    mainImage.src = defaultImage;
+    localStorage.removeItem(localStorageKey);
+    localStorage.setItem(lockStateKey, false);
+    updateLockVisualState(false);
+  });
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    // Add 'in-panel' class to body for CSS control
+    document.body.classList.add('in-panel');
+
+    // Modify all internal links to preserve ?panel=1
+    document.querySelectorAll('a[href^="/dokimon/"]').forEach(link => {
+      if (!link.href.includes('panel=1')) {
+        link.href += link.href.includes('?') ? '&panel=1' : '?panel=1';
+      }
+    });
+  }
+  document.body.classList.add('loading');
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('loading');
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script src="/assets/js/movesets.js"></script>
+<script>
+const moveData = {
+  
+  
+};
+
+function toggleMoveList() {
+  const dropdown = document.getElementById("move-list-dropdown");
+  const button = document.querySelector(".move-toggle-btn");
+  const isOpen = dropdown.classList.toggle("show");
+
+  if (isOpen) {
+    dropdown.dataset.loaded = "true";
+    button.innerHTML = "Move List + Lvls ▲";
+    loadMoveList();
+  } else {
+    button.innerHTML = "Move List + Lvls ▼";
+  }
+}
+
+function loadMoveList() {
+  const monsterName = "world.md";
+  const moveList = MOVESETS[monsterName];
+
+  if (!moveList) return;
+
+  const ul = document.getElementById("move-list-content");
+  moveList
+    .sort((a, b) => a.level - b.level)
+    .forEach(entry => {
+      const li = document.createElement("li");
+      const moveName = entry.move.replace(/_/g, " ");  // Replace underscores
+      li.textContent = `Lv ${entry.level}: ${moveName}`;
+      ul.appendChild(li);
+    });
+}
+</script>
+
+
+</body>
+</html>

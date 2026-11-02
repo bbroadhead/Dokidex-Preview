@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  // Hide document until theme is applied
+  document.documentElement.style.visibility = 'hidden';
+
+  (function() {
+    const mode = localStorage.getItem('dark-mode');
+    const isDark = !mode || mode === 'enabled';
+
+    // Add class temporarily to <html> so styles apply early
+    if (isDark) {
+      document.documentElement.classList.add('pre-dark-mode');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Move the dark mode class to body
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      document.documentElement.classList.remove('pre-dark-mode');
+
+      // Set toggle switch
+      const toggle = document.getElementById('dark-mode-toggle');
+      if (toggle) {
+        toggle.checked = isDark;
+      }
+
+      // Show page after theme is applied
+      document.documentElement.style.visibility = '';
+    });
+  })();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VWHRN2K6DG');
+</script>
+
+  <meta charset="UTF-8">
+  <title>Dokimon:Quest - Wiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-bg">
+      <a href="/">
+        <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+      </a>
+    </div>
+    
+    <nav class="site-nav">
+      <div class="nav-left">
+        <a href="/" class="nav-button tracker-link">Dex</a>
+        <a href="/world" class="nav-button tracker-link">World</a>
+        <div class="dropdown">
+          <button class="nav-button">Links ▾</button>
+          <div class="dropdown-content">
+            <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
+            <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
+            <a href="https://discord.com/invite/4YUaYNvVHD" target="_blank">Dokimon Discord</a>
+            <a href="https://www.yanakorpgs.com/monmae" target="_blank">MonMae (MonTamer Maker)</a>
+            <a href="https://discord.gg/fd62AcwAyY" target="_blank">MonMae Discord</a>
+            <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
+          </div>
+        </div>
+		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
+      </div>
+      <div class="nav-center">
+        <div class="search-and-toggle">
+		  <span style="color: white; margin-right: 8px;">Dark/Light Mode:</span>
+          <!--<input type="text" placeholder="Search..." class="search-bar">-->
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="dark-mode-toggle">
+              <input type="checkbox" id="dark-mode-toggle" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <span class="lang-flag" data-lang="en">🇺🇸</span>
+        <span class="lang-flag" data-lang="ja">🇯🇵</span>
+        <span class="lang-flag" data-lang="pt">🇧🇷</span>
+        <span class="lang-flag" data-lang="es">🇪🇸</span>
+        <span class="lang-flag" data-lang="ko">🇰🇷</span>
+      </div>
+    </nav>
+  
+  </header>
+
+<main class="page-content">
+
+
+
+
+
+
+
+
+  <div class="nav-arrows">
+    
+      <a href="/Dokidex-Preview/dokimon/casper" class="nav-arrow left-arrow" style="transform: translateY(60px) scaleX(-1);">➤</a>
+    
+    
+      <a href="/Dokidex-Preview/dokimon/nimbis" class="nav-arrow right-arrow">➤</a>
+    
+  </div>
+
+<!-- Monster Detail Layout -->
+<div class="monster-profile"> 
+  <div class="top-bar">
+    <div class="return-link">
+      <a href="/" class="back-to-dex">&larr; Return to Dex</a>
+    </div>
+    <div class="evolution-wrapper">
+      
+  <div class="evo-chain" style="display:flex; align-items:center; gap:10px; flex-wrap: wrap;">
+
+  <div style="text-align:center;">
+    <a href="/dokimon/casper">
+      <img src="/assets/images/mini_sprites/casper_mini.png" alt="Casper"
+           style="image-rendering: pixelated; width:48px; height:48px;">
+    </a>
+    <div style="font-size:12px;">Casper (Lv 16)</div>
+  </div>
+  <div style="font-size:24px;">&rarr;</div>
+
+  <div style="text-align:center;">
+    <a href="/dokimon/deathscye">
+      <img src="/assets/images/mini_sprites/deathscye_mini.png" alt="Deathscye"
+           style="image-rendering: pixelated; width:48px; height:48px;">
+    </a>
+    <div style="font-size:12px;">Deathscye</div>
+  </div>
+</div>
+
+    </div>
+	  <div class="move-list-container">
+  <button class="move-toggle-btn" onclick="toggleMoveList()">Move List + Lvls ▼</button>
+  <div id="move-list-dropdown" class="move-dropdown hidden">
+    <ul id="move-list-content">
+      <!-- JS will inject move list here -->
+    </ul>
+  </div>
+</div>
+
+  </div>
+
+ <div class="monster-layout-row">
+
+
+
+<!-- RARE FORMS (2–8) -->
+<div class="forms-wrapper">
+<div class="forms-instructions style="text-align: center;">
+  Rare encounter rate: 1/777<br>
+</div>
+
+<div class="forms-container">
+  <div class="forms-label">RARE FORMS</div>
+  <div class="forms-images">
+    
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_2.png" alt="Deathscye Form 2">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_3.png" alt="Deathscye Form 3">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_4.png" alt="Deathscye Form 4">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_5.png" alt="Deathscye Form 5">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_6.png" alt="Deathscye Form 6">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_7.png" alt="Deathscye Form 7">
+    
+      <img src="/assets/images/forms/20_deathscye/deathscye_8.png" alt="Deathscye Form 8">
+    
+  </div>
+
+  <hr class="forms-separator">
+
+  <div class="forms-extra-row">
+    <div class="forms-box">
+      <div class="forms-label">BOUND</div>
+      <div class="forms-images">
+        <img src="/assets/images/forms/20_deathscye/deathscye_9.png" alt="Deathscye Bound Form">
+      </div>
+    </div>
+
+    <div class="forms-separator-vertical"></div>
+
+    <div class="forms-box">
+      <div class="forms-label">UNIQUE</div>
+      <div class="forms-images">
+        <img src="/assets/images/forms/20_deathscye/deathscye_10.png" alt="Deathscye Unique Form">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="forms-instructions style="text-align: center;">
+  Click an image to set as Dokimon image
+</div>
+</div>
+
+  <div class="monster-image-container">
+    <div class="glow-wrapper ">
+      <img id="main-monster-image"
+     src="/assets/images/deathscye.png"
+     alt="Deathscye image"
+     class="monster-image"
+     data-name="deathscye"
+     data-default="/assets/images/deathscye.png">
+<div class="lock-reset-controls">
+  <button id="lockImageBtn" class="lock-button" aria-pressed="false" title="Lock selected alt. palette">🔓</button>
+  <span class="lock-label">Lock selected alt. palette</span>
+  <button id="resetToDefaultBtn">Default</button>
+</div>
+    </div>
+  </div>
+
+  <div class="monster-info">
+    <h1>Deathscye <span class="dex-number">#20</span></h1>
+    <p><strong>Stage:</strong> 2</p>
+    <p><strong>Evolution Level:</strong> None</p>
+    <p><strong>Type:</strong>
+  
+    <img src="/assets/images/type_icons/dark.png" alt="Dark" title="Dark" class="type-icon">
+  
+    <img src="/assets/images/type_icons/ghost.png" alt="Ghost" title="Ghost" class="type-icon">
+  
+</p>
+    <p><strong>Obtain by:</strong> Route 08, Yugo Caves</p>
+    <p><strong>Classification:</strong> Scythe Dokimon</p>
+    <p><strong>Lore:</strong> An old nursery rhyme says that if you feel a sharp chill down your spine, it's likely that you are being stalked by a Deathscye.</p>
+  </div>
+
+  <div class="stats-side">
+    <canvas id="statRadarChart" width="240" height="240"></canvas>
+    <table class="monster-stats">
+      <tr>
+        <th class="hp">HP</th>
+        <th class="atk">ATK</th>
+        <th class="def">DEF</th>
+        <th class="matk">M.ATK</th>
+        <th class="mdef">M.DEF</th>
+        <th class="spd">SPD</th>
+      </tr>
+      <tr>
+        <td>35</td>
+        <td>17</td>
+        <td>46</td>
+        <td>105</td>
+        <td>82</td>
+        <td>106</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+  
+
+<!-- Mini Map Insertion -->
+<!--
+
+
+
+
+
+
+
+
+
+<div class="mini-map-container">
+  
+    <div class="map-label">Unmapped locations exist for this Dokimon</div>
+  
+  
+  <div class="mini-map-wrapper">
+    <img src="/assets/images/region_map_updated.png" alt="Map" class="mini-map">
+    
+    
+      
+      
+    
+      
+      
+    
+  </div>
+</div>
+
+-->
+</main>
+  <!-- Prevent Right Click on Images -->
+  <script>
+    document.addEventListener('contextmenu', event => {
+      if (event.target.tagName === 'IMG') {
+        event.preventDefault();
+      }
+    });
+  </script>
+<script>
+  const toggleSwitch = document.getElementById('dark-mode-toggle');
+  const body = document.body;
+
+  function applyTheme(isDark) {
+    body.classList.toggle('dark-mode', isDark);
+    toggleSwitch.checked = isDark;
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+  }
+
+  toggleSwitch.addEventListener('change', () => {
+    applyTheme(toggleSwitch.checked);
+    createRadarChart();
+  });
+
+// Default to dark mode unless user set to light
+if (!localStorage.getItem('dark-mode')) {
+  localStorage.setItem('dark-mode', 'enabled');
+}
+
+  // Load preference
+  const savedTheme = localStorage.getItem('dark-mode');
+  applyTheme(savedTheme === 'enabled');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.querySelector('.links-button');
+    const menu = document.querySelector('.dropdown-content');
+
+    if (button && menu) {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        menu.classList.toggle('show');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.remove('show');
+        }
+      });
+    }
+  });
+</script>
+<script>
+let radarChart;
+
+function createRadarChart() {
+  const canvas = document.getElementById('statRadarChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (radarChart) radarChart.destroy();
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['HP', 'ATK', 'DEF', 'M.ATK', 'M.DEF', 'SPD'],
+      datasets: [{
+        label: 'Deathscye',
+        data: [35,17,46,105,82,106],
+        backgroundColor: 'rgba(136, 136, 136, 0.2)', // light gray fill
+        borderColor: '#888', // neutral edge
+        pointBackgroundColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointBorderColor: [
+          '#f66', // HP
+          '#f90', // ATK
+          '#fc3', // DEF
+          '#99f', // M.ATK
+          '#6cf', // M.DEF
+          '#3cba54'  // SPD
+        ],
+        pointRadius: 5,
+        pointHoverRadius: 6,
+        borderWidth: 2
+      }]
+    },
+options: {
+  responsive: false,
+  scales: {
+    r: {
+      suggestedMin: 0,
+      suggestedMax: 177,
+      ticks: {
+        backdropColor: 'transparent',
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        font: {
+          weight: 'bold'
+        }
+      },
+      pointLabels: {
+        font: {
+          weight: 'bold'
+        },
+        color: function(context) {
+          const colors = ['#f66', '#f90', '#fc3', '#99f', '#6cf', '#3cba54'];
+          return colors[context.index];
+        }
+      },
+      grid: {
+        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#bbbbbb",
+      }
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    }
+  }
+}
+  });
+}
+createRadarChart();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    if (tabs.length && contents.length) {
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab).classList.add('active');
+        });
+      });
+    }
+  });
+</script>
+<script>
+  // Fade in on load
+  document.body.classList.add('fade-out');
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.remove('fade-out');
+    document.body.classList.add('fade-in');
+  });
+
+  // Fade out on arrow click
+document.querySelectorAll('.nav-arrow').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const href = this.href; // Correct for <a> elements
+    document.body.classList.remove('fade-in');
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const mainImage = document.getElementById("main-monster-image");
+  const altImages = document.querySelectorAll(".forms-images img");
+  const lockButton = document.getElementById("lockImageBtn");
+  const resetButton = document.getElementById("resetToDefaultBtn");
+
+  if (!mainImage || !lockButton || !resetButton) {
+    return;
+  }
+
+  const monsterName = mainImage?.dataset?.name;
+  const defaultImage = mainImage?.dataset?.default;
+  const localStorageKey = `dokimon_locked_image_${monsterName}`;
+  const lockStateKey = `dokimon_lock_state_${monsterName}`;
+
+  function updateLockVisualState(isLocked) {
+    lockButton.textContent = isLocked ? '🔒' : '🔓';
+    lockButton.setAttribute('aria-pressed', isLocked);
+  }
+
+  // Load from localStorage on page load
+  const savedImage = localStorage.getItem(localStorageKey);
+  const savedLockState = localStorage.getItem(lockStateKey) === 'true';
+
+  if (savedImage) {
+    mainImage.src = savedImage;
+  }
+
+  updateLockVisualState(savedLockState);
+
+  // Click rare form images
+  altImages.forEach(img => {
+    img.addEventListener("click", () => {
+      const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+      if (isLocked) return;
+      mainImage.src = img.src;
+    });
+  });
+
+  // Toggle lock button
+  lockButton.addEventListener("click", () => {
+    const isLocked = lockButton.getAttribute('aria-pressed') === 'true';
+    const newLocked = !isLocked;
+
+    updateLockVisualState(newLocked);
+    localStorage.setItem(lockStateKey, newLocked);
+
+    if (newLocked) {
+      localStorage.setItem(localStorageKey, mainImage.src);
+    } else {
+      localStorage.removeItem(localStorageKey);
+    }
+  });
+
+  // Default reset
+  resetButton.addEventListener("click", () => {
+    mainImage.src = defaultImage;
+    localStorage.removeItem(localStorageKey);
+    localStorage.setItem(lockStateKey, false);
+    updateLockVisualState(false);
+  });
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    // Add 'in-panel' class to body for CSS control
+    document.body.classList.add('in-panel');
+
+    // Modify all internal links to preserve ?panel=1
+    document.querySelectorAll('a[href^="/dokimon/"]').forEach(link => {
+      if (!link.href.includes('panel=1')) {
+        link.href += link.href.includes('?') ? '&panel=1' : '?panel=1';
+      }
+    });
+  }
+  document.body.classList.add('loading');
+window.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.remove('loading');
+});
+</script>
+<script>
+  if (window.location.search.includes('panel=1')) {
+    document.body.classList.add('in-panel');
+  }
+</script>
+<script src="/assets/js/movesets.js"></script>
+<script>
+const moveData = {
+  
+  
+};
+
+function toggleMoveList() {
+  const dropdown = document.getElementById("move-list-dropdown");
+  const button = document.querySelector(".move-toggle-btn");
+  const isOpen = dropdown.classList.toggle("show");
+
+  if (isOpen) {
+    dropdown.dataset.loaded = "true";
+    button.innerHTML = "Move List + Lvls ▲";
+    loadMoveList();
+  } else {
+    button.innerHTML = "Move List + Lvls ▼";
+  }
+}
+
+function loadMoveList() {
+  const monsterName = "Deathscye";
+  const moveList = MOVESETS[monsterName];
+
+  if (!moveList) return;
+
+  const ul = document.getElementById("move-list-content");
+  moveList
+    .sort((a, b) => a.level - b.level)
+    .forEach(entry => {
+      const li = document.createElement("li");
+      const moveName = entry.move.replace(/_/g, " ");  // Replace underscores
+      li.textContent = `Lv ${entry.level}: ${moveName}`;
+      ul.appendChild(li);
+    });
+}
+</script>
+
+
+</body>
+</html>
