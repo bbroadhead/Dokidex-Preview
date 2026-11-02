@@ -45,23 +45,23 @@
   <meta charset="UTF-8">
   <title>Dokimon:Quest - Wiki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <link rel="stylesheet" href="/Dokidex-Preview/styles.css">
+  <link rel="icon" type="image/png" href="/Dokidex-Preview/assets/images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header class="site-header">
     <div class="header-bg">
-      <a href="/">
-        <img src="/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
+      <a href="/Dokidex-Preview/">
+        <img src="/Dokidex-Preview/assets/images/dokimon_wiki_header.png" alt="Dokimon Wiki Logo" class="header-logo">
       </a>
     </div>
     
     <nav class="site-nav">
       <div class="nav-left">
-        <a href="/" class="nav-button tracker-link">Dex</a>
-        <a href="/world" class="nav-button tracker-link">World</a>
+        <a href="/Dokidex-Preview/" class="nav-button tracker-link">Dex</a>
+        <a href="/Dokidex-Preview/world" class="nav-button tracker-link">World</a>
         <div class="dropdown">
           <button class="nav-button">Links ▾</button>
           <div class="dropdown-content">
@@ -73,7 +73,7 @@
             <a href="https://steamcommunity.com/id/knightexcalibur/" target="_blank">KnightExcalibur (Dokidex developer)</a>
           </div>
         </div>
-		<a href="/dokitracker" class="nav-button tracker-link">DokiTracker</a>
+		<a href="/Dokidex-Preview/dokitracker" class="nav-button tracker-link">DokiTracker</a>
       </div>
       <div class="nav-center">
         <div class="search-and-toggle">
@@ -103,7 +103,7 @@
     <div class="tracker-layout">
   <div class="tracker-sidebar">
   <div class="dokitracker-logo">
-    <img src="/assets/images/dokitracker_transparent.png" alt="DokiTracker Logo">
+    <img src="/Dokidex-Preview/assets/images/dokitracker_transparent.png" alt="DokiTracker Logo">
   </div>
     <div class="tracker-summary-box">
     <p><strong>Dokimon caught:</strong> <span id="caught-count">0</span> <strong>/ 144</strong></p>
@@ -764,7 +764,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add('in-panel');
 
     // Modify all internal links to preserve ?panel=1
-    document.querySelectorAll('a[href^="/dokimon/"]').forEach(link => {
+    document.querySelectorAll('a[href^="/Dokidex-Preview/dokimon/"]').forEach(link => {
       if (!link.href.includes('panel=1')) {
         link.href += link.href.includes('?') ? '&panel=1' : '?panel=1';
       }
@@ -780,7 +780,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('in-panel');
   }
 </script>
-<script src="/assets/js/movesets.js"></script>
+<script src="/Dokidex-Preview/assets/js/movesets.js"></script>
 <script>
 const moveData = {
   
@@ -820,11 +820,11 @@ function loadMoveList() {
 </script>
 
 
-  <script src="/assets/js/mondex_data.js"></script>
+  <script src="/Dokidex-Preview/assets/js/mondex_data.js"></script>
 
-  <script src="/assets/js/dokitracker.js"></script>
+  <script src="/Dokidex-Preview/assets/js/dokitracker.js"></script>
 
-  <script src="/assets/js/dokitracker_settings.js"></script>
+  <script src="/Dokidex-Preview/assets/js/dokitracker_settings.js"></script>
 
 
 
