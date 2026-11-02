@@ -3,8 +3,7 @@
     {id:'dokimon2',name:'Dokimon 2',status:'In development'},
     {id:'quest',name:'Dokimon: Quest',status:''},
     {id:'yami',name:'Yami Kids',status:'Data coming soon'},
-    {id:'nuumonsters',name:'Nuumonsters',status:'Data coming soon'},
-    {id:'tinymon',name:'Tinymon',status:'Data coming soon'}
+    {id:'nuumonsters',name:'Nuumonsters',status:'Data coming soon'}
   ];
   const track=document.getElementById('yanoverse-game-track');
   const notice=document.getElementById('yanoverse-game-notice');
