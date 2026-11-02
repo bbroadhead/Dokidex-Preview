@@ -1,6 +1,6 @@
 # Dokimon: Quest - Dokidex
 
-Welcome to the **Dokidex**, a Jekyll-based site designed to function like a Pokédex for the monster taming game **Dokimon: Quest**.
+Welcome to the **Dokidex**, a Jekyll-based site designed as a dedicated monster encyclopedia for the monster-taming game **Dokimon: Quest**.
 
 ## 🌐 Live Site
 
