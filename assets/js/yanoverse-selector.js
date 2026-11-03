@@ -1,6 +1,6 @@
 (() => {
   const games = [
-    {id:'dokimon2',name:'Dokimon 2',status:'In development'},
+    {id:'dokimon2',name:'Dokimon Quest 2',status:'In development'},
     {id:'quest',name:'Dokimon: Quest',status:''},
     {id:'yami',name:'Yami Kids',status:'Data coming soon'},
     {id:'nuumonsters',name:'Nuumonsters',status:'Data coming soon'}
