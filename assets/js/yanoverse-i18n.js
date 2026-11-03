@@ -18,14 +18,10 @@ function translateText(value){
   if(!value||!value.trim())return value;
   const trim=value.trim();
   if(dict.has(trim))return value.replace(trim,dict.get(trim));
-  // Translate complete labels and phrases, not fragments inside monster names.
-  // Keep original content reversible when switching back to English.
+  // Translate longer UI phrases while avoiding partial matches inside names.
   let translated=trim;
-  for(const [en,ja] of pairs.filter(([key])=>key.length>5).sort((a,b)=>b[0].length-a[0].length)){
-    if(en===trim)continue;
-    const escaped=en.replace(/[.*+?^\u0024{}()|[\]\\]/g,'\\$&');
-    const regex=new RegExp('(?<![\\\\p{L}\\\\p{N}])'+escaped+'(?![\\\\p{L}\\\\p{N}])','gu');
-    translated=translated.replace(regex,ja);
+  for(const [en,ja] of pairs.filter(([key])=>key.length>8 && key.includes(' ')).sort((a,b)=>b[0].length-a[0].length)){
+    if(translated.includes(en))translated=translated.split(en).join(ja);
   }
   return translated===trim?value:value.replace(trim,translated);
 }
