@@ -1,37 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  // Hide document until theme is applied
-  document.documentElement.style.visibility = 'hidden';
-
-  (function() {
-    const mode = localStorage.getItem('dark-mode');
-    const isDark = !mode || mode === 'enabled';
-
-    // Add class temporarily to <html> so styles apply early
-    if (isDark) {
-      document.documentElement.classList.add('pre-dark-mode');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Move the dark mode class to body
-      if (isDark) {
-        document.body.classList.add('dark-mode');
-      }
-      document.documentElement.classList.remove('pre-dark-mode');
-
-      // Set toggle switch
-      const toggle = document.getElementById('dark-mode-toggle');
-      if (toggle) {
-        toggle.checked = isDark;
-      }
-
-      // Show page after theme is applied
-      document.documentElement.style.visibility = '';
-    });
-  })();
-</script>
+<script>document.documentElement.classList.add('pre-dark-mode');document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('dark-mode');document.documentElement.classList.remove('pre-dark-mode')});</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
 <script>
@@ -176,19 +146,7 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
         </div>
 		<a href="/Dokidex-Preview/dokitracker" class="nav-button tracker-link">Tracker</a>
       </div>
-      <div class="nav-center">
-        <div class="search-and-toggle">
-		  <span class="theme-label">Theme</span>
-          <!--<input type="text" placeholder="Search..." class="search-bar">-->
-          <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="dark-mode-toggle">
-              <input type="checkbox" id="dark-mode-toggle" />
-              <span class="slider round"></span>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="nav-right">
+<div class="nav-right">
         <span class="lang-flag" data-lang="en">🇺🇸</span>
         <span class="lang-flag" data-lang="ja">🇯🇵</span>
       </div>
@@ -422,30 +380,7 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
       }
     });
   </script>
-<script>
-  const toggleSwitch = document.getElementById('dark-mode-toggle');
-  const body = document.body;
 
-  function applyTheme(isDark) {
-    body.classList.toggle('dark-mode', isDark);
-    toggleSwitch.checked = isDark;
-    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
-  }
-
-  toggleSwitch.addEventListener('change', () => {
-    applyTheme(toggleSwitch.checked);
-    createRadarChart();
-  });
-
-// Default to dark mode unless user set to light
-if (!localStorage.getItem('dark-mode')) {
-  localStorage.setItem('dark-mode', 'enabled');
-}
-
-  // Load preference
-  const savedTheme = localStorage.getItem('dark-mode');
-  applyTheme(savedTheme === 'enabled');
-</script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
