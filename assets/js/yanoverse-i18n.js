@@ -14,13 +14,42 @@ const pairs=[
 ['Data coming soon','データは準備中です'],['In development','開発中'],['No monsters found','モンスターが見つかりません'],['Loading...','読み込み中…'],['Level','レベル'],['Lv.','Lv.'],['Half','半減']
 ];
 const dict=new Map(pairs);const originals=new WeakMap();const attrOriginals=new WeakMap();
+
+// Additional interface strings used in profile panels, world navigation and tracker dialogs.
+const additionalPairs=[
+['Close','閉じる'],['Close panel','パネルを閉じる'],['Open','開く'],['Back','戻る'],['Next','次へ'],['Previous','前へ'],
+['Home','ホーム'],['Map','マップ'],['World Map','ワールドマップ'],['View Map','マップを見る'],
+['Select a monster','モンスターを選択'],['Select a type','タイプを選択'],['No results','結果がありません'],
+['No results found','検索結果がありません'],['No matching monsters','該当するモンスターがいません'],
+['Search by location','出現場所で検索'],['Search by type','タイプで検索'],
+['All monsters','すべてのモンスター'],['All forms','すべてのフォーム'],['Normal','通常'],
+['Rare','レア'],['Rare Form','レアフォーム'],['Base Form','通常フォーム'],
+['Health','HP'],['Physical Attack','物理攻撃'],['Physical Defense','物理防御'],
+['Special Attack','特殊攻撃'],['Special Defense','特殊防御'],['Total','合計'],
+['Base Stats:','基本ステータス：'],['Evolution Chain:','進化系統：'],
+['Level:','レベル：'],['Level Up','レベルアップ'],['Evolves From','進化前'],['Evolves Into','進化先'],
+['Weakness','弱点'],['Weaknesses','弱点'],['Resistance','耐性'],['Resistances','耐性'],
+['Effective','効果あり'],['Not Very Effective','効果はいまひとつ'],['No Effect','効果なし'],
+['Attack Move Type','攻撃わざのタイプ'],['Defend Mon Type','防御側のタイプ'],
+['Show All','すべて表示'],['Show More','もっと見る'],['Show Less','閉じる'],
+['Caught Dokimon','捕獲したドキモン'],['Caught Dokimon:','捕獲したドキモン：'],
+['Rare forms caught','捕獲したレアフォーム'],['Capture Progress','捕獲進捗'],
+['Export CSV','CSVを書き出す'],['Import CSV','CSVを読み込む'],
+['Save','保存'],['Cancel','キャンセル'],['Confirm','確認'],['Delete','削除'],
+['Yes','はい'],['No','いいえ'],['None','なし'],['Unknown','不明'],
+['Loading','読み込み中'],['Error','エラー'],['Retry','再試行'],
+['Dokimon: Quest','ドキモン：クエスト'],['Yami Kids','ヤミキッズ'],
+['In Development','開発中'],['Coming Soon','近日公開'],['Coming soon','近日公開']
+];
+for(const [en,ja] of additionalPairs)dict.set(en,ja);
+
 function translateText(value){
   if(!value||!value.trim())return value;
   const trim=value.trim();
   if(dict.has(trim))return value.replace(trim,dict.get(trim));
   // Translate longer UI phrases while avoiding partial matches inside names.
   let translated=trim;
-  for(const [en,ja] of pairs.filter(([key])=>key.length>8 && key.includes(' ')).sort((a,b)=>b[0].length-a[0].length)){
+  for(const [en,ja] of [...dict].filter(([key])=>key.length>8 && key.includes(' ')).sort((a,b)=>b[0].length-a[0].length)){
     if(translated.includes(en))translated=translated.split(en).join(ja);
   }
   return translated===trim?value:value.replace(trim,translated);
@@ -29,5 +58,5 @@ function apply(lang){document.documentElement.lang=lang;document.documentElement
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);const target=lang==='ja'?translateText(original):original;if(n.nodeValue!==target)n.nodeValue=target}
 document.querySelectorAll('[placeholder],[title],[aria-label]').forEach(el=>{let orig=attrOriginals.get(el);if(!orig){orig={};for(const k of ['placeholder','title','aria-label'])if(el.hasAttribute(k))orig[k]=el.getAttribute(k);attrOriginals.set(el,orig)}for(const [k,v] of Object.entries(orig))el.setAttribute(k,lang==='ja'?translateText(v):v)})}
 let current='en',scheduled=false;function refresh(){scheduled=false;apply(current)}function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(refresh)}}
-document.addEventListener('DOMContentLoaded',()=>{try{current=localStorage.getItem('yanoverse-language')==='ja'?'ja':'en'}catch{}document.querySelectorAll('.lang-flag[data-lang]').forEach(flag=>{const lang=flag.dataset.lang;if(!['en','ja'].includes(lang))return;flag.setAttribute('role','button');flag.setAttribute('tabindex','0');flag.setAttribute('aria-label',lang==='ja'?'日本語に切り替え':'Switch to English');const select=()=>{current=lang;try{localStorage.setItem('yanoverse-language',lang)}catch{}apply(lang)};flag.addEventListener('click',select);flag.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select()}})});apply(current);const observer=new MutationObserver(schedule);observer.observe(document.body,{subtree:true,childList:true})});
+document.addEventListener('DOMContentLoaded',()=>{try{current=localStorage.getItem('yanoverse-language')==='ja'?'ja':'en'}catch{}document.querySelectorAll('.lang-flag[data-lang]').forEach(flag=>{const lang=flag.dataset.lang;if(!['en','ja'].includes(lang))return;flag.setAttribute('role','button');flag.setAttribute('tabindex','0');flag.setAttribute('aria-label',lang==='ja'?'日本語に切り替え':'Switch to English');const select=()=>{current=lang;try{localStorage.setItem('yanoverse-language',lang)}catch{}apply(lang)};flag.addEventListener('click',select);flag.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select()}})});apply(current);const observer=new MutationObserver(schedule);observer.observe(document.body,{subtree:true,childList:true,characterData:true})});
 })();
