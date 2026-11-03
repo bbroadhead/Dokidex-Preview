@@ -640,6 +640,9 @@ col.col-label {
 <style id="yanoverse-filter-collapse-fix">
 #dex-filter-controls.collapsed,
 body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
+#filter-toggle {display:flex!important;align-items:center!important;justify-content:center!important;width:fit-content!important;max-width:calc(100% - 24px)!important;min-height:42px!important;margin:4px auto 18px!important;padding:10px 22px!important;border:1px solid rgba(152,191,237,.36)!important;border-radius:12px!important;background:linear-gradient(145deg,#243c5b,#14273e)!important;color:#edf5ff!important;font:700 13px/1.3 system-ui,sans-serif!important;letter-spacing:.025em!important;box-shadow:0 6px 20px rgba(0,0,0,.2)!important;cursor:pointer!important;transition:background .2s,transform .2s!important;}
+#filter-toggle:hover,#filter-toggle:focus-visible {background:linear-gradient(145deg,#355779,#1d3653)!important;}
+#filter-toggle:active {transform:scale(.98)!important;}
 </style>
 
 <p><button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button></p>
