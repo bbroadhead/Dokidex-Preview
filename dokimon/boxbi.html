@@ -117,6 +117,11 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
 </style>
 
 <style id="yanoverse-links-dropdown-v2">
+/* Keep the expanded menu above the language selector row. */
+.site-header .site-nav{isolation:isolate!important}
+.site-header .nav-left{position:relative!important;z-index:30!important}
+.site-header .nav-right{position:relative!important;z-index:1!important}
+.site-header .yv-links-dropdown{z-index:40!important}
 .site-header,.site-header .site-nav,.site-header .nav-left{overflow:visible!important}
 .site-header .yv-links-dropdown{position:relative!important;display:inline-flex!important;min-width:0!important}
 .site-header .yv-links-dropdown .links-button{cursor:pointer!important;white-space:nowrap!important}
