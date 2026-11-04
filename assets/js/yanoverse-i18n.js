@@ -43,20 +43,42 @@ const additionalPairs=[
 ];
 for(const [en,ja] of additionalPairs)dict.set(en,ja);
 
-function translateText(value){
+const koreanPairs=[
+['Hide Filters','필터 숨기기'],['Show Filters','필터 표시'],['Toggle Filters','필터 표시/숨기기'],['Clear Filters','필터 초기화'],
+['Search Location','출현 장소 검색'],['Search Name','이름 검색'],['Palettes:','색상 변형:'],['Palettes','색상 변형'],['Common','일반'],['Bound','속박'],['Unique','특별'],
+['Rare Form 1','희귀 형태 1'],['Rare Form 2','희귀 형태 2'],['Rare Form 3','희귀 형태 3'],['Rare Form 4','희귀 형태 4'],['Rare Form 5','희귀 형태 5'],['Rare Form 6','희귀 형태 6'],['Rare Form 7','희귀 형태 7'],
+['Stage 1','1단계'],['Stage 2','2단계'],['Stage 3','3단계'],['Stage 4','4단계'],['Stage 5','5단계'],['Stage 6','6단계'],
+['Stage:','진화 단계:'],['Type:','타입:'],['Location:','출현 장소:'],['Name:','이름:'],['Evolves at:','진화 레벨:'],
+['Dex','도감'],['World','월드'],['Tracker','포획 기록'],['Links','링크'],['Home','홈'],['Map','지도'],['World Map','월드 지도'],
+['Type Effectiveness Tool','타입 상성표'],['Row=Attack Move Type,','행=공격 기술 타입,'],['Col=Defend Mon Type ➤','열=방어 몬스터 타입 ➤'],['Col=Defend Mon Type','열=방어 몬스터 타입'],['Click a type to highlight','타입을 눌러 강조 표시'],
+['Fire','불꽃'],['Water','물'],['Grass','풀'],['Electric','전기'],['Dark','악'],['Light','빛'],['Flying','비행'],['Fight','격투'],['fight','격투'],['Fighting','격투'],['Fairy','페어리'],['Ghost','고스트'],['Poison','독'],['Dragon','드래곤'],['Ice','얼음'],
+['All','전체'],['All Types','모든 타입'],['All Stages','모든 단계'],['All Locations','모든 장소'],['Stage','단계'],['Stages','단계'],['Type','타입'],['Types','타입'],['Location','출현 장소'],['Locations','출현 장소'],['Name','이름'],['Image','이미지'],['Search','검색'],
+['Evolution Chain','진화 계보'],['Evolution','진화'],['Base Stats','기본 능력치'],['Stats','능력치'],['Moves','기술'],['Move List','기술 목록'],['Moveset','기술 목록'],['Abilities','특성'],['Ability','특성'],['Description','설명'],
+['Return to Dex','도감으로 돌아가기'],['← Return to Dex','← 도감으로 돌아가기'],['Back to Dex','도감으로 돌아가기'],['Back to Index','도감으로 돌아가기'],
+['Attack','공격'],['Defense','방어'],['Speed','스피드'],['HP','HP'],['Sp. Atk','특수공격'],['Sp. Def','특수방어'],['Level','레벨'],['Lv.','Lv.'],['Half','반감'],['Null','무효'],['2x','2배'],['1x','1배'],
+['Dokimon caught:','포획한 도키몬:'],['Rare forms caught:','포획한 희귀 형태:'],['Caught?','포획 여부'],['Rare Forms','희귀 형태'],['Caught','포획함'],['Not caught','미포획'],
+['Settings','설정'],['Mark all as caught','모두 포획으로 표시'],['Remove all as caught','전체 포획 기록 삭제'],['Remove all rare forms','희귀 형태 기록 모두 삭제'],['Export as CSV','CSV로 내보내기'],['Filter out caught Dokimon','포획한 도키몬 숨기기'],['Restore filtered Dokimon','숨긴 도키몬 다시 표시'],
+['(click to open panel)','(눌러서 상세 정보 열기)'],['(double-click to remove)','(두 번 눌러 삭제)'],['Loading...','불러오는 중…'],['Data coming soon','데이터 준비 중'],['In development','개발 중'],['IN DEVELOPMENT','개발 중'],['Coming Soon','곧 공개'],['No monsters found','몬스터를 찾을 수 없습니다'],
+['Close','닫기'],['Open','열기'],['Next','다음'],['Previous','이전'],['Save','저장'],['Cancel','취소'],['Confirm','확인'],['Delete','삭제'],['Yes','예'],['No','아니요'],['None','없음'],['Unknown','알 수 없음'],
+['YANOVERSE MULTI-DEX','야노버스 멀티 도감']
+];
+const koreanDict=new Map(koreanPairs);
+
+function translateText(value,lang){
   if(!value||!value.trim())return value;
   const trim=value.trim();
-  if(dict.has(trim))return value.replace(trim,dict.get(trim));
+  const source=lang==='ko'?koreanDict:dict;
+  if(source.has(trim))return value.replace(trim,source.get(trim));
   // Translate longer UI phrases while avoiding partial matches inside names.
   let translated=trim;
-  for(const [en,ja] of [...dict].filter(([key])=>key.length>8 && key.includes(' ')).sort((a,b)=>b[0].length-a[0].length)){
+  for(const [en,ja] of [...source].filter(([key])=>key.length>8 && key.includes(' ')).sort((a,b)=>b[0].length-a[0].length)){
     if(translated.includes(en))translated=translated.split(en).join(ja);
   }
   return translated===trim?value:value.replace(trim,translated);
 }
 function apply(lang){document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
-const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);const target=lang==='ja'?translateText(original):original;if(n.nodeValue!==target)n.nodeValue=target}
-document.querySelectorAll('[placeholder],[title],[aria-label]').forEach(el=>{let orig=attrOriginals.get(el);if(!orig){orig={};for(const k of ['placeholder','title','aria-label'])if(el.hasAttribute(k))orig[k]=el.getAttribute(k);attrOriginals.set(el,orig)}for(const [k,v] of Object.entries(orig))el.setAttribute(k,lang==='ja'?translateText(v):v)})}
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);const target=lang==='en'?original:translateText(original,lang);if(n.nodeValue!==target)n.nodeValue=target}
+document.querySelectorAll('[placeholder],[title],[aria-label]').forEach(el=>{let orig=attrOriginals.get(el);if(!orig){orig={};for(const k of ['placeholder','title','aria-label'])if(el.hasAttribute(k))orig[k]=el.getAttribute(k);attrOriginals.set(el,orig)}for(const [k,v] of Object.entries(orig))el.setAttribute(k,lang==='en'?v:translateText(v,lang))})}
 let current='en',scheduled=false;function refresh(){scheduled=false;apply(current)}function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(refresh)}}
-document.addEventListener('DOMContentLoaded',()=>{try{current=localStorage.getItem('yanoverse-language')==='ja'?'ja':'en'}catch{}document.querySelectorAll('.lang-flag[data-lang]').forEach(flag=>{const lang=flag.dataset.lang;if(!['en','ja'].includes(lang))return;flag.setAttribute('role','button');flag.setAttribute('tabindex','0');flag.setAttribute('aria-label',lang==='ja'?'日本語に切り替え':'Switch to English');const select=()=>{current=lang;try{localStorage.setItem('yanoverse-language',lang)}catch{}apply(lang)};flag.addEventListener('click',select);flag.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select()}})});apply(current);const observer=new MutationObserver(schedule);observer.observe(document.body,{subtree:true,childList:true,characterData:true})});
+document.addEventListener('DOMContentLoaded',()=>{try{current=['en','ja','ko'].includes(localStorage.getItem('yanoverse-language'))?localStorage.getItem('yanoverse-language'):'en'}catch{}document.querySelectorAll('.lang-flag[data-lang]').forEach(flag=>{const lang=flag.dataset.lang;if(!['en','ja','ko'].includes(lang))return;flag.setAttribute('role','button');flag.setAttribute('tabindex','0');flag.setAttribute('aria-label',lang==='ja'?'日本語に切り替え':lang==='ko'?'한국어로 전환':'Switch to English');const select=()=>{current=lang;try{localStorage.setItem('yanoverse-language',lang)}catch{}apply(lang)};flag.addEventListener('click',select);flag.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select()}})});apply(current);const observer=new MutationObserver(schedule);observer.observe(document.body,{subtree:true,childList:true,characterData:true})});
 })();
