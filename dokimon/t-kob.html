@@ -115,6 +115,40 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
 .site-header .nav-left{flex:1 1 100%!important;justify-content:center!important}
 .site-header .nav-right{order:2!important;flex:1 1 100%!important;justify-content:center!important;gap:12px!important;margin:0 auto!important;padding:0!important}
 </style>
+
+<style id="yanoverse-links-dropdown-v2">
+.site-header,.site-header .site-nav,.site-header .nav-left{overflow:visible!important}
+.site-header .yv-links-dropdown{position:relative!important;display:inline-flex!important;min-width:0!important}
+.site-header .yv-links-dropdown .links-button{cursor:pointer!important;white-space:nowrap!important}
+.site-header .yv-links-dropdown .dropdown-content{
+ position:absolute!important;top:calc(100% + 9px)!important;left:50%!important;right:auto!important;
+ transform:translateX(-50%) translateY(-5px)!important;
+ display:none!important;box-sizing:border-box!important;width:max-content!important;
+ min-width:220px!important;max-width:min(340px,calc(100vw - 24px))!important;
+ max-height:min(65dvh,460px)!important;overflow-y:auto!important;overflow-x:hidden!important;
+ padding:7px!important;margin:0!important;border:1px solid rgba(145,184,230,.35)!important;
+ border-radius:14px!important;background:linear-gradient(155deg,#1b2e48,#101d30)!important;
+ box-shadow:0 18px 42px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.08)!important;
+ z-index:9999!important;opacity:1!important;visibility:visible!important;
+}
+.site-header .yv-links-dropdown .dropdown-content.show{display:flex!important;flex-direction:column!important;gap:3px!important;transform:translateX(-50%)!important}
+.site-header .yv-links-dropdown .dropdown-content a{
+ display:block!important;box-sizing:border-box!important;width:100%!important;
+ padding:11px 13px!important;margin:0!important;border:1px solid transparent!important;
+ border-radius:9px!important;background:transparent!important;color:#e9f2ff!important;
+ text-align:left!important;text-decoration:none!important;white-space:normal!important;
+ overflow-wrap:anywhere!important;word-break:normal!important;
+ font:550 13px/1.45 system-ui,sans-serif!important;text-shadow:none!important;
+}
+.site-header .yv-links-dropdown .dropdown-content a:hover,
+.site-header .yv-links-dropdown .dropdown-content a:focus-visible{
+ background:rgba(120,172,235,.16)!important;border-color:rgba(145,184,230,.27)!important;
+ color:#fff!important;outline:none!important;
+}
+@media(max-width:600px){
+ .site-header .yv-links-dropdown .dropdown-content{max-width:calc(100vw - 24px)!important;min-width:210px!important}
+}
+</style>
 </head>
 <body>
 
@@ -139,9 +173,9 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
       <div class="nav-left">
         <a href="/Dokidex-Preview/" class="nav-button tracker-link">Dex</a>
         <a href="/Dokidex-Preview/world" class="nav-button tracker-link">World</a>
-        <div class="dropdown">
-          <button class="nav-button" type="button" aria-label="Open links menu">Links ▾</button>
-          <div class="dropdown-content">
+        <div class="dropdown yv-links-dropdown">
+          <button class="nav-button links-button" type="button" aria-label="Open links menu" aria-haspopup="true" aria-expanded="false" aria-controls="yv-links-menu">Links ▾</button>
+          <div class="dropdown-content" id="yv-links-menu">
             <a href="https://www.yanakorpgs.com/" target="_blank">Yanako RPGs</a>
             <a href="https://store.steampowered.com/app/2019300/Dokimon_Quest/" target="_blank">Dokimon: Quest</a>
             <a href="https://discord.com/invite/4YUaYNvVHD" target="_blank">Dokimon Discord</a>
@@ -408,20 +442,21 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const button = document.querySelector('.links-button');
-    const menu = document.querySelector('.dropdown-content');
-
+    const button = document.querySelector('.yv-links-dropdown .links-button');
+    const menu = document.querySelector('.yv-links-dropdown .dropdown-content');
     if (button && menu) {
-      button.addEventListener('click', (e) => {
+      const close = () => { menu.classList.remove('show'); button.setAttribute('aria-expanded','false'); };
+      button.addEventListener('click', e => {
         e.preventDefault();
-        menu.classList.toggle('show');
+        const opening = !menu.classList.contains('show');
+        menu.classList.toggle('show', opening);
+        button.setAttribute('aria-expanded',String(opening));
       });
-
-      document.addEventListener('click', (e) => {
-        if (!button.contains(e.target) && !menu.contains(e.target)) {
-          menu.classList.remove('show');
-        }
+      document.addEventListener('click', e => {
+        if (!button.contains(e.target) && !menu.contains(e.target)) close();
       });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      menu.addEventListener('click', e => { if (e.target.closest('a')) close(); });
     }
   });
 </script>
