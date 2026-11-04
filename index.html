@@ -828,6 +828,14 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
   </div>
 </div>
 
+<div class="yv-dex-summary" id="yv-dex-summary" role="status" aria-live="polite">
+  <span><strong id="yv-visible-count">0</strong> <span data-yv-count-label="">Dokimon shown</span></span>
+</div>
+<style id="yv-dex-summary-style">
+.yv-dex-summary{box-sizing:border-box;max-width:100%;width:fit-content;margin:4px auto 18px;padding:9px 19px;border:1px solid rgba(145,184,230,.27);border-radius:999px;background:linear-gradient(145deg,rgba(36,60,91,.68),rgba(20,39,62,.75));color:#dceaff;font:600 13px/1.4 system-ui,sans-serif;text-align:center}
+.yv-dex-summary strong{color:#fff;font-size:15px}
+</style>
+
 <div class="dex-grid" id="dex-grid">
   
     
@@ -3489,6 +3497,7 @@ function filterDex() {
   const loc = locationFilter.value.toLowerCase();
   const search = searchFilter.value.toLowerCase();
 
+  let visibleCount = 0;
   entries.forEach(entry => {
     const matchType = [...activeTypes].every(type =>
       entry.dataset.type.includes(type)
@@ -3496,9 +3505,14 @@ function filterDex() {
     const matchStage = !stage || entry.dataset.stage === stage;
     const matchLoc = entry.dataset.location.includes(loc);
     const matchSearch = entry.dataset.name.includes(search);
-    entry.style.display = (matchType && matchStage && matchLoc && matchSearch) ? '' : 'none';
+    const visible = matchType && matchStage && matchLoc && matchSearch;
+    entry.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
   });
+  const count = document.getElementById('yv-visible-count');
+  if (count) count.textContent = String(visibleCount);
 }
+filterDex();
 
 filterToggle.addEventListener('click', () => {
   const isCollapsed = filterControls.classList.toggle('collapsed');

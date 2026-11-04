@@ -2,7 +2,7 @@
    Keeps original English strings so switching languages is reversible. */
 (()=>{'use strict';
 const pairs=[
-['Hide Filters','フィルターを隠す'],['Show Filters','フィルターを表示'],['Search Location','出現場所を検索'],['Search Name','名前を検索'],['Palettes','カラーパターン'],['Palettes:','カラーパターン：'],['Stage:','進化段階：'],['Type:','タイプ：'],['Location:','出現場所：'],['Name:','名前：'],['Rare Form 4','レアフォーム4'],['Rare Form 5','レアフォーム5'],['Rare Form 6','レアフォーム6'],['Rare Form 7','レアフォーム7'],['Bound','束縛'],['Unique','ユニーク'],['Stage 1','第1段階'],['Stage 2','第2段階'],['Stage 3','第3段階'],['Stage 4','第4段階'],['Stage 5','第5段階'],['Stage 6','第6段階'],['Return to Dex','図鑑に戻る'],['← Return to Dex','← 図鑑に戻る'],['Evolves at:','進化レベル：'],['Type Effectiveness Tool','タイプ相性表'],['Row=Attack Move Type,','行＝攻撃わざのタイプ、'],['Col=Defend Mon Type ➤','列＝防御側のタイプ ➤'],['Click a type to highlight','タイプを選択して強調表示'],['Fight','かくとう'],['Half','半減'],['Null','無効'],['2x','2倍'],['1x','等倍'],['IN DEVELOPMENT','開発中'],['YANOVERSE MULTI-DEX','ヤノバース・マルチ図鑑'],
+['Dokimon shown','表示中のドキモン'],['Hide Filters','フィルターを隠す'],['Show Filters','フィルターを表示'],['Search Location','出現場所を検索'],['Search Name','名前を検索'],['Palettes','カラーパターン'],['Palettes:','カラーパターン：'],['Stage:','進化段階：'],['Type:','タイプ：'],['Location:','出現場所：'],['Name:','名前：'],['Rare Form 4','レアフォーム4'],['Rare Form 5','レアフォーム5'],['Rare Form 6','レアフォーム6'],['Rare Form 7','レアフォーム7'],['Bound','束縛'],['Unique','ユニーク'],['Stage 1','第1段階'],['Stage 2','第2段階'],['Stage 3','第3段階'],['Stage 4','第4段階'],['Stage 5','第5段階'],['Stage 6','第6段階'],['Return to Dex','図鑑に戻る'],['← Return to Dex','← 図鑑に戻る'],['Evolves at:','進化レベル：'],['Type Effectiveness Tool','タイプ相性表'],['Row=Attack Move Type,','行＝攻撃わざのタイプ、'],['Col=Defend Mon Type ➤','列＝防御側のタイプ ➤'],['Click a type to highlight','タイプを選択して強調表示'],['Fight','かくとう'],['Half','半減'],['Null','無効'],['2x','2倍'],['1x','等倍'],['IN DEVELOPMENT','開発中'],['YANOVERSE MULTI-DEX','ヤノバース・マルチ図鑑'],
 ['Theme','テーマ'],['Dex','図鑑'],['World','ワールド'],['Tracker','捕獲記録'],['Links','リンク'],['Type Effectiveness Tool','タイプ相性表'],
 ['Toggle Filters','フィルターを表示・非表示'],['Palettes:','カラーパターン：'],['Common','通常'],['Rare Form 1','レアフォーム1'],['Rare Form 2','レアフォーム2'],['Rare Form 3','レアフォーム3'],
 ['Stage','進化段階'],['Stages','進化段階'],['Type','タイプ'],['Types','タイプ'],['Location','出現場所'],['Locations','出現場所'],['Search','検索'],['Search by name','名前で検索'],['Search monsters','モンスターを検索'],['All','すべて'],['All Types','すべてのタイプ'],['All Stages','すべての段階'],['All Locations','すべての場所'],['Clear Filters','フィルターを解除'],['Reset Filters','フィルターをリセット'],
@@ -44,7 +44,7 @@ const additionalPairs=[
 for(const [en,ja] of additionalPairs)dict.set(en,ja);
 
 const koreanPairs=[
-['Hide Filters','필터 숨기기'],['Show Filters','필터 표시'],['Toggle Filters','필터 표시/숨기기'],['Clear Filters','필터 초기화'],
+['Dokimon shown','표시 중인 도키몬'],['Hide Filters','필터 숨기기'],['Show Filters','필터 표시'],['Toggle Filters','필터 표시/숨기기'],['Clear Filters','필터 초기화'],
 ['Search Location','출현 장소 검색'],['Search Name','이름 검색'],['Palettes:','색상 변형:'],['Palettes','색상 변형'],['Common','일반'],['Bound','속박'],['Unique','특별'],
 ['Rare Form 1','희귀 형태 1'],['Rare Form 2','희귀 형태 2'],['Rare Form 3','희귀 형태 3'],['Rare Form 4','희귀 형태 4'],['Rare Form 5','희귀 형태 5'],['Rare Form 6','희귀 형태 6'],['Rare Form 7','희귀 형태 7'],
 ['Stage 1','1단계'],['Stage 2','2단계'],['Stage 3','3단계'],['Stage 4','4단계'],['Stage 5','5단계'],['Stage 6','6단계'],
