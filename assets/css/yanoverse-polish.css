@@ -641,3 +641,19 @@ html.monster-arriving body{opacity:0!important}
 @media(prefers-reduced-motion:reduce){
  html.monster-leaving body,html.monster-arriving body{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+/* Site-wide typography: every UI element, generated label, and SVG text uses VT323.
+   Explicit exclusions only for icon glyph fonts to preserve their symbols. */
+html,html body,html body *,
+html body *::before,html body *::after,
+html body svg text,html body svg tspan,
+html body input,html body textarea,html body select,
+html body button,html body option,
+html body canvas + *,html body [contenteditable]{
+ font-family:'VT323',monospace!important;
+}
+html body :is(.material-icons,.material-symbols-outlined,.material-symbols-rounded,
+ .fa,.fas,.far,.fab,[class^="fa-"],[class*=" fa-"],
+ .lucide,[class*="icon-font"]){
+ font-family:inherit;
+}
