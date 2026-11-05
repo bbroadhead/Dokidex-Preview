@@ -420,3 +420,16 @@ html body .monster-profile .evolution-wrapper :is(img,svg){max-width:100%!import
  html body .monster-profile .top-bar{gap:10px!important}
  html body .monster-profile .monster-layout-row>.monster-image-container{min-height:180px!important}
 }
+
+/* Keep card labels directly beneath artwork instead of pinning them to the bottom. */
+html body #dex-grid.dex-grid>.dex-entry{
+ min-height:0!important;height:auto!important;align-self:start!important;
+}
+html body #dex-grid.dex-grid>.dex-entry>a{
+ height:auto!important;min-height:0!important;
+ justify-content:flex-start!important;gap:2px!important;
+}
+html body #dex-grid.dex-grid>.dex-entry .dex-card-details{
+ margin-top:0!important;padding:2px 1px 5px!important;
+ align-self:stretch!important;flex:0 0 auto!important;
+}
