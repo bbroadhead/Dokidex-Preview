@@ -1,0 +1,66 @@
+/* Yanoverse visual refinement — shared tokens and surfaces */
+:root{--yv-bg:#0b1525;--yv-surface:#15253b;--yv-surface-raised:#1d324c;--yv-stroke:rgba(158,191,232,.23);--yv-text:#eff5ff;--yv-muted:#b3c4db;--yv-accent:#91c7ff;--yv-radius:16px}
+body.dark-mode{background:radial-gradient(ellipse 75% 38% at 50% 0%,rgba(45,87,143,.19),transparent 80%),var(--yv-bg)!important;color:var(--yv-text)}
+body.dark-mode .page-content{line-height:1.6}
+body.dark-mode .page-content h1,body.dark-mode .page-content h2,body.dark-mode .page-content h3{letter-spacing:-.025em;line-height:1.25;text-wrap:balance}
+body.dark-mode .page-content h1{font-size:clamp(1.75rem,3.4vw,2.6rem)}
+body.dark-mode .page-content h2{font-size:clamp(1.35rem,2.3vw,1.9rem)}
+body.dark-mode .page-content p{overflow-wrap:break-word}
+body.dark-mode .page-content a{transition:color .18s,border-color .18s,background-color .18s}
+body.dark-mode .page-content a:focus-visible,body.dark-mode .page-content button:focus-visible,body.dark-mode .page-content input:focus-visible,body.dark-mode .page-content select:focus-visible{outline:2px solid var(--yv-accent)!important;outline-offset:3px}
+body.dark-mode .page-content :is(input[type="search"],input[type="text"],select,textarea){color-scheme:dark;border-radius:10px}
+body.dark-mode :is(.yv-map-explorer,.yv-encounter-embed,.yv-map-directory-item,.yv-map-detail,.yv-map-unmapped,.tracker-summary-box,.tracker-settings-box){box-shadow:0 12px 32px rgba(0,0,0,.14)}
+body.dark-mode :is(.yv-map-directory-item,.yv-map-monsters a,.yv-encounter-embed){transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+@media(hover:hover){body.dark-mode .yv-map-directory-item:hover{border-color:rgba(160,201,250,.55);transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.2)}}
+body.dark-mode .yv-map-toolbar select,body.dark-mode .yv-map-directory-controls input,body.dark-mode .yv-map-directory-controls select,body.dark-mode .yv-encounter-select{background-color:#1a304a;border-color:rgba(150,190,234,.45)}
+body.dark-mode .yv-map-toolbar select:hover,body.dark-mode .yv-map-directory-controls input:hover,body.dark-mode .yv-map-directory-controls select:hover{border-color:#8cbee9}
+body.dark-mode .yv-map-coverage,body.dark-mode .yv-map-original{color:var(--yv-muted)}
+body.dark-mode .yv-map-detail h3,body.dark-mode .yv-map-directory h3{color:var(--yv-text)}
+@media(max-width:700px){body.dark-mode .page-content{padding-bottom:72px!important}body.dark-mode .yv-map-explorer,body.dark-mode .yv-encounter-embed{border-radius:13px}body.dark-mode .yv-map-directory-results{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){body.dark-mode .page-content *,body.dark-mode .page-content *::before,body.dark-mode .page-content *::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Dex gallery: consistent card rhythm without overriding type-specific art borders */
+body.dark-mode #dex-grid.dex-grid{gap:clamp(11px,1.8vw,20px)!important;align-items:stretch;padding:10px 2px 24px!important}
+body.dark-mode #dex-grid .dex-entry{position:relative;min-width:0!important;margin:0!important;padding:0!important;overflow:hidden;border:1px solid rgba(144,180,221,.29)!important;border-radius:16px!important;background:linear-gradient(155deg,rgba(48,77,112,.54),rgba(16,32,52,.96) 64%)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.075),0 7px 20px rgba(0,0,0,.18)!important;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease!important}
+body.dark-mode #dex-grid .dex-entry>a{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;height:100%!important;box-sizing:border-box!important;padding:12px!important;text-decoration:none!important;color:var(--yv-text)!important}
+body.dark-mode #dex-grid .dex-entry .img-wrapper{display:flex!important;align-items:center!important;justify-content:center!important;width:100%!important;min-height:0!important;aspect-ratio:1/1!important;margin:0!important;overflow:hidden!important;border-radius:12px!important;background:transparent!important;box-shadow:none!important}
+body.dark-mode #dex-grid .dex-entry .monster-image{display:block!important;width:82%!important;height:82%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:pixelated!important;filter:drop-shadow(0 8px 9px rgba(0,0,0,.24));transition:transform .22s ease!important}
+body.dark-mode #dex-grid .dex-card-details{display:flex!important;align-items:baseline!important;justify-content:center!important;flex-wrap:wrap!important;gap:4px 9px!important;min-width:0!important;padding:13px 2px 5px!important;text-align:center!important;line-height:1.4!important}
+body.dark-mode #dex-grid .dex-card-number{color:#a8c6e6!important;font:700 12px/1.4 system-ui,sans-serif!important;letter-spacing:.035em!important}
+body.dark-mode #dex-grid .dex-card-name{color:#f2f7ff!important;font:750 clamp(13px,1.25vw,16px)/1.35 system-ui,sans-serif!important;overflow-wrap:anywhere!important}
+@media(hover:hover){body.dark-mode #dex-grid .dex-entry:hover{transform:translateY(-4px)!important;border-color:rgba(158,205,255,.72)!important;box-shadow:0 14px 32px rgba(0,0,0,.3),0 0 0 1px rgba(144,196,249,.12)!important}body.dark-mode #dex-grid .dex-entry:hover .monster-image{transform:scale(1.07)!important}}
+body.dark-mode #dex-grid .dex-entry:focus-within{border-color:#a3d0ff!important;box-shadow:0 0 0 2px rgba(145,199,255,.35)!important}
+body.dark-mode #dex-filter-controls{border:1px solid rgba(144,180,221,.22)!important;border-radius:17px!important;background:linear-gradient(160deg,rgba(29,51,77,.7),rgba(14,29,48,.76))!important;padding:clamp(12px,2vw,22px)!important;box-shadow:0 10px 28px rgba(0,0,0,.13)!important}
+body.dark-mode #dex-filter-controls .filter-block>label{color:#c8dbf0!important;font-weight:700!important;letter-spacing:.02em!important}
+body.dark-mode #dex-filter-controls :is(input,select){min-height:43px!important;border:1px solid rgba(156,190,228,.4)!important;border-radius:10px!important;background:#1a304a!important;color:#f4f8ff!important;padding:9px 11px!important}
+body.dark-mode .yv-dex-summary{border-color:rgba(147,193,238,.43);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+@media(max-width:767px){body.dark-mode #dex-grid.dex-grid{gap:10px!important;padding:7px 0 22px!important}body.dark-mode #dex-grid .dex-entry>a{padding:8px!important}body.dark-mode #dex-grid .dex-card-details{padding:9px 1px 3px!important;gap:3px 6px!important}body.dark-mode #dex-grid .dex-card-name{font-size:13px!important}body.dark-mode #dex-grid .dex-card-number{font-size:11px!important}}
+
+/* Transparent monster artwork containers: retain card framing, remove image-panel fill. */
+body.dark-mode #dex-grid .dex-entry .img-wrapper,body.dark-mode #dex-grid .dex-entry .img-wrapper::before,body.dark-mode #dex-grid .dex-entry .img-wrapper::after{background:transparent!important;background-image:none!important;box-shadow:none!important}
+
+/* Type-colored card perimeter: single types stay uniform, dual types blend smoothly. */
+body.dark-mode #dex-grid .dex-entry{
+  --yv-type-one:#7898bd;--yv-type-two:var(--yv-type-one);
+  overflow:visible!important;
+  border:1px solid transparent!important;
+  background:linear-gradient(155deg,#273d58,#101f34 70%) padding-box,
+             linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two)) border-box!important;
+  box-shadow:0 0 10px -4px var(--yv-type-one),0 0 16px -8px var(--yv-type-two),0 7px 20px rgba(0,0,0,.18)!important;
+}
+body.dark-mode #dex-grid .dex-entry::before{
+  content:"";position:absolute;inset:-3px;z-index:-1;pointer-events:none;
+  border-radius:inherit;background:linear-gradient(125deg,var(--yv-type-one),var(--yv-type-two));
+  filter:blur(9px);opacity:.24;transition:opacity .2s ease;
+}
+@media(hover:hover){
+  body.dark-mode #dex-grid .dex-entry:hover{
+    border-color:transparent!important;
+    box-shadow:0 0 15px -3px var(--yv-type-one),0 0 22px -6px var(--yv-type-two),0 14px 32px rgba(0,0,0,.3)!important;
+  }
+  body.dark-mode #dex-grid .dex-entry:hover::before{opacity:.42}
+}
+body.dark-mode #dex-grid .dex-entry:focus-within{
+  border-color:transparent!important;
+  box-shadow:0 0 0 2px rgba(210,231,255,.7),0 0 16px -3px var(--yv-type-one)!important;
+}

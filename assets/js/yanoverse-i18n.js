@@ -38,7 +38,7 @@ const additionalPairs=[
 ['Save','保存'],['Cancel','キャンセル'],['Confirm','確認'],['Delete','削除'],
 ['Yes','はい'],['No','いいえ'],['None','なし'],['Unknown','不明'],
 ['Loading','読み込み中'],['Error','エラー'],['Retry','再試行'],
-['Dokimon: Quest','ドキモン：クエスト'],['Yami Kids','ヤミキッズ'],
+['Dokimon: Quest','ドキモン：クエスト'],['Dokimon Quest 2','ドキモン クエスト2'],['Yami Kids','ヤミキッズ'],['Nuumonsters','ヌーモンスターズ'],
 ['In Development','開発中'],['Coming Soon','近日公開'],['Coming soon','近日公開']
 ];
 for(const [en,ja] of additionalPairs)dict.set(en,ja);
@@ -60,6 +60,7 @@ const koreanPairs=[
 ['Settings','설정'],['Mark all as caught','모두 포획으로 표시'],['Remove all as caught','전체 포획 기록 삭제'],['Remove all rare forms','희귀 형태 기록 모두 삭제'],['Export as CSV','CSV로 내보내기'],['Filter out caught Dokimon','포획한 도키몬 숨기기'],['Restore filtered Dokimon','숨긴 도키몬 다시 표시'],
 ['(click to open panel)','(눌러서 상세 정보 열기)'],['(double-click to remove)','(두 번 눌러 삭제)'],['Loading...','불러오는 중…'],['Data coming soon','데이터 준비 중'],['In development','개발 중'],['IN DEVELOPMENT','개발 중'],['Coming Soon','곧 공개'],['No monsters found','몬스터를 찾을 수 없습니다'],
 ['Close','닫기'],['Open','열기'],['Next','다음'],['Previous','이전'],['Save','저장'],['Cancel','취소'],['Confirm','확인'],['Delete','삭제'],['Yes','예'],['No','아니요'],['None','없음'],['Unknown','알 수 없음'],
+['Dokimon Quest 2','도키몬 퀘스트 2'],['Dokimon: Quest','도키몬: 퀘스트'],['Yami Kids','야미 키즈'],['Nuumonsters','누몬스터즈'],
 ['YANOVERSE MULTI-DEX','야노버스 멀티 도감']
 ];
 const koreanDict=new Map(koreanPairs);

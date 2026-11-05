@@ -16,3 +16,13 @@
 .yanoverse-profile .chain-stage img{max-width:100px!important;max-height:100px!important;object-fit:contain!important;image-rendering:pixelated}
 .yanoverse-profile .evo-arrow{flex:0 0 auto;color:#9bc4f7;font:700 12px system-ui,sans-serif}
 @media(max-width:700px){.yanoverse-profile{display:flex!important;flex-direction:column!important;padding:4px!important;gap:12px!important}.yanoverse-profile>*{width:100%!important;box-sizing:border-box!important}.yanoverse-profile .yv-back-link{width:auto!important}.yanoverse-profile .yv-profile-art{min-height:210px!important;padding:14px!important}.yanoverse-profile .yv-profile-art>img{max-height:245px!important}.yv-profile-facts{padding:16px!important}.yanoverse-profile .evolution-chain{padding:15px!important}.yanoverse-profile .chain-stage{min-width:90px;padding:9px}}
+
+/* Keep monster artwork on transparent surfaces, matching Dex cards. */
+.yanoverse-profile .yv-profile-art,
+.yanoverse-profile .yv-profile-art::before,
+.yanoverse-profile .yv-profile-art::after,
+.yanoverse-profile .yv-profile-art .img-blocker,
+.yanoverse-profile .chain-stage .img-wrapper,
+.yanoverse-profile .chain-stage .img-wrapper::before,
+.yanoverse-profile .chain-stage .img-wrapper::after,
+.yanoverse-profile .chain-stage .img-blocker{background:transparent!important;background-image:none!important;box-shadow:none!important}
