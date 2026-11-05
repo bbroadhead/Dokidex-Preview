@@ -64,3 +64,20 @@ body.dark-mode #dex-grid .dex-entry:focus-within{
   border-color:transparent!important;
   box-shadow:0 0 0 2px rgba(210,231,255,.7),0 0 16px -3px var(--yv-type-one)!important;
 }
+
+/* Sprite-only display: no inset dark tile, matte, overlay or artwork background.
+   The outer card's type glow and surface remain unchanged. */
+html body #dex-grid .dex-entry .img-wrapper,
+html body #dex-grid .dex-entry .img-wrapper::before,
+html body #dex-grid .dex-entry .img-wrapper::after,
+html body #dex-grid .dex-entry .img-blocker,
+html body #dex-grid .dex-entry img.monster-image,
+html body #dex-grid .dex-entry img.monster-image.small {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+  border:0!important;
+}
+html body #dex-grid .dex-entry .img-blocker{display:none!important}
+html body #dex-grid .dex-entry .img-wrapper{border-radius:0!important}
