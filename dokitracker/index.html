@@ -313,8 +313,8 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
   <button id="restore-filtered" disabled>Restore filtered Dokimon</button>
 </div>
 <div id="monster-profile-panel" class="profile-panel hidden">
-  <iframe id="monster-profile-frame" src="" frameborder="0"></iframe>
-  <button id="close-profile-panel" class="close-button">✖</button>
+  <div class="tracker-panel-header"><span class="tracker-panel-title">MONSTER DETAILS</span><button id="close-profile-panel" class="close-button" type="button" aria-label="Close monster details">✕</button></div>
+  <iframe id="monster-profile-frame" src="" title="Monster details"></iframe>
 </div>
 </div>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
@@ -795,6 +795,57 @@ body .image-dropdown .rare-palette-choice span{text-align:center!important;overf
  body .tracker-table .rare-select-button{font-size:17px!important;padding:5px 4px!important}
 }
 
+
+/* Responsive monster detail drawer with glass surface and dedicated header. */
+body .tracker-layout .profile-panel,body #monster-profile-panel{
+ position:fixed!important;top:0!important;right:0!important;left:auto!important;
+ width:min(720px,92vw)!important;max-width:100vw!important;height:100dvh!important;
+ display:flex!important;flex-direction:column!important;overflow:hidden!important;
+ background:linear-gradient(155deg,#203b59,#102239 70%)!important;
+ border:1px solid rgba(157,202,249,.34)!important;border-right:0!important;
+ border-radius:20px 0 0 20px!important;
+ box-shadow:-18px 0 50px rgba(0,0,0,.48),inset 1px 0 rgba(255,255,255,.1)!important;
+ z-index:9999!important;transition:transform .28s ease,visibility .28s!important;
+ transform:translateX(105%)!important;visibility:hidden!important;
+}
+body #monster-profile-panel.visible{transform:translateX(0)!important;visibility:visible!important}
+body #monster-profile-panel.hidden{transform:translateX(105%)!important;visibility:hidden!important}
+body #monster-profile-panel .tracker-panel-header{
+ flex:0 0 auto!important;display:flex!important;align-items:center!important;
+ justify-content:space-between!important;gap:12px!important;
+ min-height:62px!important;padding:10px 18px!important;
+ border-bottom:1px solid rgba(166,201,244,.23)!important;
+ background:rgba(51,84,121,.28)!important;
+}
+body #monster-profile-panel .tracker-panel-title{
+ font:normal 28px/1 'VT323',monospace!important;letter-spacing:.04em!important;color:#e9f5ff!important;
+}
+body #monster-profile-panel #close-profile-panel{
+ position:static!important;display:grid!important;place-items:center!important;
+ width:42px!important;height:42px!important;min-width:42px!important;
+ padding:0!important;border:1px solid rgba(170,209,250,.36)!important;
+ border-radius:11px!important;background:rgba(117,167,221,.18)!important;
+ color:#f4f9ff!important;font:normal 29px/1 'VT323',monospace!important;
+ cursor:pointer!important;
+}
+body #monster-profile-panel #close-profile-panel:hover{background:rgba(130,185,242,.38)!important}
+body #monster-profile-panel #monster-profile-frame{
+ display:block!important;flex:1 1 auto!important;min-height:0!important;
+ width:100%!important;height:100%!important;margin:0!important;padding:0!important;
+ border:0!important;box-shadow:none!important;background:#102239!important;
+}
+@media(max-width:700px){
+ body #monster-profile-panel{
+  width:100vw!important;border-radius:0!important;border:0!important;
+ }
+ body #monster-profile-panel .tracker-panel-header{
+  min-height:56px!important;padding:8px 14px!important;
+  padding-top:max(8px,env(safe-area-inset-top))!important;
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ body #monster-profile-panel{transition:none!important}
+}
 </style>
 
   
