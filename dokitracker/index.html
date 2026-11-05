@@ -299,7 +299,7 @@ body.in-panel .monster-profile .stats-side canvas{max-width:100%!important}
 .yv-encounter-map-base{display:block;width:100%;height:100%;object-fit:fill;pointer-events:none}
 .yv-encounter-markers{position:absolute;inset:0;pointer-events:none}
 .yv-encounter-map-window .yv-encounter-sprite{position:absolute!important;transform:translate(-50%,-85%)!important;width:var(--sprite-size,36px)!important;height:var(--sprite-size,36px)!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;display:block!important;box-sizing:border-box!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;background-image:none!important;box-shadow:none!important;filter:drop-shadow(0 2px 2px #06101c) drop-shadow(0 0 2px #fff8)!important;pointer-events:auto;cursor:pointer;z-index:2;line-height:0!important;overflow:visible!important}
-.yv-encounter-map-window .yv-encounter-sprite img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:pixelated!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important}
+.yv-encounter-map-window .yv-encounter-markers .yv-encounter-sprite>img{visibility:visible!important;opacity:1!important;display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;image-rendering:pixelated!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important}
 .yv-encounter-sprite:focus-visible{outline:3px solid white;outline-offset:3px}
 .yv-encounter-info{font-size:14px;line-height:1.55;margin-top:10px;overflow-wrap:anywhere}
 .yv-encounter-info a{color:#b8dcff}
@@ -332,10 +332,17 @@ body.in-panel .monster-profile .stats-side canvas{max-width:100%!important}
    const title=document.createElement('strong');title.textContent=m.name+' — '+matched.size+' mapped encounter location'+(matched.size===1?'':'s');info.appendChild(title);
    const list=document.createElement('p');list.textContent=[...matched.keys()].join(' · ')||'No verified map coordinates available.';info.appendChild(list);
    if(unmapped.length){const p=document.createElement('p');p.textContent='Other reported locations (not mapped): '+unmapped.join(' · ');info.appendChild(p)}
-   const image=String(m.image||'');const imageUrl=/^https?:\/\//.test(image)?image:base.replace(/\/$/,'')+'/Dokidex-Preview/'+image.replace(/^\//,'');
+   const image=String(m.image||'').trim();
+   // Build image paths from the same Jekyll base used by the map itself.
+   // Avoid duplicate preview prefixes and support absolute external sprite URLs.
+   const rootBase=base.replace(/\/$/,'');
+   const imagePath=image.replace(/^\/+/, '');
+   const imageUrl=/^https?:\/\//i.test(image)?image:
+     (rootBase+'/Dokidex-Preview/'+imagePath.replace(/^(Dokidex-Preview\/)+/i,''));
+
    matched.forEach((pos,place)=>{
     const b=document.createElement('button');b.type='button';b.className='yv-encounter-sprite';b.style.left=(+pos.x/1600*100)+'%';b.style.top=(+pos.y/777*100)+'%';b.title=m.name+' — '+place;b.setAttribute('aria-label',b.title);
-    if(image){const img=document.createElement('img');img.src=imageUrl;img.alt='';img.loading='lazy';b.appendChild(img)}
+    if(image){const img=document.createElement('img');img.src=imageUrl;img.alt=m.name;img.loading='eager';img.decoding='async';img.onerror=()=>{if(!img.dataset.fallback){img.dataset.fallback='1';img.src='/Dokidex-Preview/'+imagePath}};b.appendChild(img)}
     b.addEventListener('click',()=>{list.textContent='Selected: '+place+' · Other locations: '+[...matched.keys()].filter(x=>x!==place).join(' · ')});
     markers.appendChild(b);
    });
