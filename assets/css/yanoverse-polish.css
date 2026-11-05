@@ -96,3 +96,23 @@ html body #dex-grid .dex-entry img.monster-image.small{
   html body #dex-grid .dex-entry>a{padding:7px!important;gap:2px!important}
   html body #dex-grid .dex-entry .img-wrapper{aspect-ratio:1/1!important}
 }
+
+/* Actual legacy monster profile markup uses .monster-image-container/.glow-wrapper,
+   not .yv-profile-art. Remove its dark image panel without touching palette controls. */
+html body .monster-profile .monster-image-container,
+html body .monster-profile .monster-image-container .glow-wrapper,
+html body .monster-profile .monster-image-container #main-monster-image,
+html body .monster-image-container,
+html body .monster-image-container .glow-wrapper,
+html body .monster-image-container #main-monster-image {
+  background:transparent!important;
+  background-color:transparent!important;
+  background-image:none!important;
+  box-shadow:none!important;
+}
+html body .monster-image-container .glow-wrapper{
+  border:0!important;
+}
+html body .monster-image-container #main-monster-image{
+  border:0!important;
+}
