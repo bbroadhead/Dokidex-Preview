@@ -565,3 +565,9 @@ html body .monster-profile #main-monster-image{
 @media(max-width:850px){
  html body .monster-profile .forms-extra-row{padding-top:7px!important}
 }
+
+/* Remove legacy three-column divider pseudo-elements from the move list. */
+html body .monster-profile .move-dropdown ul::before,
+html body .monster-profile .move-dropdown ul::after{
+ content:none!important;display:none!important;background:none!important;
+}
