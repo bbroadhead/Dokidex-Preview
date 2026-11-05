@@ -251,3 +251,42 @@ html body .yanoverse-profile .evo-arrow{font-size:23px!important;color:#fff!impo
  html body .yanoverse-profile .chain-stage img{height:70px!important;max-width:72px!important}
  html body .yanoverse-profile .evo-arrow{font-size:18px!important;white-space:nowrap!important}
 }
+
+/* Evolution chains: fit all stages and arrows within the viewport, no horizontal scrolling. */
+html body .yanoverse-profile .chain-wrapper{
+ display:flex!important;flex-wrap:nowrap!important;justify-content:center!important;
+ align-items:center!important;overflow:visible!important;width:100%!important;
+ min-width:0!important;box-sizing:border-box!important;gap:clamp(3px,1vw,14px)!important;
+}
+html body .yanoverse-profile .chain-stage{
+ flex:1 1 0!important;min-width:0!important;max-width:170px!important;
+ box-sizing:border-box!important;overflow-wrap:anywhere!important;
+}
+html body .yanoverse-profile .chain-stage .img-wrapper{
+ width:100%!important;min-width:0!important;
+}
+html body .yanoverse-profile .chain-stage img{
+ width:100%!important;max-width:100%!important;height:auto!important;
+ max-height:105px!important;object-fit:contain!important;
+}
+html body .yanoverse-profile .evo-arrow{
+ flex:0 1 auto!important;min-width:0!important;white-space:nowrap!important;
+ text-align:center!important;
+}
+@media(max-width:700px){
+ html body .yanoverse-profile .chain-wrapper{
+  flex-wrap:nowrap!important;justify-content:space-between!important;
+  overflow:visible!important;gap:clamp(2px,.7vw,6px)!important;
+  padding:4px 0!important;
+ }
+ html body .yanoverse-profile .chain-stage{
+  flex:1 1 0!important;min-width:0!important;max-width:none!important;
+  padding:clamp(3px,1vw,8px)!important;font-size:clamp(13px,3.1vw,18px)!important;
+ }
+ html body .yanoverse-profile .chain-stage img{
+  width:100%!important;height:auto!important;max-height:clamp(55px,17vw,90px)!important;
+ }
+ html body .yanoverse-profile .evo-arrow{
+  flex:0 1 auto!important;font-size:clamp(12px,3vw,18px)!important;
+ }
+}
