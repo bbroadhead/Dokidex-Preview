@@ -1,4 +1,8 @@
 const dokimonList = MONDEX_DATA; // from mondex_data.js
+// The preview is hosted below /Dokidex-Preview/; production is at the domain root.
+const dokiSiteBase = window.location.pathname.startsWith('/Dokidex-Preview/') ? '/Dokidex-Preview' : '';
+const dokiAssetUrl = path => dokiSiteBase + path;
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("tracker-table-body");
@@ -13,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgCell = document.createElement("td");
     const img = document.createElement("img");
-    img.src = `/assets/images/${mon.name.toLowerCase()}.png`;
+    img.src = dokiAssetUrl(`/assets/images/${mon.name.toLowerCase()}.png`);
     img.alt = mon.name;
     img.width = 24;
     img.height = 24;
@@ -70,7 +74,7 @@ nameCell.addEventListener("click", (event) => {
   event.stopPropagation(); // prevent any accidental bubbling
 
   const monsterName = mon.name.toLowerCase().replace(/\s+/g, '-');
-  const profileUrl = `/dokimon/${monsterName}`;
+  const profileUrl = dokiAssetUrl(`/dokimon/${monsterName}`);
 
   const panel = document.getElementById("monster-profile-panel");
   const iframe = document.getElementById("monster-profile-frame");
@@ -126,7 +130,7 @@ function createImageDropdown(mon, imageContainer, rareFormsArray) {
     formLabels.forEach(num => {
       const label = labelMap[num] || `Form ${num}`;
       const img = document.createElement("img");
-      img.src = `/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`;
+      img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
       img.title = label;
       img.width = 24;
       img.height = 24;
@@ -168,7 +172,7 @@ function createImageDropdown(mon, imageContainer, rareFormsArray) {
     img.title = formLabel;
 
     const number = formLabel === "Bound" ? "9" : formLabel.split(" ")[1];
-    img.src = `/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${number}.png`;
+    img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${number}.png`);
 
     img.addEventListener("dblclick", () => {
       container.removeChild(img);
