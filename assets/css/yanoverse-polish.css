@@ -595,3 +595,49 @@ html body:not(.in-panel) .nav-arrows .right-arrow{
  transform:translateY(-50%)!important;
 }
 html body.in-panel .nav-arrows{display:none!important}
+
+/* Uniform evolution-chain stage widths; arrows use narrow dedicated tracks. */
+html body .monster-profile .evolution-wrapper .evo-chain{
+ display:flex!important;flex-wrap:nowrap!important;align-items:center!important;
+ justify-content:space-between!important;gap:clamp(3px,1vw,12px)!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ box-sizing:border-box!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd){
+ flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:5px!important;
+ text-align:center!important;overflow-wrap:anywhere!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(even){
+ flex:0 0 clamp(12px,3vw,26px)!important;width:clamp(12px,3vw,26px)!important;
+ min-width:0!important;text-align:center!important;
+ font-size:clamp(17px,2.5vw,25px)!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd)>a{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ width:100%!important;min-width:0!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd) img{
+ display:block!important;width:clamp(35px,8vw,72px)!important;
+ height:clamp(35px,8vw,72px)!important;max-width:100%!important;
+ object-fit:contain!important;image-rendering:pixelated!important;
+}
+html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(odd)>div{
+ width:100%!important;max-width:100%!important;
+ font-size:clamp(15px,2.8vw,23px)!important;line-height:1.12!important;
+ white-space:normal!important;text-align:center!important;
+}
+@media(max-width:400px){
+ html body .monster-profile .evolution-wrapper .evo-chain{gap:2px!important}
+ html body .monster-profile .evolution-wrapper .evo-chain>div:nth-child(even){
+  flex-basis:12px!important;width:12px!important;
+ }
+}
+/* Neutralize old body-wide 0.5s fades; navigation uses a short dark transition. */
+html body.fade-out,html body.fade-in{opacity:1!important;transition:none!important}
+html.monster-leaving body{opacity:.65!important;transition:opacity .09s ease,transform .09s ease!important}
+html.monster-arriving body{opacity:0!important}
+@media(prefers-reduced-motion:reduce){
+ html.monster-leaving body,html.monster-arriving body{opacity:1!important;transform:none!important;transition:none!important}
+}
