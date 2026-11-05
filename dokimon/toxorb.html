@@ -741,5 +741,50 @@ function loadMoveList() {
 <script src="/Dokidex-Preview/assets/js/yanoverse-selector.js" defer></script>
 <style>.lang-flag[data-lang]{border:2px solid transparent;border-radius:50%;padding:3px;cursor:pointer;transition:border-color .18s,background .18s}.lang-flag.active-language{border-color:#90c2ff;background:rgba(135,186,255,.17)}.lang-flag:focus-visible{outline:2px solid #90c2ff;outline-offset:3px}</style>
 <script src="/Dokidex-Preview/assets/js/yanoverse-i18n.js" defer></script>
+
+<style id="yv-final-font-overrides">
+/* Late-loaded override for legacy inline font shorthands. */
+html body .yanoverse-brand,
+html body .yanoverse-brand span,
+html body .yanoverse-game-title,
+html body .yanoverse-game .yanoverse-game-title,
+html body .yanoverse-game small,
+html body #filter-toggle,
+html body #clear-filters,
+html body #dex-filter-controls,
+html body #dex-filter-controls *,
+html body #dex-filter-controls input,
+html body #dex-filter-controls input::placeholder,
+html body #dex-filter-controls select,
+html body #dex-filter-controls button,
+html body #dex-filter-controls label,
+html body #dex-count,
+html body .dex-count,
+html body .dex-results-count {
+ font-family:'VT323',monospace!important;
+}
+html body .yanoverse-brand,
+html body .yanoverse-brand span {
+ font:400 clamp(22px,3vw,30px)/1.2 'VT323',monospace!important;
+ letter-spacing:.14em!important;
+}
+html body .yanoverse-game-title,
+html body .yanoverse-game .yanoverse-game-title,
+html body .yanoverse-game.is-selected .yanoverse-game-title{
+ font:400 clamp(23px,2.7vw,31px)/1.1 'VT323',monospace!important;
+}
+html body #filter-toggle,html body #clear-filters{
+ font:400 clamp(23px,2.4vw,29px)/1.1 'VT323',monospace!important;
+}
+html body #dex-filter-controls label{
+ font:400 clamp(20px,2vw,25px)/1.1 'VT323',monospace!important;
+}
+html body #dex-filter-controls :is(input,select){
+ font:400 clamp(23px,2.2vw,28px)/1.2 'VT323',monospace!important;
+}
+html body #dex-filter-controls input::placeholder{
+ font-family:'VT323',monospace!important;
+}
+</style>
 </body>
 </html>
