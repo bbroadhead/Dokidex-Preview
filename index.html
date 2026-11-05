@@ -908,6 +908,19 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
   padding:4px 8px!important;font-size:19px!important;
  }
 }
+
+/* Equal-width compact type buttons, with centered responsive wrapping. */
+#dex-filter-controls #type-filters .type-btn{
+ flex:0 0 76px!important;width:76px!important;
+ min-width:76px!important;max-width:76px!important;
+ box-sizing:border-box!important;
+}
+@media(max-width:420px){
+ #dex-filter-controls #type-filters .type-btn{
+  flex-basis:76px!important;width:76px!important;
+  min-width:76px!important;max-width:76px!important;
+ }
+}
 </style>
 
 <div class="dex-grid" id="dex-grid">
