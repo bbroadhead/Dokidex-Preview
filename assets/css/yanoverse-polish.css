@@ -153,3 +153,101 @@ html body #dex-grid .dex-entry .dex-card-name{
     grid-template-columns:repeat(auto-fill,minmax(115px,1fr))!important;
   }
 }
+
+/* Shared pixel typography across the site, including buttons and form controls. */
+html body,html body button,html body input,html body select,html body textarea,
+html body a,html body label,html body table,html body .page-content,
+html body .page-content h1,html body .page-content h2,html body .page-content h3,
+html body .page-content p,html body .page-content strong,
+html body .page-content span,html body .page-content div{
+  font-family:'VT323',monospace!important;
+}
+html body{font-size:clamp(20px,1.65vw,24px)!important;line-height:1.28!important}
+html body .page-content{font-size:clamp(21px,1.8vw,25px)!important}
+html body button,html body input,html body select,html body textarea{font-size:clamp(19px,1.55vw,23px)!important}
+html body #dex-grid .dex-card-name{font-size:clamp(18px,1.55vw,23px)!important}
+html body #dex-grid .dex-card-number{font-size:clamp(17px,1.4vw,20px)!important}
+@media(max-width:767px){
+ html body #dex-grid .dex-card-name{font-size:18px!important;line-height:1.05!important}
+ html body #dex-grid .dex-card-number{font-size:17px!important}
+}
+/* White numeric labels on SVG web/network diagrams and evolution connectors. */
+html body svg text,html body svg tspan,html body .web-diagram .number,
+html body .web-diagram [class*="number"],html body .network-diagram text{
+ fill:#fff!important;color:#fff!important;font-family:'VT323',monospace!important;
+}
+/* Profile layout: strong hierarchy, compact navigation, and a clear desktop split. */
+html body .yanoverse-profile{
+ display:grid!important;
+ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr)!important;
+ gap:clamp(12px,2vw,24px)!important;
+ max-width:1180px!important;
+ padding:clamp(10px,2vw,24px)!important;
+ align-items:start!important;
+}
+html body .yanoverse-profile>.yv-back-link{
+ grid-column:1/-1!important;grid-row:auto!important;
+ width:fit-content!important;padding:7px 13px!important;margin:0!important;
+ border:1px solid rgba(148,191,244,.28)!important;border-radius:10px!important;
+ background:rgba(35,59,89,.48)!important;color:#d3e7ff!important;
+ font-size:22px!important;
+}
+html body .yanoverse-profile .yv-profile-heading{
+ grid-column:1/-1!important;grid-row:auto!important;
+ padding:5px 0 15px!important;gap:12px!important;
+}
+html body .yanoverse-profile .yv-profile-heading h1{
+ font-size:clamp(36px,4.4vw,64px)!important;line-height:1!important;
+}
+html body .yanoverse-profile .yv-profile-number{font-size:clamp(26px,2.7vw,38px)!important;color:#a7ccff!important}
+html body .yanoverse-profile .yv-profile-art{
+ grid-column:1!important;grid-row:auto!important;
+ min-height:300px!important;max-width:100%!important;
+ padding:clamp(12px,2vw,24px)!important;
+ background:linear-gradient(145deg,rgba(49,76,108,.36),rgba(15,31,50,.55))!important;
+ border:1px solid rgba(152,196,245,.3)!important;border-radius:20px!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 12px 30px rgba(0,0,0,.16)!important;
+}
+html body .yanoverse-profile .yv-profile-art>img{
+ max-width:100%!important;max-height:390px!important;
+ background:transparent!important;object-fit:contain!important;
+ filter:drop-shadow(0 12px 14px rgba(0,0,0,.19));
+}
+html body .yanoverse-profile .yv-profile-facts{
+ grid-column:2!important;grid-row:auto!important;
+ padding:clamp(16px,2vw,26px)!important;border-radius:20px!important;
+ background:linear-gradient(155deg,rgba(37,62,91,.78),rgba(15,30,49,.9))!important;
+}
+html body .yanoverse-profile .yv-profile-facts p{
+ font-size:clamp(22px,1.9vw,27px)!important;line-height:1.22!important;
+ margin:0 0 12px!important;
+}
+html body .yanoverse-profile .evolution-chain{
+ grid-column:1/-1!important;grid-row:auto!important;
+ padding:clamp(14px,2vw,24px)!important;border-radius:20px!important;
+}
+html body .yanoverse-profile .evolution-chain h2{font-size:clamp(27px,2.5vw,36px)!important}
+html body .yanoverse-profile .chain-wrapper{
+ justify-content:center!important;flex-wrap:wrap!important;
+ overflow-x:visible!important;gap:clamp(7px,1.6vw,18px)!important;
+}
+html body .yanoverse-profile .chain-stage{
+ flex:0 1 155px!important;min-width:0!important;
+ padding:12px!important;border-radius:14px!important;
+ background:rgba(116,166,222,.075)!important;
+ font-size:22px!important;
+}
+html body .yanoverse-profile .chain-stage img{width:100%!important;max-width:105px!important;height:95px!important;object-fit:contain!important}
+html body .yanoverse-profile .evo-arrow{font-size:23px!important;color:#fff!important}
+@media(max-width:700px){
+ html body .yanoverse-profile{display:flex!important;flex-direction:column!important;gap:12px!important;padding:8px!important}
+ html body .yanoverse-profile>*{width:100%!important;box-sizing:border-box!important}
+ html body .yanoverse-profile>.yv-back-link{width:fit-content!important}
+ html body .yanoverse-profile .yv-profile-art{min-height:220px!important;padding:12px!important}
+ html body .yanoverse-profile .yv-profile-art>img{max-height:285px!important}
+ html body .yanoverse-profile .yv-profile-facts{padding:16px!important}
+ html body .yanoverse-profile .chain-wrapper{flex-wrap:nowrap!important;justify-content:flex-start!important;overflow-x:auto!important;gap:6px!important}
+ html body .yanoverse-profile .chain-stage{flex:0 0 82px!important;padding:6px!important;font-size:18px!important}
+ html body .yanoverse-profile .chain-stage img{height:70px!important;max-width:72px!important}
+ html body .yanoverse-profile .evo-arrow{font-size:18px!important;white-space:nowrap!important}
+}
