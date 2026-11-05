@@ -571,3 +571,27 @@ html body .monster-profile .move-dropdown ul::before,
 html body .monster-profile .move-dropdown ul::after{
  content:none!important;display:none!important;background:none!important;
 }
+
+/* Pin previous/next controls to the visible viewport midpoint.
+   Legacy fixed-position/top rules must not shift them into the header. */
+html body:not(.in-panel) .nav-arrows{
+ position:fixed!important;top:50dvh!important;bottom:auto!important;
+ left:0!important;right:0!important;width:100%!important;height:0!important;
+ min-height:0!important;margin:0!important;padding:0!important;
+ transform:none!important;display:block!important;overflow:visible!important;
+ pointer-events:none!important;z-index:60!important;
+}
+html body:not(.in-panel) .nav-arrows .nav-arrow{
+ position:fixed!important;top:50dvh!important;bottom:auto!important;
+ margin:0!important;transform:translateY(-50%)!important;
+ pointer-events:auto!important;
+}
+html body:not(.in-panel) .nav-arrows .left-arrow{
+ left:max(5px,env(safe-area-inset-left))!important;right:auto!important;
+ transform:translateY(-50%) scaleX(-1)!important;
+}
+html body:not(.in-panel) .nav-arrows .right-arrow{
+ right:max(5px,env(safe-area-inset-right))!important;left:auto!important;
+ transform:translateY(-50%)!important;
+}
+html body.in-panel .nav-arrows{display:none!important}
