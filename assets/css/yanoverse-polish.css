@@ -534,3 +534,34 @@ html body.in-panel .nav-arrows{display:none!important}
  html body .monster-profile .forms-extra-row .forms-box{padding:10px 2px!important}
  html body .nav-arrows{padding:0 3px!important}
 }
+
+/* Fine-tune profile spacing and center the main monster artwork. */
+html body .monster-profile .forms-extra-row{
+ padding-top:9px!important;
+}
+html body .monster-profile .forms-instructions:last-child{
+ padding-top:5px!important;
+ margin-top:0!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ text-align:center!important;
+}
+html body .monster-profile .monster-image-container .glow-wrapper{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ margin-inline:auto!important;
+}
+html body .monster-profile #main-monster-image{
+ display:block!important;
+ margin-inline:auto!important;
+ align-self:center!important;
+ object-fit:contain!important;
+}
+@media(max-width:850px){
+ html body .monster-profile .forms-extra-row{padding-top:7px!important}
+}
