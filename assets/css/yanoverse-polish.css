@@ -116,3 +116,40 @@ html body .monster-image-container .glow-wrapper{
 html body .monster-image-container #main-monster-image{
   border:0!important;
 }
+
+/* Compact, consistently sized cards: 3 across on phones, more columns as space allows. */
+html body #dex-grid.dex-grid{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,105px),1fr))!important;
+  gap:clamp(8px,1.5vw,14px)!important;
+  width:100%!important;
+  align-items:stretch!important;
+}
+html body #dex-grid .dex-entry{
+  width:100%!important;min-width:0!important;
+}
+html body #dex-grid .dex-entry>a{
+  padding:clamp(6px,1vw,10px)!important;
+}
+html body #dex-grid .dex-entry .dex-card-details{
+  padding:6px 0 3px!important;
+  gap:2px 5px!important;
+}
+html body #dex-grid .dex-entry .dex-card-name{
+  font-size:clamp(11px,1.2vw,13px)!important;
+}
+@media(max-width:767px){
+  html body #dex-grid.dex-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+    padding:6px 0 18px!important;
+  }
+  html body #dex-grid .dex-entry>a{padding:5px!important}
+  html body #dex-grid .dex-entry .dex-card-name{font-size:11px!important}
+  html body #dex-grid .dex-entry .dex-card-number{font-size:10px!important}
+}
+@media(min-width:768px){
+  html body #dex-grid.dex-grid{
+    grid-template-columns:repeat(auto-fill,minmax(115px,1fr))!important;
+  }
+}
