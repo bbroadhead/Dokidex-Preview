@@ -892,6 +892,37 @@ body #monster-profile-panel #monster-profile-frame{
 @media(prefers-reduced-motion:reduce){
  body #monster-profile-panel{transition:none!important}
 }
+
+/* Single reusable palette picker, never a table child. */
+body #tracker-rare-picker{
+ position:fixed!important;z-index:2147483000!important;
+ display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+ gap:5px!important;box-sizing:border-box!important;
+ max-width:calc(100vw - 24px)!important;
+ max-height:calc(100dvh - 24px)!important;overflow-y:auto!important;
+ padding:9px!important;border:1px solid rgba(167,204,247,.48)!important;
+ border-radius:14px!important;background:#172b46!important;color:#f2f7ff!important;
+ box-shadow:0 16px 40px rgba(0,0,0,.6)!important;
+ backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;
+}
+body #tracker-rare-picker[hidden]{display:none!important}
+body #tracker-rare-picker .rare-palette-choice{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:3px!important;min-width:0!important;
+ padding:5px 2px!important;background:rgba(109,160,220,.14)!important;
+ border:1px solid rgba(170,205,242,.2)!important;border-radius:9px!important;
+ color:#f1f7ff!important;font:normal 17px/1 'VT323',monospace!important;
+ cursor:pointer!important;
+}
+body #tracker-rare-picker .rare-palette-choice img{
+ width:48px!important;height:48px!important;max-width:100%!important;
+ object-fit:contain!important;image-rendering:pixelated!important;
+}
+body #tracker-rare-picker .rare-palette-choice span{text-align:center!important}
+body #tracker-rare-picker .rare-palette-choice:hover,
+body #tracker-rare-picker .rare-palette-choice:focus-visible{
+ background:rgba(130,185,248,.34)!important;border-color:#9ccaff!important;
+}
 </style>
 
   
