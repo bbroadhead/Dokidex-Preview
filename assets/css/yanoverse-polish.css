@@ -789,3 +789,27 @@ html body .monster-profile .monster-layout-row>.monster-image-container #main-mo
   margin-inline:auto!important;
  }
 }
+
+/* Center every monster profile section within its responsive row. */
+html body .monster-profile .monster-layout-row{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ align-items:center!important;align-content:center!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container,
+html body .monster-profile .monster-layout-row>.monster-info,
+html body .monster-profile .monster-layout-row>.stats-side,
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ align-self:center!important;margin-inline:auto!important;
+}
+html body .monster-profile .top-bar{
+ align-items:center!important;justify-content:center!important;
+}
+html body .monster-profile .top-bar>.evolution-wrapper,
+html body .monster-profile .top-bar>.move-list-container{
+ align-self:center!important;margin-inline:auto!important;
+}
+html body .monster-profile .forms-wrapper .forms-container,
+html body .monster-profile .forms-wrapper .forms-images,
+html body .monster-profile .forms-wrapper .forms-extra-row{
+ margin-inline:auto!important;justify-content:center!important;
+}
