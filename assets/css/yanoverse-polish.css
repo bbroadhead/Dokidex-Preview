@@ -290,3 +290,133 @@ html body .yanoverse-profile .evo-arrow{
   flex:0 1 auto!important;font-size:clamp(12px,3vw,18px)!important;
  }
 }
+
+/* Responsive Dex tiles: portrait shows 3; landscape adds columns at the same tile size.
+   Flex layout centers the final, partially filled row. */
+html body #dex-grid.dex-grid{
+ display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+ align-content:flex-start!important;align-items:stretch!important;
+ gap:8px!important;width:100%!important;box-sizing:border-box!important;
+ padding:8px 0 22px!important;
+}
+html body #dex-grid.dex-grid>.dex-entry{
+ flex:0 0 108px!important;width:108px!important;max-width:108px!important;
+ min-width:0!important;margin:0!important;box-sizing:border-box!important;
+}
+@media(max-width:359px){
+ html body #dex-grid.dex-grid>.dex-entry{
+  flex-basis:calc((100% - 16px)/3)!important;
+  width:calc((100% - 16px)/3)!important;
+  max-width:calc((100% - 16px)/3)!important;
+ }
+}
+@media(min-width:360px) and (max-width:379px){
+ html body #dex-grid.dex-grid>.dex-entry{
+  flex-basis:calc((100% - 16px)/3)!important;
+  width:calc((100% - 16px)/3)!important;
+  max-width:calc((100% - 16px)/3)!important;
+ }
+}
+/* Legacy monster pages: unified glass panels and stable layout at every orientation. */
+html body .monster-profile{
+ width:100%!important;max-width:1240px!important;min-width:0!important;
+ margin:0 auto!important;box-sizing:border-box!important;
+ padding:clamp(8px,2vw,22px)!important;
+}
+html body .monster-profile .top-bar{
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ gap:12px!important;width:100%!important;min-width:0!important;
+ margin:0 0 16px!important;
+}
+html body .monster-profile .monster-layout-row{
+ display:grid!important;
+ grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)!important;
+ gap:clamp(12px,1.8vw,22px)!important;
+ align-items:start!important;justify-content:stretch!important;
+ width:100%!important;min-width:0!important;margin:0!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container,
+html body .monster-profile .monster-layout-row>.monster-info,
+html body .monster-profile .monster-layout-row>.stats-side,
+html body .monster-profile .monster-layout-row>.forms-wrapper,
+html body .monster-profile .top-bar>.evolution-wrapper,
+html body .monster-profile .top-bar>.move-list-container{
+ box-sizing:border-box!important;min-width:0!important;
+ margin:0!important;max-width:100%!important;
+ border:1px solid rgba(144,180,221,.29)!important;border-radius:17px!important;
+ background:linear-gradient(155deg,rgba(48,77,112,.54),rgba(16,32,52,.96) 64%)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.075),0 7px 20px rgba(0,0,0,.18)!important;
+ padding:clamp(12px,1.8vw,22px)!important;
+}
+html body .monster-profile .monster-layout-row>.monster-image-container{
+ grid-column:1!important;grid-row:1!important;
+ display:flex!important;justify-content:center!important;align-items:center!important;
+ width:100%!important;min-height:240px!important;
+}
+html body .monster-profile .monster-image-container .glow-wrapper{
+ width:100%!important;min-width:0!important;max-width:100%!important;
+ background:transparent!important;background-image:none!important;
+ box-shadow:none!important;border:0!important;
+}
+html body .monster-profile #main-monster-image{
+ max-width:100%!important;max-height:330px!important;object-fit:contain!important;
+ background:transparent!important;
+}
+html body .monster-profile .monster-layout-row>.monster-info{
+ grid-column:2!important;grid-row:1 / span 2!important;width:100%!important;
+ overflow-wrap:anywhere!important;
+}
+html body .monster-profile .monster-layout-row>.stats-side{
+ grid-column:1!important;grid-row:2!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ width:100%!important;
+}
+html body .monster-profile .stats-side canvas{display:block!important;max-width:100%!important;height:auto!important}
+html body .monster-profile .monster-stats{max-width:100%!important;width:100%!important;table-layout:fixed!important}
+html body .monster-profile .monster-stats :is(th,td){padding:4px 2px!important;overflow-wrap:anywhere!important}
+html body .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:1/-1!important;grid-row:3!important;
+ width:100%!important;display:flex!important;flex-direction:column!important;
+ align-items:center!important;gap:10px!important;padding:clamp(14px,2vw,22px)!important;
+}
+html body .monster-profile .forms-wrapper>.forms-container{
+ width:100%!important;max-width:100%!important;margin:0!important;
+ border:0!important;outline:0!important;box-shadow:none!important;
+ background:transparent!important;padding:0!important;
+}
+html body .monster-profile .forms-instructions{
+ display:block!important;width:100%!important;text-align:center!important;
+ margin:0!important;padding:0!important;color:#c9dcef!important;
+}
+html body .monster-profile .forms-wrapper>.forms-instructions:last-child{
+ text-align:center!important;align-self:center!important;
+}
+html body .monster-profile .forms-images{justify-content:center!important;max-width:100%!important}
+html body .monster-profile .forms-extra-row{justify-content:center!important;max-width:100%!important}
+html body .monster-profile .top-bar>.evolution-wrapper{width:100%!important}
+html body .monster-profile .top-bar>.move-list-container{width:100%!important;text-align:center!important}
+html body .monster-profile .evolution-wrapper :is(img,svg){max-width:100%!important;height:auto!important}
+@media(max-width:850px){
+ html body .monster-profile .monster-layout-row{
+  grid-template-columns:minmax(0,1fr)!important;gap:12px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container,
+ html body .monster-profile .monster-layout-row>.monster-info,
+ html body .monster-profile .monster-layout-row>.stats-side,
+ html body .monster-profile .monster-layout-row>.forms-wrapper{
+  grid-column:1!important;grid-row:auto!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  margin:0!important;padding:14px!important;
+ }
+ html body .monster-profile .monster-layout-row>.monster-image-container{order:0!important;min-height:200px!important}
+ html body .monster-profile .monster-layout-row>.monster-info{order:1!important}
+ html body .monster-profile .monster-layout-row>.stats-side{order:2!important}
+ html body .monster-profile .monster-layout-row>.forms-wrapper{order:3!important;padding:14px!important}
+ html body .monster-profile .monster-layout-row>.monster-info{text-align:left!important}
+ html body .monster-profile .forms-wrapper{padding-left:14px!important}
+}
+@media(orientation:landscape) and (max-height:550px){
+ html body .monster-profile .monster-layout-row{gap:12px!important}
+ html body .monster-profile .top-bar{gap:10px!important}
+ html body .monster-profile .monster-layout-row>.monster-image-container{min-height:180px!important}
+}
