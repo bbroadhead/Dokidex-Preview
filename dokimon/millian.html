@@ -258,7 +258,7 @@ body.in-panel .monster-profile .stats-side canvas{max-width:100%!important}
 
   <div class="nav-arrows">
     
-      <a href="/Dokidex-Preview/dokimon/milli" class="nav-arrow left-arrow" style="transform: translateY(60px) scaleX(-1);">➤</a>
+      <a href="/Dokidex-Preview/dokimon/milli" class="nav-arrow left-arrow" >➤</a>
     
     
       <a href="/Dokidex-Preview/dokimon/mag" class="nav-arrow right-arrow">➤</a>
@@ -531,7 +531,7 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
-        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        color: "#ffffff",
         font: {
           weight: 'bold'
         }
@@ -717,7 +717,8 @@ function loadMoveList() {
   if (!moveList) return;
 
   const ul = document.getElementById("move-list-content");
-  moveList
+  ul.replaceChildren();
+  [...moveList]
     .sort((a, b) => a.level - b.level)
     .forEach(entry => {
       const li = document.createElement("li");

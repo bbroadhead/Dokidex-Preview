@@ -689,7 +689,7 @@ options: {
       suggestedMax: 177,
       ticks: {
         backdropColor: 'transparent',
-        color: document.body.classList.contains("dark-mode") ? "#ffffff" : "#000000",
+        color: "#ffffff",
         font: {
           weight: 'bold'
         }
@@ -875,7 +875,8 @@ function loadMoveList() {
   if (!moveList) return;
 
   const ul = document.getElementById("move-list-content");
-  moveList
+  ul.replaceChildren();
+  [...moveList]
     .sort((a, b) => a.level - b.level)
     .forEach(entry => {
       const li = document.createElement("li");
