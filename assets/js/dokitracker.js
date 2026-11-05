@@ -96,97 +96,94 @@ nameCell.addEventListener("click", (event) => {
     });
   }
 
+// One reusable palette picker avoids overlapping menus and dozens of floating layers.
+let activeRareButton = null;
+const rarePicker = document.createElement("div");
+rarePicker.id = "tracker-rare-picker";
+rarePicker.className = "tracker-rare-picker";
+rarePicker.hidden = true;
+rarePicker.setAttribute("role", "dialog");
+document.body.appendChild(rarePicker);
+
+function closeRarePicker() {
+  rarePicker.hidden = true;
+  if (activeRareButton) activeRareButton.setAttribute("aria-expanded", "false");
+  activeRareButton = null;
+}
+function positionRarePicker(button) {
+  const rect = button.getBoundingClientRect();
+  const margin = 12;
+  const vw = document.documentElement.clientWidth;
+  const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+  const width = Math.min(304, vw - margin * 2);
+  rarePicker.style.width = width + "px";
+  rarePicker.style.left = Math.max(margin, Math.min(rect.left + rect.width / 2 - width / 2, vw - width - margin)) + "px";
+  const height = rarePicker.getBoundingClientRect().height;
+  const spaceBelow = vh - rect.bottom - margin;
+  const spaceAbove = rect.top - margin;
+  const preferBelow = spaceBelow >= height + 8 || (spaceBelow >= spaceAbove && spaceBelow >= 120);
+  const top = preferBelow ? rect.bottom + 8 : rect.top - height - 8;
+  rarePicker.style.top = Math.max(margin, Math.min(top, vh - height - margin)) + "px";
+}
+document.addEventListener("pointerdown", e => {
+  if (!rarePicker.contains(e.target) && !(activeRareButton && activeRareButton.contains(e.target))) closeRarePicker();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeRarePicker(); });
+window.addEventListener("resize", closeRarePicker);
+window.addEventListener("scroll", closeRarePicker, true);
+
 function createImageDropdown(mon, imageContainer, rareFormsArray) {
   const wrapper = document.createElement("div");
   wrapper.className = "image-dropdown-wrapper";
-
   const button = document.createElement("button");
   button.type = "button";
   button.className = "rare-select-button";
   button.textContent = "Select...";
   button.setAttribute("aria-haspopup", "dialog");
   button.setAttribute("aria-expanded", "false");
-
-  // Render in the document body instead of inside the table cell, where
-  // overflow and stacking contexts can clip the palette menu on mobile.
-  const dropdown = document.createElement("div");
-  dropdown.className = "image-dropdown";
-  dropdown.setAttribute("role", "dialog");
-  dropdown.setAttribute("aria-label", mon.name + " rare palettes");
-  dropdown.hidden = true;
-  document.body.appendChild(dropdown);
-
-  const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
-  const labelMap = { "9": "Bound" };
-  let imagesLoaded = false;
-
-  function close() {
-    dropdown.hidden = true;
-    button.setAttribute("aria-expanded", "false");
-  }
-  function place() {
-    const rect = button.getBoundingClientRect();
-    const margin = 10;
-    const width = Math.min(336, window.innerWidth - margin * 2);
-    dropdown.style.width = width + "px";
-    const left = Math.max(margin, Math.min(rect.left, window.innerWidth - width - margin));
-    dropdown.style.left = left + "px";
-    const height = dropdown.offsetHeight;
-    const below = window.innerHeight - rect.bottom - margin;
-    const above = rect.top - margin;
-    const top = below >= Math.min(height, 180) || below >= above
-      ? rect.bottom + 6
-      : Math.max(margin, rect.top - height - 6);
-    dropdown.style.top = Math.max(margin, Math.min(top, window.innerHeight - height - margin)) + "px";
-  }
-  button.addEventListener("click", (e) => {
-    e.stopPropagation();
-    if (!dropdown.hidden) { close(); return; }
-    // Close other open palette menus.
-    document.querySelectorAll(".image-dropdown").forEach(el => { el.hidden = true; });
-    document.querySelectorAll(".rare-select-button").forEach(el => el.setAttribute("aria-expanded", "false"));
-    if (!imagesLoaded) {
-      formLabels.forEach(num => {
-        const label = labelMap[num] || `Form ${num}`;
-        const choice = document.createElement("button");
-        choice.type = "button";
-        choice.className = "rare-palette-choice";
-        choice.title = label;
-        choice.setAttribute("aria-label", label);
-        const img = document.createElement("img");
-        img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
-        img.alt = label;
-        img.loading = "lazy";
-        choice.appendChild(img);
-        const caption = document.createElement("span");
-        caption.textContent = label;
-        choice.appendChild(caption);
-        choice.addEventListener("click", (event) => {
-          event.stopPropagation();
-          if (!rareFormsArray.includes(label) && rareFormsArray.length < 8) {
-            rareFormsArray.push(label);
-            addRareImage(mon, label, imageContainer, rareFormsArray);
-            savedData[mon.name] = savedData[mon.name] || {};
-            savedData[mon.name].rareForms = rareFormsArray;
-            localStorage.setItem("dokitracker", JSON.stringify(savedData));
-            updateCounts(savedData);
-          }
-          close();
-        });
-        dropdown.appendChild(choice);
-      });
-      imagesLoaded = true;
+  button.addEventListener("click", event => {
+    event.stopPropagation();
+    if (activeRareButton === button && !rarePicker.hidden) {
+      closeRarePicker();
+      return;
     }
-    dropdown.hidden = false;
+    closeRarePicker();
+    rarePicker.replaceChildren();
+    rarePicker.setAttribute("aria-label", mon.name + " rare palettes");
+    const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
+    formLabels.forEach(num => {
+      const label = num === "9" ? "Bound" : `Form ${num}`;
+      const choice = document.createElement("button");
+      choice.type = "button";
+      choice.className = "rare-palette-choice";
+      choice.setAttribute("aria-label", label);
+      const img = document.createElement("img");
+      img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
+      img.alt = "";
+      img.loading = "eager";
+      choice.appendChild(img);
+      const caption = document.createElement("span");
+      caption.textContent = label;
+      choice.appendChild(caption);
+      choice.addEventListener("click", e => {
+        e.stopPropagation();
+        if (!rareFormsArray.includes(label) && rareFormsArray.length < 8) {
+          rareFormsArray.push(label);
+          addRareImage(mon, label, imageContainer, rareFormsArray);
+          savedData[mon.name] = savedData[mon.name] || {};
+          savedData[mon.name].rareForms = rareFormsArray;
+          localStorage.setItem("dokitracker", JSON.stringify(savedData));
+          updateCounts(savedData);
+        }
+        closeRarePicker();
+      });
+      rarePicker.appendChild(choice);
+    });
+    activeRareButton = button;
     button.setAttribute("aria-expanded", "true");
-    place();
+    rarePicker.hidden = false;
+    positionRarePicker(button);
   });
-  document.addEventListener("pointerdown", e => {
-    if (!dropdown.contains(e.target) && !wrapper.contains(e.target)) close();
-  });
-  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
-  window.addEventListener("resize", close);
-  window.addEventListener("scroll", close, true);
   wrapper.appendChild(button);
   return wrapper;
 }
