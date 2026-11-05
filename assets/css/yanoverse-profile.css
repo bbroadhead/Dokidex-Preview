@@ -26,3 +26,17 @@
 .yanoverse-profile .chain-stage .img-wrapper::before,
 .yanoverse-profile .chain-stage .img-wrapper::after,
 .yanoverse-profile .chain-stage .img-blocker{background:transparent!important;background-image:none!important;box-shadow:none!important}
+
+/* Match Dex: sprites sit directly on the profile surface without a dark tile. */
+html body .yanoverse-profile .yv-profile-art,
+html body .yanoverse-profile .yv-profile-art::before,
+html body .yanoverse-profile .yv-profile-art::after,
+html body .yanoverse-profile .yv-profile-art>img,
+html body .yanoverse-profile .chain-stage .img-wrapper,
+html body .yanoverse-profile .chain-stage .img-wrapper::before,
+html body .yanoverse-profile .chain-stage .img-wrapper::after,
+html body .yanoverse-profile .chain-stage img{
+  background:transparent!important;background-color:transparent!important;
+  background-image:none!important;box-shadow:none!important;
+}
+html body .yanoverse-profile .img-blocker{display:none!important}
