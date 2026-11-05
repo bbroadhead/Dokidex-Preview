@@ -887,6 +887,27 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
 <style id="yv-dex-summary-style">
 .yv-dex-summary{box-sizing:border-box;max-width:100%;width:fit-content;margin:4px auto 18px;padding:9px 19px;border:1px solid rgba(145,184,230,.27);border-radius:999px;background:linear-gradient(145deg,rgba(36,60,91,.68),rgba(20,39,62,.75));color:#dceaff;font:600 13px/1.4 system-ui,sans-serif;text-align:center}
 .yv-dex-summary strong{color:#fff;font-size:15px}
+
+/* Compact, content-width type filters that naturally wrap and center on any screen. */
+#dex-filter-controls #type-filters{
+ display:flex!important;flex-flow:row wrap!important;justify-content:center!important;
+ align-content:center!important;align-items:center!important;
+ gap:6px!important;width:100%!important;min-width:0!important;
+}
+#dex-filter-controls #type-filters .type-btn{
+ flex:0 0 auto!important;width:auto!important;min-width:0!important;max-width:none!important;
+ height:34px!important;min-height:34px!important;max-height:34px!important;
+ padding:5px 10px!important;margin:0!important;
+ font:normal clamp(19px,2.3vw,23px)/1 'VT323',monospace!important;
+ white-space:nowrap!important;
+}
+@media(max-width:420px){
+ #dex-filter-controls #type-filters{gap:5px!important}
+ #dex-filter-controls #type-filters .type-btn{
+  height:32px!important;min-height:32px!important;max-height:32px!important;
+  padding:4px 8px!important;font-size:19px!important;
+ }
+}
 </style>
 
 <div class="dex-grid" id="dex-grid">
