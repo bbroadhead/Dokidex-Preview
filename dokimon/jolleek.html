@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="monster-navigation-critical">html,body{background-color:#0b192c!important}html.monster-arriving body{opacity:0}html.monster-leaving body{opacity:.65;transform:translateX(-5px)}html.monster-arriving body,html.monster-leaving body{transition:opacity .12s ease,transform .12s ease}@media(prefers-reduced-motion:reduce){html.monster-arriving body,html.monster-leaving body{opacity:1;transform:none;transition:none}}</style>
 <script>document.documentElement.classList.add('pre-dark-mode');document.addEventListener('DOMContentLoaded',()=>{document.body.classList.add('dark-mode');document.documentElement.classList.remove('pre-dark-mode')});</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWHRN2K6DG"></script>
@@ -582,25 +583,35 @@ createRadarChart();
   });
 </script>
 <script>
-  // Fade in on load
-  document.body.classList.add('fade-out');
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.remove('fade-out');
-    document.body.classList.add('fade-in');
+(function () {
+  // Keep the dark background painted during navigation, including the first frame.
+  const motionOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const navKey = 'yanoverse-monster-navigation';
+  let navigating = false;
+  try {
+    if (sessionStorage.getItem(navKey) === '1') {
+      document.documentElement.classList.add('monster-arriving');
+      sessionStorage.removeItem(navKey);
+    }
+  } catch (_) {}
+  function reveal() {
+    document.documentElement.classList.remove('monster-arriving');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(reveal), {once:true});
+  } else requestAnimationFrame(reveal);
+  window.addEventListener('pageshow', reveal);
+  document.querySelectorAll('.nav-arrow').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0 || navigating) return;
+      event.preventDefault();
+      navigating = true;
+      try { sessionStorage.setItem(navKey, '1'); } catch (_) {}
+      if (motionOK) document.documentElement.classList.add('monster-leaving');
+      window.setTimeout(() => { window.location.assign(link.href); }, motionOK ? 90 : 0);
+    });
   });
-
-  // Fade out on arrow click
-document.querySelectorAll('.nav-arrow').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const href = this.href; // Correct for <a> elements
-    document.body.classList.remove('fade-in');
-    document.body.classList.add('fade-out');
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300);
-  });
-});
+})();
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
