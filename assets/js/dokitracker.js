@@ -101,67 +101,93 @@ function createImageDropdown(mon, imageContainer, rareFormsArray) {
   wrapper.className = "image-dropdown-wrapper";
 
   const button = document.createElement("button");
+  button.type = "button";
+  button.className = "rare-select-button";
   button.textContent = "Select...";
-  button.style.padding = "4px 8px";
-  button.style.cursor = "pointer";
-  button.style.border = "1px solid #aaa";
+  button.setAttribute("aria-haspopup", "dialog");
+  button.setAttribute("aria-expanded", "false");
 
+  // Render in the document body instead of inside the table cell, where
+  // overflow and stacking contexts can clip the palette menu on mobile.
   const dropdown = document.createElement("div");
   dropdown.className = "image-dropdown";
-  dropdown.style.display = "none";
-  dropdown.style.position = "absolute";
-  dropdown.style.zIndex = "10";
-  dropdown.style.background = "#fff";
-  dropdown.style.padding = "4px";
-  dropdown.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
-  dropdown.style.whiteSpace = "nowrap";
+  dropdown.setAttribute("role", "dialog");
+  dropdown.setAttribute("aria-label", mon.name + " rare palettes");
+  dropdown.hidden = true;
+  document.body.appendChild(dropdown);
 
   const formLabels = ["2", "3", "4", "5", "6", "7", "8", "9"];
   const labelMap = { "9": "Bound" };
-
   let imagesLoaded = false;
 
+  function close() {
+    dropdown.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  }
+  function place() {
+    const rect = button.getBoundingClientRect();
+    const margin = 10;
+    const width = Math.min(336, window.innerWidth - margin * 2);
+    dropdown.style.width = width + "px";
+    const left = Math.max(margin, Math.min(rect.left, window.innerWidth - width - margin));
+    dropdown.style.left = left + "px";
+    const height = dropdown.offsetHeight;
+    const below = window.innerHeight - rect.bottom - margin;
+    const above = rect.top - margin;
+    const top = below >= Math.min(height, 180) || below >= above
+      ? rect.bottom + 6
+      : Math.max(margin, rect.top - height - 6);
+    dropdown.style.top = Math.max(margin, Math.min(top, window.innerHeight - height - margin)) + "px";
+  }
   button.addEventListener("click", (e) => {
-    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
     e.stopPropagation();
-
-    if (imagesLoaded) return;
-
-    formLabels.forEach(num => {
-      const label = labelMap[num] || `Form ${num}`;
-      const img = document.createElement("img");
-      img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
-      img.title = label;
-      img.width = 24;
-      img.height = 24;
-      img.style.margin = "2px";
-      img.style.cursor = "pointer";
-
-      img.addEventListener("click", () => {
-        if (!rareFormsArray.includes(label) && rareFormsArray.length < 8) {
-          rareFormsArray.push(label);
-          addRareImage(mon, label, imageContainer, rareFormsArray);
-          savedData[mon.name].rareForms = rareFormsArray;
-          localStorage.setItem("dokitracker", JSON.stringify(savedData));
-          updateCounts(savedData);
-          dropdown.style.display = "none";
-        }
+    if (!dropdown.hidden) { close(); return; }
+    // Close other open palette menus.
+    document.querySelectorAll(".image-dropdown").forEach(el => { el.hidden = true; });
+    document.querySelectorAll(".rare-select-button").forEach(el => el.setAttribute("aria-expanded", "false"));
+    if (!imagesLoaded) {
+      formLabels.forEach(num => {
+        const label = labelMap[num] || `Form ${num}`;
+        const choice = document.createElement("button");
+        choice.type = "button";
+        choice.className = "rare-palette-choice";
+        choice.title = label;
+        choice.setAttribute("aria-label", label);
+        const img = document.createElement("img");
+        img.src = dokiAssetUrl(`/assets/images/forms/${mon.number}_${mon.name.toLowerCase()}/${mon.name.toLowerCase()}_${num}.png`);
+        img.alt = label;
+        img.loading = "lazy";
+        choice.appendChild(img);
+        const caption = document.createElement("span");
+        caption.textContent = label;
+        choice.appendChild(caption);
+        choice.addEventListener("click", (event) => {
+          event.stopPropagation();
+          if (!rareFormsArray.includes(label) && rareFormsArray.length < 8) {
+            rareFormsArray.push(label);
+            addRareImage(mon, label, imageContainer, rareFormsArray);
+            savedData[mon.name] = savedData[mon.name] || {};
+            savedData[mon.name].rareForms = rareFormsArray;
+            localStorage.setItem("dokitracker", JSON.stringify(savedData));
+            updateCounts(savedData);
+          }
+          close();
+        });
+        dropdown.appendChild(choice);
       });
-
-      dropdown.appendChild(img);
-    });
-
-    imagesLoaded = true;
+      imagesLoaded = true;
+    }
+    dropdown.hidden = false;
+    button.setAttribute("aria-expanded", "true");
+    place();
   });
-
-  document.addEventListener("click", () => {
-    dropdown.style.display = "none";
+  document.addEventListener("pointerdown", e => {
+    if (!dropdown.contains(e.target) && !wrapper.contains(e.target)) close();
   });
-
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  window.addEventListener("resize", close);
+  window.addEventListener("scroll", close, true);
   wrapper.appendChild(button);
-  wrapper.appendChild(dropdown);
-  wrapper.style.position = "relative";
-  wrapper.style.display = "inline-block";
   return wrapper;
 }
 
