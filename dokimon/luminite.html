@@ -155,6 +155,52 @@ body.dark-mode .filter-controls{gap:12px!important;padding:13px!important}
  .site-header .yv-links-dropdown .dropdown-content{max-width:calc(100vw - 24px)!important;min-width:210px!important}
 }
 </style>
+
+<style id="yanoverse-embedded-profile-layout">
+/* Only monster pages loaded inside DokiTracker's iframe. */
+body.in-panel{margin:0!important;padding:0!important;min-width:0!important;overflow-x:hidden!important;background:#102239!important}
+body.in-panel main,body.in-panel .page-content,body.in-panel .wrapper{
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:0!important;padding:0!important;box-sizing:border-box!important;
+}
+body.in-panel .monster-profile{
+ display:block!important;width:100%!important;max-width:100%!important;
+ margin:0!important;padding:clamp(10px,2.5vw,20px)!important;
+ box-sizing:border-box!important;
+}
+body.in-panel .monster-profile .top-bar{
+ display:flex!important;flex-direction:column!important;gap:12px!important;
+ width:100%!important;min-width:0!important;margin:0 0 14px!important;
+}
+body.in-panel .monster-profile .monster-layout-row{
+ display:grid!important;grid-template-columns:minmax(0,1fr)!important;
+ gap:12px!important;width:100%!important;min-width:0!important;
+ margin:0!important;align-items:stretch!important;
+}
+body.in-panel .monster-profile .monster-layout-row>.monster-image-container,
+body.in-panel .monster-profile .monster-layout-row>.monster-info,
+body.in-panel .monster-profile .monster-layout-row>.stats-side,
+body.in-panel .monster-profile .monster-layout-row>.forms-wrapper{
+ grid-column:1!important;grid-row:auto!important;order:initial!important;
+ width:100%!important;max-width:100%!important;min-width:0!important;
+ margin:0!important;padding:clamp(12px,2vw,20px)!important;
+ box-sizing:border-box!important;
+}
+body.in-panel .monster-profile .monster-layout-row>.monster-image-container{min-height:190px!important}
+body.in-panel .monster-profile #main-monster-image{max-height:255px!important;max-width:100%!important;object-fit:contain!important}
+body.in-panel .monster-profile .monster-layout-row>.monster-info{text-align:left!important;overflow-wrap:anywhere!important}
+body.in-panel .monster-profile .monster-layout-row>.stats-side{margin:0!important}
+body.in-panel .monster-profile .monster-stats{width:100%!important;max-width:100%!important}
+body.in-panel .monster-profile .forms-wrapper{padding-left:14px!important}
+body.in-panel .monster-profile .forms-container{border:0!important;width:100%!important}
+body.in-panel .monster-profile .forms-instructions{text-align:center!important;width:100%!important}
+body.in-panel .monster-profile .evolution-wrapper{width:100%!important;min-width:0!important}
+body.in-panel .monster-profile .evolution-wrapper img{max-width:100%!important;height:auto!important}
+body.in-panel .monster-profile .nav-arrows{display:none!important}
+body.in-panel .monster-profile .return-link{display:none!important}
+body.in-panel .monster-profile .top-bar>.move-list-container{width:100%!important}
+body.in-panel .monster-profile .stats-side canvas{max-width:100%!important}
+</style>
 </head>
 <body>
 
