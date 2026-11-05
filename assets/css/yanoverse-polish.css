@@ -81,3 +81,18 @@ html body #dex-grid .dex-entry img.monster-image.small {
 }
 html body #dex-grid .dex-entry .img-blocker{display:none!important}
 html body #dex-grid .dex-entry .img-wrapper{border-radius:0!important}
+
+/* Larger sprites on Dex cards; keep labels and gradient type border intact. */
+html body #dex-grid .dex-entry .img-wrapper{
+  width:100%!important;height:auto!important;aspect-ratio:1/1!important;
+  margin:0!important;align-self:stretch!important;overflow:visible!important;
+}
+html body #dex-grid .dex-entry img.monster-image.small{
+  width:96%!important;height:96%!important;max-width:none!important;
+  max-height:none!important;padding:0!important;object-fit:contain!important;
+  image-rendering:pixelated!important;
+}
+@media(max-width:767px){
+  html body #dex-grid .dex-entry>a{padding:7px!important;gap:2px!important}
+  html body #dex-grid .dex-entry .img-wrapper{aspect-ratio:1/1!important}
+}
