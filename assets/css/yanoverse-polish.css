@@ -813,3 +813,40 @@ html body .monster-profile .forms-wrapper .forms-images,
 html body .monster-profile .forms-wrapper .forms-extra-row{
  margin-inline:auto!important;justify-content:center!important;
 }
+
+/* Override legacy header/nav shorthand font declarations, not just inherited text. */
+html body .site-header .yanoverse-brand,
+html body .site-header .yanoverse-brand *,
+html body .site-header .yanoverse-game-title,
+html body .site-header .yanoverse-game .yanoverse-game-title,
+html body .site-header .yanoverse-game small,
+html body .site-header .site-nav,
+html body .site-header .site-nav *,
+html body .site-header .nav-left,
+html body .site-header .nav-left *,
+html body .site-header nav a,
+html body .site-header nav button,
+html body .site-header nav span,
+html body .site-header .language-selector,
+html body .site-header .language-selector *{
+ font-family:'VT323',monospace!important;
+}
+html body .site-header .yanoverse-brand{
+ font-size:clamp(19px,2.2vw,25px)!important;
+ font-weight:400!important;
+}
+html body .site-header .yanoverse-game-title{
+ font-size:clamp(22px,2.5vw,29px)!important;
+ font-weight:400!important;line-height:1.1!important;
+}
+html body .site-header .yanoverse-game.is-selected .yanoverse-game-title{
+ font-size:clamp(24px,2.7vw,31px)!important;
+}
+html body .site-header .yanoverse-game small{
+ font-size:16px!important;font-weight:400!important;
+}
+html body .site-header .site-nav :is(a,button,.dropdown-toggle){
+ font-family:'VT323',monospace!important;
+ font-size:clamp(24px,2.5vw,30px)!important;
+ font-weight:400!important;
+}
