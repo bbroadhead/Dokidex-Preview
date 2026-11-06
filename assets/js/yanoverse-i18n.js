@@ -172,29 +172,48 @@ function translateText(value,lang){
   return translated===trim?value:value.replace(trim,translated);
 }
 
-// Keep the type-effectiveness chart readable in Korean: its original icon art
-// contains baked-in English lettering, so show accessible Hangul badges instead.
-const koreanTypeLabels=new Map([['Fire','불꽃'],['Water','물'],['Grass','풀'],['Electric','전기'],['Dark','악'],['Light','빛'],['Flying','비행'],['fight','격투'],['Poison','독'],['Dragon','드래곤'],['Fairy','페어리'],['Ghost','고스트'],['Ice','얼음']]);
+// Type chart: equal-sized horizontal and vertical badges in every language.
+// English keeps the original artwork; localized labels use the same badge geometry.
+const chartTypeKeys=new Map([['Fire','Fire'],['Grass','Grass'],['Water','Water'],['Electric','Electric'],['Dark','Dark'],['Light','Light'],['Flying','Flying'],['fight','Fight'],['Poison','Poison'],['Dragon','Dragon'],['Fairy','Fairy'],['Ghost','Ghost'],['Ice','Ice']]);
+const chartTranslations={ja:dict,ko:koreanDict,es:spanishDict,'pt-BR':portugueseDict};
 const chartBadgeStyle=document.createElement('style');
 chartBadgeStyle.textContent=`
-html[data-language="ko"] #type-effect-tool th.type-header[data-type] img{display:none!important}
-#type-effect-tool .yv-ko-type-label{display:none}
-html[data-language="ko"] #type-effect-tool .yv-ko-type-label{display:flex;align-items:center;justify-content:center;min-width:35px;min-height:30px;padding:3px;border-radius:5px;border:1px solid #b5c9e8;background:linear-gradient(150deg,#426082,#1b304b);color:#fff;font:700 14px/1.1 system-ui,sans-serif;text-shadow:1px 1px #000,-1px -1px #000,1px -1px #000,-1px 1px #000;writing-mode:horizontal-tb;white-space:nowrap}
-html[data-language="ko"] #type-effect-tool thead .yv-ko-type-label{writing-mode:vertical-rl;min-height:64px;min-width:24px}
+#type-effect-tool .type-effect-table th.type-header{padding:2px!important}
+#type-effect-tool .type-effect-table tbody th.type-header{width:80px!important;min-width:80px!important;height:32px!important}
+#type-effect-tool .type-effect-table thead th.type-header{width:32px!important;min-width:32px!important;height:80px!important}
+#type-effect-tool .type-effect-table tbody th.type-header img.type-icon{width:76px!important;height:26px!important;max-width:none!important;max-height:none!important;object-fit:fill!important}
+#type-effect-tool .type-effect-table thead th.type-header img.rotated-type-icon{width:26px!important;height:76px!important;max-width:none!important;max-height:none!important;object-fit:fill!important}
+#type-effect-tool .yv-local-type-label{display:none;box-sizing:border-box;align-items:center;justify-content:center;width:76px;height:26px;min-width:76px;min-height:26px;max-width:76px;max-height:26px;margin:auto;padding:0 3px;border:1px solid rgba(255,255,255,.8);border-radius:4px;color:#fff;font:700 15px/1 'VT323',system-ui,sans-serif;white-space:nowrap;text-align:center;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;letter-spacing:0}
+#type-effect-tool .yv-local-type-label[data-type="Fire"]{background:#d34942}
+#type-effect-tool .yv-local-type-label[data-type="Grass"]{background:#458b40}
+#type-effect-tool .yv-local-type-label[data-type="Water"]{background:#347db7}
+#type-effect-tool .yv-local-type-label[data-type="Electric"]{background:#a58219}
+#type-effect-tool .yv-local-type-label[data-type="Dark"]{background:#4e4769}
+#type-effect-tool .yv-local-type-label[data-type="Light"]{background:#ad9146}
+#type-effect-tool .yv-local-type-label[data-type="Flying"]{background:#5786a7}
+#type-effect-tool .yv-local-type-label[data-type="fight"]{background:#a05237}
+#type-effect-tool .yv-local-type-label[data-type="Poison"]{background:#884ba0}
+#type-effect-tool .yv-local-type-label[data-type="Dragon"]{background:#6153a3}
+#type-effect-tool .yv-local-type-label[data-type="Fairy"]{background:#ae568e}
+#type-effect-tool .yv-local-type-label[data-type="Ghost"]{background:#5d5c8d}
+#type-effect-tool .yv-local-type-label[data-type="Ice"]{background:#428d9d}
+html[data-language]:not([data-language="en"]) #type-effect-tool th.type-header[data-type] img{display:none!important}
+html[data-language]:not([data-language="en"]) #type-effect-tool .yv-local-type-label{display:flex!important}
+#type-effect-tool thead .yv-local-type-label{transform:rotate(-90deg);transform-origin:center;position:relative;left:calc(50% - 38px);margin:25px 0}
 `;
 document.head.appendChild(chartBadgeStyle);
-function ensureKoreanChartLabels(){
+function ensureLocalizedChartLabels(lang){
+ const translations=chartTranslations[lang];
  document.querySelectorAll('#type-effect-tool th.type-header[data-type]').forEach(cell=>{
-   if(cell.querySelector('.yv-ko-type-label'))return;
-   const name=koreanTypeLabels.get(cell.dataset.type);
-   if(!name)return;
-   const label=document.createElement('span');
-   label.className='yv-ko-type-label';
-   label.textContent=name;
-   cell.appendChild(label);
+   const english=chartTypeKeys.get(cell.dataset.type);
+   if(!english)return;
+   let label=cell.querySelector('.yv-local-type-label');
+   if(!label){label=document.createElement('span');label.className='yv-local-type-label';label.dataset.type=cell.dataset.type;cell.appendChild(label);}
+   label.textContent=translations?.get(english)||english;
+   label.setAttribute('aria-label',label.textContent);
  });
 }
-function apply(lang){ensureKoreanChartLabels();document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
+function apply(lang){ensureLocalizedChartLabels(lang);document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);let target=lang==='en'?original:translateText(original,lang);
 if((lang==='ja'||lang==='es'||lang==='pt-BR')&&n.parentElement?.closest('.monster-info')){
  const profile=n.parentElement.closest('.monster-info');

@@ -27,7 +27,16 @@
     document.title=game.id==='quest'?'Dokimon: Quest | Yanoverse Multi-Dex':game.name+' | Yanoverse Multi-Dex';
     try { sessionStorage.setItem('yanoverse-game',game.id); } catch(e) {}
   }
-  buttons.forEach(btn=>btn.addEventListener('click',()=>select(btn.dataset.game)));
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    const id=btn.dataset.game;
+    // A second tap on the active game acts as a Home shortcut.
+    if(btn.classList.contains('is-selected')){
+      const home='/Dokidex-Preview/'; 
+      window.location.assign(home);
+      return;
+    }
+    select(id);
+  }));
   let saved='quest';
   try {saved=sessionStorage.getItem('yanoverse-game')||'quest';} catch(e) {}
   select(saved);
