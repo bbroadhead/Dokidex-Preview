@@ -654,6 +654,31 @@ col.col-label {
 #type-effect-tool .type-effect-table th.type-header {
   background:#203650!important;
 }
+/* Let the type-name artwork fill its header cell without stretching it. */
+#type-effect-tool .type-effect-table th.type-header {
+  padding:2px!important;
+  vertical-align:middle!important;
+}
+#type-effect-tool .type-effect-table th.type-header .type-icon,
+#type-effect-tool .type-effect-table th.type-header .rotated-type-icon {
+  display:block!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  padding:0!important;
+  margin:auto!important;
+  object-fit:contain!important;
+  image-rendering:pixelated;
+}
+#type-effect-tool .type-effect-table tbody th.type-header {
+  height:32px!important;
+}
+#type-effect-tool .type-effect-table thead th.type-header {
+  height:90px!important;
+}
+
 #type-effect-tool .type-effect-table .type-arrow {
   background:#203650!important;
   color:#dceaff!important;
