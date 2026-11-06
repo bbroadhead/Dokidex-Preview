@@ -698,6 +698,13 @@ col.col-label {
   background:#497eaa!important;
   outline-color:#d0eaff!important;
 }
+/* Keep the selected row/column intersection legible, including colored multipliers. */
+#type-effect-tool .type-effect-table td.effect-cell.highlight-both,
+#type-effect-tool .type-effect-table td.effect-cell.highlight-both span {
+  text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000,
+              0 -1px 0 #000,0 1px 0 #000,-1px 0 0 #000,1px 0 0 #000!important;
+}
+
 #type-effect-tool .type-effect-table th.type-header:hover {
   background:#355777!important;
 }
