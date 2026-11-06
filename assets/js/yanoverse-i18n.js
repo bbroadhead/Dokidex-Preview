@@ -172,49 +172,71 @@ function translateText(value,lang){
   return translated===trim?value:value.replace(trim,translated);
 }
 
-// Type chart: equal-sized horizontal and vertical badges in every language.
-// English keeps the original artwork; localized labels use the same badge geometry.
-const chartTypeKeys=new Map([['Fire','Fire'],['Grass','Grass'],['Water','Water'],['Electric','Electric'],['Dark','Dark'],['Light','Light'],['Flying','Flying'],['fight','Fight'],['Poison','Poison'],['Dragon','Dragon'],['Fairy','Fairy'],['Ghost','Ghost'],['Ice','Ice']]);
-const chartTranslations={ja:dict,ko:koreanDict,es:spanishDict,'pt-BR':portugueseDict};
+// The type chart uses original pixel-art English labels and matching pixel-styled
+// translated badges. Keep the two orientations the same physical label size.
+const chartTypeNames={
+ Fire:{ja:'ほのお',ko:'불꽃',es:'Fuego','pt-BR':'Fogo'},
+ Grass:{ja:'くさ',ko:'풀',es:'Planta','pt-BR':'Planta'},
+ Water:{ja:'みず',ko:'물',es:'Agua','pt-BR':'Água'},
+ Electric:{ja:'でんき',ko:'전기',es:'Eléctrico','pt-BR':'Elétrico'},
+ Dark:{ja:'あく',ko:'악',es:'Oscuro','pt-BR':'Sombrio'},
+ Light:{ja:'ひかり',ko:'빛',es:'Luz','pt-BR':'Luz'},
+ Flying:{ja:'ひこう',ko:'비행',es:'Volador','pt-BR':'Voador'},
+ fight:{ja:'かくとう',ko:'격투',es:'Lucha','pt-BR':'Lutador'},
+ Poison:{ja:'どく',ko:'독',es:'Veneno','pt-BR':'Veneno'},
+ Dragon:{ja:'ドラゴン',ko:'드래곤',es:'Dragón','pt-BR':'Dragão'},
+ Fairy:{ja:'フェアリー',ko:'페어리',es:'Hada','pt-BR':'Fada'},
+ Ghost:{ja:'ゴースト',ko:'고스트',es:'Fantasma','pt-BR':'Fantasma'},
+ Ice:{ja:'こおり',ko:'얼음',es:'Hielo','pt-BR':'Gelo'}
+};
 const chartBadgeStyle=document.createElement('style');
 chartBadgeStyle.textContent=`
-#type-effect-tool .type-effect-table th.type-header{padding:2px!important}
-#type-effect-tool .type-effect-table tbody th.type-header{width:80px!important;min-width:80px!important;height:32px!important}
-#type-effect-tool .type-effect-table thead th.type-header{width:32px!important;min-width:32px!important;height:80px!important}
-#type-effect-tool .type-effect-table tbody th.type-header img.type-icon{width:76px!important;height:26px!important;max-width:none!important;max-height:none!important;object-fit:fill!important}
-#type-effect-tool .type-effect-table thead th.type-header img.rotated-type-icon{width:26px!important;height:76px!important;max-width:none!important;max-height:none!important;object-fit:fill!important}
-#type-effect-tool .yv-local-type-label{display:none;box-sizing:border-box;align-items:center;justify-content:center;width:76px;height:26px;min-width:76px;min-height:26px;max-width:76px;max-height:26px;margin:auto;padding:0 3px;border:1px solid rgba(255,255,255,.8);border-radius:4px;color:#fff;font:700 15px/1 'VT323',system-ui,sans-serif;white-space:nowrap;text-align:center;text-shadow:1px 1px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;letter-spacing:0}
-#type-effect-tool .yv-local-type-label[data-type="Fire"]{background:#d34942}
-#type-effect-tool .yv-local-type-label[data-type="Grass"]{background:#458b40}
-#type-effect-tool .yv-local-type-label[data-type="Water"]{background:#347db7}
-#type-effect-tool .yv-local-type-label[data-type="Electric"]{background:#a58219}
-#type-effect-tool .yv-local-type-label[data-type="Dark"]{background:#4e4769}
-#type-effect-tool .yv-local-type-label[data-type="Light"]{background:#ad9146}
-#type-effect-tool .yv-local-type-label[data-type="Flying"]{background:#5786a7}
-#type-effect-tool .yv-local-type-label[data-type="fight"]{background:#a05237}
-#type-effect-tool .yv-local-type-label[data-type="Poison"]{background:#884ba0}
-#type-effect-tool .yv-local-type-label[data-type="Dragon"]{background:#6153a3}
-#type-effect-tool .yv-local-type-label[data-type="Fairy"]{background:#ae568e}
-#type-effect-tool .yv-local-type-label[data-type="Ghost"]{background:#5d5c8d}
-#type-effect-tool .yv-local-type-label[data-type="Ice"]{background:#428d9d}
-html[data-language]:not([data-language="en"]) #type-effect-tool th.type-header[data-type] img{display:none!important}
-html[data-language]:not([data-language="en"]) #type-effect-tool .yv-local-type-label{display:flex!important}
-#type-effect-tool thead .yv-local-type-label{transform:rotate(-90deg);transform-origin:center;position:relative;left:calc(50% - 38px);margin:25px 0}
+/* Original artwork: equal physical dimensions, rotated by the asset itself. */
+#type-effect-tool .type-effect-table tbody th.type-header{width:84px!important;min-width:84px!important;height:36px!important}
+#type-effect-tool .type-effect-table thead th.type-header{width:36px!important;min-width:36px!important;height:84px!important}
+#type-effect-tool .type-effect-table tbody th.type-header img.type-icon{display:block;box-sizing:border-box!important;width:76px!important;height:26px!important;max-width:none!important;max-height:none!important;padding:0!important;object-fit:contain!important}
+#type-effect-tool .type-effect-table thead th.type-header img.rotated-type-icon{display:block;box-sizing:border-box!important;width:26px!important;height:76px!important;max-width:none!important;max-height:none!important;padding:0!important;object-fit:contain!important}
+/* Localized badges mimic the pixel-art border, highlights, shadows and typography. */
+#type-effect-tool .yv-local-type-label{display:none!important;position:relative;box-sizing:border-box!important;align-items:center;justify-content:center;width:76px!important;height:26px!important;min-width:76px!important;min-height:26px!important;max-width:76px!important;max-height:26px!important;padding:0 2px!important;margin:0 auto!important;border:3px solid #111521!important;border-radius:0!important;outline:2px solid var(--yv-type-edge,#c3a1a1);outline-offset:-6px;color:#fff!important;background:var(--yv-type-color,#a7474a)!important;font:700 17px/1 'VT323',monospace!important;white-space:nowrap!important;text-align:center!important;text-shadow:1px 1px 0 #000,-1px 1px 0 #000,1px -1px 0 #000,-1px -1px 0 #000!important;letter-spacing:0!important;box-shadow:inset 3px 3px 0 rgba(255,255,255,.27),inset -3px -3px 0 rgba(0,0,0,.3),3px 3px 0 #10111a!important;image-rendering:pixelated}
+#type-effect-tool .yv-local-type-label[data-type="Fire"]{--yv-type-color:#e8454c;--yv-type-edge:#ffb5b5}
+#type-effect-tool .yv-local-type-label[data-type="Grass"]{--yv-type-color:#74d44c;--yv-type-edge:#c4ffa2}
+#type-effect-tool .yv-local-type-label[data-type="Water"]{--yv-type-color:#4786ec;--yv-type-edge:#b2c9ff}
+#type-effect-tool .yv-local-type-label[data-type="Electric"]{--yv-type-color:#d4b719;--yv-type-edge:#fff1a0}
+#type-effect-tool .yv-local-type-label[data-type="Dark"]{--yv-type-color:#8b54b0;--yv-type-edge:#d7b3ef}
+#type-effect-tool .yv-local-type-label[data-type="Light"]{--yv-type-color:#e4c329;--yv-type-edge:#fff1a8}
+#type-effect-tool .yv-local-type-label[data-type="Flying"]{--yv-type-color:#5c83d8;--yv-type-edge:#b6d1ff}
+#type-effect-tool .yv-local-type-label[data-type="fight"]{--yv-type-color:#d44d53;--yv-type-edge:#ffb2b8}
+#type-effect-tool .yv-local-type-label[data-type="Poison"]{--yv-type-color:#b35390;--yv-type-edge:#f4add4}
+#type-effect-tool .yv-local-type-label[data-type="Dragon"]{--yv-type-color:#7157bd;--yv-type-edge:#c9b9ff}
+#type-effect-tool .yv-local-type-label[data-type="Fairy"]{--yv-type-color:#d769a5;--yv-type-edge:#ffc5e7}
+#type-effect-tool .yv-local-type-label[data-type="Ghost"]{--yv-type-color:#6559a0;--yv-type-edge:#c5bbed}
+#type-effect-tool .yv-local-type-label[data-type="Ice"]{--yv-type-color:#4dacc5;--yv-type-edge:#b3f1ff}
+html[data-language="ja"] #type-effect-tool .yv-local-type-label{font-family:'VT323',sans-serif!important;font-size:14px!important}
+html[data-language="ko"] #type-effect-tool .yv-local-type-label{font-family:'VT323',sans-serif!important;font-size:17px!important}
+html[data-language]:not([data-language="en"]) #type-effect-tool th.type-header[data-type] > img{display:none!important}
+html[data-language]:not([data-language="en"]) #type-effect-tool th.type-header[data-type] > .yv-local-type-label{display:flex!important}
+#type-effect-tool .type-effect-table thead th.type-header{position:relative!important}
+#type-effect-tool .type-effect-table thead th.type-header > .yv-local-type-label{position:absolute!important;top:50%!important;left:50%!important;margin:0!important;transform:translate(-50%,-50%) rotate(-90deg)!important;transform-origin:center!important}
 `;
 document.head.appendChild(chartBadgeStyle);
 function ensureLocalizedChartLabels(lang){
- const translations=chartTranslations[lang];
  document.querySelectorAll('#type-effect-tool th.type-header[data-type]').forEach(cell=>{
-   const english=chartTypeKeys.get(cell.dataset.type);
-   if(!english)return;
+   const translations=chartTypeNames[cell.dataset.type];
+   if(!translations)return;
    let label=cell.querySelector('.yv-local-type-label');
    if(!label){label=document.createElement('span');label.className='yv-local-type-label';label.dataset.type=cell.dataset.type;cell.appendChild(label);}
-   label.textContent=translations?.get(english)||english;
-   label.setAttribute('aria-label',label.textContent);
+   const name=translations[lang]||cell.dataset.type;
+   // Avoid the general translation walker replacing these authoritative labels.
+   if(label.textContent!==name)label.textContent=name;
+   label.setAttribute('aria-label',name);
+   // Explicit visibility also beats older !important image rules on the page.
+   const image=cell.querySelector(':scope > img');
+   if(image)image.style.setProperty('display',lang==='en'?'block':'none','important');
+   label.style.setProperty('display',lang==='en'?'none':'flex','important');
  });
 }
 function apply(lang){ensureLocalizedChartLabels(lang);document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
-const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);let target=lang==='en'?original:translateText(original,lang);
+const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg,.yv-local-type-label')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);let target=lang==='en'?original:translateText(original,lang);
 if((lang==='ja'||lang==='es'||lang==='pt-BR')&&n.parentElement?.closest('.monster-info')){
  const profile=n.parentElement.closest('.monster-info');
  const heading=profile.querySelector('h1 .dex-number');
