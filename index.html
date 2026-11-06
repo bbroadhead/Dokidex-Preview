@@ -836,6 +836,63 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
 <p><button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button></p>
 
 <div class="filter-controls" id="dex-filter-controls">
+  
+<style id="yv-localized-type-badges">
+/* Reuse the original pixel-art labels in English. Other languages retain
+   selectable type identifiers and render translated live text over a clean badge. */
+#dex-filter-controls #type-filters .type-btn {
+  --yv-type-color:#607c9a;
+  padding:3px!important;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--yv-type-color),white 26%),var(--yv-type-color) 52%,color-mix(in srgb,var(--yv-type-color),black 33%))!important;
+  border:2px solid color-mix(in srgb,var(--yv-type-color),white 28%)!important;
+  border-radius:7px!important;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.25),inset 0 -3px 0 rgba(0,0,0,.25),0 2px 5px rgba(0,0,0,.22)!important;
+}
+#type-filters .type-fire{--yv-type-color:#e56a43!important}
+#type-filters .type-water{--yv-type-color:#438dce!important}
+#type-filters .type-grass{--yv-type-color:#4eaa64!important}
+#type-filters .type-electric{--yv-type-color:#d3ad39!important}
+#type-filters .type-light{--yv-type-color:#d6bb65!important}
+#type-filters .type-dark{--yv-type-color:#6d58a2!important}
+#type-filters .type-flying{--yv-type-color:#6bafc3!important}
+#type-filters .type-fight{--yv-type-color:#b86443!important}
+#type-filters .type-fairy{--yv-type-color:#c96ba7!important}
+#type-filters .type-ghost{--yv-type-color:#7760b3!important}
+#type-filters .type-poison{--yv-type-color:#9250ae!important}
+#type-filters .type-dragon{--yv-type-color:#586dbb!important}
+#type-filters .type-ice{--yv-type-color:#6dbbc9!important}
+#dex-filter-controls #type-filters .type-btn .yv-type-label {
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  width:100%;height:100%;min-width:0;
+  color:white!important;font:700 clamp(12px,1.5vw,16px)/1.05 'VT323',monospace!important;
+  text-shadow:1px 1px 0 rgba(0,0,0,.85),-1px -1px 0 rgba(0,0,0,.4)!important;
+  white-space:nowrap;
+}
+html[lang="en"] #dex-filter-controls #type-filters .type-btn {
+  background-image:var(--yv-type-image)!important;
+  background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;
+}
+html[lang="en"] #dex-filter-controls #type-filters .type-btn .yv-type-label {
+  opacity:0!important;
+}
+#type-filters .type-fire{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/fire.png')}
+#type-filters .type-water{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/water.png')}
+#type-filters .type-grass{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/grass.png')}
+#type-filters .type-electric{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/electric.png')}
+#type-filters .type-light{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/light.png')}
+#type-filters .type-dark{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/dark.png')}
+#type-filters .type-flying{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/flying.png')}
+#type-filters .type-fight{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/fight.png')}
+#type-filters .type-fairy{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/fairy.png')}
+#type-filters .type-ghost{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/ghost.png')}
+#type-filters .type-poison{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/poison.png')}
+#type-filters .type-dragon{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/dragon.png')}
+#type-filters .type-ice{--yv-type-image:url('/Dokidex-Preview/assets/images/type_icons/ice.png')}
+#dex-filter-controls #type-filters .type-btn.active {
+  outline:2px solid #e9f6ff!important;outline-offset:1px!important;
+  filter:brightness(1.18)!important;
+}
+</style>
   <!-- Group: Stage -->
   <div class="filter-block">
 <label for="formFilter">Palettes:</label>
@@ -874,19 +931,19 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
   <div class="filter-block type-block">
     <label>Type:</label>
     <div id="type-filters">
-      <button class="type-btn type-fire" data-type="Fire">Fire</button>
-      <button class="type-btn type-water" data-type="Water">Water</button>
-      <button class="type-btn type-grass" data-type="Grass">Grass</button>
-      <button class="type-btn type-electric" data-type="Electric">Electric</button>
-      <button class="type-btn type-light" data-type="Light">Light</button>
-      <button class="type-btn type-dark" data-type="Dark">Dark</button>
-      <button class="type-btn type-flying" data-type="Flying">Flying</button>
-      <button class="type-btn type-fight" data-type="Fight">Fight</button>
-      <button class="type-btn type-fairy" data-type="Fairy">Fairy</button>
-      <button class="type-btn type-ghost" data-type="Ghost">Ghost</button>
-      <button class="type-btn type-poison" data-type="Poison">Poison</button>
-      <button class="type-btn type-dragon" data-type="Dragon">Dragon</button>
-      <button class="type-btn type-ice" data-type="Ice">Ice</button>
+      <button class="type-btn type-fire" data-type="Fire"><span class="yv-type-label">Fire</span></button>
+      <button class="type-btn type-water" data-type="Water"><span class="yv-type-label">Water</span></button>
+      <button class="type-btn type-grass" data-type="Grass"><span class="yv-type-label">Grass</span></button>
+      <button class="type-btn type-electric" data-type="Electric"><span class="yv-type-label">Electric</span></button>
+      <button class="type-btn type-light" data-type="Light"><span class="yv-type-label">Light</span></button>
+      <button class="type-btn type-dark" data-type="Dark"><span class="yv-type-label">Dark</span></button>
+      <button class="type-btn type-flying" data-type="Flying"><span class="yv-type-label">Flying</span></button>
+      <button class="type-btn type-fight" data-type="Fight"><span class="yv-type-label">Fight</span></button>
+      <button class="type-btn type-fairy" data-type="Fairy"><span class="yv-type-label">Fairy</span></button>
+      <button class="type-btn type-ghost" data-type="Ghost"><span class="yv-type-label">Ghost</span></button>
+      <button class="type-btn type-poison" data-type="Poison"><span class="yv-type-label">Poison</span></button>
+      <button class="type-btn type-dragon" data-type="Dragon"><span class="yv-type-label">Dragon</span></button>
+      <button class="type-btn type-ice" data-type="Ice"><span class="yv-type-label">Ice</span></button>
     </div>
   </div>
 
