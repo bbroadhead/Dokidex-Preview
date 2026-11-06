@@ -101,11 +101,40 @@ for(const [en,pt] of [["Theme","Tema"],["Home","Início"],["Back","Voltar"],["Ba
 
 
 
+// Encounter-map and tracker labels, including strings created after initial page load.
+const japaneseEncounterLabels=[
+ ['Dokimon encounter locations','ドキモンの出現場所'],
+ ['Choose Dokimon','ドキモンを選択'],
+ ['Choose a Dokimon','ドキモンを選択してください'],
+ ['Scrollable encounter map','スクロールできる出現場所マップ'],
+ ['Choose a Dokimon to view its encounter locations.','出現場所を表示するドキモンを選択してください。'],
+ ['No verified map coordinates available.','確認済みのマップ座標はありません。'],
+ ['Other reported locations (not mapped):','その他の報告された出現場所（マップ未登録）：'],
+ ['Other locations:','その他の出現場所：'],
+ ['Selected:','選択中：'],
+ ['mapped encounter locations','件の出現場所がマップに登録されています'],
+ ['mapped encounter location','件の出現場所がマップに登録されています'],
+ ['rare palettes','のレアカラーパターン'],
+ ['Select...','選択...']
+];
+for(const [en,ja] of japaneseEncounterLabels)dict.set(en,ja);
+function translateJapaneseDynamic(value){
+ let result=value;
+ const patterns=[
+  [/^(.*?) — (\d+) mapped encounter locations?$/,(_,name,count)=>(officialNameMap.get(name)||name)+' — '+count+'件の出現場所がマップに登録されています'],
+  [/^Selected: (.*?) · Other locations: (.*)$/,(_,place,others)=>'選択中：'+place+' · その他の出現場所：'+others],
+  [/^(.*?) rare palettes$/,(_,name)=>(officialNameMap.get(name)||name)+'のレアカラーパターン'],
+  [/^(.*?) — (.*)$/,(_,name,place)=>officialNameMap.has(name)?officialNameMap.get(name)+' — '+place:null]
+ ];
+ for(const [pattern,replace] of patterns){const match=result.match(pattern);if(match){const translated=replace(...match);if(translated!==null)return translated}}
+ return result;
+}
 function translateText(value,lang){
   if(!value||!value.trim())return value;
   const trim=value.trim();
   const source=lang==='ko'?koreanDict:lang==='es'?spanishDict:lang==='pt-BR'?portugueseDict:dict;
   if(source.has(trim))return value.replace(trim,source.get(trim));
+  if(lang==='ja'){const dynamic=translateJapaneseDynamic(trim);if(dynamic!==trim)return value.replace(trim,dynamic);}
   if(lang==='ja'||lang==='es'||lang==='pt-BR'){
     // Name-only labels can include a level, index or form suffix.
     const match=trim.match(/^(.+?)(\s*\((?:Lv\.?\s*\d+|Level\s*\d+)\))$/i);
