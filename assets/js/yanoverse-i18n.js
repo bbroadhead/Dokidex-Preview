@@ -204,9 +204,15 @@ const localizedMoveDescriptions=[["Throws a hefty swing at the enemy","きょう
 for(const [english,japanese,spanish] of localizedMoveNames){
  if(japanese)dict.set(english,japanese);
  spanishDict.set(english,spanish);
- // Portuguese uses official Spanish move names until Portuguese move data is available.
- portugueseDict.set(english,spanish);
+ // Portuguese translations are provided in localizedMoveNamesPt below.
 }
+// Korean and Brazilian Portuguese move names translated from the English, Japanese and Spanish source names.
+const localizedMoveNamesKo=["강타","희미한 빛","경보","철벽 웅크리기","베기","날 세우기","휘두르기","방어","정화","눈부신 빛","기습 공격","저글링","빛나는 발톱","돌진","엑스 베기","연막탄","격려","검 베기","나뭇가지 검","치유 약초","끈적한 수액","잎사귀 회전","뿌리 분쇄","덩굴 덫","버섯 방패","씨앗 투척","가시 베기","풀 낫","물보라 강타","만조","닻 강타","바다 소금","빗속 돌진","고요한 물결","잠수","포탄","지글지글","점화","작열하는 발톱","들불","로켓 폭발","화염구","정전기 충격","번개","배터리 번개","오버클록","빛의 올가미","충전 대포","초과 충전","급강하","갈퀴 베기","부리 폭탄","일찍 일어나는 새","돌풍","하늘의 춤","깃털 부채","재빠른 찌르기","연속 타격","강력한 휘두르기","무너뜨리기","괴력 강타","십자 연타","킥킥 웃기","비열한 일격","교묘한 사격","선제타","섀도 복싱","장난 소동","꼬리 덫","어둠의 결속","어둠의 대가","물기","먹물 분사","역병","털뭉치","맹독 아가리","부식","독성 숨결","[미사용 기술]","산성 폭풍","용의 불꽃","날카로운 비늘","용의 턱","용의 탐욕","사나운 눈빛","히드라 폭발","까꿍","간단한 주문","달콤한 노래","무거운 마음","감싸기","하데스의 주먹","빙의","그림자 찢기","사이렌의 비명","일식의 낫","영혼 흡수","동상","빙하 분쇄","눈보라 돌진","서리 신성","빙하의 포옹","얼음 송곳","얼어붙은 사슬","천상의 불꽃"];
+const localizedMoveNamesPt=["Pancada","Cintilação","Alarme","Enrolar de Ferro","Corte","Afiar","Golpe Cortante","Proteger","Purificar","Luz Ofuscante","Ataque Surpresa","Malabarismo","Garras Brilhantes","Debandada","Corte em X","Bomba de Fumaça","Discurso Motivador","Corte de Espada","Lâmina de Galho","Ervas Curativas","Seiva Pegajosa","Giro de Folhas","Raiz Esmagadora","Armadilha de Cipó","Escudo de Cogumelo","Arremesso de Sementes","Corte de Espinhos","Foice de Grama","Golpe de Água","Maré Alta","Golpe de Âncora","Sais Marinhos","Investida Chuvosa","Águas Calmas","Submarino","Bala de Canhão","Crepitar","Incendiar","Garras Abrasadoras","Incêndio Selvagem","Explosão de Foguete","Bola de Fogo","Choque Estático","Relâmpago","Raio de Bateria","Sobrecarga de Clock","Laço de Luz","Canhão de Carga","Supercarga","Mergulho Rasante","Corte de Garras","Bomba de Bico","Madrugador","Rajada de Vento","Dança Celeste","Leque de Penas","Soco Rápido","Golpes em Sequência","Golpe Pesado","Demolição","Golpe Poderoso","Cruz Dupla","Risadinha","Golpe Baixo","Disparo Astuto","Primeiro Golpe","Boxe de Sombras","Travessuras","Armadilha de Cauda","Vínculo Sombrio","Tributo Sombrio","Mordida","Jato de Tinta","Praga","Bola de Pelo","Mandíbula Tóxica","Corrosão","Sopro Venenoso","[GOLPE NÃO UTILIZADO]","Tempestade Ácida","Fogo de Dragão","Escama Afiada","Mandíbula Dracônica","Ganância Dracônica","Olhar Feroz","Explosão de Hidra","Cadê? Achou!","Feitiço Simples","Canção Doce","Coração Pesado","Envolver","Punho de Hades","Assombrar","Rasgo Sombrio","Grito de Sereia","Foice do Eclipse","Drenagem de Alma","Congelamento","Esmagamento Glacial","Investida de Nevasca","Nova de Gelo","Abraço Glacial","Picareta de Gelo","Correntes Congeladas","Chama Empírea"];
+localizedMoveNames.forEach(([english],i)=>{
+ koreanDict.set(english,localizedMoveNamesKo[i]);
+ portugueseDict.set(english,localizedMoveNamesPt[i]);
+});
 for(const [english,japanese,spanish] of localizedMoveDescriptions){
  if(japanese)dict.set(english,japanese);
  spanishDict.set(english,spanish);
