@@ -188,11 +188,11 @@ for(const [english,ja,es,pt] of worldMapStrings){dict.set(english,ja);spanishDic
 const worldMapCountPhrases={ja:{shown:'件の場所を表示',known:'件のドキモン出現記録',mapped:'件の地図登録場所',missing:'件の異なる出現場所は地図座標が未確認です。各ドキモンの詳細ページから検索できます。',mon:'ドキモン'},es:{shown:'ubicaciones mostradas',known:'encuentros Dokimon conocidos',mapped:'ubicaciones en el mapa',missing:'lugares de encuentro distintos aún no tienen coordenadas verificadas. Puedes buscarlos desde los perfiles de Dokimon.',mon:'Dokimon'},'pt-BR':{shown:'locais exibidos',known:'encontros Dokimon conhecidos',mapped:'locais mapeados',missing:'locais de encontro distintos ainda não têm coordenadas verificadas. Eles podem ser pesquisados nos perfis dos Dokimon.',mon:'Dokimon'}};
 function translateWorldMapDynamic(value,lang){
  const t=worldMapCountPhrases[lang];if(!t)return null;
- let m=value.match(/^(\\d+) locations shown$/);if(m)return lang==='ja'?m[1]+t.shown:m[1]+' '+t.shown;
- m=value.match(/^(\\d+) known Dokimon encounter\\(s\\)$/);if(m)return lang==='ja'?m[1]+t.known:m[1]+' '+t.known;
- m=value.match(/^(.*?) — (\\d+) mapped location\\(s\\)$/);if(m)return lang==='ja'?m[1]+' — '+m[2]+t.mapped:m[1]+' — '+m[2]+' '+t.mapped;
- m=value.match(/^(\\d+) distinct encounter locations currently lack verified map coordinates\\. These remain searchable through individual Dokimon profiles\\.$/);if(m)return lang==='ja'?m[1]+t.missing:m[1]+' '+t.missing;
- m=value.match(/^(Mapped|Coordinates needed) · (\\d+) Dokimon$/);if(m)return (lang==='ja'?dict:lang==='es'?spanishDict:portugueseDict).get(m[1])+' · '+m[2]+' '+t.mon;
+ let m=value.match(/^(\d+) locations shown$/);if(m)return lang==='ja'?m[1]+t.shown:m[1]+' '+t.shown;
+ m=value.match(/^(\d+) known Dokimon encounter\(s\)$/);if(m)return lang==='ja'?m[1]+t.known:m[1]+' '+t.known;
+ m=value.match(/^(.*?) — (\d+) mapped location\(s\)$/);if(m)return lang==='ja'?m[1]+' — '+m[2]+t.mapped:m[1]+' — '+m[2]+' '+t.mapped;
+ m=value.match(/^(\d+) distinct encounter locations currently lack verified map coordinates\. These remain searchable through individual Dokimon profiles\.$/);if(m)return lang==='ja'?m[1]+t.missing:m[1]+' '+t.missing;
+ m=value.match(/^(Mapped|Coordinates needed) · (\d+) Dokimon$/);if(m)return (lang==='ja'?dict:lang==='es'?spanishDict:portugueseDict).get(m[1])+' · '+m[2]+' '+t.mon;
  return null;
 }
 
