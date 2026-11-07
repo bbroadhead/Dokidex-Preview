@@ -77,6 +77,22 @@ const koreanPairs=[
 ['YANOVERSE MULTI-DEX','야노버스 멀티 도감']
 ];
 const koreanDict=new Map(koreanPairs);
+// Additional Korean labels used by the standalone bestiary pages and map links.
+for(const [english,korean] of [
+ ['View all encounter locations on map','지도에서 모든 출현 장소 보기'],
+ ['← Return to Dex','← 도감으로 돌아가기'],
+ ['[Evolution only]','[진화로만 획득]'],
+ ['[Evolution Only]','[진화로만 획득]'],
+ ['Evolution only','진화로만 획득'],
+ ['Unmapped locations','지도에 표시되지 않은 장소'],
+ ['No encounter locations found','출현 장소를 찾을 수 없습니다'],
+ ['Encounter Locations','출현 장소'],
+ ['Encounter Location','출현 장소'],
+ ['View on map','지도에서 보기'],
+ ['View on Map','지도에서 보기'],
+ ['Return to Dex','도감으로 돌아가기']
+])koreanDict.set(english,korean);
+
 // Korean monster names from the reviewed 144-entry localization spreadsheet.
 // Indexed by current English site names (including renamed entries), not outdated source labels.
 // Romanization is reference-only and deliberately omitted from display.
@@ -237,16 +253,16 @@ function ensureLocalizedChartLabels(lang){
 }
 function apply(lang){ensureLocalizedChartLabels(lang);document.documentElement.lang=lang;document.documentElement.dataset.language=lang;document.querySelectorAll('.lang-flag[data-lang]').forEach(f=>{const active=f.dataset.lang===lang;f.setAttribute('aria-pressed',String(active));f.classList.toggle('active-language',active)});
 const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement?.closest('script,style,textarea,code,pre,svg,.yv-local-type-label')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});let n;while(n=walker.nextNode()){if(!originals.has(n))originals.set(n,n.nodeValue);const original=originals.get(n);let target=lang==='en'?original:translateText(original,lang);
-if((lang==='ja'||lang==='es'||lang==='pt-BR')&&n.parentElement?.closest('.monster-info')){
+if((lang==='ja'||lang==='ko'||lang==='es'||lang==='pt-BR')&&n.parentElement?.closest('.monster-info')){
  const profile=n.parentElement.closest('.monster-info');
  const heading=profile.querySelector('h1 .dex-number');
  const number=Number(heading?.textContent?.replace(/[^0-9]/g,''));
- const record=(lang==='pt-BR'?portugueseProfiles:lang==='es'?spanishProfiles:officialProfiles)[number-1];
+ const record=lang==='ko'?window.yvKoreanProfiles?.[number]:(lang==='pt-BR'?portugueseProfiles:lang==='es'?spanishProfiles:officialProfiles)[number-1];
  const paragraph=n.parentElement.closest('p');
  const label=paragraph?.querySelector('strong')?.textContent?.trim();
  if(record&&paragraph&&n.parentElement===paragraph){
-   if(label==='Classification:'||label==='分類：'||label==='Clasificación:'||label==='Classificação:')target=record[0]||target;
-   if(label==='Lore:'||label==='図鑑説明：'||label==='Descripción:'||label==='Descrição:')target=record[1]||target;
+   if(label==='Classification:'||label==='分類：'||label==='Clasificación:'||label==='Classificação:'||label==='분류:')target=record[0]||target;
+   if(label==='Lore:'||label==='図鑑説明：'||label==='Descripción:'||label==='Descrição:'||label==='도감 설명:')target=record[1]||target;
  }
 }
 if(n.nodeValue!==target)n.nodeValue=target}
