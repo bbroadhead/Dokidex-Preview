@@ -33,12 +33,30 @@
 
   function centerSelected() {
     const selected=track.querySelector('.yanoverse-game.is-selected');
-    if(!selected) return;
+    const picker=track.closest('.yanoverse-game-picker');
+    if(!selected || !picker) return;
 
-    // Always measure from a known neutral position. Measuring offsetLeft on
-    // this flex track is unreliable on monster pages because their legacy
-    // header CSS gives the track a different containing block.
+    // Normalize the selector geometry on every page before measuring.
+    // This neutral state is identical on the homepage and monster pages.
+    picker.style.setProperty('position','relative','important');
+    picker.style.setProperty('left','50%','important');
+    picker.style.setProperty('width','100vw','important');
+    picker.style.setProperty('max-width','100vw','important');
+    picker.style.setProperty('margin-left','-50vw','important');
+    picker.style.setProperty('margin-right','0','important');
+    picker.style.setProperty('overflow','hidden','important');
+    picker.style.setProperty('box-sizing','border-box','important');
+
+    track.style.setProperty('position','relative','important');
+    track.style.setProperty('left','50%','important');
+    track.style.setProperty('display','flex','important');
+    track.style.setProperty('width','max-content','important');
+    track.style.setProperty('max-width','none','important');
+    track.style.setProperty('margin','0','important');
+    track.style.setProperty('overflow','visible','important');
+    track.style.setProperty('scroll-snap-type','none','important');
     track.style.setProperty('transform','translateX(-50%)','important');
+
     const rect=selected.getBoundingClientRect();
     const shift=(window.innerWidth/2)-(rect.left+rect.width/2);
     track.style.setProperty('transform','translateX(calc(-50% + '+shift+'px))','important');
@@ -75,6 +93,7 @@
   }));
   applyBrandColors();
   window.addEventListener('resize',scheduleCenter);
+  window.addEventListener('orientationchange',scheduleCenter);
   window.addEventListener('load',scheduleCenter);
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleCenter);
   if('ResizeObserver' in window){
