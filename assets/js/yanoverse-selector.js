@@ -36,8 +36,7 @@
     const picker=track.closest('.yanoverse-game-picker');
     if(!selected || !picker) return;
 
-    // Normalize the selector geometry on every page before measuring.
-    // This neutral state is identical on the homepage and monster pages.
+    // Normalize the same viewport-anchored geometry on every page.
     picker.style.setProperty('position','relative','important');
     picker.style.setProperty('left','50%','important');
     picker.style.setProperty('width','100vw','important');
@@ -55,7 +54,14 @@
     track.style.setProperty('margin','0','important');
     track.style.setProperty('overflow','visible','important');
     track.style.setProperty('scroll-snap-type','none','important');
+
+    // A transition on the track makes measurements depend on the previous
+    // animation frame, which creates cumulative drift. Measure from a truly
+    // neutral, non-animated position every time.
+    track.style.setProperty('transition','none','important');
+    track.scrollLeft=0;
     track.style.setProperty('transform','translateX(-50%)','important');
+    void track.offsetWidth; // force layout after clearing the old transform
 
     const rect=selected.getBoundingClientRect();
     const shift=(window.innerWidth/2)-(rect.left+rect.width/2);
