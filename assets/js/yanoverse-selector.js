@@ -13,15 +13,12 @@
     const selected=track.querySelector('.yanoverse-game.is-selected');
     if(!selected) return;
 
-    // Reset to the neutral centered strip, then measure the selected card
-    // against the actual viewport. This is independent of offsetParent.
-    track.style.transition='none';
-    track.style.transform='translateX(-50%)';
-    void track.offsetWidth;
+    // Clear the previous shift, then measure the selected card in viewport
+    // coordinates after the browser has applied its selected dimensions.
+    track.style.setProperty('--selected-shift','0px');
     const rect=selected.getBoundingClientRect();
-    const delta=(window.innerWidth/2)-(rect.left+rect.width/2);
-    track.style.transform='translateX(calc(-50% + '+delta+'px))';
-    requestAnimationFrame(()=>{ track.style.transition='transform .3s ease'; });
+    const shift=(window.innerWidth/2)-(rect.left+rect.width/2);
+    track.style.setProperty('--selected-shift',shift+'px');
   }
   function select(id) {
     const game=games.find(g=>g.id===id)||games[1];
@@ -52,6 +49,7 @@
     select(id);
   }));
   window.addEventListener('resize',()=>requestAnimationFrame(centerSelected));
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>requestAnimationFrame(centerSelected));
   let saved='quest';
   try {saved=sessionStorage.getItem('yanoverse-game')||'quest';} catch(e) {}
   select(saved);
