@@ -2906,3 +2906,146 @@ body.in-panel .nav-arrow.right-arrow {
     align-items:center!important;
   }
 }
+
+
+/* Shared Yanoverse selector and profile layout: applies on every page. */
+html body .yanoverse-brand{
+  color:#aab8ce!important;
+  -webkit-text-fill-color:#aab8ce!important;
+  background:transparent!important;
+  background-image:none!important;
+  background-clip:border-box!important;
+  -webkit-background-clip:border-box!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+  text-shadow:none!important;
+}
+html body .yanoverse-brand span{
+  color:#7487a2!important;
+  -webkit-text-fill-color:#7487a2!important;
+  background:transparent!important;
+  background-image:none!important;
+  background-clip:border-box!important;
+  -webkit-background-clip:border-box!important;
+  filter:none!important;
+  opacity:1!important;
+  mix-blend-mode:normal!important;
+  text-shadow:none!important;
+}
+html body .yanoverse-game-picker{
+  position:relative!important;
+  left:50%!important;
+  width:100vw!important;
+  max-width:100vw!important;
+  margin-left:-50vw!important;
+  margin-right:0!important;
+  box-sizing:border-box!important;
+  overflow:hidden!important;
+}
+html body .yanoverse-game-track{
+  position:relative!important;
+  left:50%!important;
+  width:max-content!important;
+  max-width:none!important;
+  margin:0!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+  scroll-snap-type:none!important;
+  transition:transform .3s ease!important;
+}
+
+/* Desktop profile: the rare-forms panel spans its own row; the three
+   primary content panels share the next row without creating an overflow
+   implicit fourth column. */
+@media(min-width:769px){
+  html body main.page-content{
+    width:calc(100% - 112px)!important;
+    max-width:1600px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-profile{
+    display:block!important;
+    width:100%!important;
+    max-width:1600px!important;
+    min-width:0!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding:16px clamp(12px,1.5vw,24px)!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-profile .monster-layout-row{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    grid-auto-flow:row!important;
+    align-items:stretch!important;
+    justify-content:stretch!important;
+    justify-items:stretch!important;
+    gap:clamp(12px,1.5vw,24px)!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0 auto!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-profile .monster-layout-row>.forms-wrapper{
+    grid-column:1/-1!important;
+    grid-row:auto!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    padding:12px!important;
+    box-sizing:border-box!important;
+    justify-self:stretch!important;
+  }
+  html body .monster-profile .monster-layout-row>.monster-image-container,
+  html body .monster-profile .monster-layout-row>.monster-info,
+  html body .monster-profile .monster-layout-row>.stats-side{
+    grid-column:auto!important;
+    grid-row:auto!important;
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:clamp(12px,1.5vw,22px)!important;
+    box-sizing:border-box!important;
+    justify-self:stretch!important;
+    align-self:stretch!important;
+  }
+  html body .monster-profile .monster-layout-row>.monster-image-container{
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  html body .monster-profile #main-monster-image{
+    display:block!important;
+    width:100%!important;
+    max-width:min(100%,360px)!important;
+    height:auto!important;
+    max-height:420px!important;
+    object-fit:contain!important;
+  }
+  html body .monster-profile .monster-layout-row>.monster-info{
+    overflow-wrap:anywhere!important;
+  }
+  html body .monster-profile .monster-layout-row>.stats-side{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+  }
+  html body .monster-profile .monster-layout-row>.stats-side canvas,
+  html body .monster-profile .monster-layout-row>.stats-side .monster-stats{
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+  }
+}
+@media(max-width:768px){
+  html body .yanoverse-game-picker{width:100vw!important}
+  html body .yanoverse-game-track{gap:8px!important}
+}
