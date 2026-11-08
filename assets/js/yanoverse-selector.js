@@ -12,10 +12,16 @@
   function centerSelected() {
     const selected=track.querySelector('.yanoverse-game.is-selected');
     if(!selected) return;
-    // Use untransformed layout coordinates to avoid animation drift.
-    const selectedCenter=selected.offsetLeft + selected.offsetWidth / 2;
-    const trackCenter=track.scrollWidth / 2;
-    track.style.setProperty('--selected-offset', (selectedCenter-trackCenter)+'px');
+
+    // Reset to the neutral centered strip, then measure the selected card
+    // against the actual viewport. This is independent of offsetParent.
+    track.style.transition='none';
+    track.style.transform='translateX(-50%)';
+    void track.offsetWidth;
+    const rect=selected.getBoundingClientRect();
+    const delta=(window.innerWidth/2)-(rect.left+rect.width/2);
+    track.style.transform='translateX(calc(-50% + '+delta+'px))';
+    requestAnimationFrame(()=>{ track.style.transition='transform .3s ease'; });
   }
   function select(id) {
     const game=games.find(g=>g.id===id)||games[1];
@@ -25,7 +31,7 @@
       btn.setAttribute('aria-pressed',String(selected));
     });
     const selected=buttons.find(btn=>btn.dataset.game===game.id);
-    requestAnimationFrame(centerSelected);
+    requestAnimationFrame(()=>requestAnimationFrame(centerSelected));
     const main=document.querySelector('main.page-content');
     if(main) main.hidden=game.id!=='quest';
     notice.hidden=game.id==='quest';
