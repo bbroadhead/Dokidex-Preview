@@ -1,63 +1,51 @@
-# Dokimon: Quest - Dokidex
+# Yanoverse Multi-Dex
 
-Welcome to the **Dokidex**, a Jekyll-based site designed as a dedicated monster encyclopedia for the monster-taming game **Dokimon: Quest**.
+A multilingual, multi-game monster encyclopedia for the Yanoverse.
 
-## 🌐 Live Site
+**Live site:** https://bbroadhead.github.io/Yanoverse-Multidex/  
+**Repository:** https://github.com/bbroadhead/Yanoverse-Multidex
 
-View the site live via GitLab Pages:  
-👉 https://dokimon.gitlab.io/dokimon-quest
+## What it includes
 
-## 📦 Features (all of these are work in progress)
+- **Multi-game selector** for Dokimon: Quest, Dokimon Quest 2, Yami Kids, and Nuumonsters.
+- **Monster encyclopedia** with individual profiles, artwork, types, stats, evolutions, moves, forms, and encounter information where data is available.
+- **World reference** with localized content and supporting sub-sections.
+- **Dokitracker** for tracking collection and completion progress.
+- **Multilingual interface and monster data**, including English, Japanese, Spanish, Portuguese, and Korean content where available.
+- Responsive desktop and mobile layouts, with a shared game selector across pages.
 
-- 🧬 Evolution chain display
-- 🎨 Type-based colored borders and background tints
-- 🔥 Multi-select type filtering
-- 🎚️ Stage and 🗺️ location filters
-- 🔍 Live name search
-- 🌓 Dark mode toggle with sun/moon icon
-- 🎛️ Collapsible filter controls
-- 🔒 Image protection overlay and anti-right-click
-- 🌍 Multilingual support placeholders (🇺🇸 🇯🇵 🇧🇷 🇪🇸 🇰🇷)
+## Repository structure
 
-## 🗂 Folder Structure
+| Path | Purpose |
+|---|---|
+| `index.html` | Main Multi-Dex landing page |
+| `dokimon/` | Individual Dokimon profile pages |
+| `world/` | World reference pages |
+| `dokitracker/` | Dokitracker experience |
+| `assets/` | Images, logos, stylesheets, scripts, and supporting assets |
+| `styles.css` | Shared site styling |
 
-```
-├── _data/
-│   └── dokimon.yml              # Core monster data (depricated)
-├── _dokimon/
-│   └── (monster_name).md        # Core monster data (individual monster markdown files)
-├── _layouts/
-│   ├── default.html             # Site wrapper and header
-│   └── dex_entry.html           # Individual monster detail layout
-├── assets/
-│   └── images/
-│       ├── dokimon_wiki_header.png
-│       ├── favicon.png
-│       └── monster image assets
-├── index.md                     # Main Dex page with filters
-├── styles.css                   # All styling (dark mode, type colors, etc.)
-└── README.md                    # This file
-```
+## Deployment
 
-## 🖼️ How to Add/Update Dokimon
+This repository is configured for **GitHub Pages**.
 
-Edit the individual .md files in `_dokimon` to update names, types, stages, images, evolutions, and multilingual text. All pages and filters update automatically based on this file.
+- Production branch: `main`
+- Published URL: https://bbroadhead.github.io/Yanoverse-Multidex/
+- GitHub Pages settings: **Settings → Pages**
 
-## 🛠️ Development
+The site is a static website. Changes merged or pushed to `main` are published by GitHub Pages after its build completes.
 
-To preview locally:
+## Development workflow
 
-```bash
-bundle install
-bundle exec jekyll serve
-```
+- Make and test changes in the repository before publishing.
+- Keep shared navigation, selector behavior, and responsive styling consistent across the landing page, monster profiles, World pages, and Dokitracker.
+- Verify both desktop and mobile layouts after changes.
+- Keep asset and internal navigation paths rooted at `/Yanoverse-Multidex/` for the GitHub Pages project-site URL.
 
-Then open: [http://localhost:4000](http://localhost:4000)
+## Notes
 
+Some game selections may display a development or “data coming soon” notice until their datasets and pages are ready. The presence of a game in the selector does not imply that its full encyclopedia is complete.
 
-## 💡 Credits
+---
 
-- Game: **Dokimon: Quest**
-- by: Yanako RPGs
-- https://www.yanakorpgs.com/
-- Dokidex: Benjamin Broadhead (KnightExcalibur)
+Yanoverse Multi-Dex is an independent fan-made reference project and is not an official game publication.
