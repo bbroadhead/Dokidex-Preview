@@ -2842,3 +2842,67 @@ body.in-panel .nav-arrow.right-arrow {
   .evolution-wrapper * { font-size: .88rem !important; }
   .evolution-wrapper img { max-width: 88% !important; }
 }
+
+
+/* Center the desktop monster profile as a contained three-column group. */
+@media (min-width: 769px) {
+  html body .page-content {
+    width:100%!important;
+    max-width:1240px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-profile {
+    display:block!important;
+    width:100%!important;
+    max-width:1400px!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    padding-left:clamp(12px,1.5vw,24px)!important;
+    padding-right:clamp(12px,1.5vw,24px)!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-layout-row {
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    align-items:start!important;
+    justify-content:center!important;
+    gap:clamp(12px,1.5vw,24px)!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-layout-row > .monster-image-container,
+  html body .monster-layout-row > .monster-info,
+  html body .monster-layout-row > .stats-side {
+    grid-column:auto!important;
+    width:100%!important;
+    min-width:0!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:clamp(12px,1.5vw,20px)!important;
+    box-sizing:border-box!important;
+    justify-self:stretch!important;
+  }
+  html body .monster-layout-row > .monster-image-container {
+    display:flex!important;
+    justify-content:center!important;
+    align-items:center!important;
+  }
+  html body .monster-layout-row > .monster-info {
+    overflow-wrap:anywhere!important;
+  }
+  html body .monster-layout-row > .stats-side {
+    align-items:center!important;
+  }
+}
+@media (max-width:768px) {
+  html body .monster-layout-row {
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+}
