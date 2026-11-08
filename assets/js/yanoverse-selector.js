@@ -34,9 +34,13 @@
   function centerSelected() {
     const selected=track.querySelector('.yanoverse-game.is-selected');
     if(!selected) return;
-    // Calculate entirely in the track's own layout coordinates. This avoids
-    // measuring a transformed element and accumulating positional drift.
-    const shift=(track.clientWidth/2)-(selected.offsetLeft+selected.offsetWidth/2);
+
+    // Always measure from a known neutral position. Measuring offsetLeft on
+    // this flex track is unreliable on monster pages because their legacy
+    // header CSS gives the track a different containing block.
+    track.style.setProperty('transform','translateX(-50%)','important');
+    const rect=selected.getBoundingClientRect();
+    const shift=(window.innerWidth/2)-(rect.left+rect.width/2);
     track.style.setProperty('transform','translateX(calc(-50% + '+shift+'px))','important');
   }
   function scheduleCenter() {
