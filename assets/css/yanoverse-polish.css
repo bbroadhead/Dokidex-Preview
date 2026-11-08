@@ -850,3 +850,164 @@ html body .site-header .site-nav :is(a,button,.dropdown-toggle){
  font-size:clamp(24px,2.5vw,30px)!important;
  font-weight:400!important;
 }
+
+
+/* Desktop-only refinement. Mobile rules and the main Dex card grid are intentionally untouched. */
+@media (min-width: 701px) {
+  /* Center the game-logo selector within the full header width. */
+  html body .yanoverse-game-track {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+
+  /* Slightly reduce the desktop navigation controls without changing their styling. */
+  html body .site-nav :is(a,button,.dropdown-toggle),
+  html body .site-nav .nav-left :is(a,button,.dropdown-toggle) {
+    font-size: clamp(19px, 1.8vw, 23px) !important;
+    padding: .38rem .72rem !important;
+  }
+
+  /* Compact the filter toggle and filter panel; preserve colors, borders and type artwork. */
+  html body #filter-toggle {
+    font-size: 21px !important;
+    padding: 8px 16px !important;
+    margin-top: 8px !important;
+  }
+  html body #dex-filter-controls.filter-controls {
+    width: min(100% - 32px, 1050px) !important;
+    max-width: 1050px !important;
+    box-sizing: border-box !important;
+    gap: 12px !important;
+    padding: 12px 16px !important;
+    margin: 10px auto !important;
+  }
+  html body #dex-filter-controls .filter-block {
+    gap: 6px !important;
+  }
+  html body #dex-filter-controls .filter-block label,
+  html body #dex-filter-controls label {
+    font-size: 19px !important;
+    line-height: 1 !important;
+  }
+  html body #dex-filter-controls select,
+  html body #dex-filter-controls input {
+    font-size: 17px !important;
+    min-height: 38px !important;
+    padding: 6px 10px !important;
+  }
+  html body #dex-filter-controls #type-filters {
+    gap: 6px !important;
+  }
+  html body #dex-filter-controls #type-filters .type-btn {
+    min-height: 32px !important;
+    height: 32px !important;
+    padding: 2px !important;
+  }
+  html body #dex-filter-controls #type-filters .type-btn .yv-type-label {
+    font-size: 14px !important;
+  }
+  html body #dex-filter-controls #clear-filters {
+    font-size: 16px !important;
+    padding: 7px 14px !important;
+  }
+
+  /* Give monster profiles the available desktop width between the fixed side arrows. */
+  html body .monster-profile {
+    width: calc(100vw - 150px) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin-inline: auto !important;
+    padding-inline: clamp(12px, 1.5vw, 26px) !important;
+  }
+
+  /* Compact the evolution chain and move-list control only on desktop. */
+  html body .monster-profile .top-bar > .evolution-wrapper {
+    width: min(100%, 570px) !important;
+    max-width: 570px !important;
+    padding: 7px !important;
+  }
+  html body .monster-profile .evolution-wrapper .evo-chain {
+    gap: 6px !important;
+  }
+  html body .monster-profile .evolution-wrapper .evo-chain > div:nth-child(odd) > div {
+    font-size: clamp(14px, 1.15vw, 18px) !important;
+  }
+  html body .monster-profile .move-toggle-btn {
+    font-size: 17px !important;
+    padding: 5px 10px !important;
+  }
+  html body .monster-profile .move-list-container {
+    margin-top: 4px !important;
+  }
+
+  /* Three balanced content columns, with the rare-form section spanning the row.
+     The fixed left/right navigation buttons are not selected or restyled here. */
+  html body .monster-profile .monster-layout-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr) !important;
+    align-items: center !important;
+    justify-items: center !important;
+    justify-content: stretch !important;
+    gap: clamp(12px, 1.4vw, 24px) !important;
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    padding-inline: clamp(8px, 1vw, 18px) !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container,
+  html body .monster-profile .monster-layout-row > .monster-info,
+  html body .monster-profile .monster-layout-row > .stats-side {
+    grid-row: 1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    justify-self: stretch !important;
+    align-self: center !important;
+    margin: 0 !important;
+    padding: clamp(8px, 1vw, 16px) !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container {
+    grid-column: 1 !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-info {
+    grid-column: 2 !important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side {
+    grid-column: 3 !important;
+  }
+  html body .monster-profile .monster-layout-row > .forms-wrapper {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    justify-self: stretch !important;
+    align-self: center !important;
+    margin: 0 !important;
+    padding: clamp(8px, 1vw, 16px) !important;
+    box-sizing: border-box !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container #main-monster-image {
+    max-width: min(100%, 330px) !important;
+    max-height: 390px !important;
+    object-fit: contain !important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-info {
+    overflow-wrap: anywhere !important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  html body .monster-profile .stats-side .monster-stats-visual {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  html body .monster-profile .forms-wrapper .forms-container,
+  html body .monster-profile .forms-wrapper .forms-images,
+  html body .monster-profile .forms-wrapper .forms-extra-row {
+    justify-content: center !important;
+    margin-inline: auto !important;
+  }
+}
