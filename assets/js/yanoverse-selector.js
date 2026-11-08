@@ -9,13 +9,13 @@
   const notice=document.getElementById('yanoverse-game-notice');
   if(!track || !notice) return;
   const buttons=[...track.querySelectorAll('[data-game]')];
-  let trackShift=0;
   function centerSelected() {
     const selected=track.querySelector('.yanoverse-game.is-selected');
     if(!selected) return;
-    const rect=selected.getBoundingClientRect();
-    trackShift += (window.innerWidth / 2) - (rect.left + rect.width / 2);
-    track.style.transform=`translateX(calc(-50% + ${trackShift}px))`;
+    // Use untransformed layout coordinates to avoid animation drift.
+    const selectedCenter=selected.offsetLeft + selected.offsetWidth / 2;
+    const trackCenter=track.scrollWidth / 2;
+    track.style.setProperty('--selected-offset', (selectedCenter-trackCenter)+'px');
   }
   function select(id) {
     const game=games.find(g=>g.id===id)||games[1];
@@ -25,8 +25,6 @@
       btn.setAttribute('aria-pressed',String(selected));
     });
     const selected=buttons.find(btn=>btn.dataset.game===game.id);
-    trackShift=0;
-    track.style.transform='translateX(-50%)';
     requestAnimationFrame(centerSelected);
     const main=document.querySelector('main.page-content');
     if(main) main.hidden=game.id!=='quest';
@@ -47,11 +45,7 @@
     }
     select(id);
   }));
-  window.addEventListener('resize',()=>{
-    trackShift=0;
-    track.style.transform='translateX(-50%)';
-    requestAnimationFrame(centerSelected);
-  });
+  window.addEventListener('resize',()=>requestAnimationFrame(centerSelected));
   let saved='quest';
   try {saved=sessionStorage.getItem('yanoverse-game')||'quest';} catch(e) {}
   select(saved);
