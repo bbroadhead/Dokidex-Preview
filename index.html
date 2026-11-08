@@ -4426,5 +4426,26 @@ html body .yanoverse-game:not(.is-selected) small{
  html body .yanoverse-game:not(.is-selected) small{font-size:11px!important}
 }
 </style>
+
+<style id="yv-final-selector-and-filter-fixes">
+html body .yanoverse-game-track{
+  transform:translateX(calc(-50% - var(--selected-offset, 0px)))!important;
+}
+html body .yanoverse-brand,
+html body .yanoverse-brand span{
+  color:#aab8ce!important;
+  -webkit-text-fill-color:#aab8ce!important;
+  background:none!important;
+  background-image:none!important;
+  text-shadow:none!important;
+}
+html body #filter-toggle{
+  min-height:34px!important;
+  padding:6px 13px!important;
+  margin:4px auto 14px!important;
+  font:400 clamp(16px,1.5vw,19px)/1.1 'VT323',monospace!important;
+  border-radius:9px!important;
+}
+</style>
 </body>
 </html>
