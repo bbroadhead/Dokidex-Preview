@@ -3097,3 +3097,31 @@ html body .yanoverse-game-track{
     box-sizing:border-box!important;
   }
 }
+
+
+/* Final desktop monster stats sizing: don't let the chart panel stretch
+   to the height of the tallest content column. */
+@media (min-width: 769px) {
+  html body .monster-profile .monster-layout-row > .stats-side {
+    align-self:start!important;
+    justify-self:stretch!important;
+    height:fit-content!important;
+    min-height:0!important;
+    max-height:440px!important;
+    overflow:hidden!important;
+    margin-top:0!important;
+    padding-top:12px!important;
+    padding-bottom:12px!important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side canvas,
+  html body .monster-profile .monster-layout-row > .stats-side #statRadarChart {
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    max-width:300px!important;
+    max-height:300px!important;
+    aspect-ratio:1/1!important;
+    object-fit:contain!important;
+    flex:0 1 auto!important;
+  }
+}
