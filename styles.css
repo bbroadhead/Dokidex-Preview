@@ -2833,3 +2833,12 @@ body.in-panel .nav-arrow.right-arrow {
   #dex-grid .dex-entry:hover,#dex-grid .dex-entry:focus-within,#dex-grid .dex-entry:active{transform:none!important}
   #dex-grid .dex-entry:hover .monster-image.small{transform:none!important}
 }
+
+
+/* Compact the evolution chain on desktop without changing mobile. */
+@media (min-width: 900px) {
+  .evolution-wrapper { zoom: .84; }
+  .evolution-wrapper,
+  .evolution-wrapper * { font-size: .88rem !important; }
+  .evolution-wrapper img { max-width: 88% !important; }
+}
