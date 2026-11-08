@@ -3049,3 +3049,51 @@ html body .yanoverse-game-track{
   html body .yanoverse-game-picker{width:100vw!important}
   html body .yanoverse-game-track{gap:8px!important}
 }
+
+
+/* Individual monster pages: explicitly place every direct child.
+   The old grid-area names caused the stats panel to auto-place into a
+   different row from the image and information cards. */
+@media (min-width: 769px) {
+  html body .monster-profile .monster-layout-row {
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    grid-template-rows:auto minmax(0,auto)!important;
+    grid-auto-flow:row!important;
+    align-items:stretch!important;
+    justify-items:stretch!important;
+    gap:clamp(14px,1.5vw,24px)!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0 auto!important;
+  }
+  html body .monster-profile .monster-layout-row > .forms-wrapper {
+    grid-area:1 / 1 / 2 / 4!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container {
+    grid-area:2 / 1 / 3 / 2!important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-info {
+    grid-area:2 / 2 / 3 / 3!important;
+  }
+  html body .monster-profile .monster-layout-row > .stats-side {
+    grid-area:2 / 3 / 3 / 4!important;
+  }
+  html body .monster-profile .monster-layout-row > .monster-image-container,
+  html body .monster-profile .monster-layout-row > .monster-info,
+  html body .monster-profile .monster-layout-row > .stats-side {
+    align-self:stretch!important;
+    justify-self:stretch!important;
+    min-width:0!important;
+    max-width:none!important;
+    width:100%!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+}
