@@ -1,6 +1,6 @@
 const dokimonList = MONDEX_DATA; // from mondex_data.js
-// The preview is hosted below /Dokidex-Preview/; production is at the domain root.
-const dokiSiteBase = window.location.pathname.startsWith('/Dokidex-Preview/') ? '/Dokidex-Preview' : '';
+// GitHub Pages project site is hosted below /Yanoverse-Multidex/.
+const dokiSiteBase = window.location.pathname.startsWith('/Yanoverse-Multidex/') ? '/Yanoverse-Multidex' : '';
 const dokiAssetUrl = path => dokiSiteBase + path;
 
 
