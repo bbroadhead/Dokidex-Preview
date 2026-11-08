@@ -91,7 +91,7 @@
     const id=btn.dataset.game;
     // A second tap on the active game acts as a Home shortcut.
     if(btn.classList.contains('is-selected')){
-      const home='/Dokidex-Preview/'; 
+      const home='/Yanoverse-Multidex/'; 
       window.location.assign(home);
       return;
     }
