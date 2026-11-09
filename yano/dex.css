@@ -1478,3 +1478,42 @@ html body.yano-dex #profile .monster-stats .yv-stat-value{
   font-size:clamp(10px,2.7vw,12px)!important;
  }
 }
+
+/* Mobile listing: remove the outer page gutters as well as grid padding.
+   Previous card-only changes left the page container's padding intact. */
+@media(max-width:600px){
+ html body.yano-dex main.page-content:has(#dex-list:not([hidden])){
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  padding-left:4px!important;
+  padding-right:4px!important;
+ }
+ html body.yano-dex #dex-list{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+  gap:7px!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry{
+  flex:0 0 clamp(96px,calc((100% - 14px)/3),116px)!important;
+  width:clamp(96px,calc((100% - 14px)/3),116px)!important;
+  min-width:0!important;
+  max-width:116px!important;
+ }
+}
