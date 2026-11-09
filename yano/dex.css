@@ -749,3 +749,23 @@ html body.yano-dex #dex-grid.dex-grid>.dex-entry{
   max-width:165px!important;
  }
 }
+
+/* The Multi-Dex wordmark follows the selected game's accent palette. */
+html body.yano-dex[data-theme="yami-kids"] > .yanoverse-brand{
+ color:#ff9690!important;
+ -webkit-text-fill-color:#ff9690!important;
+ text-shadow:0 0 12px rgba(223,72,72,.28)!important;
+}
+html body.yano-dex[data-theme="yami-kids"] > .yanoverse-brand span{
+ color:#df4848!important;
+ -webkit-text-fill-color:#df4848!important;
+}
+html body.yano-dex[data-theme="nuumonsters"] > .yanoverse-brand{
+ color:#85efcb!important;
+ -webkit-text-fill-color:#85efcb!important;
+ text-shadow:0 0 12px rgba(55,196,173,.25)!important;
+}
+html body.yano-dex[data-theme="nuumonsters"] > .yanoverse-brand span{
+ color:#37c4ad!important;
+ -webkit-text-fill-color:#37c4ad!important;
+}
