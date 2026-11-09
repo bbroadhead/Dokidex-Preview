@@ -65,3 +65,24 @@ body.yano-dex{margin:0;font-family:system-ui,sans-serif}
 .yano-dex #profile .evo img{max-width:55px;max-height:55px;image-rendering:pixelated}
 @media(max-width:768px){.yano-dex #profile .monster-layout-row{grid-template-columns:1fr!important}.yano-dex #profile .monster-image-container{min-height:200px}.yano-dex .yanoverse-game{flex-basis:125px;width:125px;height:95px}.yano-dex .yanoverse-game.is-selected{flex-basis:190px;width:190px;height:110px}.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:8px!important}.yano-dex #dex-grid .img-wrapper{width:100px;height:100px}.yano-dex #dex-grid .monster-image.small{max-width:96px!important;max-height:96px!important}.yano-dex #dex-grid .dex-entry{min-height:205px}.yano-dex #dex-filter-controls{gap:10px}}
 @media(prefers-reduced-motion:reduce){.yano-dex .dex-entry,.yano-dex .yanoverse-game{transition:none!important}}
+
+/* Scoped refinements: preserve the working grid, filters and data renderer. */
+body.yano-dex .yanoverse-game-picker{position:relative!important;left:50%!important;width:100vw!important;margin-left:-50vw!important;overflow:hidden!important}
+body.yano-dex .yanoverse-game-track{position:relative!important;left:auto!important;transform:none!important;display:flex!important;justify-content:center!important;align-items:center!important;gap:10px!important;width:max-content!important;max-width:none!important;margin:0 auto!important}
+body.yano-dex .yanoverse-game{flex-shrink:0!important}
+body.yano-dex .yanoverse-game-title{width:100%!important;text-align:center!important;white-space:normal!important}
+body.yano-dex #dex-filter-controls #search{width:240px!important;min-width:240px!important;max-width:100%!important}
+body.yano-dex #type-filters .type-btn{--type-color:#789bc2;background:linear-gradient(180deg,color-mix(in srgb,var(--type-color),white 25%),var(--type-color) 52%,color-mix(in srgb,var(--type-color),black 36%))!important;border-color:color-mix(in srgb,var(--type-color),white 35%)!important;color:white!important;text-shadow:1px 1px #0009!important}
+body.yano-dex #type-filters .type-btn.active{outline:2px solid #d8eaff!important;outline-offset:2px!important;box-shadow:0 0 15px var(--type-color)!important}
+body.yano-dex #dex-grid .dex-entry{--type-glow:#789bc2;border-color:color-mix(in srgb,var(--type-glow),transparent 45%)!important;box-shadow:inset 0 1px 0 #ffffff22,0 8px 24px #0004,0 0 14px color-mix(in srgb,var(--type-glow),transparent 75%)!important}
+body.yano-dex #dex-grid .dex-entry:hover{border-color:var(--type-glow)!important;box-shadow:0 14px 28px #0007,0 0 22px color-mix(in srgb,var(--type-glow),transparent 42%)!important}
+body.yano-dex .dex-card-type{--type-color:#789bc2;background:color-mix(in srgb,var(--type-color),#16263b 54%)!important;border-color:var(--type-color)!important;color:white!important}
+body.yano-dex #dex-grid .img-wrapper,body.yano-dex #dex-grid .monster-image,body.yano-dex #profile .hero-image{background:transparent!important;background-image:none!important;box-shadow:none!important}
+body.yano-dex #profile .profile-navigation{display:grid;grid-template-columns:40px minmax(0,1fr) 40px;gap:10px;align-items:center}
+body.yano-dex #profile .profile-navigation>.monster-layout-row{min-width:0!important;width:100%!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+body.yano-dex #profile .nav-arrow{display:flex;align-items:center;justify-content:center;width:40px;height:64px;background:linear-gradient(145deg,#2b4767,#14283e);border:1px solid #93b7df66;border-radius:10px;color:#e7f4ff;text-decoration:none;font:400 40px 'VT323',monospace}
+body.yano-dex #profile .nav-arrow:hover{background:#365c83}
+body.yano-dex #profile .monster-layout-row>.monster-image-container{background:transparent!important;background-image:none!important;border:0!important;box-shadow:none!important}
+body.yano-dex #profile .monster-layout-row>.monster-info,body.yano-dex #profile .monster-layout-row>.stats-side{min-width:0!important;max-width:none!important;width:100%!important;grid-area:auto!important}
+body.yano-dex #profile .stats-side{height:fit-content!important;max-height:none!important;overflow:visible!important}
+@media(max-width:768px){body.yano-dex #profile .profile-navigation{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}body.yano-dex #profile .nav-arrow{width:28px;height:52px;font-size:30px}body.yano-dex #profile .profile-navigation>.monster-layout-row{display:flex!important;flex-direction:column!important;align-items:center!important}body.yano-dex #profile .monster-layout-row>div{width:100%!important}}
