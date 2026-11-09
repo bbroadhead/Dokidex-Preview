@@ -1090,3 +1090,19 @@ html body.dark-mode:not(.yano-dex) :is(.yv-map-directory-item,.yv-map-detail,.yv
  color:#eaf3ff!important;
 }
 html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.return-link,.yv-back-link,.profile-number,.yv-profile-number){color:#9cc8f1!important}
+
+/* Original Dokidex evolution levels: show beneath the connecting arrows. */
+html body:not(.yano-dex) .monster-profile .evolution-wrapper .evo-chain>.yv-evolution-transition{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ gap:2px!important;
+ line-height:1.05!important;
+ white-space:nowrap!important;
+}
+html body:not(.yano-dex) .monster-profile .evolution-wrapper .yv-evolution-level{
+ display:block!important;
+ font:400 15px/1.1 'VT323',monospace!important;
+ color:#a9cdef!important;
+}
