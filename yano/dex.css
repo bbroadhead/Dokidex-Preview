@@ -1121,3 +1121,33 @@ html body.yano-dex[data-theme] main.page-content{
  background:transparent!important;
  background-image:none!important;
 }
+
+/* Evolution chains: full-size artwork must be given explicit rendered
+   dimensions (max-width alone leaves tiny source sprites tiny). */
+html body.yano-dex #profile .evolution-wrapper .evo img.evo-sprite,
+html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo img.evo-sprite{
+ display:block!important;
+ width:82px!important;
+ height:82px!important;
+ min-width:82px!important;
+ min-height:82px!important;
+ max-width:82px!important;
+ max-height:82px!important;
+ object-fit:contain!important;
+ image-rendering:pixelated!important;
+}
+html body.yano-dex #profile .evolution-wrapper .evo a{
+ min-width:90px!important;
+}
+@media(max-width:600px){
+ html body.yano-dex #profile .evolution-wrapper .evo img.evo-sprite,
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo img.evo-sprite{
+  width:68px!important;
+  height:68px!important;
+  min-width:68px!important;
+  min-height:68px!important;
+  max-width:68px!important;
+  max-height:68px!important;
+ }
+ html body.yano-dex #profile .evolution-wrapper .evo a{min-width:74px!important}
+}
