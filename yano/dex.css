@@ -349,20 +349,23 @@ html body.yano-dex #dex-filter-controls .filter-actions #clear-filters{
  }
 }
 
-/* Compact cards: cap track width instead of stretching 1fr across the row. */
+/* Match the original Dokidex grid: responsive 170px minimum tracks that
+   expand to fill every row; retain the two-type border/glow treatment. */
 html body.yano-dex #dex-grid.dex-grid{
- grid-template-columns:repeat(auto-fill,minmax(155px,180px))!important;
- justify-content:center!important;
+ display:grid!important;
+ grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;
+ justify-content:stretch!important;
  justify-items:stretch!important;
  gap:14px!important;
+ padding:14px!important;
 }
 html body.yano-dex #dex-grid .dex-entry{
  box-sizing:border-box!important;
  width:100%!important;
  min-width:0!important;
- height:205px!important;
+ height:auto!important;
  min-height:205px!important;
- max-height:205px!important;
+ max-height:none!important;
  border:2px solid transparent!important;
  background:
   linear-gradient(145deg,#29394e,#101a2b 65%,#202e41) padding-box,
@@ -379,9 +382,16 @@ html body.yano-dex #dex-grid .dex-entry:hover{
   9px 0 24px -6px var(--yv-type-two,#789bc2),
   0 12px 24px #0008!important;
 }
-html body.yano-dex #dex-grid .dex-entry>a{min-height:0!important;height:100%!important}
-html body.yano-dex #dex-grid .img-wrapper{height:110px!important;width:110px!important}
-html body.yano-dex #dex-grid .monster-image.small{max-height:105px!important;max-width:105px!important}
+html body.yano-dex #dex-grid .dex-entry>a{
+ min-height:0!important;height:100%!important;
+ padding:12px!important;gap:12px!important;
+}
+html body.yano-dex #dex-grid .img-wrapper{
+ height:120px!important;width:120px!important;max-width:100%!important;
+}
+html body.yano-dex #dex-grid .monster-image.small{
+ max-height:112px!important;max-width:112px!important;
+}
 /* Hidden game-specific controls must stay hidden despite action-row flex styles. */
 html body.yano-dex #dex-filter-controls #shiny-label[hidden]{display:none!important}
 /* Four type buttons per row on narrow screens. */
@@ -398,11 +408,11 @@ html body.yano-dex #dex-filter-controls #shiny-label[hidden]{display:none!import
   font-size:clamp(14px,4.3vw,21px)!important;
  }
  html body.yano-dex #dex-grid.dex-grid{
-  grid-template-columns:repeat(2,minmax(0,180px))!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
   gap:10px!important;
  }
  html body.yano-dex #dex-grid .dex-entry{
-  height:190px!important;min-height:190px!important;max-height:190px!important;
+  height:auto!important;min-height:190px!important;max-height:none!important;
  }
  html body.yano-dex #dex-grid .img-wrapper{height:100px!important;width:100px!important;max-width:100%!important}
  html body.yano-dex #dex-grid .monster-image.small{max-width:96px!important;max-height:96px!important}
