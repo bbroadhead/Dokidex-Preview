@@ -10,6 +10,38 @@ if(heading)heading.textContent=title+' Dex';document.title=title+' Dex | Yanover
 $('dex-home').href='?game='+game;
 document.querySelectorAll('[data-game]').forEach(a=>{const active=a.dataset.game===game;a.classList.toggle('is-selected',active);if(active)a.setAttribute('aria-current','page')});
 $('shiny-label').hidden=game!=='yami-kids';
+
+function centerSelectedGame(){
+ const track=document.getElementById('yanoverse-game-track');
+ const selected=track?.querySelector('.yanoverse-game.is-selected');
+ const picker=track?.closest('.yanoverse-game-picker');
+ if(!selected||!picker)return;
+ picker.style.setProperty('position','relative','important');
+ picker.style.setProperty('left','50%','important');
+ picker.style.setProperty('width','100vw','important');
+ picker.style.setProperty('max-width','100vw','important');
+ picker.style.setProperty('margin-left','-50vw','important');
+ picker.style.setProperty('overflow','hidden','important');
+ track.style.setProperty('position','relative','important');
+ track.style.setProperty('left','50%','important');
+ track.style.setProperty('display','flex','important');
+ track.style.setProperty('width','max-content','important');
+ track.style.setProperty('max-width','none','important');
+ track.style.setProperty('margin','0','important');
+ track.style.setProperty('transition','none','important');
+ track.style.setProperty('transform','translateX(-50%)','important');
+ void track.offsetWidth;
+ const rect=selected.getBoundingClientRect();
+ const shift=window.innerWidth/2-(rect.left+rect.width/2);
+ track.style.setProperty('transform','translateX(calc(-50% + '+shift+'px))','important');
+}
+const scheduleCenter=()=>requestAnimationFrame(()=>requestAnimationFrame(centerSelectedGame));
+window.addEventListener('resize',scheduleCenter);
+window.addEventListener('orientationchange',scheduleCenter);
+window.addEventListener('load',scheduleCenter);
+if(document.fonts?.ready)document.fonts.ready.then(scheduleCenter);
+scheduleCenter();
+
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const image=p=>p?'/Yanoverse-Multidex'+(p.startsWith('/')?p:'/'+p):'';
 const img=(p,alt,klass='')=>'<img class="'+klass+'" src="'+esc(image(p))+'" alt="'+esc(alt)+'" loading="lazy">';
