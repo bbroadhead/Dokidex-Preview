@@ -1423,3 +1423,44 @@ html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{
  html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{left:4px!important}
  html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{right:4px!important}
 }
+
+/* Base-stat title and total share a header; the six actual values sit
+   beneath the radar, in the same order as its labeled axes. */
+html body.yano-dex #profile .stats-side .yv-stats-heading{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ gap:8px!important;width:100%!important;margin:0 0 6px!important;
+}
+html body.yano-dex #profile .stats-side .yv-stats-heading h3{
+ margin:0!important;text-align:left!important;flex:0 1 auto!important;
+}
+html body.yano-dex #profile .stats-side .yv-stats-heading .stat-total{
+ width:auto!important;margin:0!important;text-align:right!important;
+ white-space:nowrap!important;font-weight:700!important;
+}
+html body.yano-dex #profile .monster-stats .yv-stat-values{
+ display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;
+ width:100%!important;gap:1px!important;margin-top:6px!important;
+ border:1px solid rgba(160,188,219,.35)!important;
+}
+html body.yano-dex #profile .monster-stats .yv-stat-value{
+ min-width:0!important;display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:center!important;
+ text-align:center!important;background:rgba(12,27,44,.65)!important;
+ font-size:clamp(9px,1.1vw,12px)!important;line-height:1.25!important;
+}
+html body.yano-dex #profile .monster-stats .yv-stat-value span{
+ width:100%!important;box-sizing:border-box!important;padding:5px 1px!important;
+ color:#fff!important;font-weight:700!important;white-space:nowrap!important;
+}
+html body.yano-dex #profile .monster-stats .yv-stat-value strong{
+ padding:5px 1px!important;color:#f2f5ff!important;
+}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(1) span{background:#9e1111!important}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(2) span{background:#b86d09!important}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(3) span{background:#95730a!important}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(4) span{background:#26218c!important}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(5) span{background:#145b80!important}
+html body.yano-dex #profile .monster-stats .yv-stat-value:nth-child(6) span{background:#286c15!important}
+@media(max-width:700px){
+ html body.yano-dex #profile .monster-stats .yv-stat-value{font-size:clamp(8px,2.4vw,11px)!important}
+}
