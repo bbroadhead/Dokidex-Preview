@@ -1,4 +1,25 @@
 (() => {
+
+  // Profile stats header overlays the existing chart without changing its layout.
+  const addProfileStatsHeading = () => {
+    document.querySelectorAll('.monster-profile .stats-side').forEach(panel => {
+      if(panel.querySelector('.yv-dokidex-stats-heading')) return;
+      const cells=[...panel.querySelectorAll('.monster-stats tr:nth-child(2) td')];
+      if(cells.length!==6)return;
+      const total=cells.reduce((sum,cell)=>sum+(Number(cell.textContent.trim())||0),0);
+      const heading=document.createElement('div');
+      heading.className='yv-dokidex-stats-heading';
+      const label=document.createElement('span');
+      label.textContent='Base Stats';
+      const value=document.createElement('span');
+      value.textContent='Total: '+total;
+      heading.append(label,value);
+      panel.insertBefore(heading,panel.firstChild);
+    });
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',addProfileStatsHeading,{once:true});
+  else addProfileStatsHeading();
+
   // Standardize original Dokidex evolution chains: place each evolution
   // requirement below the arrow leading to the next monster.
   const alignEvolutionLevels = () => {
