@@ -123,3 +123,99 @@ html body.yano-dex #dex-grid .dex-card-types{display:none!important}
  html body.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
  html body.yano-dex #dex-grid .dex-entry{min-height:170px!important}
 }
+
+/* Use the same measured selector centering as the working Dokimon page.
+   Its script owns the track transform; no static CSS centering overrides. */
+html body.yano-dex .yanoverse-game-picker{
+ position:relative!important;left:50%!important;width:100vw!important;
+ max-width:100vw!important;margin-left:-50vw!important;margin-right:0!important;
+ overflow:hidden!important;box-sizing:border-box!important;
+}
+html body.yano-dex .yanoverse-game-track{
+ position:relative!important;left:50%!important;width:max-content!important;
+ max-width:none!important;margin:0!important;justify-content:flex-start!important;
+ overflow:visible!important;transition:none!important;
+}
+html body.yano-dex .yanoverse-game{flex-shrink:0!important}
+
+/* Mirror the Dokimon profile's artwork/facts arrangement.
+   Navigation arrows frame the content instead of consuming a content column. */
+html body.yano-dex #profile{width:100%!important;max-width:1160px!important;margin:0 auto!important;padding:12px!important;box-sizing:border-box!important}
+html body.yano-dex #profile .profile-navigation{
+ display:grid!important;
+ grid-template-columns:40px minmax(0,1fr) 40px!important;
+ align-items:center!important;gap:12px!important;width:100%!important;
+}
+html body.yano-dex #profile .profile-navigation>.monster-layout-row{
+ display:grid!important;
+ grid-template-columns:minmax(220px,.85fr) minmax(0,1.15fr)!important;
+ gap:18px!important;align-items:start!important;
+ min-width:0!important;width:100%!important;max-width:none!important;
+}
+html body.yano-dex #profile .monster-layout-row>.monster-image-container{
+ grid-column:1!important;grid-row:1 / span 2!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ min-height:320px!important;padding:22px!important;
+ background:transparent!important;background-image:none!important;
+ border:0!important;box-shadow:none!important;
+}
+html body.yano-dex #profile .monster-layout-row>.monster-info{
+ grid-column:2!important;grid-row:1!important;
+ width:100%!important;min-width:0!important;
+ background:linear-gradient(145deg,rgba(37,54,76,.75),rgba(15,26,42,.78))!important;
+ border:1px solid rgba(161,190,225,.24)!important;
+ border-radius:18px!important;padding:20px!important;
+ box-shadow:inset 0 1px 0 #ffffff1a!important;
+}
+html body.yano-dex #profile .monster-layout-row>.stats-side{
+ grid-column:2!important;grid-row:2!important;
+ width:100%!important;min-width:0!important;
+ height:auto!important;max-height:none!important;overflow:visible!important;
+ background:linear-gradient(145deg,rgba(37,54,76,.75),rgba(15,26,42,.78))!important;
+ border:1px solid rgba(161,190,225,.24)!important;
+ border-radius:18px!important;padding:20px!important;
+}
+html body.yano-dex #profile .hero-image{
+ width:auto!important;max-width:100%!important;height:auto!important;
+ max-height:370px!important;object-fit:contain!important;
+ background:transparent!important;box-shadow:none!important;
+ image-rendering:pixelated!important;
+}
+html body.yano-dex #profile .monster-info p{font:500 14px/1.65 system-ui,sans-serif!important;color:#e3edf9!important;overflow-wrap:anywhere}
+html body.yano-dex #profile .stat-row{grid-template-columns:80px minmax(0,1fr) 32px!important;gap:8px!important}
+html body.yano-dex #profile .evolution-wrapper{
+ width:calc(100% - 104px)!important;max-width:100%!important;
+ margin:18px auto!important;padding:20px!important;
+ background:rgba(21,34,52,.78)!important;border:1px solid rgba(161,190,225,.24)!important;
+ border-radius:18px!important;
+}
+html body.yano-dex #profile .nav-arrow{
+ position:sticky;top:40vh;align-self:center!important;
+ width:40px!important;height:64px!important;min-width:0!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:linear-gradient(145deg,#2b4767,#14283e)!important;
+ border:1px solid #93b7df66!important;border-radius:12px!important;
+ color:#e7f4ff!important;text-decoration:none!important;
+ font:400 40px/1 'VT323',monospace!important;
+}
+@media(max-width:700px){
+ html body.yano-dex #profile{padding:4px!important}
+ html body.yano-dex #profile .profile-navigation{
+  grid-template-columns:28px minmax(0,1fr) 28px!important;gap:5px!important;
+ }
+ html body.yano-dex #profile .profile-navigation>.monster-layout-row{
+  display:flex!important;flex-direction:column!important;gap:12px!important;
+  align-items:stretch!important;
+ }
+ html body.yano-dex #profile .monster-layout-row>.monster-image-container{
+  width:100%!important;min-height:210px!important;padding:10px!important;
+ }
+ html body.yano-dex #profile .hero-image{max-height:245px!important}
+ html body.yano-dex #profile .monster-layout-row>.monster-info,
+ html body.yano-dex #profile .monster-layout-row>.stats-side{
+  width:100%!important;max-width:100%!important;padding:15px!important;
+ }
+ html body.yano-dex #profile .nav-arrow{width:28px!important;height:52px!important;font-size:30px!important}
+ html body.yano-dex #profile .evolution-wrapper{width:100%!important;padding:14px!important}
+ html body.yano-dex #profile .profile-title{font-size:34px!important}
+}
