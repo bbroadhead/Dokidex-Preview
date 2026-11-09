@@ -1517,3 +1517,8 @@ html body.yano-dex #profile .monster-stats .yv-stat-value{
   max-width:116px!important;
  }
 }
+
+/* Align the monster name's left edge with its number on both new Dexes. */
+html body.yano-dex #dex-grid.dex-grid>.dex-entry .dex-card-name{
+ text-align:left!important;
+}
