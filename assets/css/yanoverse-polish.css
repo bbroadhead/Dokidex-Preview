@@ -1266,3 +1266,10 @@ html body:not(.yano-dex) .monster-profile .stats-side .yv-dokidex-stats-heading{
  gap:8px!important;pointer-events:none!important;
  color:#eaf3ff!important;font:700 15px/1.2 'VT323',monospace!important;
 }
+
+/* Vertically center the description content within its existing panel. */
+html body:not(.yano-dex) .monster-profile .monster-layout-row>.monster-info{
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+}
