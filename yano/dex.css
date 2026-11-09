@@ -622,6 +622,24 @@ html body.yano-dex[data-theme] #dex-grid .dex-entry{
   linear-gradient(145deg,var(--game-card-top),var(--game-card-mid) 65%,var(--game-card-bottom)) padding-box,
   linear-gradient(125deg,var(--yv-type-one,#789bc2) 0%,var(--yv-type-one,#789bc2) 46%,var(--yv-type-two,#789bc2) 54%,var(--yv-type-two,#789bc2) 100%) border-box!important;
 }
-html body.yano-dex[data-theme] #dex-grid .dex-entry .img-wrapper{
- background:var(--game-card-art)!important;
+html body.yano-dex[data-theme] #dex-grid .dex-entry .img-wrapper,
+html body.yano-dex[data-theme] #dex-grid .dex-entry .img-wrapper::before,
+html body.yano-dex[data-theme] #dex-grid .dex-entry .img-wrapper::after,
+html body.yano-dex[data-theme] #dex-grid .dex-entry .monster-image.small{
+ background:transparent!important;
+ background-color:transparent!important;
+ background-image:none!important;
+ box-shadow:none!important;
+}
+
+/* Override the original Dokidex blue header fill, including background-color
+   and background-image declarations inherited from the shared stylesheet. */
+html body.yano-dex[data-theme] header.site-header,
+html body.yano-dex[data-theme] header.site-header nav.site-nav{
+ background-color:var(--game-header-bottom)!important;
+ background-image:linear-gradient(145deg,var(--game-header-top),var(--game-header-bottom))!important;
+}
+html body.yano-dex[data-theme] .yanoverse-game-picker{
+ background-color:transparent!important;
+ background-image:none!important;
 }
