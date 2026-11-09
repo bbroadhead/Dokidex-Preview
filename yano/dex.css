@@ -1250,3 +1250,51 @@ html body.yano-dex #profile .evolution-wrapper .evo a{
  html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{left:0!important}
  html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{right:0!important}
 }
+
+/* Mobile profiles: use nearly the full viewport for description and stats.
+   The evolution chain retains its own content-sized layout. */
+@media(max-width:700px){
+ html body.yano-dex main.page-content:has(#profile:not([hidden])){
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  margin:0 auto!important;
+  padding-left:8px!important;
+  padding-right:8px!important;
+ }
+ html body.yano-dex #profile{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important;
+ }
+ html body.yano-dex #profile .profile-navigation,
+ html body.yano-dex #profile .profile-navigation>.monster-layout-row,
+ html body.yano-dex #profile .monster-layout-row>.monster-left-column{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  padding-left:0!important;
+  padding-right:0!important;
+ }
+ html body.yano-dex #profile .monster-left-column>.monster-info,
+ html body.yano-dex #profile .monster-layout-row>.stats-side{
+  box-sizing:border-box!important;
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  padding:14px!important;
+ }
+ html body.yano-dex #profile .evolution-wrapper,
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper{
+  width:max-content!important;
+  max-width:100%!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+ }
+}
