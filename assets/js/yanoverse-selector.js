@@ -1,5 +1,24 @@
 (() => {
 
+  // Harmonize the radar web (concentric rings and radial spokes) on
+  // original Dokidex profiles, without changing the stat polygon or labels.
+  const harmonizeRadarWeb = () => {
+    const canvas=document.querySelector('.monster-profile #statRadarChart');
+    if(!canvas || !window.Chart?.getChart) return;
+    const chart=window.Chart.getChart(canvas);
+    if(!chart?.options?.scales?.r) return;
+    const radial=chart.options.scales.r;
+    const mutedWeb='rgba(139, 167, 196, 0.48)';
+    radial.grid=radial.grid||{};
+    radial.angleLines=radial.angleLines||{};
+    radial.grid.color=mutedWeb;
+    radial.angleLines.color=mutedWeb;
+    chart.update('none');
+  };
+  if(document.readyState==='complete') harmonizeRadarWeb();
+  else window.addEventListener('load',harmonizeRadarWeb,{once:true});
+
+
   // Profile stats header overlays the existing chart without changing its layout.
   const addProfileStatsHeading = () => {
     document.querySelectorAll('.monster-profile .stats-side').forEach(panel => {
