@@ -1127,3 +1127,45 @@ html body.dark-mode:not(.yano-dex) .monster-profile :is(.move-toggle-btn,.return
  border-color:rgba(130,174,223,.45)!important;
  color:#edf6ff!important;
 }
+
+/* Original Dokidex profile: remove the solid top-bar slab and give
+   individual panels a translucent liquid-glass surface instead. */
+html body.dark-mode:not(.yano-dex) .monster-profile .top-bar{
+ background:transparent!important;
+ background-color:transparent!important;
+ background-image:none!important;
+ box-shadow:none!important;
+ border:0!important;
+ border-radius:0!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+html body.dark-mode:not(.yano-dex) .monster-profile :is(
+ .evolution-wrapper,.monster-layout-row>.monster-image-container,
+ .monster-layout-row>.monster-info,.monster-layout-row>.stats-side,
+ .monster-layout-row>.forms-wrapper,.move-list-container .move-dropdown
+){
+ background:linear-gradient(135deg,rgba(70,113,158,.25) 0%,rgba(27,52,85,.34) 45%,rgba(16,32,57,.45) 100%)!important;
+ background-color:transparent!important;
+ border:1px solid rgba(173,209,247,.24)!important;
+ border-radius:18px!important;
+ box-shadow:inset 0 1px 0 rgba(235,247,255,.19),inset 0 -1px 0 rgba(8,20,38,.24),0 9px 26px rgba(2,11,25,.18)!important;
+ backdrop-filter:blur(16px) saturate(155%)!important;
+ -webkit-backdrop-filter:blur(16px) saturate(155%)!important;
+ color:#eaf3ff!important;
+}
+html body.dark-mode:not(.yano-dex) .monster-profile .top-bar>.move-list-container{
+ background:transparent!important;
+ background-image:none!important;
+ border:0!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+ -webkit-backdrop-filter:none!important;
+}
+html body.dark-mode:not(.yano-dex) .monster-profile .move-toggle-btn{
+ background:linear-gradient(135deg,rgba(79,139,195,.55),rgba(24,58,98,.65))!important;
+ border:1px solid rgba(179,219,255,.34)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 5px 16px rgba(0,0,0,.15)!important;
+ backdrop-filter:blur(12px) saturate(145%)!important;
+ -webkit-backdrop-filter:blur(12px) saturate(145%)!important;
+}
