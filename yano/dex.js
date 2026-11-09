@@ -10,6 +10,7 @@ if(heading)heading.textContent=title+' Dex';document.title=title+' Dex | Yanover
 $('dex-home').href='?game='+game;
 document.querySelectorAll('[data-game]').forEach(a=>{const active=a.dataset.game===game;a.classList.toggle('is-selected',active);if(active)a.setAttribute('aria-current','page')});
 $('shiny-label').hidden=game!=='yami-kids';
+$('stage-filter').hidden=game==='nuumonsters';
 
 function centerSelectedGame(){
  const track=document.getElementById('yanoverse-game-track');
