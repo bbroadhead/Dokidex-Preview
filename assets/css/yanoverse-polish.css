@@ -1106,3 +1106,24 @@ html body:not(.yano-dex) .monster-profile .evolution-wrapper .yv-evolution-level
  font:400 15px/1.1 'VT323',monospace!important;
  color:#a9cdef!important;
 }
+
+/* Deep Navy coverage for all original Dokidex subpages:
+   monster profiles, World, and DokiTracker. This shared file is linked
+   by each page, so no individual profile templates need to diverge. */
+html body.dark-mode:not(.yano-dex) :is(.monster-profile,.page-content,.world-page,.tracker-page){
+ color:#eaf3ff!important;
+}
+html body.dark-mode:not(.yano-dex) .monster-profile :is(.top-bar,.forms-wrapper,.forms-container,.monster-image-container,.monster-info,.stats-side,.evolution-wrapper,.move-list-container,.move-dropdown,.moves-wrapper,.move-list,.rare-forms-wrapper),
+html body.dark-mode:not(.yano-dex) :is(.world-page,.tracker-page) :is(.panel,.card,.section,.content-panel),
+html body.dark-mode:not(.yano-dex) :is(.yv-map-directory-item,.yv-map-detail,.yv-map-unmapped,.yv-encounter-embed,.tracker-summary-box,.tracker-settings-box,.tracker-card,.tracker-panel){
+ background-color:#14243a!important;
+ background-image:linear-gradient(145deg,#1d3451,#102039)!important;
+ border-color:rgba(130,174,223,.35)!important;
+ color:#eaf3ff!important;
+}
+html body.dark-mode:not(.yano-dex) .monster-profile :is(.move-toggle-btn,.return-link,.nav-arrow,.profile-nav-button){
+ background-color:#244362!important;
+ background-image:linear-gradient(145deg,#31577b,#19314d)!important;
+ border-color:rgba(130,174,223,.45)!important;
+ color:#edf6ff!important;
+}
