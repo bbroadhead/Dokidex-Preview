@@ -4447,15 +4447,28 @@ html body #dex-grid.dex-grid>.dex-entry>a{
 }
 </style>
 <style id="yv-dokidex-resting-card-glow">
-/* Restore a soft blue outline/glow at rest; preserve the stronger hover state. */
-html body #dex-grid.dex-grid>.dex-entry:not(:hover){
- border-color:rgba(141,191,242,.55)!important;
+/* Preserve the liquid-glass interior while restoring type-colored borders
+   and persistent glow, including blended dual-type perimeters. */
+html body.dark-mode #dex-grid.dex-grid>.dex-entry{
+ border:1px solid transparent!important;
+ background:
+  linear-gradient(135deg,rgba(72,119,165,.24),rgba(24,48,78,.36) 52%,rgba(12,28,49,.46)) padding-box,
+  linear-gradient(125deg,var(--yv-type-one,#7898bd),var(--yv-type-two,#7898bd)) border-box!important;
  box-shadow:
   inset 0 1px 0 rgba(242,249,255,.20),
-  inset 0 -1px 0 rgba(4,15,30,.22),
-  0 0 0 1px rgba(105,165,229,.20),
-  0 0 14px rgba(76,145,219,.24),
+  0 0 10px -3px var(--yv-type-one,#7898bd),
+  0 0 18px -5px var(--yv-type-two,#7898bd),
   0 8px 24px rgba(2,10,24,.20)!important;
+ overflow:visible!important;
+}
+@media(hover:hover){
+ html body.dark-mode #dex-grid.dex-grid>.dex-entry:hover{
+  box-shadow:
+   inset 0 1px 0 rgba(242,249,255,.2),
+   0 0 15px -2px var(--yv-type-one,#7898bd),
+   0 0 24px -4px var(--yv-type-two,#7898bd),
+   0 13px 28px rgba(0,0,0,.28)!important;
+ }
 }
 </style>
 </body>
