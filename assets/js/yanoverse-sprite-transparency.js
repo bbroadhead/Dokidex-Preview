@@ -1,7 +1,7 @@
 /* Remove only edge-connected, near-uniform dark matte from legacy opaque sprites.
    Original image files remain untouched. */
 (() => {
-  const selector = '#dex-grid img.monster-image, .yanoverse-profile .yv-profile-art > img, .yanoverse-profile .chain-stage img';
+  const selector = '#dex-grid img.monster-image, .yanoverse-profile .yv-profile-art > img, .yanoverse-profile .chain-stage img, .yano-dex #profile img.hero-image, .yano-dex #profile .evo img';
   const cache = new Map();
   function process(img) {
     const src = img.currentSrc || img.src;
@@ -53,7 +53,7 @@
   })}
   document.addEventListener('DOMContentLoaded',()=>{
     scan();
-    const root=document.querySelector('#dex-grid, .yanoverse-profile');
-    if(root)new MutationObserver(scan).observe(root,{subtree:true,childList:true,attributes:true,attributeFilter:['src']});
+    const roots=document.querySelectorAll('#dex-grid, .yanoverse-profile, .yano-dex #profile');
+    roots.forEach(root=>new MutationObserver(scan).observe(root,{subtree:true,childList:true,attributes:true,attributeFilter:['src']}));
   });
 })();
