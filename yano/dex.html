@@ -1,6 +1,27 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yanoverse Multi-Dex</title><link rel="stylesheet" href="/Yanoverse-Multidex/yano/dex.css"></head>
-<body><header><a href="/Yanoverse-Multidex/">← Yanoverse Multi-Dex</a><h1 id="heading">Monster Dex</h1><nav><a href="/Yanoverse-Multidex/">Dokimon Quest</a><a href="?game=yami-kids">Yami Kids</a><a href="?game=nuumonsters">Nuumonsters</a></nav></header>
-<main><div class="toolbar"><input id="search" type="search" placeholder="Search by name or number" aria-label="Search monsters"><select id="type"><option value="">All types</option></select><select id="stage"><option value="">All stages</option><option value="1">Stage 1</option><option value="2">Stage 2</option><option value="3">Stage 3</option></select><label id="shiny-label"><input type="checkbox" id="shiny"> Shiny</label></div><p id="count"></p><section id="cards" class="cards"></section><section id="profile" hidden></section></main>
-<script src="/Yanoverse-Multidex/yano/dex.js"></script></body></html>
+<title>Yanoverse Multi-Dex</title><link rel="stylesheet" href="/Yanoverse-Multidex/styles.css"><link rel="stylesheet" href="/Yanoverse-Multidex/yano/dex.css">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"></head>
+<body class="dark-mode yano-dex">
+<div class="yanoverse-brand">YANOVERSE <span>MULTI-DEX</span></div>
+<section class="yanoverse-game-picker" aria-label="Select a monster-taming game"><div class="yanoverse-game-track" id="yanoverse-game-track">
+<a class="yanoverse-game" href="/Yanoverse-Multidex/" aria-label="Dokimon Quest 2"><img src="/Yanoverse-Multidex/assets/images/logos/dokimon-quest-2-logo.png" alt=""><span class="yanoverse-game-title">Dokimon Quest 2</span><small>IN DEVELOPMENT</small></a>
+<a class="yanoverse-game" href="/Yanoverse-Multidex/"><img src="/Yanoverse-Multidex/assets/images/logos/dokimon-quest-logo.png" alt=""><span class="yanoverse-game-title">Dokimon: Quest</span></a>
+<a class="yanoverse-game" data-game="yami-kids" href="?game=yami-kids"><img src="/Yanoverse-Multidex/assets/images/logos/yami-kids-logo.png" alt=""><span class="yanoverse-game-title">Yami Kids</span></a>
+<a class="yanoverse-game" data-game="nuumonsters" href="?game=nuumonsters"><img src="/Yanoverse-Multidex/assets/images/logos/nuumonsters-logo.png" alt=""><span class="yanoverse-game-title">Nuumonsters</span></a>
+</div></section>
+<header class="site-header"><nav class="site-nav"><div class="nav-left"><a class="nav-button tracker-link" id="dex-home" href="?game=yami-kids">Dex</a></div></nav></header>
+<main class="page-content">
+<h1 id="heading" class="yano-heading">Monster Dex</h1>
+<div id="dex-list">
+<button id="filter-toggle" type="button" aria-expanded="true" aria-controls="dex-filter-controls">Hide Filters</button>
+<div class="filter-controls" id="dex-filter-controls">
+<div class="type-block"><label>Type:</label><div id="type-filters"></div></div>
+<div class="filter-block"><label for="stage">Stage:</label><select id="stage"><option value="">All stages</option><option value="1">Stage 1</option><option value="2">Stage 2</option><option value="3">Stage 3</option></select></div>
+<div class="filter-block"><label for="search">Name:</label><input id="search" type="search" placeholder="Search Name or Number" aria-label="Search monsters"></div>
+<div class="filter-block" id="shiny-label"><label for="shiny"><input type="checkbox" id="shiny"> Shiny</label></div>
+<div class="filter-block"><button id="clear-filters" type="button">Clear Filters</button></div>
+</div><div class="yv-dex-summary" role="status"><strong id="yv-visible-count">0</strong> <span id="count-label">monsters shown</span></div>
+<section id="dex-grid" class="dex-grid"></section></div>
+<section id="profile" class="monster-profile" hidden></section>
+</main><script src="/Yanoverse-Multidex/yano/dex.js"></script></body></html>
