@@ -219,3 +219,49 @@ html body.yano-dex #profile .nav-arrow{
  html body.yano-dex #profile .evolution-wrapper{width:100%!important;padding:14px!important}
  html body.yano-dex #profile .profile-title{font-size:34px!important}
 }
+
+/* Dokidex-sized cards, including its mobile two-column layout. */
+html body.yano-dex #dex-grid.dex-grid{
+ grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;
+ gap:14px!important;padding:14px!important;
+}
+html body.yano-dex #dex-grid .dex-entry{
+ height:auto!important;min-height:205px!important;max-height:225px!important;
+ --yv-type-one:#789bc2;--yv-type-two:var(--yv-type-one);
+ border:1px solid transparent!important;
+ background:
+ linear-gradient(145deg,rgba(35,46,64,.9),rgba(15,23,37,.97) 60%,rgba(23,33,50,.9)) padding-box,
+ linear-gradient(135deg,var(--yv-type-one) 0%,var(--yv-type-one) 44%,var(--yv-type-two) 56%,var(--yv-type-two) 100%) border-box!important;
+ box-shadow:-4px 0 13px -5px var(--yv-type-one),4px 0 13px -5px var(--yv-type-two),0 7px 18px #0006!important;
+}
+html body.yano-dex #dex-grid .dex-entry:hover{
+ box-shadow:-7px 0 23px -5px var(--yv-type-one),7px 0 23px -5px var(--yv-type-two),0 13px 28px #0008!important;
+}
+html body.yano-dex #dex-grid .dex-entry>a{padding:12px!important;gap:9px!important}
+html body.yano-dex #dex-grid .img-wrapper{width:120px!important;height:120px!important;max-width:100%!important}
+html body.yano-dex #dex-grid .monster-image.small{max-width:110px!important;max-height:110px!important}
+@media(max-width:600px){
+ html body.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:10px!important}
+ html body.yano-dex #dex-grid .dex-entry{min-height:190px!important;max-height:210px!important}
+ html body.yano-dex #dex-grid .dex-entry>a{padding:9px!important}
+ html body.yano-dex #dex-grid .img-wrapper{width:100px!important;height:100px!important}
+ html body.yano-dex #dex-grid .monster-image.small{max-width:96px!important;max-height:96px!important}
+}
+/* Evolution is a compact, centered panel above artwork and facts. */
+html body.yano-dex #profile .evolution-wrapper{
+ display:table!important;table-layout:auto!important;
+ width:fit-content!important;max-width:100%!important;
+ margin:12px auto 20px!important;padding:16px 20px!important;
+}
+html body.yano-dex #profile .evo{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important}
+html body.yano-dex #profile .evo a{max-width:180px!important;flex-shrink:0!important}
+html body.yano-dex #profile .monster-stats{display:flex!important;flex-direction:column!important;align-items:center!important}
+html body.yano-dex #profile .stat-radar{
+ display:block!important;width:min(100%,320px)!important;height:auto!important;
+ overflow:visible!important;margin:0 auto!important;
+}
+html body.yano-dex #profile .stat-total{width:100%!important;text-align:center!important;margin:0!important}
+@media(max-width:700px){
+ html body.yano-dex #profile .evolution-wrapper{max-width:100%!important;padding:12px!important}
+ html body.yano-dex #profile .stat-radar{width:min(100%,280px)!important}
+}
