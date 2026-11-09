@@ -1,37 +1,48 @@
 (() => {
+'use strict';
 const root='/Yanoverse-Multidex/yano/';
 const params=new URLSearchParams(location.search);
 const game=params.get('game')==='nuumonsters'?'nuumonsters':'yami-kids';
 const title=game==='yami-kids'?'Yami Kids':'Nuumonsters';
-const heading=document.getElementById('heading'),cards=document.getElementById('cards'),profile=document.getElementById('profile'),search=document.getElementById('search'),type=document.getElementById('type'),stage=document.getElementById('stage'),shiny=document.getElementById('shiny'),count=document.getElementById('count');
+const $=id=>document.getElementById(id);
+const heading=$('heading'),grid=$('dex-grid'),profile=$('profile'),search=$('search'),stage=$('stage'),shiny=$('shiny'),summary=$('yv-visible-count'),typeFilters=$('type-filters');
 heading.textContent=title+' Dex';document.title=title+' Dex | Yanoverse Multi-Dex';
-document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.href.includes('game='+game)));
-document.getElementById('shiny-label').hidden=game!=='yami-kids';
+$('dex-home').href='?game='+game;
+document.querySelectorAll('[data-game]').forEach(a=>{const active=a.dataset.game===game;a.classList.toggle('is-selected',active);if(active)a.setAttribute('aria-current','page')});
+$('shiny-label').hidden=game!=='yami-kids';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const image=p=>p?root.replace(/\/$/,'')+p.replace(/^\/yano/,''):'';
+const image=p=>p?'/Yanoverse-Multidex'+(p.startsWith('/')?p:'/'+p):'';
 const img=(p,alt,klass='')=>'<img class="'+klass+'" src="'+esc(image(p))+'" alt="'+esc(alt)+'" loading="lazy">';
+const url=m=>'?game='+game+'&monster='+encodeURIComponent(m.slug);
 const stats=['Health','Attack','Defense','Mgk. Atk','Mgk. Def','Speed'];
-let data=[];
-function tile(m){const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;return '<a class="tile" href="?game='+game+'&monster='+encodeURIComponent(m.slug)+'">'+img(pic,m.name)+'<span class="num">#'+String(m.number).padStart(3,'0')+'</span><strong>'+esc(m.name)+'</strong><small>'+m.type.map(esc).join(' · ')+'</small></a>'}
+let data=[],activeTypes=new Set(),selected=null;
+function tile(m){
+ const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
+ return '<article class="dex-entry" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong><span class="dex-card-stage">Stage '+esc(m.stage||'?')+'</span><span class="dex-card-types">'+(m.type||[]).map(t=>'<span class="dex-card-type">'+esc(t)+'</span>').join('')+'</span></div></a></article>';
+}
 function render(){
  const q=search.value.trim().toLowerCase();
- const filtered=data.filter(m=>(m.name.toLowerCase().includes(q)||String(m.number).includes(q))&&(!type.value||m.type.includes(type.value))&&(!stage.value||String(m.stage)===stage.value));
- count.textContent=filtered.length+' of '+data.length+' '+(game==='yami-kids'?'Oni':'Nuu');
- cards.innerHTML=filtered.map(tile).join('');
+ const filtered=data.filter(m=>(m.name.toLowerCase().includes(q)||String(m.number).includes(q))&&[...activeTypes].every(t=>(m.type||[]).includes(t))&&(!stage.value||String(m.stage)===stage.value));
+ summary.textContent=filtered.length;grid.innerHTML=filtered.map(tile).join('');
 }
-function show(m){
- if(!m){profile.hidden=true;cards.hidden=false;return}
- cards.hidden=true;profile.hidden=false;
+function navigate(){
+ const m=data.find(x=>x.slug===new URLSearchParams(location.search).get('monster'));
+ selected=m||null;
+ $('dex-list').hidden=!!m;profile.hidden=!m;
+ if(!m){render();return}
  const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
  const evol=[...(m.evolves_from?[m.evolves_from]:[]),m.name,...(m.evolves_to||[])];
- profile.innerHTML='<a class="back" href="?game='+game+'">← All '+esc(title)+'</a><div class="hero">'+img(pic,m.name,'hero-image')+'<div><p>#'+String(m.number).padStart(3,'0')+'</p><h2>'+esc(m.name)+'</h2><p>'+m.type.map(t=>'<span class="pill">'+esc(t)+'</span>').join(' ')+'</p><p>'+esc(m.classification||'')+'</p>'+(m.sin?'<p>Sin: '+esc(m.sin)+'</p>':'')+'<p>'+esc(m.dex_entry||'')+'</p></div></div><h3>Base stats</h3><div class="stats">'+stats.map(s=>'<div><span>'+esc(s)+'</span><meter min="0" max="255" value="'+Number(m.base_stats?.[s]||0)+'"></meter><b>'+Number(m.base_stats?.[s]||0)+'</b></div>').join('')+'</div>'+(evol.length>1?'<h3>Evolution chain</h3><div class="evo">'+evol.map(n=>{const e=data.find(x=>x.name===n);return e?'<a href="?game='+game+'&monster='+encodeURIComponent(e.slug)+'">'+img(e.mini_sprite,e.name)+esc(e.name)+'</a>':'<span>'+esc(n)+'</span>'}).join('<span>→</span>')+'</div>':'')+(m.evolves_at?'<p>Evolution level: '+m.evolves_at+'</p>':'');
+ const statTotal=stats.reduce((a,k)=>a+Number(m.base_stats?.[k]||0),0);
+ const statRows=stats.map(s=>'<div class="stat-row"><span>'+esc(s)+'</span><div class="stat-track"><span style="width:'+Math.min(100,Number(m.base_stats?.[s]||0)/255*100)+'%"></span></div><b>'+Number(m.base_stats?.[s]||0)+'</b></div>').join('');
+ profile.innerHTML='<div class="profile-top"><a class="return-link" href="?game='+game+'">← Return to Dex</a><span class="profile-number">#'+String(m.number).padStart(3,'0')+'</span></div><h2 class="profile-title">'+esc(m.name)+'</h2><div class="monster-layout-row"><div class="monster-image-container">'+img(pic,m.name,'hero-image')+'</div><div class="monster-info"><h3>'+esc(m.classification||m.name)+'</h3><p class="profile-types">'+(m.type||[]).map(t=>'<span class="dex-card-type">'+esc(t)+'</span>').join(' ')+'</p>'+(m.sin?'<p><strong>Sin:</strong> '+esc(m.sin)+'</p>':'')+'<p>'+esc(m.dex_entry||'')+'</p></div><div class="stats-side"><h3>Base Stats</h3><div class="monster-stats">'+statRows+'<p class="stat-total">Total: '+statTotal+'</p></div></div></div>'+(evol.length>1?'<div class="evolution-wrapper"><h3>Evolution Chain</h3><div class="evo">'+evol.map(n=>{const e=data.find(x=>x.name===n);return e?'<a href="'+url(e)+'">'+img(e.mini_sprite||e.sprite,e.name)+esc(e.name)+'</a>':'<span>'+esc(n)+'</span>'}).join('<span aria-hidden="true">→</span>')+'</div></div>':'')+(m.evolves_at?'<p class="evolution-level">Evolution level: '+esc(m.evolves_at)+'</p>':'');
 }
+$('filter-toggle').addEventListener('click',()=>{const collapsed=$('dex-filter-controls').classList.toggle('collapsed');$('filter-toggle').textContent=collapsed?'Show Filters':'Hide Filters';$('filter-toggle').setAttribute('aria-expanded',String(!collapsed))});
+$('clear-filters').addEventListener('click',()=>{activeTypes.clear();typeFilters.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});search.value='';stage.value='';shiny.checked=false;render()});
+[search,stage].forEach(el=>el.addEventListener('input',render));
+shiny.addEventListener('change',()=>{render();if(selected)navigate()});
 fetch(root+game+'/_data/'+game+'.json').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(rows=>{
  data=rows.sort((a,b)=>a.number-b.number);
- [...new Set(data.flatMap(m=>m.type))].sort().forEach(t=>type.add(new Option(t,t)));
- const selected=data.find(m=>m.slug===params.get('monster'));
- show(selected);render();
- shiny.addEventListener('change',()=>{show(selected);render()});
- [search,type,stage].forEach(el=>el.addEventListener('input',render));
-}).catch(e=>{count.textContent='Data not installed yet. Upload the supplied yano/ game folders to this branch. ('+e.message+')';});
+ [...new Set(data.flatMap(m=>m.type||[]))].sort().forEach(t=>{const b=document.createElement('button');b.type='button';b.className='type-btn';b.textContent=t;b.dataset.type=t;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{if(activeTypes.has(t))activeTypes.delete(t);else activeTypes.add(t);b.classList.toggle('active',activeTypes.has(t));b.setAttribute('aria-pressed',String(activeTypes.has(t)));render()});typeFilters.appendChild(b)});
+ navigate();render();
+}).catch(e=>{summary.textContent='Unable to load Dex data: '+e.message});
 })();
