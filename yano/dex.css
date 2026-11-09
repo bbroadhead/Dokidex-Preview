@@ -1100,3 +1100,24 @@ html body.yano-dex #profile .evolution-wrapper .evo .evo-arrow-glyph{
  }
  html body.yano-dex #profile .evolution-wrapper .evo .evo-transition{font-size:13px!important}
 }
+
+/* Extend each game's background to the full document, including below
+   short monster profiles. Keep the same background on html and body. */
+html:has(> body.yano-dex[data-theme="yami-kids"]),
+html body.yano-dex[data-theme="yami-kids"]{
+ min-height:100vh!important;
+ background-color:#1a0d12!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(180,42,51,.28),transparent 55%),linear-gradient(145deg,#190e14,#34171d 58%,#180f16)!important;
+ background-attachment:fixed!important;
+}
+html:has(> body.yano-dex[data-theme="nuumonsters"]),
+html body.yano-dex[data-theme="nuumonsters"]{
+ min-height:100vh!important;
+ background-color:#091c22!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(29,161,139,.25),transparent 55%),linear-gradient(145deg,#0a1c27,#103b3d 58%,#0b1d28)!important;
+ background-attachment:fixed!important;
+}
+html body.yano-dex[data-theme] main.page-content{
+ background:transparent!important;
+ background-image:none!important;
+}
