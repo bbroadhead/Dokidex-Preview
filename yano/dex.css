@@ -301,3 +301,50 @@ html body.yano-dex #profile .profile-navigation>.nav-arrow:hover{
  html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{left:4px!important}
  html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{right:4px!important}
 }
+
+/* Keep all filter section labels aligned at the top; actions on one row. */
+html body.yano-dex #dex-filter-controls{
+ align-items:flex-start!important;
+ row-gap:12px!important;
+}
+html body.yano-dex #dex-filter-controls>.type-block{
+ display:flex!important;flex-direction:column!important;
+ align-items:center!important;justify-content:flex-start!important;
+}
+html body.yano-dex #dex-filter-controls>.filter-block{
+ justify-content:flex-start!important;
+ align-self:flex-start!important;
+}
+html body.yano-dex #dex-filter-controls>.filter-block>label,
+html body.yano-dex #dex-filter-controls>.type-block>label{
+ line-height:1.1!important;
+ margin:0!important;
+}
+html body.yano-dex #dex-filter-controls .filter-actions{
+ display:flex!important;flex:0 0 100%!important;
+ flex-direction:row!important;flex-wrap:nowrap!important;
+ justify-content:center!important;align-items:center!important;
+ gap:16px!important;
+ min-width:0!important;
+}
+html body.yano-dex #dex-filter-controls .filter-actions>.filter-block{
+ display:flex!important;flex-direction:row!important;
+ justify-content:center!important;align-items:center!important;
+ min-width:0!important;
+}
+html body.yano-dex #dex-filter-controls .filter-actions #shiny-label label{
+ display:flex!important;flex-direction:row!important;
+ align-items:center!important;gap:8px!important;
+ margin:0!important;white-space:nowrap!important;
+}
+html body.yano-dex #dex-filter-controls .filter-actions #clear-filters{
+ margin:0!important;white-space:nowrap!important;
+}
+@media(max-width:600px){
+ html body.yano-dex #dex-filter-controls .filter-actions{
+  gap:12px!important;
+ }
+ html body.yano-dex #dex-filter-controls .filter-actions #clear-filters{
+  padding:8px 12px!important;font-size:22px!important;
+ }
+}
