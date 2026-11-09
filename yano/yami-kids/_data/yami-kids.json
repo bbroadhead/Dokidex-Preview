@@ -1,0 +1,2677 @@
+[
+  {
+    "number": 1,
+    "name": "Vanni",
+    "slug": "vanni",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 90,
+      "Attack": 45,
+      "Defense": 50,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 75,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Vannati"
+    ],
+    "classification": "Young Vampire",
+    "dex_entry": "This Oni craves the blood of humans and animals alike.",
+    "sprite": "/yano/yami-kids/assets/images/vanni.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/vanni.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/vanni_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/1_vanni/vanni_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/vanni_shiny.png"
+  },
+  {
+    "number": 2,
+    "name": "Vannati",
+    "slug": "vannati",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 110,
+      "Attack": 75,
+      "Defense": 80,
+      "Mgk. Atk": 125,
+      "Mgk. Def": 90,
+      "Speed": 110
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Vanni",
+    "evolves_to": [
+      "Vamperia"
+    ],
+    "classification": "Young Vampire",
+    "dex_entry": "She craves for blood and a nice bottle of wine, along with some human meat for dessert.",
+    "sprite": "/yano/yami-kids/assets/images/vannati.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/vannati.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/vannati_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/2_vannati/vannati_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/vannati_shiny.png"
+  },
+  {
+    "number": 3,
+    "name": "Vamperia",
+    "slug": "vamperia",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 150,
+      "Attack": 110,
+      "Defense": 120,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 130,
+      "Speed": 125
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Vannati",
+    "evolves_to": [],
+    "classification": "Vampire Queen",
+    "dex_entry": "The queen of all vampires. She no longer craves for just blood. Instead, she wants to eat entire towns and villages.",
+    "sprite": "/yano/yami-kids/assets/images/vamperia.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/vamperia.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/vamperia_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/3_vamperia/vamperia_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/vamperia_shiny.png"
+  },
+  {
+    "number": 4,
+    "name": "Gachiki",
+    "slug": "gachiki",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 110,
+      "Attack": 90,
+      "Defense": 75,
+      "Mgk. Atk": 35,
+      "Mgk. Def": 45,
+      "Speed": 85
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Gachi"
+    ],
+    "classification": "Chain",
+    "dex_entry": "Possessed by the soul of a young girl who died holding her beloved keychain.",
+    "sprite": "/yano/yami-kids/assets/images/gachiki.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/gachiki.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/gachiki_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/4_gachiki/gachiki_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/gachiki_shiny.png"
+  },
+  {
+    "number": 5,
+    "name": "Gachi",
+    "slug": "gachi",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 110,
+      "Defense": 100,
+      "Mgk. Atk": 75,
+      "Mgk. Def": 85,
+      "Speed": 90
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Gachiki",
+    "evolves_to": [
+      "Gachisari"
+    ],
+    "classification": "Chain",
+    "dex_entry": "Her dark tendencies make her trick people into getting locked up in chains.",
+    "sprite": "/yano/yami-kids/assets/images/gachi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/gachi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/gachi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/5_gachi/gachi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/gachi_shiny.png"
+  },
+  {
+    "number": 6,
+    "name": "Gachisari",
+    "slug": "gachisari",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 150,
+      "Attack": 125,
+      "Defense": 145,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 95,
+      "Speed": 115
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Gachi",
+    "evolves_to": [],
+    "classification": "Chain Specialist",
+    "dex_entry": "Can be found torturing people for sport in prisons.",
+    "sprite": "/yano/yami-kids/assets/images/gachisari.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/gachisari.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/gachisari_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/6_gachisari/gachisari_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/gachisari_shiny.png"
+  },
+  {
+    "number": 7,
+    "name": "Jubi",
+    "slug": "jubi",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 70,
+      "Attack": 110,
+      "Defense": 60,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 60,
+      "Speed": 85
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Jumblina"
+    ],
+    "classification": "Baby Bomb",
+    "dex_entry": "This Oni loves playing with fireworks early in its life. It instinctually craves more destruction.",
+    "sprite": "/yano/yami-kids/assets/images/jubi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jubi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jubi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/7_jubi/jubi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jubi_shiny.png"
+  },
+  {
+    "number": 8,
+    "name": "Jumblina",
+    "slug": "jumblina",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 90,
+      "Attack": 120,
+      "Defense": 75,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 75,
+      "Speed": 100
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Jubi",
+    "evolves_to": [
+      "Jumbertha"
+    ],
+    "classification": "Bomb",
+    "dex_entry": "A playful Oni that likes causing damage where people are most likely to notice.",
+    "sprite": "/yano/yami-kids/assets/images/jumblina.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jumblina.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jumblina_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/8_jumblina/jumblina_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jumblina_shiny.png"
+  },
+  {
+    "number": 9,
+    "name": "Jumbertha",
+    "slug": "jumbertha",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 110,
+      "Attack": 135,
+      "Defense": 105,
+      "Mgk. Atk": 140,
+      "Mgk. Def": 95,
+      "Speed": 120
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Jumblina",
+    "evolves_to": [],
+    "classification": "Destructor",
+    "dex_entry": "This master of destruction loves blowing anything and everything in its way.",
+    "sprite": "/yano/yami-kids/assets/images/jumbertha.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jumbertha.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jumbertha_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/9_jumbertha/jumbertha_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jumbertha_shiny.png"
+  },
+  {
+    "number": 10,
+    "name": "Jaxeter",
+    "slug": "jaxeter",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 95,
+      "Attack": 125,
+      "Defense": 70,
+      "Mgk. Atk": 40,
+      "Mgk. Def": 70,
+      "Speed": 120
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Zubanzan"
+    ],
+    "classification": "Ittoryu",
+    "dex_entry": "It's usually seen training with its sword when it's bored.",
+    "sprite": "/yano/yami-kids/assets/images/jaxeter.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jaxeter.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jaxeter_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/10_jaxeter/jaxeter_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jaxeter_shiny.png"
+  },
+  {
+    "number": 11,
+    "name": "Zubanzan",
+    "slug": "zubanzan",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 145,
+      "Defense": 90,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 90,
+      "Speed": 145
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Jaxeter",
+    "evolves_to": [],
+    "classification": "Santoryu",
+    "dex_entry": "A master of the three-sword style. Beware of its instant kill slashes.",
+    "sprite": "/yano/yami-kids/assets/images/zubanzan.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/zubanzan.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/zubanzan_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/11_zubanzan/zubanzan_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/zubanzan_shiny.png"
+  },
+  {
+    "number": 12,
+    "name": "Hatrik",
+    "slug": "hatrik",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 115,
+      "Attack": 120,
+      "Defense": 75,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 90,
+      "Speed": 125
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Yukisagi"
+    ],
+    "classification": "Magic Trick",
+    "dex_entry": "A cursed magician's hat rumored to store ancient dark magic in its cap. It loves playing tricks on people and laughing at their demise.",
+    "sprite": "/yano/yami-kids/assets/images/hatrik.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hatrik.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hatrik_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/12_hatrik/hatrik_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hatrik_shiny.png"
+  },
+  {
+    "number": 13,
+    "name": "Yukisagi",
+    "slug": "yukisagi",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 145,
+      "Defense": 95,
+      "Mgk. Atk": 95,
+      "Mgk. Def": 120,
+      "Speed": 135
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Hatrik",
+    "evolves_to": [],
+    "classification": "The Brave",
+    "dex_entry": "Being extremely talented fencers and swordsman, it's not unusual to find them as sparring partners among nobles.",
+    "sprite": "/yano/yami-kids/assets/images/yukisagi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/yukisagi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/yukisagi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/13_yukisagi/yukisagi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/yukisagi_shiny.png"
+  },
+  {
+    "number": 14,
+    "name": "Hatrix",
+    "slug": "hatrix",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 115,
+      "Attack": 80,
+      "Defense": 90,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 75,
+      "Speed": 125
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Harelequin"
+    ],
+    "classification": "Cursed",
+    "dex_entry": "When a Hatrik succumbs to the ultimate darkness in their hearts, a Hatrix is born. They are extremely evil.",
+    "sprite": "/yano/yami-kids/assets/images/hatrix.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hatrix.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hatrix_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/14_hatrix/hatrix_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hatrix_shiny.png"
+  },
+  {
+    "number": 15,
+    "name": "Harelequin",
+    "slug": "harelequin",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 95,
+      "Defense": 120,
+      "Mgk. Atk": 145,
+      "Mgk. Def": 95,
+      "Speed": 135
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Hatrix",
+    "evolves_to": [],
+    "classification": "The Harlet",
+    "dex_entry": "Harelequin are known for being especially tricky and extremely dangerous. They will lure you in and stab you with a smile.",
+    "sprite": "/yano/yami-kids/assets/images/harelequin.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/harelequin.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/harelequin_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/15_harelequin/harelequin_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/harelequin_shiny.png"
+  },
+  {
+    "number": 16,
+    "name": "Communikit",
+    "slug": "communikit",
+    "type": [
+      "Inferno",
+      "Holy"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 75,
+      "Attack": 45,
+      "Defense": 55,
+      "Mgk. Atk": 135,
+      "Mgk. Def": 70,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Nighthowlr"
+    ],
+    "classification": "Wolf",
+    "dex_entry": "The vengeful spirit of the mountains, this Oni travels in packs hunting for it's prey.",
+    "sprite": "/yano/yami-kids/assets/images/communikit.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/communikit.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/communikit_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/16_communikit/communikit_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/communikit_shiny.png"
+  },
+  {
+    "number": 17,
+    "name": "Nighthowlr",
+    "slug": "nighthowlr",
+    "type": [
+      "Inferno",
+      "Holy"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 100,
+      "Attack": 80,
+      "Defense": 75,
+      "Mgk. Atk": 165,
+      "Mgk. Def": 90,
+      "Speed": 165
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Communikit",
+    "evolves_to": [],
+    "classification": "Darkness",
+    "dex_entry": "The rage of the mountains in physical form. Loves hunting the strong.",
+    "sprite": "/yano/yami-kids/assets/images/nighthowlr.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/nighthowlr.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/nighthowlr_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/17_nighthowlr/nighthowlr_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/nighthowlr_shiny.png"
+  },
+  {
+    "number": 18,
+    "name": "Baggi",
+    "slug": "baggi",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 50,
+      "Defense": 125,
+      "Mgk. Atk": 50,
+      "Mgk. Def": 125,
+      "Speed": 55
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Baggoh"
+    ],
+    "classification": "Bag",
+    "dex_entry": "A possessed lunch bag. Some say this Oni came to be in a haunted school.",
+    "sprite": "/yano/yami-kids/assets/images/baggi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/baggi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/baggi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/18_baggi/baggi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/baggi_shiny.png"
+  },
+  {
+    "number": 19,
+    "name": "Baggoh",
+    "slug": "baggoh",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 85,
+      "Defense": 150,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 150,
+      "Speed": 70
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Baggi",
+    "evolves_to": [],
+    "classification": "Reaper",
+    "dex_entry": "It loves to eat sandwiches, and will hunt people that have some in their possession.",
+    "sprite": "/yano/yami-kids/assets/images/baggoh.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/baggoh.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/baggoh_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/19_baggoh/baggoh_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/baggoh_shiny.png"
+  },
+  {
+    "number": 20,
+    "name": "Amini",
+    "slug": "amini",
+    "type": [
+      "Sea",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 40,
+      "Defense": 120,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 90,
+      "Speed": 130
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Amenoella"
+    ],
+    "classification": "Cloud",
+    "dex_entry": "A mysterious Oni whose body is made of clouds. Some say a spirit possessed a cloud to create this Oni.",
+    "sprite": "/yano/yami-kids/assets/images/amini.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/amini.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/amini_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/20_amini/amini_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/amini_shiny.png"
+  },
+  {
+    "number": 21,
+    "name": "Amenoella",
+    "slug": "amenoella",
+    "type": [
+      "Sea",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 50,
+      "Defense": 150,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 110,
+      "Speed": 145
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Amini",
+    "evolves_to": [],
+    "classification": "Glowing",
+    "dex_entry": "Known for having the softest material for clothes, this Oni uses its fur as bait to lure people into its traps.",
+    "sprite": "/yano/yami-kids/assets/images/amenoella.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/amenoella.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/amenoella_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/21_amenoella/amenoella_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/amenoella_shiny.png"
+  },
+  {
+    "number": 22,
+    "name": "Dr. Dandy",
+    "slug": "dr-dandy",
+    "type": [
+      "Sky",
+      "Holy"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 100,
+      "Attack": 85,
+      "Defense": 90,
+      "Mgk. Atk": 135,
+      "Mgk. Def": 120,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Mr. Panic"
+    ],
+    "classification": "Good Willed",
+    "dex_entry": "An Oni known to be gentle and peaceful, and only acts out in self defense.",
+    "sprite": "/yano/yami-kids/assets/images/dr-dandy.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/dr-dandy.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/dr-dandy_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/22_dr-dandy/dr-dandy_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/dr-dandy_shiny.png"
+  },
+  {
+    "number": 23,
+    "name": "Mr. Panic",
+    "slug": "mr-panic",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 100,
+      "Attack": 95,
+      "Defense": 150,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 125,
+      "Speed": 140
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Dr. Dandy",
+    "evolves_to": [],
+    "classification": "Vengeful Spirit",
+    "dex_entry": "An Oni that transformed into a vengeful spirit, seeking revenge against those who wronged it.",
+    "sprite": "/yano/yami-kids/assets/images/mr-panic.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/mr-panic.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/mr-panic_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/23_mr-panic/mr-panic_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/mr-panic_shiny.png"
+  },
+  {
+    "number": 24,
+    "name": "Blugoo",
+    "slug": "blugoo",
+    "type": [
+      "Sea",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 100,
+      "Attack": 110,
+      "Defense": 90,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 80,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Blubert"
+    ],
+    "classification": "Whale",
+    "dex_entry": "Semi-aquatic, it spends most of it's time in the water unless it cannot find food.",
+    "sprite": "/yano/yami-kids/assets/images/blugoo.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/blugoo.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/blugoo_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/24_blugoo/blugoo_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/blugoo_shiny.png"
+  },
+  {
+    "number": 25,
+    "name": "Blubert",
+    "slug": "blubert",
+    "type": [
+      "Sea",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 135,
+      "Defense": 110,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 95,
+      "Speed": 145
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Blugoo",
+    "evolves_to": [
+      "Reppun"
+    ],
+    "classification": "Whale",
+    "dex_entry": "Curious by nature, it enjoys spending time on land even though its limbs limit the full use of his powers under water.",
+    "sprite": "/yano/yami-kids/assets/images/blubert.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/blubert.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/blubert_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/25_blubert/blubert_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/blubert_shiny.png"
+  },
+  {
+    "number": 26,
+    "name": "Reppun",
+    "slug": "reppun",
+    "type": [
+      "Sea",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 145,
+      "Defense": 115,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 110,
+      "Speed": 155
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Blubert",
+    "evolves_to": [],
+    "classification": "Whale",
+    "dex_entry": "At high speeds it can pierce through the surface of the water to either soar above or swim below, wherever it's pray may be, it will find them.",
+    "sprite": "/yano/yami-kids/assets/images/reppun.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/reppun.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/reppun_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/26_reppun/reppun_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/reppun_shiny.png"
+  },
+  {
+    "number": 27,
+    "name": "Telebi",
+    "slug": "telebi",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 105,
+      "Attack": 100,
+      "Defense": 115,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 95,
+      "Speed": 110
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Telegon"
+    ],
+    "classification": "Dragon",
+    "dex_entry": "A possessed television. It loves residing in places with elderly people.",
+    "sprite": "/yano/yami-kids/assets/images/telebi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/telebi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/telebi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/27_telebi/telebi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/telebi_shiny.png"
+  },
+  {
+    "number": 28,
+    "name": "Telegon",
+    "slug": "telegon",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 125,
+      "Defense": 125,
+      "Mgk. Atk": 135,
+      "Mgk. Def": 105,
+      "Speed": 125
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Telebi",
+    "evolves_to": [
+      "Datatsu"
+    ],
+    "classification": "Dragon",
+    "dex_entry": "Inspired by tales of dragons in shows, this TV took the shape of one itself.",
+    "sprite": "/yano/yami-kids/assets/images/telegon.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/telegon.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/telegon_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/28_telegon/telegon_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/telegon_shiny.png"
+  },
+  {
+    "number": 29,
+    "name": "Datatsu",
+    "slug": "datatsu",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 135,
+      "Attack": 140,
+      "Defense": 130,
+      "Mgk. Atk": 145,
+      "Mgk. Def": 115,
+      "Speed": 130
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Telegon",
+    "evolves_to": [],
+    "classification": "Demon Dragon",
+    "dex_entry": "Its final demonic form is not to be taken lightly. A playful Oni that loves flying freely.",
+    "sprite": "/yano/yami-kids/assets/images/datatsu.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/datatsu.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/datatsu_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/29_datatsu/datatsu_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/datatsu_shiny.png"
+  },
+  {
+    "number": 30,
+    "name": "Owletter",
+    "slug": "owletter",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 115,
+      "Attack": 130,
+      "Defense": 120,
+      "Mgk. Atk": 75,
+      "Mgk. Def": 95,
+      "Speed": 120
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Kurontan"
+    ],
+    "classification": "Aerial",
+    "dex_entry": "Loves to steal mail from unsuspecting humans.",
+    "sprite": "/yano/yami-kids/assets/images/owletter.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/owletter.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/owletter_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/30_owletter/owletter_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/owletter_shiny.png"
+  },
+  {
+    "number": 31,
+    "name": "Kurontan",
+    "slug": "kurontan",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 140,
+      "Defense": 130,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 110,
+      "Speed": 135
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Owletter",
+    "evolves_to": [],
+    "classification": "Aerial",
+    "dex_entry": "Its love of stealing mail evolved into stealing more things, like newspapers and magazines.",
+    "sprite": "/yano/yami-kids/assets/images/kurontan.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kurontan.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kurontan_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/31_kurontan/kurontan_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kurontan_shiny.png"
+  },
+  {
+    "number": 32,
+    "name": "Keshiko",
+    "slug": "keshiko",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 115,
+      "Attack": 60,
+      "Defense": 70,
+      "Mgk. Atk": 135,
+      "Mgk. Def": 120,
+      "Speed": 110
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Nekoke"
+    ],
+    "classification": "Flame Woman",
+    "dex_entry": "Its acts of sweetness are overlooked by its sudden urge to burn things.",
+    "sprite": "/yano/yami-kids/assets/images/keshiko.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/keshiko.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/keshiko_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/32_keshiko/keshiko_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/keshiko_shiny.png"
+  },
+  {
+    "number": 33,
+    "name": "Nekoke",
+    "slug": "nekoke",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 75,
+      "Defense": 80,
+      "Mgk. Atk": 145,
+      "Mgk. Def": 130,
+      "Speed": 120
+    },
+    "stage": 2,
+    "evolves_at": 32,
+    "evolves_from": "Keshiko",
+    "evolves_to": [
+      "Kashasa"
+    ],
+    "classification": "Flame Woman",
+    "dex_entry": "Mischievous, it finds joy in watching those it dislikes burn into nothing.",
+    "sprite": "/yano/yami-kids/assets/images/nekoke.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/nekoke.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/nekoke_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/33_nekoke/nekoke_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/nekoke_shiny.png"
+  },
+  {
+    "number": 34,
+    "name": "Kashasa",
+    "slug": "kashasa",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 110,
+      "Defense": 100,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 140,
+      "Speed": 140
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Nekoke",
+    "evolves_to": [],
+    "classification": "Flame Woman",
+    "dex_entry": "It constantly looks for someone to embrace. All its victims turn to nothing.",
+    "sprite": "/yano/yami-kids/assets/images/kashasa.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kashasa.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kashasa_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/34_kashasa/kashasa_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kashasa_shiny.png"
+  },
+  {
+    "number": 35,
+    "name": "Gagabebe",
+    "slug": "gagabebe",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 150,
+      "Attack": 115,
+      "Defense": 120,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 120,
+      "Speed": 140
+    },
+    "stage": 1,
+    "evolves_at": 16,
+    "evolves_from": null,
+    "evolves_to": [
+      "Ibaraki"
+    ],
+    "classification": "Guitar",
+    "dex_entry": "It loves haunting stores with lots of musical instruments.",
+    "sprite": "/yano/yami-kids/assets/images/gagabebe.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/gagabebe.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/gagabebe_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/35_gagabebe/gagabebe_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/gagabebe_shiny.png"
+  },
+  {
+    "number": 36,
+    "name": "Ibaraki",
+    "slug": "ibaraki",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 120,
+      "Defense": 100,
+      "Mgk. Atk": 45,
+      "Mgk. Def": 90,
+      "Speed": 120
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Gagabebe",
+    "evolves_to": [],
+    "classification": "Guitar",
+    "dex_entry": "A vengeful spirit with a guitar whose owner mistreated it.",
+    "sprite": "/yano/yami-kids/assets/images/ibaraki.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/ibaraki.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/ibaraki_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/36_ibaraki/ibaraki_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/ibaraki_shiny.png"
+  },
+  {
+    "number": 37,
+    "name": "Kitama",
+    "slug": "kitama",
+    "type": [
+      "Earth",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 135,
+      "Defense": 120,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 95,
+      "Speed": 125
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Shuten",
+      "Asurama"
+    ],
+    "classification": "Incarnate",
+    "dex_entry": "A small devlish fiend that chases after weak spirited humans.",
+    "sprite": "/yano/yami-kids/assets/images/kitama.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kitama.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kitama_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/37_kitama/kitama_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kitama_shiny.png"
+  },
+  {
+    "number": 38,
+    "name": "Shuten",
+    "slug": "shuten",
+    "type": [
+      "Earth",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 135,
+      "Defense": 230,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 95,
+      "Speed": 125
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kitama",
+    "evolves_to": [],
+    "classification": "Incarnate",
+    "dex_entry": "Death incarnate. This Oni is rarely ever seen.",
+    "sprite": "/yano/yami-kids/assets/images/shuten.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/shuten.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/shuten_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/38_shuten/shuten_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/shuten_shiny.png"
+  },
+  {
+    "number": 39,
+    "name": "Asurama",
+    "slug": "asurama",
+    "type": [
+      "Earth",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 150,
+      "Defense": 135,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 95,
+      "Speed": 140
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kitama",
+    "evolves_to": [],
+    "classification": "Shaman",
+    "dex_entry": "With agile movements and a mastery of martial arts, it can easily destroy any who gets in their way.",
+    "sprite": "/yano/yami-kids/assets/images/asurama.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/asurama.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/asurama_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/39_asurama/asurama_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/asurama_shiny.png"
+  },
+  {
+    "number": 40,
+    "name": "Kuji",
+    "slug": "kuji",
+    "type": [
+      "Sea",
+      "Demon"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 140,
+      "Defense": 160,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 115,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Whale",
+    "dex_entry": "Slow and steady its ginormous figure easily deters others from fighting around it.",
+    "sprite": "/yano/yami-kids/assets/images/kuji.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kuji.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kuji_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/40_kuji/kuji_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kuji_shiny.png"
+  },
+  {
+    "number": 41,
+    "name": "Jiraga",
+    "slug": "jiraga",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 220,
+      "Attack": 160,
+      "Defense": 200,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 120,
+      "Speed": 80
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Whale",
+    "dex_entry": "It likes to phase through objects with its large body and preferably likes to eat its prey whole.",
+    "sprite": "/yano/yami-kids/assets/images/jiraga.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jiraga.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jiraga_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/41_jiraga/jiraga_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jiraga_shiny.png"
+  },
+  {
+    "number": 42,
+    "name": "Trapie",
+    "slug": "trapie",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 110,
+      "Defense": 120,
+      "Mgk. Atk": 125,
+      "Mgk. Def": 110,
+      "Speed": 110
+    },
+    "stage": 1,
+    "evolves_at": 32,
+    "evolves_from": null,
+    "evolves_to": [
+      "Traqueen"
+    ],
+    "classification": "Trap Specialist",
+    "dex_entry": "It loves preying on unsuspecting victims, and is usually found near other chests with high rewards.",
+    "sprite": "/yano/yami-kids/assets/images/trapie.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/trapie.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/trapie_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/42_trapie/trapie_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/trapie_shiny.png"
+  },
+  {
+    "number": 43,
+    "name": "Traqueen",
+    "slug": "traqueen",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 140,
+      "Defense": 120,
+      "Mgk. Atk": 130,
+      "Mgk. Def": 125,
+      "Speed": 135
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Trapie",
+    "evolves_to": [],
+    "classification": "Majestic Trapmaster",
+    "dex_entry": "She loves to play with her food and savor them slowly, watching with delight as they struggle to get away.",
+    "sprite": "/yano/yami-kids/assets/images/traqueen.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/traqueen.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/traqueen_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/43_traqueen/traqueen_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/traqueen_shiny.png"
+  },
+  {
+    "number": 44,
+    "name": "Kaboomchu",
+    "slug": "kaboomchu",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 70,
+      "Attack": 55,
+      "Defense": 60,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 60,
+      "Speed": 80
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Sparkit"
+    ],
+    "classification": "Exploding",
+    "dex_entry": "It loves doing damage to its surroundings, and its prey.",
+    "sprite": "/yano/yami-kids/assets/images/kaboomchu.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kaboomchu.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kaboomchu_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/44_kaboomchu/kaboomchu_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kaboomchu_shiny.png"
+  },
+  {
+    "number": 45,
+    "name": "Sparkit",
+    "slug": "sparkit",
+    "type": [
+      "Sea",
+      "Demon"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 95,
+      "Defense": 115,
+      "Mgk. Atk": 170,
+      "Mgk. Def": 120,
+      "Speed": 160
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kaboomchu",
+    "evolves_to": [],
+    "classification": "Exploding",
+    "dex_entry": "Uses its increased size to cause larger explosions, dealing as much damage as it can to its surroundings.",
+    "sprite": "/yano/yami-kids/assets/images/sparkit.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/sparkit.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/sparkit_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/45_sparkit/sparkit_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/sparkit_shiny.png"
+  },
+  {
+    "number": 46,
+    "name": "Chirpy",
+    "slug": "chirpy",
+    "type": [
+      "Sea",
+      "Holy"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 110,
+      "Attack": 90,
+      "Defense": 80,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 135,
+      "Speed": 115
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Jean"
+    ],
+    "classification": "The Noisy",
+    "dex_entry": "Chirpy are known for the various melodies they sing. There's a huge variety, ranging from beautiful melodies to pitiful cries.",
+    "sprite": "/yano/yami-kids/assets/images/chirpy.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/chirpy.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/chirpy_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/46_chirpy/chirpy_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/chirpy_shiny.png"
+  },
+  {
+    "number": 47,
+    "name": "Jean",
+    "slug": "jean",
+    "type": [
+      "Sea",
+      "Holy"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 110,
+      "Defense": 100,
+      "Mgk. Atk": 170,
+      "Mgk. Def": 145,
+      "Speed": 135
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Chirpy",
+    "evolves_to": [],
+    "classification": "The Idol",
+    "dex_entry": "Jean dance and sing while fighting as if putting on a performance for a huge crowd, seemingly defeating enemies effortlessly with angelic movements.",
+    "sprite": "/yano/yami-kids/assets/images/jean.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jean.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jean_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/47_jean/jean_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jean_shiny.png"
+  },
+  {
+    "number": 48,
+    "name": "Rodeo",
+    "slug": "rodeo",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 125,
+      "Defense": 115,
+      "Mgk. Atk": 45,
+      "Mgk. Def": 75,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 64,
+    "evolves_from": null,
+    "evolves_to": [
+      "Watanabe"
+    ],
+    "classification": "Clay Boy",
+    "dex_entry": "A soul full of fighting spirit, they ride into battle for the sake of riding.",
+    "sprite": "/yano/yami-kids/assets/images/rodeo.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/rodeo.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/rodeo_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/48_rodeo/rodeo_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/rodeo_shiny.png"
+  },
+  {
+    "number": 49,
+    "name": "Watanabe",
+    "slug": "watanabe",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 150,
+      "Defense": 110,
+      "Mgk. Atk": 95,
+      "Mgk. Def": 140,
+      "Speed": 170
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Rodeo",
+    "evolves_to": [],
+    "classification": "Royal Dragon",
+    "dex_entry": "Nobility and honor runs through its veins. It's scales shine in the light as it moves at high speed to destroy any foe it may face.",
+    "sprite": "/yano/yami-kids/assets/images/watanabe.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/watanabe.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/watanabe_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/49_watanabe/watanabe_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/watanabe_shiny.png"
+  },
+  {
+    "number": 50,
+    "name": "Tsunake",
+    "slug": "tsunake",
+    "type": [
+      "Sky",
+      "Undead"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 135,
+      "Attack": 70,
+      "Defense": 125,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 140,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 80,
+    "evolves_from": null,
+    "evolves_to": [
+      "Tsubane"
+    ],
+    "classification": "Serpent",
+    "dex_entry": "Lonely and loving, it constantly carries alcohol made from its own venom.",
+    "sprite": "/yano/yami-kids/assets/images/tsunake.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/tsunake.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/tsunake_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/50_tsunake/tsunake_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/tsunake_shiny.png"
+  },
+  {
+    "number": 51,
+    "name": "Tsubane",
+    "slug": "tsubane",
+    "type": [
+      "Sky",
+      "Undead"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 150,
+      "Attack": 95,
+      "Defense": 130,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 145,
+      "Speed": 155
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Tsunake",
+    "evolves_to": [],
+    "classification": "Serpent",
+    "dex_entry": "A powerful sorceress that uses her own venom to concoct a variety of potions and cast powerful spells.",
+    "sprite": "/yano/yami-kids/assets/images/tsubane.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/tsubane.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/tsubane_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/51_tsubane/tsubane_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/tsubane_shiny.png"
+  },
+  {
+    "number": 52,
+    "name": "Re:akako",
+    "slug": "re-akako",
+    "type": [
+      "Sky",
+      "Undead"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 65,
+      "Defense": 110,
+      "Mgk. Atk": 135,
+      "Mgk. Def": 120,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 74,
+    "evolves_from": null,
+    "evolves_to": [
+      "Re:loomko"
+    ],
+    "classification": "Decapitated Angel",
+    "dex_entry": "A re-animated decapitated angel that's barely hanging on to life. Despite their small bodies, their magical abilities pack quite a punch.",
+    "sprite": "/yano/yami-kids/assets/images/re-akako.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/re-akako.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/re-akako_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/52_re-akako/re-akako_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/re-akako_shiny.png"
+  },
+  {
+    "number": 53,
+    "name": "Re:loomko",
+    "slug": "re-loomko",
+    "type": [
+      "Sky",
+      "Undead"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 95,
+      "Defense": 125,
+      "Mgk. Atk": 145,
+      "Mgk. Def": 135,
+      "Speed": 155
+    },
+    "stage": 2,
+    "evolves_at": 96,
+    "evolves_from": "Re:akako",
+    "evolves_to": [
+      "Re:wither"
+    ],
+    "classification": "Recovering Angel",
+    "dex_entry": "A once decapitated head-only angel that's weaved itself back together, increasing its fleshy domain and multiplying its magical abilities.",
+    "sprite": "/yano/yami-kids/assets/images/re-loomko.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/re-loomko.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/re-loomko_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/53_re-loomko/re-loomko_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/re-loomko_shiny.png"
+  },
+  {
+    "number": 54,
+    "name": "Re:wither",
+    "slug": "re-wither",
+    "type": [
+      "Sky",
+      "Undead"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 170,
+      "Attack": 120,
+      "Defense": 130,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 150,
+      "Speed": 170
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Re:loomko",
+    "evolves_to": [],
+    "classification": "Re-animation Angel",
+    "dex_entry": "A once sad and small existence that has been weaved back to full strength with a vengeance. Re:wither are capable of flattening entire cities.",
+    "sprite": "/yano/yami-kids/assets/images/re-wither.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/re-wither.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/re-wither_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/54_re-wither/re-wither_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/re-wither_shiny.png"
+  },
+  {
+    "number": 55,
+    "name": "Yappa",
+    "slug": "yappa",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 120,
+      "Attack": 95,
+      "Defense": 110,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 125,
+      "Speed": 120
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Kemuri"
+    ],
+    "classification": "Aquatic",
+    "dex_entry": "Loves to hide on the surface of lakes and ponds. When someone comes near its vicinity, it tries to get their attention and play with them.",
+    "sprite": "/yano/yami-kids/assets/images/yappa.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/yappa.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/yappa_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/55_yappa/yappa_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/yappa_shiny.png"
+  },
+  {
+    "number": 56,
+    "name": "Kemuri",
+    "slug": "kemuri",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 120,
+      "Defense": 135,
+      "Mgk. Atk": 180,
+      "Mgk. Def": 140,
+      "Speed": 160
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Yappa",
+    "evolves_to": [],
+    "classification": "Aquatic",
+    "dex_entry": "With a mature demeanor it isolates itself most of the time. He prefers to stay away from people because he finds it a hassle to talk to them.",
+    "sprite": "/yano/yami-kids/assets/images/kemuri.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kemuri.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kemuri_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/56_kemuri/kemuri_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kemuri_shiny.png"
+  },
+  {
+    "number": 57,
+    "name": "Thumper",
+    "slug": "thumper",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 120,
+      "Defense": 135,
+      "Mgk. Atk": 95,
+      "Mgk. Def": 120,
+      "Speed": 120
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Thuntra"
+    ],
+    "classification": "Bear",
+    "dex_entry": "The amalgamation of hunted bears come to life. As cuddly as it looks on the outside, it is extremely violent.",
+    "sprite": "/yano/yami-kids/assets/images/thumper.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/thumper.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/thumper_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/57_thumper/thumper_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/thumper_shiny.png"
+  },
+  {
+    "number": 58,
+    "name": "Thuntra",
+    "slug": "thuntra",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Sloth",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 200,
+      "Defense": 140,
+      "Mgk. Atk": 105,
+      "Mgk. Def": 125,
+      "Speed": 170
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Thumper",
+    "evolves_to": [],
+    "classification": "Beast Man",
+    "dex_entry": "A master hunter that uses its superior accuracy and skill to precisely kill its enemies.",
+    "sprite": "/yano/yami-kids/assets/images/thuntra.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/thuntra.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/thuntra_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/58_thuntra/thuntra_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/thuntra_shiny.png"
+  },
+  {
+    "number": 59,
+    "name": "Nyakako",
+    "slug": "nyakako",
+    "type": [
+      "Sky",
+      "Holy"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 160,
+      "Defense": 95,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 75,
+      "Speed": 150
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Byakakako"
+    ],
+    "classification": "Beast Man",
+    "dex_entry": "She constantly focuses on training her body, don't be fooled as her intellect is just as strong.",
+    "sprite": "/yano/yami-kids/assets/images/nyakako.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/nyakako.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/nyakako_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/59_nyakako/nyakako_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/nyakako_shiny.png"
+  },
+  {
+    "number": 60,
+    "name": "Byakakako",
+    "slug": "byakakako",
+    "type": [
+      "Sky",
+      "Holy"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 165,
+      "Attack": 220,
+      "Defense": 115,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 95,
+      "Speed": 200
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Nyakako",
+    "evolves_to": [],
+    "classification": "Beast Man",
+    "dex_entry": "Constantly looking for challenges or people to challenge with overwhelming strength in mind and body.",
+    "sprite": "/yano/yami-kids/assets/images/byakakako.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/byakakako.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/byakakako_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/60_byakakako/byakakako_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/byakakako_shiny.png"
+  },
+  {
+    "number": 61,
+    "name": "Kajou",
+    "slug": "kajou",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 60,
+      "Defense": 110,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 135,
+      "Speed": 130
+    },
+    "stage": 1,
+    "evolves_at": 80,
+    "evolves_from": null,
+    "evolves_to": [
+      "Hinojou",
+      "Sunato"
+    ],
+    "classification": "Infernal",
+    "dex_entry": "Playful and mischievous, she looks for people that want to spoil her and leaves them with burns.",
+    "sprite": "/yano/yami-kids/assets/images/kajou.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kajou.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kajou_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/61_kajou/kajou_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kajou_shiny.png"
+  },
+  {
+    "number": 62,
+    "name": "Hinojou",
+    "slug": "hinojou",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 90,
+      "Defense": 130,
+      "Mgk. Atk": 220,
+      "Mgk. Def": 180,
+      "Speed": 150
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kajou",
+    "evolves_to": [],
+    "classification": "Infernal",
+    "dex_entry": "Serious and mature, she likes to have fun with those she deems strong.",
+    "sprite": "/yano/yami-kids/assets/images/hinojou.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hinojou.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hinojou_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/62_hinojou/hinojou_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hinojou_shiny.png"
+  },
+  {
+    "number": 63,
+    "name": "Sunato",
+    "slug": "sunato",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 200,
+      "Attack": 180,
+      "Defense": 170,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 145,
+      "Speed": 170
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kajou",
+    "evolves_to": [],
+    "classification": "Heavy Gunner",
+    "dex_entry": "Tactical and unhurried, she picks her ground long before the fighting starts and rarely needs a second shot.",
+    "sprite": "/yano/yami-kids/assets/images/sunato.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/sunato.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/sunato_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/63_sunato/sunato_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/sunato_shiny.png"
+  },
+  {
+    "number": 64,
+    "name": "Penja",
+    "slug": "penja",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Envy",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 200,
+      "Defense": 130,
+      "Mgk. Atk": 170,
+      "Mgk. Def": 115,
+      "Speed": 250
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Bird",
+    "dex_entry": "Surging with energy it's unable to hold, the excess energy is used to move at the speed of lightning.",
+    "sprite": "/yano/yami-kids/assets/images/penja.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/penja.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/penja_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/64_penja/penja_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/penja_shiny.png"
+  },
+  {
+    "number": 65,
+    "name": "Bam",
+    "slug": "bam",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 135,
+      "Attack": 140,
+      "Defense": 120,
+      "Mgk. Atk": 105,
+      "Mgk. Def": 115,
+      "Speed": 140
+    },
+    "stage": 1,
+    "evolves_at": 96,
+    "evolves_from": null,
+    "evolves_to": [
+      "Hector"
+    ],
+    "classification": "Beast Man",
+    "dex_entry": "Inspired by shinobis, it trains in the ways of stealth. Still in its youth, it likes to play pranks.",
+    "sprite": "/yano/yami-kids/assets/images/bam.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/bam.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/bam_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/65_bam/bam_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/bam_shiny.png"
+  },
+  {
+    "number": 66,
+    "name": "Hector",
+    "slug": "hector",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 155,
+      "Attack": 165,
+      "Defense": 135,
+      "Mgk. Atk": 130,
+      "Mgk. Def": 130,
+      "Speed": 210
+    },
+    "stage": 2,
+    "evolves_at": 128,
+    "evolves_from": "Bam",
+    "evolves_to": [
+      "Cast"
+    ],
+    "classification": "Beast Man",
+    "dex_entry": "Specializing in close combat with nimble movements, it is rarely ever seen.",
+    "sprite": "/yano/yami-kids/assets/images/hector.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hector.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hector_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/66_hector/hector_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hector_shiny.png"
+  },
+  {
+    "number": 67,
+    "name": "Cast",
+    "slug": "cast",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 110,
+      "Defense": 130,
+      "Mgk. Atk": 300,
+      "Mgk. Def": 185,
+      "Speed": 150
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Hector",
+    "evolves_to": [],
+    "classification": "Great Sage",
+    "dex_entry": "A powerful wizard. Its knowledge knows no bounds. With a plethora of spells for every situation it is recommended to not get on its bad side.",
+    "sprite": "/yano/yami-kids/assets/images/cast.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/cast.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/cast_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/67_cast/cast_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/cast_shiny.png"
+  },
+  {
+    "number": 68,
+    "name": "Koko",
+    "slug": "koko",
+    "type": [
+      "Sea",
+      "Undead"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 60,
+      "Defense": 110,
+      "Mgk. Atk": 140,
+      "Mgk. Def": 120,
+      "Speed": 145
+    },
+    "stage": 1,
+    "evolves_at": 78,
+    "evolves_from": null,
+    "evolves_to": [
+      "Oo-Kori-ma"
+    ],
+    "classification": "Bug",
+    "dex_entry": "Cold and soft as snow, a good snuggle on a hot day would bring bliss to those who do so.",
+    "sprite": "/yano/yami-kids/assets/images/koko.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/koko.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/koko_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/68_koko/koko_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/koko_shiny.png"
+  },
+  {
+    "number": 69,
+    "name": "Oo-Kori-ma",
+    "slug": "oo-kori-ma",
+    "type": [
+      "Sea",
+      "Undead"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 150,
+      "Defense": 150,
+      "Mgk. Atk": 145,
+      "Mgk. Def": 130,
+      "Speed": 120
+    },
+    "stage": 2,
+    "evolves_at": 108,
+    "evolves_from": "Koko",
+    "evolves_to": [
+      "Yukiko"
+    ],
+    "classification": "Bug Man",
+    "dex_entry": "With uncontrollable wrath it seeks only more violence. Until it discovers its true desires it will forever be trapped in its ice cold shell.",
+    "sprite": "/yano/yami-kids/assets/images/oo-kori-ma.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/oo-kori-ma.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/oo-kori-ma_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/69_oo-kori-ma/oo-kori-ma_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/oo-kori-ma_shiny.png"
+  },
+  {
+    "number": 70,
+    "name": "Yukiko",
+    "slug": "yukiko",
+    "type": [
+      "Sea",
+      "Undead"
+    ],
+    "sin": "Lust",
+    "base_stats": {
+      "Health": 165,
+      "Attack": 150,
+      "Defense": 150,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 170,
+      "Speed": 150
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Oo-Kori-ma",
+    "evolves_to": [],
+    "classification": "Bug Man",
+    "dex_entry": "She casts a chilling wind without lifting a finger, if one were to threaten her she could cause a frost nova.",
+    "sprite": "/yano/yami-kids/assets/images/yukiko.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/yukiko.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/yukiko_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/70_yukiko/yukiko_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/yukiko_shiny.png"
+  },
+  {
+    "number": 71,
+    "name": "Koi",
+    "slug": "koi",
+    "type": [
+      "Sea",
+      "Holy"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 60,
+      "Defense": 110,
+      "Mgk. Atk": 130,
+      "Mgk. Def": 135,
+      "Speed": 125
+    },
+    "stage": 1,
+    "evolves_at": 72,
+    "evolves_from": null,
+    "evolves_to": [
+      "Koisha"
+    ],
+    "classification": "Fish",
+    "dex_entry": "Koi move mostly in schools and when finding someone who is injured, swarm and heal them in hopes of gratitude.",
+    "sprite": "/yano/yami-kids/assets/images/koi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/koi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/koi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/71_koi/koi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/koi_shiny.png"
+  },
+  {
+    "number": 72,
+    "name": "Koisha",
+    "slug": "koisha",
+    "type": [
+      "Sea",
+      "Holy"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 170,
+      "Attack": 75,
+      "Defense": 120,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 155,
+      "Speed": 140
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Koi",
+    "evolves_to": [],
+    "classification": "Fish Man",
+    "dex_entry": "Koisha can usually be found within a school of Koi but also have a higher intellect. Instead of healing off of emotion, she heals as a sense of duty.",
+    "sprite": "/yano/yami-kids/assets/images/koisha.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/koisha.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/koisha_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/72_koisha/koisha_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/koisha_shiny.png"
+  },
+  {
+    "number": 73,
+    "name": "Mitsushi",
+    "slug": "mitsushi",
+    "type": [
+      "Earth",
+      "Undead"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 220,
+      "Attack": 90,
+      "Defense": 135,
+      "Mgk. Atk": 210,
+      "Mgk. Def": 165,
+      "Speed": 150
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Polymorph",
+    "dex_entry": "Mangled with an uncertain form, it is actually quite peaceful yet very powerful. Energy leaks out of the rods piercing its body.",
+    "sprite": "/yano/yami-kids/assets/images/mitsushi.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/mitsushi.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/mitsushi_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/73_mitsushi/mitsushi_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/mitsushi_shiny.png"
+  },
+  {
+    "number": 74,
+    "name": "Hobgobbo",
+    "slug": "hobgobbo",
+    "type": [
+      "Earth",
+      "Demon"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 230,
+      "Attack": 260,
+      "Defense": 245,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 100,
+      "Speed": 160
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Polymorph",
+    "dex_entry": "Very playful and enjoys company, with the ability to change not only the size of its limbs, but also it's muscle structure.",
+    "sprite": "/yano/yami-kids/assets/images/hobgobbo.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hobgobbo.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hobgobbo_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/74_hobgobbo/hobgobbo_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hobgobbo_shiny.png"
+  },
+  {
+    "number": 75,
+    "name": "Ringel",
+    "slug": "ringel",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 90,
+      "Defense": 110,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 135,
+      "Speed": 130
+    },
+    "stage": 1,
+    "evolves_at": 96,
+    "evolves_from": null,
+    "evolves_to": [
+      "Lampty"
+    ],
+    "classification": "Sealed Ring",
+    "dex_entry": "Likes to hide among jewelry for attention, but will throw a tantrum if passed over for \"lesser\" accessories.",
+    "sprite": "/yano/yami-kids/assets/images/ringel.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/ringel.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/ringel_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/75_ringel/ringel_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/ringel_shiny.png"
+  },
+  {
+    "number": 76,
+    "name": "Lampty",
+    "slug": "lampty",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 100,
+      "Defense": 120,
+      "Mgk. Atk": 180,
+      "Mgk. Def": 150,
+      "Speed": 145
+    },
+    "stage": 2,
+    "evolves_at": 128,
+    "evolves_from": "Ringel",
+    "evolves_to": [
+      "Shadea"
+    ],
+    "classification": "Sealed Lamp",
+    "dex_entry": "Seeks to garner strength to break thy seal, granting meager desires for tainted souls.",
+    "sprite": "/yano/yami-kids/assets/images/lampty.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/lampty.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/lampty_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/76_lampty/lampty_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/lampty_shiny.png"
+  },
+  {
+    "number": 77,
+    "name": "Shadea",
+    "slug": "shadea",
+    "type": [
+      "Inferno",
+      "Undead"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 115,
+      "Defense": 135,
+      "Mgk. Atk": 220,
+      "Mgk. Def": 180,
+      "Speed": 175
+    },
+    "stage": 3,
+    "evolves_at": null,
+    "evolves_from": "Lampty",
+    "evolves_to": [],
+    "classification": "Unbound",
+    "dex_entry": "Shackles broken chains to dust, what once was sealed escaped at last, woe to thy who witness me, for deaths release will never be.",
+    "sprite": "/yano/yami-kids/assets/images/shadea.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/shadea.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/shadea_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/77_shadea/shadea_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/shadea_shiny.png"
+  },
+  {
+    "number": 78,
+    "name": "Mokisa",
+    "slug": "mokisa",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 130,
+      "Attack": 85,
+      "Defense": 100,
+      "Mgk. Atk": 150,
+      "Mgk. Def": 125,
+      "Speed": 135
+    },
+    "stage": 1,
+    "evolves_at": 64,
+    "evolves_from": null,
+    "evolves_to": [
+      "Mokainu"
+    ],
+    "classification": "Beast",
+    "dex_entry": "Mokisas are just immature forms of Mokainu that have expectations of adulthood.",
+    "sprite": "/yano/yami-kids/assets/images/mokisa.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/mokisa.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/mokisa_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/78_mokisa/mokisa_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/mokisa_shiny.png"
+  },
+  {
+    "number": 79,
+    "name": "Mokainu",
+    "slug": "mokainu",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 155,
+      "Attack": 105,
+      "Defense": 120,
+      "Mgk. Atk": 190,
+      "Mgk. Def": 155,
+      "Speed": 165
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Mokisa",
+    "evolves_to": [],
+    "classification": "Beast",
+    "dex_entry": "Mokainu are mature forms of Mokisas. They tend to act in a way that befits an adult.",
+    "sprite": "/yano/yami-kids/assets/images/mokainu.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/mokainu.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/mokainu_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/79_mokainu/mokainu_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/mokainu_shiny.png"
+  },
+  {
+    "number": 80,
+    "name": "Kumo",
+    "slug": "kumo",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 140,
+      "Attack": 145,
+      "Defense": 145,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 105,
+      "Speed": 95
+    },
+    "stage": 1,
+    "evolves_at": 64,
+    "evolves_from": null,
+    "evolves_to": [
+      "Yuujo"
+    ],
+    "classification": "Deceptive Spider",
+    "dex_entry": "Strings its web where something valuable ought to be, patient in the knowledge that a greedy hand always arrives eventually.",
+    "sprite": "/yano/yami-kids/assets/images/kumo.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/kumo.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/kumo_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/80_kumo/kumo_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/kumo_shiny.png"
+  },
+  {
+    "number": 81,
+    "name": "Yuujo",
+    "slug": "yuujo",
+    "type": [
+      "Earth",
+      "Living"
+    ],
+    "sin": "Greed",
+    "base_stats": {
+      "Health": 165,
+      "Attack": 185,
+      "Defense": 165,
+      "Mgk. Atk": 130,
+      "Mgk. Def": 140,
+      "Speed": 130
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Kumo",
+    "evolves_to": [],
+    "classification": "Spider Demon",
+    "dex_entry": "Takes a lovelier shape once grown, and finds the new face catches far more than any web ever did.",
+    "sprite": "/yano/yami-kids/assets/images/yuujo.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/yuujo.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/yuujo_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/81_yuujo/yuujo_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/yuujo_shiny.png"
+  },
+  {
+    "number": 82,
+    "name": "Morphtrix",
+    "slug": "morphtrix",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 155,
+      "Defense": 95,
+      "Mgk. Atk": 155,
+      "Mgk. Def": 140,
+      "Speed": 170
+    },
+    "stage": 1,
+    "evolves_at": 24,
+    "evolves_from": null,
+    "evolves_to": [
+      "Jestr"
+    ],
+    "classification": "Dark Magic",
+    "dex_entry": "Dark and mysterious, Morphtrix can use powerful illusions where it's on the baseline to reality itself.",
+    "sprite": "/yano/yami-kids/assets/images/morphtrix.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/morphtrix.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/morphtrix_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/82_morphtrix/morphtrix_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/morphtrix_shiny.png"
+  },
+  {
+    "number": 83,
+    "name": "Jestr",
+    "slug": "jestr",
+    "type": [
+      "Sky",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 160,
+      "Attack": 180,
+      "Defense": 110,
+      "Mgk. Atk": 180,
+      "Mgk. Def": 165,
+      "Speed": 200
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Morphtrix",
+    "evolves_to": [],
+    "classification": "Dark Magic",
+    "dex_entry": "Among all, there are those that please others with ulterior motives.",
+    "sprite": "/yano/yami-kids/assets/images/jestr.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/jestr.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/jestr_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/83_jestr/jestr_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/jestr_shiny.png"
+  },
+  {
+    "number": 84,
+    "name": "Fletcher",
+    "slug": "fletcher",
+    "type": [
+      "Sky",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 135,
+      "Attack": 60,
+      "Defense": 145,
+      "Mgk. Atk": 155,
+      "Mgk. Def": 90,
+      "Speed": 180
+    },
+    "stage": 1,
+    "evolves_at": 32,
+    "evolves_from": null,
+    "evolves_to": [
+      "Razor"
+    ],
+    "classification": "Chick",
+    "dex_entry": "Small with an ill mannered personality, it usually feels annoyed at any situation.",
+    "sprite": "/yano/yami-kids/assets/images/fletcher.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/fletcher.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/fletcher_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/84_fletcher/fletcher_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/fletcher_shiny.png"
+  },
+  {
+    "number": 85,
+    "name": "Razor",
+    "slug": "razor",
+    "type": [
+      "Sky",
+      "Living"
+    ],
+    "sin": "Gluttony",
+    "base_stats": {
+      "Health": 150,
+      "Attack": 70,
+      "Defense": 175,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 110,
+      "Speed": 220
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Fletcher",
+    "evolves_to": [],
+    "classification": "Black Gryphon",
+    "dex_entry": "Soars above the skies with pride, it becomes agitated when it crosses paths with those that do not respect it.",
+    "sprite": "/yano/yami-kids/assets/images/razor.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/razor.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/razor_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/85_razor/razor_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/razor_shiny.png"
+  },
+  {
+    "number": 86,
+    "name": "Wanyuu",
+    "slug": "wanyuu",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 125,
+      "Attack": 180,
+      "Defense": 110,
+      "Mgk. Atk": 180,
+      "Mgk. Def": 115,
+      "Speed": 185
+    },
+    "stage": 1,
+    "evolves_at": 96,
+    "evolves_from": null,
+    "evolves_to": [
+      "Hexachor"
+    ],
+    "classification": "Flame Wheel",
+    "dex_entry": "The wrath of those who died in flames, their souls filled with regret, a composition of disaster.",
+    "sprite": "/yano/yami-kids/assets/images/wanyuu.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/wanyuu.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/wanyuu_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/86_wanyuu/wanyuu_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/wanyuu_shiny.png"
+  },
+  {
+    "number": 87,
+    "name": "Hexachor",
+    "slug": "hexachor",
+    "type": [
+      "Inferno",
+      "Demon"
+    ],
+    "sin": "Wrath",
+    "base_stats": {
+      "Health": 145,
+      "Attack": 230,
+      "Defense": 115,
+      "Mgk. Atk": 230,
+      "Mgk. Def": 115,
+      "Speed": 220
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Wanyuu",
+    "evolves_to": [],
+    "classification": "Infernal Demon",
+    "dex_entry": "Bathed and covered in the depths of hellfire, it prefers a direct confrontation rather than beating around the bush.",
+    "sprite": "/yano/yami-kids/assets/images/hexachor.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/hexachor.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/hexachor_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/87_hexachor/hexachor_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/hexachor_shiny.png"
+  },
+  {
+    "number": 88,
+    "name": "Miyuki (Maiden)",
+    "slug": "miyuki-maiden",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 165,
+      "Attack": 135,
+      "Defense": 140,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 180,
+      "Speed": 175
+    },
+    "stage": 1,
+    "evolves_at": 160,
+    "evolves_from": null,
+    "evolves_to": [
+      "Miyuki (Ascended)"
+    ],
+    "classification": "Holy Maiden",
+    "dex_entry": "In reality, one must prove themselves before others to receive recognition, is that what life has to offer?",
+    "sprite": "/yano/yami-kids/assets/images/miyuki-maiden.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/miyuki-maiden.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/miyuki-maiden_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/88_miyuki-maiden/miyuki-maiden_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/miyuki-maiden_shiny.png"
+  },
+  {
+    "number": 89,
+    "name": "Miyuki (Ascended)",
+    "slug": "miyuki-ascended",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 265,
+      "Attack": 235,
+      "Defense": 240,
+      "Mgk. Atk": 300,
+      "Mgk. Def": 280,
+      "Speed": 275
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Miyuki (Maiden)",
+    "evolves_to": [],
+    "classification": "Diety",
+    "dex_entry": "To bend reality and fracture time, to mend the very existence of every being, true power knows no bounds to those close to a god.",
+    "sprite": "/yano/yami-kids/assets/images/miyuki-ascended.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/miyuki-ascended.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/miyuki-ascended_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/89_miyuki-ascended/miyuki-ascended_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/miyuki-ascended_shiny.png"
+  }
+]
