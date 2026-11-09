@@ -95,7 +95,7 @@ function navigate(){
  }
  const evol=lineage.length>1?lineage:[m];
  const evoMarkup=evol.map((e,i)=>{
-  const node='<a href="'+url(e)+'">'+img(e.mini_sprite||e.sprite,e.name)+'<span class="evo-name">'+esc(e.name)+'</span></a>';
+  const node='<a href="'+url(e)+'">'+img(e.sprite||e.mini_sprite,e.name,'evo-sprite')+'<span class="evo-name">'+esc(e.name)+'</span></a>';
   if(!i)return node;
   const from=evol[i-1],level=from.evolves_at;
   return '<span class="evo-transition"><span class="evo-arrow-glyph" aria-hidden="true">→</span>'+(level?'<span class="evo-level">Lv. '+esc(level)+'</span>':'')+'</span>'+node;
