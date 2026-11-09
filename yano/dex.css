@@ -508,3 +508,83 @@ html body.yano-dex #profile .stat-radar{
   max-width:48px!important;max-height:48px!important;
  }
 }
+
+/* Game-specific atmosphere. Shared grid, navigation and profile geometry
+   are intentionally unchanged. Monster type colors remain type-specific. */
+html body.yano-dex[data-theme="yami-kids"]{
+ --game-accent:#c67bdb;
+ --game-accent-bright:#e5a9f4;
+ --game-border:rgba(190,117,211,.38);
+ --game-surface:rgba(36,20,51,.78);
+ --game-button-top:#57316c;
+ --game-button-bottom:#281a3e;
+ --game-input:#24172f;
+ --game-text:#f5e8ff;
+ background-color:#110e1c!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(126,47,142,.30),transparent 55%),linear-gradient(145deg,#100d1a,#21132e 58%,#11101e)!important;
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme="nuumonsters"]{
+ --game-accent:#37c4ad;
+ --game-accent-bright:#85efcb;
+ --game-border:rgba(54,190,160,.36);
+ --game-surface:rgba(12,43,46,.76);
+ --game-button-top:#176e68;
+ --game-button-bottom:#123c49;
+ --game-input:#102f38;
+ --game-text:#e3fff6;
+ background-color:#091c22!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(29,161,139,.25),transparent 55%),linear-gradient(145deg,#0a1c27,#103b3d 58%,#0b1d28)!important;
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme] .yanoverse-brand{color:var(--game-accent-bright)!important}
+html body.yano-dex[data-theme] .yanoverse-brand span{color:var(--game-accent)!important}
+html body.yano-dex[data-theme] .yanoverse-game.is-selected{
+ background:var(--game-surface)!important;
+ border-color:var(--game-accent)!important;
+ box-shadow:0 0 22px color-mix(in srgb,var(--game-accent),transparent 72%)!important;
+}
+html body.yano-dex[data-theme] .nav-button,
+html body.yano-dex[data-theme] #filter-toggle,
+html body.yano-dex[data-theme] #clear-filters{
+ background:linear-gradient(145deg,var(--game-button-top),var(--game-button-bottom))!important;
+ border-color:var(--game-border)!important;
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme] #dex-filter-controls{
+ background:var(--game-surface)!important;
+ border-color:var(--game-border)!important;
+}
+html body.yano-dex[data-theme] #dex-filter-controls input:not([type=checkbox]),
+html body.yano-dex[data-theme] #dex-filter-controls select{
+ background:var(--game-input)!important;
+ border-color:var(--game-border)!important;
+}
+html body.yano-dex[data-theme] .yv-dex-summary{
+ background:linear-gradient(145deg,var(--game-button-top),var(--game-button-bottom))!important;
+ border-color:var(--game-border)!important;
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme] #profile .monster-info,
+html body.yano-dex[data-theme] #profile .stats-side,
+html body.yano-dex[data-theme] #profile .evolution-wrapper{
+ background:var(--game-surface)!important;
+ border-color:var(--game-border)!important;
+}
+html body.yano-dex[data-theme] #profile .return-link,
+html body.yano-dex[data-theme] #profile .profile-number,
+html body.yano-dex[data-theme] #profile .evo a{
+ color:var(--game-accent-bright)!important;
+}
+html body.yano-dex[data-theme] #profile .profile-title{
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme] #profile .profile-navigation>.nav-arrow{
+ background:linear-gradient(145deg,var(--game-button-top),var(--game-button-bottom))!important;
+ border-color:var(--game-border)!important;
+ color:var(--game-text)!important;
+}
+html body.yano-dex[data-theme] #profile .stat-radar polygon:last-of-type{
+ stroke:var(--game-accent-bright)!important;
+ fill:var(--game-accent)!important;
+}
