@@ -265,3 +265,39 @@ html body.yano-dex #profile .stat-total{width:100%!important;text-align:center!i
  html body.yano-dex #profile .evolution-wrapper{max-width:100%!important;padding:12px!important}
  html body.yano-dex #profile .stat-radar{width:min(100%,280px)!important}
 }
+
+/* Match Dokidex: previous/next controls remain fixed at viewport edges
+   while the profile scrolls, on both desktop and mobile. */
+html body.yano-dex #profile .profile-navigation>.nav-arrow{
+ position:fixed!important;
+ top:50%!important;
+ bottom:auto!important;
+ margin:0!important;
+ transform:translateY(-50%)!important;
+ align-self:auto!important;
+ z-index:1000!important;
+ width:30px!important;
+ height:80px!important;
+ border:2px solid #b9cbe3!important;
+ border-radius:6px!important;
+ background:rgba(18,34,55,.82)!important;
+ color:#e7f4ff!important;
+ font:400 30px/1 'VT323',monospace!important;
+ box-shadow:0 3px 12px #0007!important;
+}
+html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{
+ left:1rem!important;right:auto!important;
+}
+html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{
+ right:1rem!important;left:auto!important;
+}
+html body.yano-dex #profile .profile-navigation>.nav-arrow:hover{
+ background:#345371!important;
+}
+@media(max-width:700px){
+ html body.yano-dex #profile .profile-navigation>.nav-arrow{
+  width:24px!important;height:64px!important;font-size:26px!important;
+ }
+ html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{left:4px!important}
+ html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{right:4px!important}
+}
