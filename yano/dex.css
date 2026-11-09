@@ -1151,3 +1151,37 @@ html body.yano-dex #profile .evolution-wrapper .evo a{
  }
  html body.yano-dex #profile .evolution-wrapper .evo a{min-width:74px!important}
 }
+
+/* Mobile Dex: wrap as many compact cards per row as fit.
+   Three 96px cards fit within a 320px-wide grid; wider screens
+   naturally gain additional columns. No fixed two-column limit. */
+@media(max-width:600px){
+ html body.yano-dex #dex-grid.dex-grid{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  align-content:flex-start!important;
+  gap:8px!important;
+  padding:8px!important;
+  grid-template-columns:none!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry{
+  box-sizing:border-box!important;
+  flex:0 0 96px!important;
+  width:96px!important;
+  min-width:96px!important;
+  max-width:96px!important;
+  height:154px!important;
+  min-height:154px!important;
+  max-height:154px!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry .img-wrapper{
+  flex:0 0 84px!important;
+  width:84px!important;
+  height:84px!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry .monster-image.small{
+  max-width:82px!important;
+  max-height:82px!important;
+ }
+}
