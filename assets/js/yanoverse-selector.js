@@ -2,8 +2,8 @@
   const games = [
     {id:'dokimon2',name:'Dokimon Quest 2',status:'In development'},
     {id:'quest',name:'Dokimon: Quest',status:''},
-    {id:'yami',name:'Yami Kids',status:'Data coming soon'},
-    {id:'nuumonsters',name:'Nuumonsters',status:'Data coming soon'}
+    {id:'yami',name:'Yami Kids',status:'Dex available'},
+    {id:'nuumonsters',name:'Nuumonsters',status:'Dex available'}
   ];
   const track=document.getElementById('yanoverse-game-track');
   const notice=document.getElementById('yanoverse-game-notice');
@@ -93,6 +93,10 @@
     if(btn.classList.contains('is-selected')){
       const home='/Yanoverse-Multidex/'; 
       window.location.assign(home);
+      return;
+    }
+    if(id==='yami'||id==='nuumonsters') {
+      window.location.assign('/Yanoverse-Multidex/yano/dex.html?game='+(id==='yami'?'yami-kids':'nuumonsters'));
       return;
     }
     select(id);
