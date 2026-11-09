@@ -145,7 +145,8 @@ $('clear-filters').addEventListener('click',()=>{activeTypes.clear();typeFilters
 [search,stage].forEach(el=>el.addEventListener('input',render));
 shiny.addEventListener('change',()=>{render();if(selected)navigate()});
 fetch(root+game+'/_data/'+game+'.json').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(rows=>{
- data=rows.sort((a,b)=>a.number-b.number);
+ // Unreleased Yami Kids remain in the source JSON, but are excluded from all public views.
+ data=rows.filter(m=>game!=='yami-kids'||![88,89].includes(Number(m.number))).sort((a,b)=>a.number-b.number);
  [...new Set(data.flatMap(m=>m.type||[]))].sort().forEach(t=>{const b=document.createElement('button');b.type='button';b.className='type-btn';b.textContent=t;b.dataset.type=t;b.style.setProperty('--type-color',color(t));b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{if(activeTypes.has(t))activeTypes.delete(t);else activeTypes.add(t);b.classList.toggle('active',activeTypes.has(t));b.setAttribute('aria-pressed',String(activeTypes.has(t)));render()});typeFilters.appendChild(b)});
  navigate();render();
 }).catch(e=>{summary.textContent='Unable to load Dex data: '+e.message});
