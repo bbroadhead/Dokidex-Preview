@@ -93,3 +93,10 @@ html body.yano-dex #profile .profile-top{gap:20px}
 html body.yano-dex #profile .profile-title{margin:6px auto 18px!important}
 html body.yano-dex #profile .stat-row{grid-template-columns:85px minmax(0,1fr) 32px!important}
 @media(max-width:768px){html body.yano-dex #profile .monster-layout-row{display:flex!important;flex-direction:column!important;align-items:center!important}html body.yano-dex #profile .monster-layout-row>div{width:100%!important}html body.yano-dex #profile .monster-layout-row>.monster-image-container{min-height:220px!important}html body.yano-dex .yanoverse-game-track{gap:8px!important}}
+
+/* Profile navigation: same side-arrow framing as the Dokimon profile. */
+html body.yano-dex #profile .profile-navigation{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:12px;align-items:center}
+html body.yano-dex #profile .nav-arrow{display:flex;align-items:center;justify-content:center;width:44px;height:64px;border:1px solid #93b7df66;border-radius:12px;background:linear-gradient(145deg,#2b4767,#14283e);color:#e7f4ff;text-decoration:none;font:400 44px/1 'VT323',monospace;transition:background .2s}
+html body.yano-dex #profile .nav-arrow:hover{background:#355a81}
+html body.yano-dex #profile .profile-navigation .monster-layout-row{min-width:0!important;width:100%!important}
+@media(max-width:768px){html body.yano-dex #profile .profile-navigation{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}html body.yano-dex #profile .nav-arrow{width:28px;height:52px;font-size:33px}html body.yano-dex #profile{padding:4px!important}html body.yano-dex #profile .monster-layout-row>.monster-info,html body.yano-dex #profile .monster-layout-row>.stats-side{padding:14px!important}}
