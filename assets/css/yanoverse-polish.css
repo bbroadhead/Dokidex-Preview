@@ -1012,130 +1012,81 @@ html body .site-header .site-nav :is(a,button,.dropdown-toggle){
   }
 }
 
-/* ===============================================================
-   Dokimon: Quest — Mystic Amethyst
-   Shared by the main Dex, monster pages, World and DokiTracker.
-   Color-only overrides: no changes to layout, type controls,
-   sprite artwork, dual-type borders, or chart rendering.
-   Yami Kids / Nuumonsters do not load this stylesheet.
-   =============================================================== */
+
+/* Dokimon: Quest — Deep Navy. Loaded after inline page styles.
+   Preserve monster type filters, borders, glows and page geometry. */
 html body.dark-mode:not(.yano-dex){
- --yv-bg:#25223b;
- --yv-surface:#332d48;
- --yv-surface-raised:#403754;
- --yv-stroke:rgba(169,148,205,.34);
- --yv-text:#f1ebfa;
- --yv-muted:#c8bedb;
- --yv-accent:#e9bc73;
- --bg-color:#25223b;
- --card-bg:#332d48;
- --text-color:#f1ebfa;
- --link-color:#dfc08d;
- --border-color:rgba(169,148,205,.38);
- --separator-color:#a08abf;
- background-color:#25223b!important;
- background-image:radial-gradient(ellipse 80% 42% at 50% 0%,rgba(113,97,155,.22),transparent 75%),linear-gradient(160deg,#25223b,#201d30 65%,#29233b)!important;
- color:var(--yv-text)!important;
+ --yv-bg:#0a1423;
+ --yv-surface:#14243a;
+ --yv-surface-raised:#1d3451;
+ --yv-stroke:rgba(130,174,223,.34);
+ --yv-text:#eaf3ff;
+ --yv-muted:#b7cce4;
+ --yv-accent:#83b7e8;
+ --bg-color:#0a1423;
+ --card-bg:#14243a;
+ --text-color:#eaf3ff;
+ --link-color:#9cc8f1;
+ --border-color:rgba(130,174,223,.34);
+ background-color:#0a1423!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(43,91,148,.22),transparent 55%),linear-gradient(145deg,#0a1423,#11243a 58%,#0a1727)!important;
+ color:#eaf3ff!important;
 }
 html body.dark-mode:not(.yano-dex) .site-header{
- background:#29243b!important;
- background-image:linear-gradient(150deg,#352e4b,#252138)!important;
- border-color:rgba(169,148,205,.33)!important;
+ background:#102039!important;
+ background-image:linear-gradient(145deg,#192f4d,#0c192b)!important;
+ border-color:rgba(130,174,223,.32)!important;
 }
 html body.dark-mode:not(.yano-dex) .header-bg{
- background:#29243b!important;
- background-image:linear-gradient(130deg,#332c47,#252139)!important;
+ background:#102039!important;
+ background-image:linear-gradient(145deg,#192f4d,#0c192b)!important;
 }
 html body.dark-mode:not(.yano-dex) .site-nav{
- background:#403653!important;
- background-image:linear-gradient(130deg,#4a3e61,#302941)!important;
- border-color:rgba(181,155,215,.38)!important;
+ background:#1a304d!important;
+ background-image:linear-gradient(145deg,#254263,#12243c)!important;
+ border-color:rgba(130,174,223,.36)!important;
 }
-html body.dark-mode:not(.yano-dex) .yanoverse-brand{
- color:#e7d5f5!important;
- text-shadow:0 0 12px rgba(160,122,203,.20)!important;
-}
-html body.dark-mode:not(.yano-dex) .yanoverse-brand span{
- color:#e9bc73!important;
-}
+html body.dark-mode:not(.yano-dex) .yanoverse-brand{color:#d4e6fa!important}
+html body.dark-mode:not(.yano-dex) .yanoverse-brand span{color:#83b7e8!important}
 html body.dark-mode:not(.yano-dex) .yanoverse-game.is-selected{
- background:#403450!important;
- background-image:linear-gradient(145deg,#4a3a5b,#30293f)!important;
- border-color:#c9a56f!important;
- box-shadow:0 0 18px rgba(233,188,115,.16)!important;
+ background:#1a304d!important;
+ background-image:linear-gradient(145deg,#254263,#12243c)!important;
+ border-color:#83b7e8!important;
+ box-shadow:0 0 18px rgba(100,168,233,.18)!important;
 }
 html body.dark-mode:not(.yano-dex) .site-nav :is(.nav-button,.dropdown-toggle,button),
 html body.dark-mode:not(.yano-dex) :is(#filter-toggle,#clear-filters){
- background:#514266!important;
- background-image:linear-gradient(150deg,#625078,#3b304e)!important;
- border-color:rgba(211,178,129,.45)!important;
- color:#f4edf9!important;
-}
-html body.dark-mode:not(.yano-dex) .site-nav :is(.nav-button,.dropdown-toggle,button):hover,
-html body.dark-mode:not(.yano-dex) :is(#filter-toggle,#clear-filters):hover{
- background:#6d5685!important;
- background-image:linear-gradient(150deg,#755e8b,#49395d)!important;
+ background:#244362!important;
+ background-image:linear-gradient(145deg,#31577b,#19314d)!important;
+ border-color:rgba(130,174,223,.45)!important;
+ color:#edf6ff!important;
 }
 html body.dark-mode:not(.yano-dex) :is(.filter-controls,#dex-filter-controls,#filters,.dropdown-content){
- background-color:#332b45!important;
- background-image:linear-gradient(145deg,rgba(64,52,82,.95),rgba(42,35,59,.97))!important;
- border-color:rgba(176,151,206,.40)!important;
- color:#f1ebfa!important;
+ background-color:#14243a!important;
+ background-image:linear-gradient(145deg,rgba(27,48,75,.96),rgba(13,27,46,.97))!important;
+ border-color:rgba(130,174,223,.36)!important;
+ color:#eaf3ff!important;
 }
 html body.dark-mode:not(.yano-dex) :is(.filter-controls,#dex-filter-controls,#filters) :is(input:not([type=checkbox]),select){
- background:#2c273e!important;
- border-color:rgba(179,152,209,.43)!important;
- color:#f1ebfa!important;
-}
-html body.dark-mode:not(.yano-dex) :is(.filter-controls,#dex-filter-controls,#filters) input::placeholder{
- color:#b8abc9!important;
+ background:#102039!important;
+ border-color:rgba(130,174,223,.4)!important;
+ color:#eaf3ff!important;
 }
 html body.dark-mode:not(.yano-dex) .yv-dex-summary{
- background:#42334e!important;
- background-image:linear-gradient(145deg,#51405f,#352c47)!important;
- border-color:rgba(233,188,115,.45)!important;
- color:#f4e8fa!important;
+ background:#19324f!important;
+ background-image:linear-gradient(145deg,#24466c,#13283f)!important;
+ border-color:rgba(130,174,223,.38)!important;
+ color:#eaf3ff!important;
 }
-/* Preserve existing type-dependent border colors, glow and card sizing. */
 html body.dark-mode:not(.yano-dex) #dex-grid .dex-entry{
- background-color:#2f2943!important;
- background-image:linear-gradient(150deg,#403650,#29243a 70%,#302940)!important;
+ background-color:#132238!important;
+ background-image:linear-gradient(145deg,#1d314d,#0d1a2d 68%,#16273e)!important;
 }
-html body.dark-mode:not(.yano-dex) #dex-grid .dex-entry .dex-card-details,
-html body.dark-mode:not(.yano-dex) #dex-grid .dex-entry :is(.dex-card-name,.dex-name){
- color:#f3edf9!important;
-}
-html body.dark-mode:not(.yano-dex) #dex-grid .dex-entry :is(.dex-card-number,.dex-number){
- color:#c7b8db!important;
-}
-/* Profile surfaces; leave artwork, type colors and stat graphics untouched. */
-html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.monster-info,.stats-side,.evolution-wrapper,.yv-profile-facts,.yv-profile-info,.yv-profile-stats,.yv-profile-evolution,.forms-wrapper,.moves-wrapper,.move-list){
- background-color:#332b46!important;
- background-image:linear-gradient(145deg,rgba(67,55,86,.94),rgba(43,36,61,.96))!important;
- border-color:rgba(173,146,205,.36)!important;
- color:#f1ebfa!important;
-}
-html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.return-link,.yv-back-link,.profile-number,.yv-profile-number){
- color:#e9bc73!important;
-}
-html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.profile-title,.yv-profile-heading h1){
- color:#f1ebfa!important;
-}
-html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) .nav-arrow{
- background-color:#4b3b61!important;
- border-color:rgba(233,188,115,.48)!important;
- color:#f1ebfa!important;
-}
-/* World and tracker: theme surfaces only, preserve maps and markers. */
+html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.monster-info,.stats-side,.evolution-wrapper,.yv-profile-facts,.yv-profile-info,.yv-profile-stats,.yv-profile-evolution,.forms-wrapper,.moves-wrapper,.move-list),
 html body.dark-mode:not(.yano-dex) :is(.yv-map-directory-item,.yv-map-detail,.yv-map-unmapped,.yv-encounter-embed,.tracker-summary-box,.tracker-settings-box,.tracker-card,.tracker-panel){
- background-color:#352d49!important;
- background-image:linear-gradient(145deg,#403450,#2b253c)!important;
- border-color:rgba(173,146,205,.36)!important;
- color:#f1ebfa!important;
+ background-color:#14243a!important;
+ background-image:linear-gradient(145deg,#1d3451,#102039)!important;
+ border-color:rgba(130,174,223,.35)!important;
+ color:#eaf3ff!important;
 }
-html body.dark-mode:not(.yano-dex) :is(.yv-map-directory-item,.yv-map-detail,.tracker-summary-box,.tracker-settings-box) :is(h2,h3,h4){
- color:#edcf9c!important;
-}
-html body.dark-mode:not(.yano-dex) :is(.page-content,.monster-profile,.yanoverse-profile) a:not(.type-btn):not(.dex-entry a):not(.nav-button){
- accent-color:#e9bc73;
-}
+html body.dark-mode:not(.yano-dex) :is(.monster-profile,.yanoverse-profile) :is(.return-link,.yv-back-link,.profile-number,.yv-profile-number){color:#9cc8f1!important}
