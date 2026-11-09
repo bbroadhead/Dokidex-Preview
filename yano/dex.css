@@ -840,3 +840,55 @@ html body.yano-dex #profile .stats-side h3{margin-top:0!important}
   max-width:100%!important;
  }
 }
+
+/* Yami Kids: make evolution chains substantial and easy to inspect.
+   Nuumonsters and the original Dokidex are unaffected. */
+html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper{
+ display:block!important;
+ width:fit-content!important;
+ min-width:min(100%,420px)!important;
+ max-width:min(100%,900px)!important;
+ margin:12px auto 20px!important;
+ padding:18px 24px!important;
+}
+html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ justify-content:center!important;
+ align-items:center!important;
+ gap:18px!important;
+}
+html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo a{
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ flex:0 0 auto!important;
+ max-width:180px!important;
+ gap:8px!important;
+ font-size:22px!important;
+ line-height:1.15!important;
+}
+html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo img{
+ width:auto!important;
+ height:auto!important;
+ max-width:110px!important;
+ max-height:110px!important;
+ object-fit:contain!important;
+}
+@media(max-width:600px){
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper{
+  min-width:0!important;
+  width:100%!important;
+  padding:14px 10px!important;
+ }
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo{gap:10px!important}
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo a{
+  max-width:115px!important;
+  font-size:19px!important;
+ }
+ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo img{
+  max-width:82px!important;
+  max-height:82px!important;
+ }
+}
