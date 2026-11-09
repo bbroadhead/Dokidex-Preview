@@ -721,3 +721,31 @@ html body.yano-dex[data-theme] #dex-grid .dex-entry{
  html body.yano-dex #dex-grid .img-wrapper{width:95px!important;height:95px!important}
  html body.yano-dex #dex-grid .monster-image.small{max-width:90px!important;max-height:90px!important}
 }
+
+/* Center every card row, including a partially filled final row.
+   Flex wrapping preserves responsive column counts without stretching cards. */
+html body.yano-dex #dex-grid.dex-grid{
+ display:flex!important;
+ flex-wrap:wrap!important;
+ justify-content:center!important;
+ align-content:flex-start!important;
+ align-items:stretch!important;
+ gap:12px!important;
+}
+html body.yano-dex #dex-grid.dex-grid>.dex-entry{
+ flex:0 1 165px!important;
+ width:165px!important;
+ max-width:165px!important;
+}
+@media(max-width:600px){
+ html body.yano-dex #dex-grid.dex-grid{
+  display:flex!important;
+  justify-content:center!important;
+  gap:10px!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry{
+  flex:0 1 calc((100% - 10px)/2)!important;
+  width:calc((100% - 10px)/2)!important;
+  max-width:165px!important;
+ }
+}
