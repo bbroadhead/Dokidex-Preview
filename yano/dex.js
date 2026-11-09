@@ -81,13 +81,31 @@ function navigate(){
  $('dex-list').hidden=!!m;profile.hidden=!m;
  if(!m){render();return}
  const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
- const evol=[...(m.evolves_from?[m.evolves_from]:[]),m.name,...(m.evolves_to||[])];
+ // Build the complete evolution path so levels belong to each transition.
+ const lineage=[];let ancestor=m;const seen=new Set();
+ while(ancestor&&!seen.has(ancestor.name)){
+  seen.add(ancestor.name);lineage.unshift(ancestor);
+  ancestor=data.find(x=>x.name===ancestor.evolves_from);
+ }
+ let descendant=m;const forwardSeen=new Set(lineage.map(x=>x.name));
+ while(descendant?.evolves_to?.length){
+  const nextStage=data.find(x=>x.name===descendant.evolves_to[0]);
+  if(!nextStage||forwardSeen.has(nextStage.name))break;
+  lineage.push(nextStage);forwardSeen.add(nextStage.name);descendant=nextStage;
+ }
+ const evol=lineage.length>1?lineage:[m];
+ const evoMarkup=evol.map((e,i)=>{
+  const node='<a href="'+url(e)+'">'+img(e.mini_sprite||e.sprite,e.name)+'<span class="evo-name">'+esc(e.name)+'</span></a>';
+  if(!i)return node;
+  const from=evol[i-1],level=from.evolves_at;
+  return '<span class="evo-transition"><span class="evo-arrow-glyph" aria-hidden="true">→</span>'+(level?'<span class="evo-level">Lv. '+esc(level)+'</span>':'')+'</span>'+node;
+ }).join('');
  const position=data.findIndex(x=>x.slug===m.slug);
  const previous=data[(position+data.length-1)%data.length];
  const next=data[(position+1)%data.length];
  const statTotal=stats.reduce((a,k)=>a+Number(m.base_stats?.[k]||0),0);
  const statRows=stats.map(s=>'<div class="stat-row"><span>'+esc(s)+'</span><div class="stat-track"><span style="width:'+Math.min(100,Number(m.base_stats?.[s]||0)/255*100)+'%"></span></div><b>'+Number(m.base_stats?.[s]||0)+'</b></div>').join('');
- profile.innerHTML='<div class="profile-top"><a class="return-link" href="?game='+game+'">← Return to Dex</a><h2 class="profile-title">'+esc(m.name)+'</h2><span class="profile-number">#'+String(m.number).padStart(3,'0')+'</span></div><div class="profile-navigation"><a class="nav-arrow" aria-label="Previous monster" href="'+url(previous)+'">‹</a><div class="monster-layout-row"><div class="monster-left-column"><div class="monster-info"><h3>'+esc(m.classification||m.name)+'</h3><p class="profile-types">'+(m.type||[]).map(badge).join(' ')+'</p>'+(m.sin?'<p><strong>Sin:</strong> '+esc(m.sin)+'</p>':'')+'<p>'+esc(m.dex_entry||'')+'</p></div><div class="monster-image-container">'+img(pic,m.name,'hero-image')+'</div></div><div class="stats-side"><h3>Base Stats</h3><div class="monster-stats">'+statRadar(m)+'<p class="stat-total">Total: '+statTotal+'</p></div></div></div><a class="nav-arrow" aria-label="Next monster" href="'+url(next)+'">›</a></div>'+(evol.length>1?'<div class="evolution-wrapper"><div class="evo">'+evol.map(n=>{const e=data.find(x=>x.name===n);return e?'<a href="'+url(e)+'">'+img(e.mini_sprite||e.sprite,e.name)+esc(e.name)+'</a>':'<span>'+esc(n)+'</span>'}).join('<span aria-hidden="true">→</span>')+'</div></div>':'')+(m.evolves_at?'<p class="evolution-level">Evolution level: '+esc(m.evolves_at)+'</p>':'');
+ profile.innerHTML='<div class="profile-top"><a class="return-link" href="?game='+game+'">← Return to Dex</a><h2 class="profile-title">'+esc(m.name)+'</h2><span class="profile-number">#'+String(m.number).padStart(3,'0')+'</span></div><div class="profile-navigation"><a class="nav-arrow" aria-label="Previous monster" href="'+url(previous)+'">‹</a><div class="monster-layout-row"><div class="monster-left-column"><div class="monster-info"><h3>'+esc(m.classification||m.name)+'</h3><p class="profile-types">'+(m.type||[]).map(badge).join(' ')+'</p>'+(m.sin?'<p><strong>Sin:</strong> '+esc(m.sin)+'</p>':'')+'<p>'+esc(m.dex_entry||'')+'</p></div><div class="monster-image-container">'+img(pic,m.name,'hero-image')+'</div></div><div class="stats-side"><h3>Base Stats</h3><div class="monster-stats">'+statRadar(m)+'<p class="stat-total">Total: '+statTotal+'</p></div></div></div><a class="nav-arrow" aria-label="Next monster" href="'+url(next)+'">›</a></div>'+(evol.length>1?'<div class="evolution-wrapper"><div class="evo">'+evoMarkup+'</div></div>':'');
  const chain=profile.querySelector('.evolution-wrapper');
  if(chain)profile.insertBefore(chain,profile.querySelector('.profile-navigation'));
 }
