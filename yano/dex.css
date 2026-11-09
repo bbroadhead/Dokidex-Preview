@@ -1,1 +1,67 @@
-:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#101522;color:#edf2ff}*{box-sizing:border-box}body{margin:0}header,main{max-width:1250px;margin:auto;padding:22px}header a{color:#b6c9ef}h1{margin:18px 0}nav{display:flex;flex-wrap:wrap;gap:12px}nav a{padding:10px 14px;border:1px solid #3d4b68;border-radius:12px;text-decoration:none}nav a.active{background:#334769;color:white}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}input,select{background:#202b40;color:#fff;border:1px solid #485978;border-radius:10px;padding:12px}.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}.tile{background:linear-gradient(150deg,#273449,#182336);border:1px solid #3b4c65;border-radius:15px;padding:13px;display:flex;flex-direction:column;text-align:center;text-decoration:none;color:inherit;gap:7px}.tile:hover{border-color:#8eacf1;transform:translateY(-2px)}.tile img{width:100%;height:160px;object-fit:contain;image-rendering:pixelated}.num,.tile small{color:#9fb2d1}.hero{display:grid;grid-template-columns:minmax(180px,340px) 1fr;gap:30px;align-items:center}.hero-image{width:100%;image-rendering:pixelated}.pill{display:inline-block;background:#36496c;padding:7px 12px;border-radius:18px;margin:3px}.stats{max-width:680px}.stats>div{display:grid;grid-template-columns:115px 1fr 40px;gap:12px;align-items:center;margin:12px 0}.stats meter{width:100%;height:18px}.evo{display:flex;align-items:center;flex-wrap:wrap;gap:16px}.evo a{display:flex;align-items:center;gap:8px;color:#bed2fa}.evo img{width:45px;image-rendering:pixelated}.back{color:#bed2fa}@media(max-width:600px){.hero{grid-template-columns:1fr}.hero-image{max-width:250px;margin:auto}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.tile img{height:125px}.toolbar input{width:100%}}
+/* Yami Kids / Nuumonsters: share Dokimon Quest's dark, glassy pixel-Dex design. */
+:root{color-scheme:dark}*{box-sizing:border-box}
+html,body{background:#101723!important;color:#edf3ff!important;min-height:100%}
+body.yano-dex{margin:0;font-family:system-ui,sans-serif}
+.yano-dex [hidden]{display:none!important}
+.yano-dex .yanoverse-brand{font:400 clamp(22px,3vw,30px)/1.2 'VT323',monospace!important;letter-spacing:.14em!important;color:#aab8ce!important;text-align:center;padding:10px}
+.yano-dex .yanoverse-brand span{color:#7487a2!important}
+.yano-dex .yanoverse-game-picker{width:100vw;overflow:hidden;padding:10px 0}
+.yano-dex .yanoverse-game-track{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:none;margin:0 auto;padding:10px;position:relative;left:50%;transform:translateX(-50%)}
+.yano-dex .yanoverse-game{flex:0 0 145px;width:145px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:8px;text-decoration:none;color:#d8e6fa;border:1px solid rgba(153,177,208,.28);border-radius:12px;background:rgba(135,165,205,.035);filter:grayscale(1);opacity:.56;transform:scale(.92);transition:filter .2s,opacity .2s,transform .2s}
+.yano-dex .yanoverse-game.is-selected{flex-basis:210px;width:210px;height:124px;background:rgba(135,165,205,.07);border-color:rgba(149,190,241,.5);filter:none;opacity:1;transform:none}
+.yano-dex .yanoverse-game img{max-width:100%;max-height:60px;width:auto;height:auto;object-fit:contain}
+.yano-dex .yanoverse-game.is-selected img{max-height:72px}
+.yano-dex .yanoverse-game-title{font:400 21px/1 'VT323',monospace;text-align:center}
+.yano-dex .yanoverse-game.is-selected .yanoverse-game-title{font-size:28px}
+.yano-dex .yanoverse-game small{font:400 12px/1 'VT323',monospace}
+.yano-dex .site-header{max-width:1250px;margin:0 auto}
+.yano-dex .site-nav{display:flex;justify-content:center;padding:10px}
+.yano-dex .nav-button{display:inline-flex;align-items:center;justify-content:center;padding:9px 24px;border-radius:10px;border:1px solid rgba(155,191,232,.36);background:linear-gradient(145deg,#243c5b,#14273e);color:#eef5ff;text-decoration:none;font:400 25px 'VT323',monospace}
+.yano-dex main.page-content{width:min(100% - 28px,1240px)!important;max-width:1240px!important;margin:0 auto!important;padding:12px!important}
+.yano-dex .yano-heading{text-align:center;font:400 clamp(32px,4vw,46px)/1.1 'VT323',monospace;margin:12px 0 22px}
+.yano-dex #filter-toggle,.yano-dex #clear-filters{display:block;margin:10px auto 16px;padding:9px 22px;border:1px solid rgba(152,191,237,.36);border-radius:12px;background:linear-gradient(145deg,#243c5b,#14273e);color:#edf5ff;font:400 25px 'VT323',monospace;cursor:pointer}
+.yano-dex #dex-filter-controls{display:flex;flex-wrap:wrap;justify-content:center;align-items:end;gap:16px;padding:14px;border:1px solid rgba(145,184,230,.22);border-radius:16px;background:rgba(25,40,60,.5);margin:0 auto 15px}
+.yano-dex #dex-filter-controls.collapsed{display:none!important}
+.yano-dex .type-block{width:100%;text-align:center}
+.yano-dex #type-filters{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:9px}
+.yano-dex .type-btn{min-width:76px;padding:5px 9px;border-radius:7px;border:2px solid rgba(200,224,255,.35);background:linear-gradient(160deg,#496e9b,#213b5e);box-shadow:inset 0 2px 0 rgba(255,255,255,.22),0 3px 7px #0004;color:#fff;font:400 22px/1 'VT323',monospace;cursor:pointer}
+.yano-dex .type-btn.active{border-color:#e4f2ff;background:linear-gradient(145deg,#6195c5,#2e568a);box-shadow:0 0 0 2px #8ebcf6}
+.yano-dex .filter-block{display:flex;flex-direction:column;gap:6px;align-items:center}
+.yano-dex #dex-filter-controls label{font:400 24px 'VT323',monospace}
+.yano-dex #dex-filter-controls input:not([type=checkbox]),.yano-dex #dex-filter-controls select{border:1px solid #526a89;background:#182b42;color:white;padding:8px 12px;border-radius:9px;font:400 23px 'VT323',monospace}
+.yano-dex #shiny-label label{display:flex;gap:8px;align-items:center}
+.yano-dex .yv-dex-summary{width:fit-content;margin:5px auto 18px;padding:9px 19px;border:1px solid rgba(145,184,230,.27);border-radius:999px;background:linear-gradient(145deg,rgba(36,60,91,.68),rgba(20,39,62,.75));color:#dceaff;font:400 23px 'VT323',monospace;text-align:center}
+.yano-dex #dex-grid.dex-grid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;gap:14px!important;padding:14px!important}
+.yano-dex #dex-grid .dex-entry{position:relative;isolation:isolate;overflow:hidden;min-height:215px;border:1px solid rgba(154,186,220,.3)!important;border-radius:13px!important;background:linear-gradient(145deg,rgba(41,57,77,.8),rgba(17,25,39,.9) 62%,rgba(30,42,59,.8))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 8px 24px #0003!important;backdrop-filter:blur(12px);transition:transform .24s,box-shadow .24s}
+.yano-dex #dex-grid .dex-entry::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 9%,#ffffff13 24%,#ffffff05 39%,transparent 57%);pointer-events:none}
+.yano-dex #dex-grid .dex-entry:hover{transform:translateY(-5px) scale(1.015);border-color:#b1d2ff!important;box-shadow:0 14px 28px #0006!important}
+.yano-dex #dex-grid .dex-entry>a{position:relative;display:flex;flex-direction:column;gap:10px;height:100%;padding:12px;color:#eef4ff;text-decoration:none}
+.yano-dex #dex-grid .img-wrapper{display:flex;justify-content:center;align-items:center;width:125px;height:125px;margin:0 auto}
+.yano-dex #dex-grid .monster-image.small{display:block;max-width:120px!important;max-height:120px!important;width:auto;height:auto;object-fit:contain;image-rendering:pixelated}
+.yano-dex #dex-grid .dex-card-details{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:auto}
+.yano-dex #dex-grid .dex-card-number{color:#87baff;font:700 12px system-ui}
+.yano-dex #dex-grid .dex-card-name{font:750 15px/1.3 system-ui;overflow-wrap:anywhere}
+.yano-dex #dex-grid .dex-card-stage{font:600 12px system-ui;color:#aab8cc}
+.yano-dex #dex-grid .dex-card-types{display:flex;flex-wrap:wrap;gap:5px}
+.yano-dex .dex-card-type{display:inline-block;border:1px solid #aabfd144;border-radius:5px;padding:4px 7px;background:#91a8cd30;color:#edf3ff;font:700 11px system-ui}
+.yano-dex #profile{max-width:1200px;margin:auto;padding:14px}
+.yano-dex #profile .profile-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.yano-dex #profile .return-link{color:#bad6ff;text-decoration:none;font:400 24px 'VT323',monospace}
+.yano-dex #profile .profile-number{color:#9dbbe0}
+.yano-dex #profile .profile-title{text-align:center;font:400 42px 'VT323',monospace;margin:10px 0 20px}
+.yano-dex #profile .monster-layout-row{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px;align-items:start}
+.yano-dex #profile .monster-image-container,.yano-dex #profile .monster-info,.yano-dex #profile .stats-side,.yano-dex #profile .evolution-wrapper{background:linear-gradient(145deg,#29394ecf,#152238ed);border:1px solid #8099bb55;border-radius:16px;padding:20px;min-width:0;box-shadow:0 8px 24px #0003}
+.yano-dex #profile .monster-image-container{display:flex;align-items:center;justify-content:center;min-height:300px}
+.yano-dex #profile .hero-image{display:block;width:100%;max-width:310px;max-height:340px;object-fit:contain;image-rendering:pixelated}
+.yano-dex #profile h3{margin:0 0 14px;color:#e8f3ff;font:400 28px 'VT323',monospace}
+.yano-dex #profile .profile-types{display:flex;flex-wrap:wrap;gap:6px}
+.yano-dex #profile .stat-row{display:grid;grid-template-columns:80px minmax(0,1fr) 30px;gap:8px;align-items:center;margin:12px 0;font-size:12px}
+.yano-dex #profile .stat-track{height:11px;border-radius:8px;background:#101c2d;overflow:hidden}
+.yano-dex #profile .stat-track span{display:block;height:100%;background:linear-gradient(90deg,#5c8ec3,#a2c9f7);border-radius:8px}
+.yano-dex #profile .stat-total{text-align:right;font-weight:700}
+.yano-dex #profile .evolution-wrapper{margin-top:20px}
+.yano-dex #profile .evo{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px}
+.yano-dex #profile .evo a{display:flex;align-items:center;gap:8px;color:#bdd8ff;text-decoration:none}
+.yano-dex #profile .evo img{max-width:55px;max-height:55px;image-rendering:pixelated}
+@media(max-width:768px){.yano-dex #profile .monster-layout-row{grid-template-columns:1fr!important}.yano-dex #profile .monster-image-container{min-height:200px}.yano-dex .yanoverse-game{flex-basis:125px;width:125px;height:95px}.yano-dex .yanoverse-game.is-selected{flex-basis:190px;width:190px;height:110px}.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:8px!important}.yano-dex #dex-grid .img-wrapper{width:100px;height:100px}.yano-dex #dex-grid .monster-image.small{max-width:96px!important;max-height:96px!important}.yano-dex #dex-grid .dex-entry{min-height:205px}.yano-dex #dex-filter-controls{gap:10px}}
+@media(prefers-reduced-motion:reduce){.yano-dex .dex-entry,.yano-dex .yanoverse-game{transition:none!important}}
