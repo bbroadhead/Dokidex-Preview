@@ -1,0 +1,62 @@
+[
+  {
+    "number": 88,
+    "name": "Miyuki (Maiden)",
+    "slug": "miyuki-maiden",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 165,
+      "Attack": 135,
+      "Defense": 140,
+      "Mgk. Atk": 200,
+      "Mgk. Def": 180,
+      "Speed": 175
+    },
+    "stage": 1,
+    "evolves_at": 160,
+    "evolves_from": null,
+    "evolves_to": [
+      "Miyuki (Ascended)"
+    ],
+    "classification": "Holy Maiden",
+    "dex_entry": "In reality, one must prove themselves before others to receive recognition, is that what life has to offer?",
+    "sprite": "/yano/yami-kids/assets/images/miyuki-maiden.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/miyuki-maiden.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/miyuki-maiden_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/88_miyuki-maiden/miyuki-maiden_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/miyuki-maiden_shiny.png"
+  },
+  {
+    "number": 89,
+    "name": "Miyuki (Ascended)",
+    "slug": "miyuki-ascended",
+    "type": [
+      "Sky",
+      "Inferno"
+    ],
+    "sin": "Pride",
+    "base_stats": {
+      "Health": 265,
+      "Attack": 235,
+      "Defense": 240,
+      "Mgk. Atk": 300,
+      "Mgk. Def": 280,
+      "Speed": 275
+    },
+    "stage": 2,
+    "evolves_at": null,
+    "evolves_from": "Miyuki (Maiden)",
+    "evolves_to": [],
+    "classification": "Diety",
+    "dex_entry": "To bend reality and fracture time, to mend the very existence of every being, true power knows no bounds to those close to a god.",
+    "sprite": "/yano/yami-kids/assets/images/miyuki-ascended.png",
+    "sprite_native": "/yano/yami-kids/assets/images/native/miyuki-ascended.png",
+    "mini_sprite": "/yano/yami-kids/assets/images/mini_sprites/miyuki-ascended_mini.png",
+    "shiny_sprite": "/yano/yami-kids/assets/images/forms/89_miyuki-ascended/miyuki-ascended_shiny.png",
+    "shiny_sprite_native": "/yano/yami-kids/assets/images/native/miyuki-ascended_shiny.png"
+  }
+]
