@@ -1,4 +1,13 @@
 (() => {
+  // Record one Dex visit per page load using the existing GA4 property.
+  // Event-scoped dex_name makes all three games independently reportable.
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'dex_view', {
+      dex_name: 'dokidex',
+      page_location: window.location.href
+    });
+  }
+
 
   // Harmonize the radar web (concentric rings and radial spokes) on
   // original Dokidex profiles, without changing the stat polygon or labels.
