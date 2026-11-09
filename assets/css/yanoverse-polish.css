@@ -1289,3 +1289,18 @@ html body:not(.yano-dex) .monster-profile .monster-layout-row>.monster-info>p{
 html body:not(.yano-dex) .monster-profile .monster-layout-row>.monster-info>p:last-child{
  margin-bottom:0!important;
 }
+
+/* Match the description panel height to the image/stats row on desktop,
+   while keeping its text together and vertically centered. */
+@media(min-width:851px){
+ html body:not(.yano-dex) .monster-profile .monster-layout-row{
+  align-items:stretch!important;
+ }
+ html body:not(.yano-dex) .monster-profile .monster-layout-row>.monster-info{
+  align-self:stretch!important;
+  height:auto!important;
+  min-height:0!important;
+  justify-content:center!important;
+  gap:0!important;
+ }
+}
