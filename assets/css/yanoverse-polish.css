@@ -1220,3 +1220,35 @@ html body.dark-mode:not(.yano-dex) .monster-profile .top-bar>.move-list-containe
   margin-bottom:-4px!important;
  }
 }
+
+/* Compact horizontal gutters on mobile across the original Dokidex
+   main listing and individual monster profiles. */
+@media(max-width:700px){
+ html body:not(.yano-dex) .page-content{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:6px!important;
+  padding-right:6px!important;
+ }
+ html body:not(.yano-dex) .monster-profile{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:4px!important;
+  padding-right:4px!important;
+ }
+ html body:not(.yano-dex) .monster-profile .top-bar,
+ html body:not(.yano-dex) .monster-profile .monster-layout-row{
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:100%!important;
+  padding-left:0!important;
+  padding-right:0!important;
+ }
+ html body:not(.yano-dex) #dex-grid.dex-grid{
+  box-sizing:border-box!important;
+  padding-left:3px!important;
+  padding-right:3px!important;
+ }
+}
