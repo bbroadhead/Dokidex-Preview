@@ -1252,3 +1252,17 @@ html body.dark-mode:not(.yano-dex) .monster-profile .top-bar>.move-list-containe
   padding-right:3px!important;
  }
 }
+
+/* Overlay the Dokidex stat heading in existing top space:
+   do not push the radar canvas or six-value table downward. */
+html body:not(.yano-dex) .monster-profile .stats-side{
+ position:relative!important;
+}
+html body:not(.yano-dex) .monster-profile .stats-side .yv-dokidex-stats-heading{
+ position:absolute!important;
+ top:7px!important;left:10px!important;right:10px!important;
+ z-index:2!important;display:flex!important;
+ justify-content:space-between!important;align-items:center!important;
+ gap:8px!important;pointer-events:none!important;
+ color:#eaf3ff!important;font:700 15px/1.2 'VT323',monospace!important;
+}
