@@ -588,3 +588,40 @@ html body.yano-dex[data-theme] #profile .stat-radar polygon:last-of-type{
  stroke:var(--game-accent-bright)!important;
  fill:var(--game-accent)!important;
 }
+
+/* Carry each selected game's palette into the header and card surfaces.
+   Keep individual monster type gradients and glows intact. */
+html body.yano-dex[data-theme="yami-kids"]{
+ --game-card-top:#391d28;
+ --game-card-mid:#1d121d;
+ --game-card-bottom:#2b1822;
+ --game-card-art:rgba(75,25,34,.30);
+ --game-header-top:#461d2b;
+ --game-header-bottom:#24131d;
+}
+html body.yano-dex[data-theme="nuumonsters"]{
+ --game-card-top:#164a4b;
+ --game-card-mid:#102a35;
+ --game-card-bottom:#153c42;
+ --game-card-art:rgba(20,102,96,.23);
+ --game-header-top:#19585a;
+ --game-header-bottom:#102d39;
+}
+html body.yano-dex[data-theme] .site-header,
+html body.yano-dex[data-theme] .site-header .site-nav{
+ background:linear-gradient(145deg,var(--game-header-top),var(--game-header-bottom))!important;
+ border-color:var(--game-border)!important;
+}
+html body.yano-dex[data-theme] .site-header{
+ border:1px solid var(--game-border)!important;
+ border-radius:14px!important;
+ box-shadow:0 8px 22px rgba(0,0,0,.22)!important;
+}
+html body.yano-dex[data-theme] #dex-grid .dex-entry{
+ background:
+  linear-gradient(145deg,var(--game-card-top),var(--game-card-mid) 65%,var(--game-card-bottom)) padding-box,
+  linear-gradient(125deg,var(--yv-type-one,#789bc2) 0%,var(--yv-type-one,#789bc2) 46%,var(--yv-type-two,#789bc2) 54%,var(--yv-type-two,#789bc2) 100%) border-box!important;
+}
+html body.yano-dex[data-theme] #dex-grid .dex-entry .img-wrapper{
+ background:var(--game-card-art)!important;
+}
