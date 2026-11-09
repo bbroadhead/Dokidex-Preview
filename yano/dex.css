@@ -72,7 +72,7 @@ body.yano-dex .yanoverse-game-track{position:relative!important;left:auto!import
 body.yano-dex .yanoverse-game{flex-shrink:0!important}
 body.yano-dex .yanoverse-game-title{width:100%!important;text-align:center!important;white-space:normal!important}
 body.yano-dex #dex-filter-controls #search{width:240px!important;min-width:240px!important;max-width:100%!important}
-body.yano-dex #type-filters .type-btn{--type-color:#789bc2;background:linear-gradient(180deg,color-mix(in srgb,var(--type-color),white 25%),var(--type-color) 52%,color-mix(in srgb,var(--type-color),black 36%))!important;border-color:color-mix(in srgb,var(--type-color),white 35%)!important;color:white!important;text-shadow:1px 1px #0009!important}
+body.yano-dex #type-filters .type-btn{--type-color:#789bc2;background:linear-gradient(180deg,color-mix(in srgb,var(--type-color),black 5%) 0%,color-mix(in srgb,var(--type-color),black 18%) 52%,color-mix(in srgb,var(--type-color),black 40%) 100%)!important;border-color:color-mix(in srgb,var(--type-color),black 15%)!important;color:white!important;text-shadow:1px 1px #0009!important}
 body.yano-dex #type-filters .type-btn.active{outline:2px solid #d8eaff!important;outline-offset:2px!important;box-shadow:0 0 15px var(--type-color)!important}
 body.yano-dex #dex-grid .dex-entry{--type-glow:#789bc2;border-color:color-mix(in srgb,var(--type-glow),transparent 45%)!important;box-shadow:inset 0 1px 0 #ffffff22,0 8px 24px #0004,0 0 14px color-mix(in srgb,var(--type-glow),transparent 75%)!important}
 body.yano-dex #dex-grid .dex-entry:hover{border-color:var(--type-glow)!important;box-shadow:0 14px 28px #0007,0 0 22px color-mix(in srgb,var(--type-glow),transparent 42%)!important}
