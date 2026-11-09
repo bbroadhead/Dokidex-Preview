@@ -1136,6 +1136,17 @@ body.dark-mode #dex-filter-controls.collapsed { display: none !important; }
 }
 </style>
 
+<style id="yv-compact-filter-toggle-spacing">
+/* Remove excess vertical whitespace before the Hide Filters control. */
+html body #filter-toggle{
+ margin-top:0!important;
+}
+html body p:has(> #filter-toggle){
+ margin-top:4px!important;
+ padding-top:0!important;
+}
+</style>
+
 <p><button id="filter-toggle" type="button" aria-controls="dex-filter-controls" aria-expanded="true">Hide Filters</button></p>
 
 <div class="filter-controls" id="dex-filter-controls">
