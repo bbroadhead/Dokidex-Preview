@@ -1,5 +1,5 @@
 (() => {
-  // Apply the Quest theme after page-local inline styles, which otherwise
+  // Apply the Deep Navy theme after page-local inline styles, which otherwise
   // override the shared stylesheet and leave the old blue palette visible.
   const applyQuestTheme = () => {
     if (document.body?.classList.contains('yano-dex')) return;
@@ -7,7 +7,7 @@
     const link=document.createElement('link');
     link.id='yv-mystic-amethyst-theme';
     link.rel='stylesheet';
-    link.href='/Yanoverse-Multidex/assets/css/yanoverse-polish.css?v=mystic-amethyst-2';
+    link.href='/Yanoverse-Multidex/assets/css/yanoverse-polish.css?v=deep-navy-1';
     document.body.appendChild(link);
   };
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',applyQuestTheme,{once:true});
@@ -25,16 +25,16 @@
   function applyBrandColors() {
     const brand=document.querySelector('.yanoverse-brand');
     if(!brand) return;
-    brand.style.setProperty('color','#e7d5f5','important');
-    brand.style.setProperty('-webkit-text-fill-color','#e7d5f5','important');
+    brand.style.setProperty('color','#d4e6fa','important');
+    brand.style.setProperty('-webkit-text-fill-color','#d4e6fa','important');
     brand.style.setProperty('background','transparent','important');
     brand.style.setProperty('background-image','none','important');
     brand.style.setProperty('filter','none','important');
     brand.style.setProperty('mix-blend-mode','normal','important');
     const accent=brand.querySelector('span');
     if(accent){
-      accent.style.setProperty('color','#e9bc73','important');
-      accent.style.setProperty('-webkit-text-fill-color','#e9bc73','important');
+      accent.style.setProperty('color','#83b7e8','important');
+      accent.style.setProperty('-webkit-text-fill-color','#83b7e8','important');
       accent.style.setProperty('background','transparent','important');
       accent.style.setProperty('background-image','none','important');
       accent.style.setProperty('background-clip','border-box','important');
