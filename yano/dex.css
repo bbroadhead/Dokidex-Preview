@@ -512,16 +512,16 @@ html body.yano-dex #profile .stat-radar{
 /* Game-specific atmosphere. Shared grid, navigation and profile geometry
    are intentionally unchanged. Monster type colors remain type-specific. */
 html body.yano-dex[data-theme="yami-kids"]{
- --game-accent:#c67bdb;
- --game-accent-bright:#e5a9f4;
- --game-border:rgba(190,117,211,.38);
- --game-surface:rgba(36,20,51,.78);
- --game-button-top:#57316c;
- --game-button-bottom:#281a3e;
- --game-input:#24172f;
- --game-text:#f5e8ff;
- background-color:#110e1c!important;
- background-image:radial-gradient(ellipse at 50% -10%,rgba(126,47,142,.30),transparent 55%),linear-gradient(145deg,#100d1a,#21132e 58%,#11101e)!important;
+ --game-accent:#df4848;
+ --game-accent-bright:#ff9690;
+ --game-border:rgba(222,77,77,.43);
+ --game-surface:rgba(49,19,24,.80);
+ --game-button-top:#8e3038;
+ --game-button-bottom:#421b26;
+ --game-input:#321b22;
+ --game-text:#fff0ed;
+ background-color:#1a0d12!important;
+ background-image:radial-gradient(ellipse at 50% -10%,rgba(180,42,51,.28),transparent 55%),linear-gradient(145deg,#190e14,#34171d 58%,#180f16)!important;
  color:var(--game-text)!important;
 }
 html body.yano-dex[data-theme="nuumonsters"]{
