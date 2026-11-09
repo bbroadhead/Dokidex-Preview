@@ -5,8 +5,8 @@ const params=new URLSearchParams(location.search);
 const game=params.get('game')==='nuumonsters'?'nuumonsters':'yami-kids';
 const title=game==='yami-kids'?'Yami Kids':'Nuumonsters';
 const $=id=>document.getElementById(id);
-const heading=$('heading'),grid=$('dex-grid'),profile=$('profile'),search=$('search'),stage=$('stage'),shiny=$('shiny'),summary=$('yv-visible-count'),typeFilters=$('type-filters');
-heading.textContent=title+' Dex';document.title=title+' Dex | Yanoverse Multi-Dex';
+const grid=$('dex-grid'),profile=$('profile'),search=$('search'),stage=$('stage'),shiny=$('shiny'),summary=$('yv-visible-count'),typeFilters=$('type-filters');
+document.title=title+' Dex | Yanoverse Multi-Dex';
 $('dex-home').href='?game='+game;
 document.querySelectorAll('[data-game]').forEach(a=>{const active=a.dataset.game===game;a.classList.toggle('is-selected',active);if(active)a.setAttribute('aria-current','page')});
 $('shiny-label').hidden=game!=='yami-kids';
@@ -14,11 +14,11 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const image=p=>p?'/Yanoverse-Multidex'+(p.startsWith('/')?p:'/'+p):'';
 const img=(p,alt,klass='')=>'<img class="'+klass+'" src="'+esc(image(p))+'" alt="'+esc(alt)+'" loading="lazy">';
 const url=m=>'?game='+game+'&monster='+encodeURIComponent(m.slug);
-const stats=['Health','Attack','Defense','Mgk. Atk','Mgk. Def','Speed'];
+const typePalette={Astral:'#a18be8',Living:'#64b873',Nature:'#55b990',Fire:'#e97848',Water:'#468fd1',Earth:'#bd9363',Air:'#76b6d4',Light:'#e5c667',Dark:'#8968b8',Electric:'#e6bd49',Ice:'#74c5d4',Ghost:'#8c7bd0',Poison:'#a16ac1',Metal:'#9da8b6',Construct:'#9aa8bd',Celestial:'#f2cc7e',Spirit:'#aa83db',Beast:'#c68a55',Magic:'#aa85dc',Shadow:'#7765a9',Normal:'#98a5b6',Dragon:'#647fc6',Fighting:'#c7765d'};\nconst typeColor=t=>typePalette[t]||'#789bc2';\nconst palette=m=>{const colors=(m.type||[]).map(typeColor);return '--type-glow:'+ (colors[0]||'#789bc2')+';--type-glow-secondary:'+(colors[1]||colors[0]||'#789bc2')};\nconst stats=['Health','Attack','Defense','Mgk. Atk','Mgk. Def','Speed'];
 let data=[],activeTypes=new Set(),selected=null;
 function tile(m){
  const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
- return '<article class="dex-entry" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong><span class="dex-card-stage">Stage '+esc(m.stage||'?')+'</span><span class="dex-card-types">'+(m.type||[]).map(t=>'<span class="dex-card-type">'+esc(t)+'</span>').join('')+'</span></div></a></article>';
+ return '<article class="dex-entry" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong><span class="dex-card-stage">Stage '+esc(m.stage||'?')+'</span><span class="dex-card-types">'+(m.type||[]).map(t=>'<span class="dex-card-type" style="--type-color:'+typeColor(t)+'">'+esc(t)+'</span>').join('')+'</span></div></a></article>';
 }
 function render(){
  const q=search.value.trim().toLowerCase();
@@ -40,9 +40,22 @@ $('filter-toggle').addEventListener('click',()=>{const collapsed=$('dex-filter-c
 $('clear-filters').addEventListener('click',()=>{activeTypes.clear();typeFilters.querySelectorAll('button').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false')});search.value='';stage.value='';shiny.checked=false;render()});
 [search,stage].forEach(el=>el.addEventListener('input',render));
 shiny.addEventListener('change',()=>{render();if(selected)navigate()});
+function centerSelectedGame(){
+ const track=$('yanoverse-game-track'),selected=track?.querySelector('.is-selected');
+ if(!track||!selected)return;
+ track.style.transition='none';
+ track.style.transform='translateX(-50%)';
+ const rect=selected.getBoundingClientRect();
+ const offset=innerWidth/2-(rect.left+rect.width/2);
+ track.style.transform='translateX(calc(-50% + '+offset+'px))';
+}
+window.addEventListener('resize',()=>requestAnimationFrame(centerSelectedGame));
+window.addEventListener('load',centerSelectedGame);
+if(document.fonts?.ready)document.fonts.ready.then(centerSelectedGame);
+requestAnimationFrame(()=>requestAnimationFrame(centerSelectedGame));
 fetch(root+game+'/_data/'+game+'.json').then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.json()}).then(rows=>{
  data=rows.sort((a,b)=>a.number-b.number);
- [...new Set(data.flatMap(m=>m.type||[]))].sort().forEach(t=>{const b=document.createElement('button');b.type='button';b.className='type-btn';b.textContent=t;b.dataset.type=t;b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{if(activeTypes.has(t))activeTypes.delete(t);else activeTypes.add(t);b.classList.toggle('active',activeTypes.has(t));b.setAttribute('aria-pressed',String(activeTypes.has(t)));render()});typeFilters.appendChild(b)});
+ [...new Set(data.flatMap(m=>m.type||[]))].sort().forEach(t=>{const b=document.createElement('button');b.type='button';b.className='type-btn';b.textContent=t;b.dataset.type=t;b.style.setProperty('--type-color',typeColor(t));b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{if(activeTypes.has(t))activeTypes.delete(t);else activeTypes.add(t);b.classList.toggle('active',activeTypes.has(t));b.setAttribute('aria-pressed',String(activeTypes.has(t)));render()});typeFilters.appendChild(b)});
  navigate();render();
 }).catch(e=>{summary.textContent='Unable to load Dex data: '+e.message});
 })();
