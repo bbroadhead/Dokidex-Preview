@@ -7,9 +7,9 @@
       for(let i=0;i<nodes.length-1;i++){
         const stage=nodes[i], arrow=nodes[i+1];
         if(!stage.querySelector('img') || arrow.querySelector('img')) continue;
-        const label=[...stage.querySelectorAll('div')].find(el=>/\\(\\s*Lv\\.?\\s*\\d+\\s*\\)/i.test(el.textContent) && !el.querySelector('div'));
+        const label=[...stage.querySelectorAll('div')].find(el=>/\(\s*Lv\.?\s*\d+\s*\)/i.test(el.textContent) && !el.querySelector('div'));
         if(!label) continue;
-        const match=label.textContent.match(/\\(\\s*Lv\\.?\\s*(\\d+)\\s*\\)/i);
+        const match=label.textContent.match(/\(\s*Lv\.?\s*(\d+)\s*\)/i);
         if(!match) continue;
         label.textContent=label.textContent.replace(match[0],'').trim();
         arrow.classList.add('yv-evolution-transition');
