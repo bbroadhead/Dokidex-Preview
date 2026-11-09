@@ -1395,3 +1395,31 @@ html body.yano-dex #dex-grid.dex-grid>.dex-entry .dex-card-name{
  text-align:center!important;
  line-height:1.15!important;
 }
+
+/* Profile navigation stays anchored to the viewport while scrolling,
+   rather than to the profile's scrollable content. */
+html body.yano-dex #profile .profile-navigation>.nav-arrow{
+ position:fixed!important;
+ top:50dvh!important;
+ bottom:auto!important;
+ transform:translateY(-50%)!important;
+ z-index:1000!important;
+}
+html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{
+ left:6px!important;
+ right:auto!important;
+}
+html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{
+ right:6px!important;
+ left:auto!important;
+}
+@media(max-width:700px){
+ html body.yano-dex #profile .profile-navigation>.nav-arrow{
+  position:fixed!important;
+  top:50dvh!important;
+  transform:translateY(-50%)!important;
+  z-index:1000!important;
+ }
+ html body.yano-dex #profile .profile-navigation>.nav-arrow:first-child{left:4px!important}
+ html body.yano-dex #profile .profile-navigation>.nav-arrow:last-child{right:4px!important}
+}
