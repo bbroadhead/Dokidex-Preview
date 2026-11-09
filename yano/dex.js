@@ -14,7 +14,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const image=p=>p?'/Yanoverse-Multidex'+(p.startsWith('/')?p:'/'+p):'';
 const img=(p,alt,klass='')=>'<img class="'+klass+'" src="'+esc(image(p))+'" alt="'+esc(alt)+'" loading="lazy">';
 const url=m=>'?game='+game+'&monster='+encodeURIComponent(m.slug);
-const colors={Astral:'#a18be8',Living:'#64b873',Nature:'#55b990',Fire:'#e97848',Water:'#468fd1',Earth:'#bd9363',Air:'#76b6d4',Light:'#e5c667',Dark:'#8968b8',Electric:'#e6bd49',Ice:'#74c5d4',Ghost:'#8c7bd0',Poison:'#a16ac1',Metal:'#9da8b6',Construct:'#9aa8bd',Celestial:'#f2cc7e',Spirit:'#aa83db',Beast:'#c68a55',Magic:'#aa85dc',Shadow:'#7765a9',Normal:'#98a5b6',Dragon:'#647fc6',Fighting:'#c7765d'};
+const colors={Astral:'#a18be8',Living:'#64b873',Nature:'#55b990',Demon:'#a35b9d',Earth:'#bb9461',Holy:'#e8d47b',Inferno:'#ed6044',Sea:'#398fbe',Sky:'#80b9df',Undead:'#8379ad',Fairy:'#dc8fca',Ghoul:'#7964a5',Mimic:'#c49b68',Neutral:'#9da9b5',Fire:'#e97848',Water:'#468fd1',Earth:'#bd9363',Air:'#76b6d4',Light:'#e5c667',Dark:'#8968b8',Electric:'#e6bd49',Ice:'#74c5d4',Ghost:'#8c7bd0',Poison:'#a16ac1',Metal:'#9da8b6',Construct:'#9aa8bd',Celestial:'#f2cc7e',Spirit:'#aa83db',Beast:'#c68a55',Magic:'#aa85dc',Shadow:'#7765a9',Normal:'#98a5b6',Dragon:'#647fc6',Fighting:'#c7765d'};
 const color=t=>colors[t]||'#789bc2';
 const style=m=>'--type-glow:'+color((m.type||[])[0])+';--type-glow-secondary:'+color((m.type||[])[1]||(m.type||[])[0]);
 const badge=t=>'<span class="dex-card-type" style="--type-color:'+color(t)+'">'+esc(t)+'</span>';
@@ -22,7 +22,7 @@ const stats=['Health','Attack','Defense','Mgk. Atk','Mgk. Def','Speed'];
 let data=[],activeTypes=new Set(),selected=null;
 function tile(m){
  const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
- return '<article class="dex-entry" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong><span class="dex-card-stage">Stage '+esc(m.stage||'?')+'</span><span class="dex-card-types">'+(m.type||[]).map(badge).join('')+'</span></div></a></article>';
+ return '<article class="dex-entry" style="'+style(m)+'" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong></div></a></article>';
 }
 function render(){
  const q=search.value.trim().toLowerCase();
