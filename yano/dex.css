@@ -65,38 +65,3 @@ body.yano-dex{margin:0;font-family:system-ui,sans-serif}
 .yano-dex #profile .evo img{max-width:55px;max-height:55px;image-rendering:pixelated}
 @media(max-width:768px){.yano-dex #profile .monster-layout-row{grid-template-columns:1fr!important}.yano-dex #profile .monster-image-container{min-height:200px}.yano-dex .yanoverse-game{flex-basis:125px;width:125px;height:95px}.yano-dex .yanoverse-game.is-selected{flex-basis:190px;width:190px;height:110px}.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;padding:8px!important}.yano-dex #dex-grid .img-wrapper{width:100px;height:100px}.yano-dex #dex-grid .monster-image.small{max-width:96px!important;max-height:96px!important}.yano-dex #dex-grid .dex-entry{min-height:205px}.yano-dex #dex-filter-controls{gap:10px}}
 @media(prefers-reduced-motion:reduce){.yano-dex .dex-entry,.yano-dex .yanoverse-game{transition:none!important}}
-
-
-/* Match the selected-game centering and prevent legacy global track offsets. */
-html body.yano-dex .yanoverse-game-picker{position:relative!important;left:50%!important;width:100vw!important;max-width:100vw!important;margin-left:-50vw!important;margin-right:0!important;overflow:hidden!important}
-html body.yano-dex .yanoverse-game-track{position:relative!important;left:50%!important;display:flex!important;justify-content:flex-start!important;width:max-content!important;max-width:none!important;margin:0!important;transform:translateX(-50%);transition:none!important}
-html body.yano-dex .yanoverse-game{flex-shrink:0!important;min-width:0!important}
-html body.yano-dex .yanoverse-game img{background:transparent!important;box-shadow:none!important}
-html body.yano-dex .yanoverse-game-title{width:100%!important;white-space:normal!important;overflow:visible!important;text-align:center!important}
-html body.yano-dex #dex-filter-controls #search{width:250px!important;min-width:250px!important;max-width:100%!important;box-sizing:border-box!important}
-html body.yano-dex #dex-filter-controls #search::placeholder{font:400 22px/1.2 'VT323',monospace!important}
-html body.yano-dex #type-filters .type-btn{--type-color:#789bc2;background:linear-gradient(180deg,color-mix(in srgb,var(--type-color),white 28%),var(--type-color) 50%,color-mix(in srgb,var(--type-color),black 37%))!important;border-color:color-mix(in srgb,var(--type-color),white 32%)!important;text-shadow:1px 1px #0009!important;box-shadow:inset 0 2px 0 #ffffff40,inset 0 -3px 0 #0005,0 3px 7px #0005!important}
-html body.yano-dex #type-filters .type-btn.active{outline:2px solid #d4eaff!important;outline-offset:2px!important;box-shadow:0 0 16px var(--type-color),inset 0 2px 0 #ffffff55!important}
-html body.yano-dex #dex-grid .dex-entry{--type-glow:#789bc2;--type-glow-secondary:var(--type-glow);border-color:color-mix(in srgb,var(--type-glow),transparent 52%)!important;box-shadow:inset 0 1px 0 #ffffff22,0 7px 22px #0004,0 0 17px color-mix(in srgb,var(--type-glow),transparent 83%)!important}
-html body.yano-dex #dex-grid .dex-entry:hover{border-color:var(--type-glow)!important;box-shadow:0 12px 28px #0008,0 0 24px color-mix(in srgb,var(--type-glow),transparent 42%),0 0 12px color-mix(in srgb,var(--type-glow-secondary),transparent 65%)!important}
-html body.yano-dex .dex-card-type{--type-color:#789bc2;background:color-mix(in srgb,var(--type-color),#17283c 56%)!important;border-color:color-mix(in srgb,var(--type-color),white 20%)!important;color:white!important}
-html body.yano-dex #dex-grid .img-wrapper,html body.yano-dex #dex-grid .img-wrapper *,html body.yano-dex #dex-grid img.monster-image,html body.yano-dex #profile .monster-image-container,html body.yano-dex #profile .hero-image{background:transparent!important;background-image:none!important;box-shadow:none!important;filter:none!important}
-html body.yano-dex #profile .monster-layout-row{grid-template-columns:repeat(3,minmax(0,1fr))!important;align-items:start!important;gap:clamp(12px,1.5vw,24px)!important}
-html body.yano-dex #profile .monster-layout-row>.monster-image-container,html body.yano-dex #profile .monster-layout-row>.monster-info,html body.yano-dex #profile .monster-layout-row>.stats-side{grid-area:auto!important;min-width:0!important;max-width:none!important;width:100%!important;margin:0!important;align-self:start!important}
-html body.yano-dex #profile .monster-layout-row>.monster-image-container{border:0!important;background:transparent!important;box-shadow:none!important}
-html body.yano-dex #profile .monster-layout-row>.monster-info,html body.yano-dex #profile .monster-layout-row>.stats-side{background:linear-gradient(145deg,#29394ecf,#152238ed)!important;border:1px solid #8099bb55!important;border-radius:16px!important}
-html body.yano-dex #profile .monster-layout-row>.stats-side{height:fit-content!important;max-height:none!important;overflow:visible!important}
-html body.yano-dex #profile .hero-image{width:100%!important;max-width:360px!important;height:auto!important;max-height:420px!important;object-fit:contain!important;image-rendering:pixelated!important}
-html body.yano-dex #profile .monster-layout-row>.monster-info{line-height:1.65!important;overflow-wrap:anywhere!important}
-html body.yano-dex #profile .evolution-wrapper{max-width:100%!important;margin:20px auto!important}
-html body.yano-dex #profile .profile-top{gap:20px}
-html body.yano-dex #profile .profile-title{margin:6px auto 18px!important}
-html body.yano-dex #profile .stat-row{grid-template-columns:85px minmax(0,1fr) 32px!important}
-@media(max-width:768px){html body.yano-dex #profile .monster-layout-row{display:flex!important;flex-direction:column!important;align-items:center!important}html body.yano-dex #profile .monster-layout-row>div{width:100%!important}html body.yano-dex #profile .monster-layout-row>.monster-image-container{min-height:220px!important}html body.yano-dex .yanoverse-game-track{gap:8px!important}}
-
-/* Profile navigation: same side-arrow framing as the Dokimon profile. */
-html body.yano-dex #profile .profile-navigation{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:12px;align-items:center}
-html body.yano-dex #profile .nav-arrow{display:flex;align-items:center;justify-content:center;width:44px;height:64px;border:1px solid #93b7df66;border-radius:12px;background:linear-gradient(145deg,#2b4767,#14283e);color:#e7f4ff;text-decoration:none;font:400 44px/1 'VT323',monospace;transition:background .2s}
-html body.yano-dex #profile .nav-arrow:hover{background:#355a81}
-html body.yano-dex #profile .profile-navigation .monster-layout-row{min-width:0!important;width:100%!important}
-@media(max-width:768px){html body.yano-dex #profile .profile-navigation{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}html body.yano-dex #profile .nav-arrow{width:28px;height:52px;font-size:33px}html body.yano-dex #profile{padding:4px!important}html body.yano-dex #profile .monster-layout-row>.monster-info,html body.yano-dex #profile .monster-layout-row>.stats-side{padding:14px!important}}
