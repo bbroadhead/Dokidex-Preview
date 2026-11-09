@@ -1298,3 +1298,40 @@ html body.yano-dex #profile .evolution-wrapper .evo a{
   margin-right:auto!important;
  }
 }
+
+/* Mobile profile header: equal-width side tracks keep the monster name
+   centered on the viewport regardless of the back link's text length. */
+@media(max-width:700px){
+ html body.yano-dex #profile .profile-top{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr)!important;
+  align-items:center!important;
+  gap:4px!important;
+  width:100%!important;
+ }
+ html body.yano-dex #profile .profile-top>.return-link{
+  grid-column:1!important;
+  justify-self:start!important;
+  min-width:0!important;
+  max-width:100%!important;
+  font-size:clamp(12px,3.6vw,17px)!important;
+  line-height:1.05!important;
+ }
+ html body.yano-dex #profile .profile-top>.profile-title{
+  grid-column:2!important;
+  justify-self:center!important;
+  width:max-content!important;
+  max-width:calc(100vw - 16px)!important;
+  margin:0!important;
+  text-align:center!important;
+  font-size:clamp(20px,5.5vw,30px)!important;
+  line-height:1.05!important;
+  position:relative!important;
+  z-index:1!important;
+ }
+ html body.yano-dex #profile .profile-top>.profile-number{
+  grid-column:3!important;
+  justify-self:end!important;
+  font-size:15px!important;
+ }
+}
