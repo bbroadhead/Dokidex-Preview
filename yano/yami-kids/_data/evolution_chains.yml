@@ -1,0 +1,185 @@
+# Yami Kids evolution chains, same layout as _data/evolution_chains.yml in the dokidex repo.
+# level = the level that member evolves at. Kitama (#37) and Kajou (#61) evolve at random
+# (50/50) into one of two forms, so each of those is listed as two chains.
+- members:
+  - name: "Vanni"
+    level: 16
+  - name: "Vannati"
+    level: 32
+  - name: "Vamperia"
+- members:
+  - name: "Gachiki"
+    level: 16
+  - name: "Gachi"
+    level: 32
+  - name: "Gachisari"
+- members:
+  - name: "Jubi"
+    level: 16
+  - name: "Jumblina"
+    level: 32
+  - name: "Jumbertha"
+- members:
+  - name: "Jaxeter"
+    level: 16
+  - name: "Zubanzan"
+- members:
+  - name: "Hatrik"
+    level: 24
+  - name: "Yukisagi"
+- members:
+  - name: "Hatrix"
+    level: 24
+  - name: "Harelequin"
+- members:
+  - name: "Communikit"
+    level: 16
+  - name: "Nighthowlr"
+- members:
+  - name: "Baggi"
+    level: 16
+  - name: "Baggoh"
+- members:
+  - name: "Amini"
+    level: 16
+  - name: "Amenoella"
+- members:
+  - name: "Dr. Dandy"
+    level: 16
+  - name: "Mr. Panic"
+- members:
+  - name: "Blugoo"
+    level: 16
+  - name: "Blubert"
+    level: 32
+  - name: "Reppun"
+- members:
+  - name: "Telebi"
+    level: 16
+  - name: "Telegon"
+    level: 32
+  - name: "Datatsu"
+- members:
+  - name: "Owletter"
+    level: 16
+  - name: "Kurontan"
+- members:
+  - name: "Keshiko"
+    level: 16
+  - name: "Nekoke"
+    level: 32
+  - name: "Kashasa"
+- members:
+  - name: "Gagabebe"
+    level: 16
+  - name: "Ibaraki"
+- members:
+  - name: "Kitama"
+    level: 24
+  - name: "Shuten"
+- members:
+  - name: "Kitama"
+    level: 24
+  - name: "Asurama"
+- members:
+  - name: "Kuji"
+- members:
+  - name: "Jiraga"
+- members:
+  - name: "Trapie"
+    level: 32
+  - name: "Traqueen"
+- members:
+  - name: "Kaboomchu"
+    level: 24
+  - name: "Sparkit"
+- members:
+  - name: "Chirpy"
+    level: 24
+  - name: "Jean"
+- members:
+  - name: "Rodeo"
+    level: 64
+  - name: "Watanabe"
+- members:
+  - name: "Tsunake"
+    level: 80
+  - name: "Tsubane"
+- members:
+  - name: "Re:akako"
+    level: 74
+  - name: "Re:loomko"
+    level: 96
+  - name: "Re:wither"
+- members:
+  - name: "Yappa"
+    level: 24
+  - name: "Kemuri"
+- members:
+  - name: "Thumper"
+    level: 24
+  - name: "Thuntra"
+- members:
+  - name: "Nyakako"
+    level: 24
+  - name: "Byakakako"
+- members:
+  - name: "Kajou"
+    level: 80
+  - name: "Hinojou"
+- members:
+  - name: "Kajou"
+    level: 80
+  - name: "Sunato"
+- members:
+  - name: "Penja"
+- members:
+  - name: "Bam"
+    level: 96
+  - name: "Hector"
+    level: 128
+  - name: "Cast"
+- members:
+  - name: "Koko"
+    level: 78
+  - name: "Oo-Kori-ma"
+    level: 108
+  - name: "Yukiko"
+- members:
+  - name: "Koi"
+    level: 72
+  - name: "Koisha"
+- members:
+  - name: "Mitsushi"
+- members:
+  - name: "Hobgobbo"
+- members:
+  - name: "Ringel"
+    level: 96
+  - name: "Lampty"
+    level: 128
+  - name: "Shadea"
+- members:
+  - name: "Mokisa"
+    level: 64
+  - name: "Mokainu"
+- members:
+  - name: "Kumo"
+    level: 64
+  - name: "Yuujo"
+- members:
+  - name: "Morphtrix"
+    level: 24
+  - name: "Jestr"
+- members:
+  - name: "Fletcher"
+    level: 32
+  - name: "Razor"
+- members:
+  - name: "Wanyuu"
+    level: 96
+  - name: "Hexachor"
+- members:
+  - name: "Miyuki (Maiden)"
+    level: 160
+  - name: "Miyuki (Ascended)"

@@ -1,0 +1,1777 @@
+[
+  {
+    "number": 1,
+    "name": "Asobi",
+    "slug": "asobi",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 86,
+      "Defense": 42,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Flame Spirit",
+    "dex_entry": "A playful ember-being that flickers brighter when excited and vanishes in a burst of sparks when startled.",
+    "sprite": "/yano/nuumonsters/assets/images/asobi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/asobi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/asobi_mini.png"
+  },
+  {
+    "number": 2,
+    "name": "Kusaro",
+    "slug": "kusaro",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 86,
+      "Defense": 42,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Crescent Grass",
+    "dex_entry": "A moon-shaped grass spirit that sways even without wind, storing lunar energy in its curved blade.",
+    "sprite": "/yano/nuumonsters/assets/images/kusaro.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/kusaro.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/kusaro_mini.png"
+  },
+  {
+    "number": 3,
+    "name": "Mizusan",
+    "slug": "mizusan",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 86,
+      "Defense": 50,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Water Drop Man",
+    "dex_entry": "A tiny water guardian that forms from pure springs and restores strength with a cooling splash.",
+    "sprite": "/yano/nuumonsters/assets/images/mizusan.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/mizusan.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/mizusan_mini.png"
+  },
+  {
+    "number": 4,
+    "name": "Bagubi",
+    "slug": "bagubi",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 68,
+      "Defense": 35,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Spooky Bug",
+    "dex_entry": "A mischievous insect that glows faintly in the dark and feeds on lingering fear.",
+    "sprite": "/yano/nuumonsters/assets/images/bagubi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/bagubi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/bagubi_mini.png"
+  },
+  {
+    "number": 5,
+    "name": "Yachiro",
+    "slug": "yachiro",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 92,
+      "Defense": 42,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 88,
+      "Speed": 105
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Mr. Caterpillar",
+    "dex_entry": "A determined crawler that hardens its body like bark when threatened.",
+    "sprite": "/yano/nuumonsters/assets/images/yachiro.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yachiro.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yachiro_mini.png"
+  },
+  {
+    "number": 6,
+    "name": "Flappy",
+    "slug": "flappy",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 80,
+      "Defense": 58,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Fluffy Bird",
+    "dex_entry": "A round, light-feathered bird that flutters in short bursts and chirps constantly.",
+    "sprite": "/yano/nuumonsters/assets/images/flappy.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/flappy.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/flappy_mini.png"
+  },
+  {
+    "number": 7,
+    "name": "Sizzle",
+    "slug": "sizzle",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Blazing Skull",
+    "dex_entry": "A floating skull wreathed in relentless fire, said to burn hotter when angered.",
+    "sprite": "/yano/nuumonsters/assets/images/sizzle.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/sizzle.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/sizzle_mini.png"
+  },
+  {
+    "number": 8,
+    "name": "Reaper",
+    "slug": "reaper",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Poison Slime",
+    "dex_entry": "A toxic ooze that corrodes whatever it envelops and seeps silently across the ground.",
+    "sprite": "/yano/nuumonsters/assets/images/reaper.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/reaper.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/reaper_mini.png"
+  },
+  {
+    "number": 9,
+    "name": "Bombi",
+    "slug": "bombi",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "C4 Slime",
+    "dex_entry": "An unstable slime packed with explosive force that detonates when heavily struck.",
+    "sprite": "/yano/nuumonsters/assets/images/bombi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/bombi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/bombi_mini.png"
+  },
+  {
+    "number": 10,
+    "name": "Ponti",
+    "slug": "ponti",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 74,
+      "Defense": 58,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 52
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Sword Spirit",
+    "dex_entry": "A spectral blade given form, drifting silently until called to strike.",
+    "sprite": "/yano/nuumonsters/assets/images/ponti.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/ponti.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/ponti_mini.png"
+  },
+  {
+    "number": 11,
+    "name": "Truble",
+    "slug": "truble",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 100,
+      "Attack": 92,
+      "Defense": 65,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Guardian",
+    "dex_entry": "A stout protector that shields allies instinctively, standing firm against danger.",
+    "sprite": "/yano/nuumonsters/assets/images/truble.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/truble.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/truble_mini.png"
+  },
+  {
+    "number": 12,
+    "name": "Yoru",
+    "slug": "yoru",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Black Flame",
+    "dex_entry": "A shadowed inferno that consumes light instead of giving it off.",
+    "sprite": "/yano/nuumonsters/assets/images/yoru.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yoru.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yoru_mini.png"
+  },
+  {
+    "number": 13,
+    "name": "Vypr",
+    "slug": "vypr",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 62,
+      "Defense": 35,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Poison Snake",
+    "dex_entry": "A venomous serpent that strikes swiftly and leaves lingering toxins behind.",
+    "sprite": "/yano/nuumonsters/assets/images/vypr.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/vypr.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/vypr_mini.png"
+  },
+  {
+    "number": 14,
+    "name": "Zuzu",
+    "slug": "zuzu",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 62,
+      "Defense": 35,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Poison Bat",
+    "dex_entry": "A nocturnal flier that spreads toxic spores with each flutter.",
+    "sprite": "/yano/nuumonsters/assets/images/zuzu.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/zuzu.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/zuzu_mini.png"
+  },
+  {
+    "number": 15,
+    "name": "Flake",
+    "slug": "flake",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 68,
+      "Defense": 42,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Snowflake",
+    "dex_entry": "A fragile ice spirit that crystallizes the air around it when calm.",
+    "sprite": "/yano/nuumonsters/assets/images/flake.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/flake.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/flake_mini.png"
+  },
+  {
+    "number": 16,
+    "name": "Dandi",
+    "slug": "dandi",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 68,
+      "Defense": 35,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Flower Bulb",
+    "dex_entry": "A budding plant creature that blooms brilliantly under sunlight.",
+    "sprite": "/yano/nuumonsters/assets/images/dandi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/dandi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/dandi_mini.png"
+  },
+  {
+    "number": 17,
+    "name": "Nekobi",
+    "slug": "nekobi",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Sword Tail Cat",
+    "dex_entry": "A swift feline whose blade-like tail slices through obstacles mid-leap.",
+    "sprite": "/yano/nuumonsters/assets/images/nekobi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/nekobi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/nekobi_mini.png"
+  },
+  {
+    "number": 18,
+    "name": "Yaro",
+    "slug": "yaro",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Space Being",
+    "dex_entry": "A mysterious lifeform that drifts weightlessly and hums with cosmic energy.",
+    "sprite": "/yano/nuumonsters/assets/images/yaro.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yaro.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yaro_mini.png"
+  },
+  {
+    "number": 19,
+    "name": "Yshiro",
+    "slug": "yshiro",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 86,
+      "Defense": 35,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 88,
+      "Speed": 112
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Space Guardian",
+    "dex_entry": "A celestial sentinel that shields weaker beings with radiant barriers.",
+    "sprite": "/yano/nuumonsters/assets/images/yshiro.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yshiro.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yshiro_mini.png"
+  },
+  {
+    "number": 20,
+    "name": "Fang",
+    "slug": "fang",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Silly Bat",
+    "dex_entry": "A clumsy bat that laughs mid-flight and darts unpredictably.",
+    "sprite": "/yano/nuumonsters/assets/images/fang.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/fang.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/fang_mini.png"
+  },
+  {
+    "number": 21,
+    "name": "Chisa",
+    "slug": "chisa",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 86,
+      "Defense": 42,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Warding Spirit",
+    "dex_entry": "A gentle apparition that forms protective seals in moments of danger.",
+    "sprite": "/yano/nuumonsters/assets/images/chisa.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/chisa.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/chisa_mini.png"
+  },
+  {
+    "number": 22,
+    "name": "Dash",
+    "slug": "dash",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 74,
+      "Defense": 35,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Curious Fairy",
+    "dex_entry": "A quick-footed fairy that explores endlessly and never stays still for long.",
+    "sprite": "/yano/nuumonsters/assets/images/dash.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/dash.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/dash_mini.png"
+  },
+  {
+    "number": 23,
+    "name": "Tomi",
+    "slug": "tomi",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 50,
+      "Attack": 86,
+      "Defense": 28,
+      "Mgk. Atk": 120,
+      "Mgk. Def": 95,
+      "Speed": 128
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Cutesy Fairy",
+    "dex_entry": "A cheerful fairy whose sparkle lifts the spirits of nearby allies.",
+    "sprite": "/yano/nuumonsters/assets/images/tomi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/tomi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/tomi_mini.png"
+  },
+  {
+    "number": 24,
+    "name": "Hiiro",
+    "slug": "hiiro",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 100,
+      "Attack": 86,
+      "Defense": 65,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 52
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Bravery Fairy",
+    "dex_entry": "A courageous fairy that glows crimson when defending its friends.",
+    "sprite": "/yano/nuumonsters/assets/images/hiiro.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/hiiro.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/hiiro_mini.png"
+  },
+  {
+    "number": 25,
+    "name": "Castr",
+    "slug": "castr",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 74,
+      "Defense": 50,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 68
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Wizard",
+    "dex_entry": "A wandering spellcaster who channels arcane flames through his staff.",
+    "sprite": "/yano/nuumonsters/assets/images/castr.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/castr.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/castr_mini.png"
+  },
+  {
+    "number": 26,
+    "name": "Nevil",
+    "slug": "nevil",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Spook-evil Fairy",
+    "dex_entry": "A sinister fairy that feeds on mischief and delights in causing chaos.",
+    "sprite": "/yano/nuumonsters/assets/images/nevil.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/nevil.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/nevil_mini.png"
+  },
+  {
+    "number": 27,
+    "name": "Yamero",
+    "slug": "yamero",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 110,
+      "Attack": 86,
+      "Defense": 72,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 38
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Animated Teddy",
+    "dex_entry": "A stitched toy brought to life, surprisingly strong despite its soft form.",
+    "sprite": "/yano/nuumonsters/assets/images/yamero.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yamero.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yamero_mini.png"
+  },
+  {
+    "number": 28,
+    "name": "Babi",
+    "slug": "babi",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 74,
+      "Defense": 50,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 68
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Wild Animal",
+    "dex_entry": "A fierce beast that charges first and thinks later.",
+    "sprite": "/yano/nuumonsters/assets/images/babi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/babi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/babi_mini.png"
+  },
+  {
+    "number": 29,
+    "name": "Spindle",
+    "slug": "spindle",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Super Spider",
+    "dex_entry": "A massive spider that spins reinforced silk capable of binding even giants.",
+    "sprite": "/yano/nuumonsters/assets/images/spindle.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/spindle.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/spindle_mini.png"
+  },
+  {
+    "number": 30,
+    "name": "Adoyu",
+    "slug": "adoyu",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 86,
+      "Defense": 42,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Genius Enmity",
+    "dex_entry": "A calculating mind encased in shadow, always plotting its next move.",
+    "sprite": "/yano/nuumonsters/assets/images/adoyu.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/adoyu.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/adoyu_mini.png"
+  },
+  {
+    "number": 31,
+    "name": "Gool",
+    "slug": "gool",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Mischievous",
+    "dex_entry": "A shadowy trickster that steals small items just to watch the reaction.",
+    "sprite": "/yano/nuumonsters/assets/images/gool.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/gool.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/gool_mini.png"
+  },
+  {
+    "number": 32,
+    "name": "Gonn",
+    "slug": "gonn",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Consumer",
+    "dex_entry": "A ravenous being that devours anything it can fit inside its wide maw.",
+    "sprite": "/yano/nuumonsters/assets/images/gonn.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/gonn.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/gonn_mini.png"
+  },
+  {
+    "number": 33,
+    "name": "Kii",
+    "slug": "kii",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Connected Souls",
+    "dex_entry": "Two spirits bound as one, moving in perfect harmony.",
+    "sprite": "/yano/nuumonsters/assets/images/kii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/kii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/kii_mini.png"
+  },
+  {
+    "number": 34,
+    "name": "Yire",
+    "slug": "yire",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 80,
+      "Defense": 35,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 105
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Toxin",
+    "dex_entry": "A living toxin that seeps into wounds and weakens opponents over time.",
+    "sprite": "/yano/nuumonsters/assets/images/yire.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/yire.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/yire_mini.png"
+  },
+  {
+    "number": 35,
+    "name": "Glutton",
+    "slug": "glutton",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 130,
+      "Attack": 92,
+      "Defense": 88,
+      "Mgk. Atk": 50,
+      "Mgk. Def": 42,
+      "Speed": 30
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Gluttonous",
+    "dex_entry": "A bloated creature that grows stronger the more it consumes.",
+    "sprite": "/yano/nuumonsters/assets/images/glutton.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/glutton.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/glutton_mini.png"
+  },
+  {
+    "number": 36,
+    "name": "Korr",
+    "slug": "korr",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Space Bug",
+    "dex_entry": "An alien insect that vibrates with interstellar static.",
+    "sprite": "/yano/nuumonsters/assets/images/korr.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/korr.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/korr_mini.png"
+  },
+  {
+    "number": 37,
+    "name": "Snarkle",
+    "slug": "snarkle",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Diving Buddy",
+    "dex_entry": "A loyal aquatic companion that swims swiftly beneath the waves.",
+    "sprite": "/yano/nuumonsters/assets/images/snarkle.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/snarkle.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/snarkle_mini.png"
+  },
+  {
+    "number": 38,
+    "name": "Gashimo",
+    "slug": "gashimo",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 86,
+      "Defense": 42,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Animated Stuffy",
+    "dex_entry": "A plush-like creature that springs to life when no one is watching.",
+    "sprite": "/yano/nuumonsters/assets/images/gashimo.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/gashimo.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/gashimo_mini.png"
+  },
+  {
+    "number": 39,
+    "name": "Octako",
+    "slug": "octako",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 86,
+      "Defense": 58,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Sweet Octopus",
+    "dex_entry": "A friendly octopus that wraps allies in comforting tentacles.",
+    "sprite": "/yano/nuumonsters/assets/images/octako.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/octako.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/octako_mini.png"
+  },
+  {
+    "number": 40,
+    "name": "Mr Puff",
+    "slug": "mr-puff",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 74,
+      "Defense": 50,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 68
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Franken-Monster",
+    "dex_entry": "A stitched-together brute powered by crackling energy.",
+    "sprite": "/yano/nuumonsters/assets/images/mr-puff.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/mr-puff.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/mr-puff_mini.png"
+  },
+  {
+    "number": 41,
+    "name": "Blun",
+    "slug": "blun",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 74,
+      "Defense": 35,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 98
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Nefarious Kitty",
+    "dex_entry": "A sly feline that stalks silently before striking without warning.",
+    "sprite": "/yano/nuumonsters/assets/images/blun.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/blun.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/blun_mini.png"
+  },
+  {
+    "number": 42,
+    "name": "Spook",
+    "slug": "spook",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Consuming Ghost",
+    "dex_entry": "A hollow specter that absorbs energy from anything it touches.",
+    "sprite": "/yano/nuumonsters/assets/images/spook.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/spook.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/spook_mini.png"
+  },
+  {
+    "number": 43,
+    "name": "Phii",
+    "slug": "phii",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Ice Queen Fairy",
+    "dex_entry": "A pale fairy that shows no expression, even in battle, despite it's strength.",
+    "sprite": "/yano/nuumonsters/assets/images/phii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/phii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/phii_mini.png"
+  },
+  {
+    "number": 44,
+    "name": "Cho",
+    "slug": "cho",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 74,
+      "Defense": 58,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 52
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Giant Bird",
+    "dex_entry": "A towering avian whose wings create powerful gusts.",
+    "sprite": "/yano/nuumonsters/assets/images/cho.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/cho.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/cho_mini.png"
+  },
+  {
+    "number": 45,
+    "name": "Cap",
+    "slug": "cap",
+    "type": [
+      "Astral"
+    ],
+    "base_stats": {
+      "Health": 120,
+      "Attack": 92,
+      "Defense": 80,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 30
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Iron Knight",
+    "dex_entry": "A heavily armored warrior that never retreats from a duel.",
+    "sprite": "/yano/nuumonsters/assets/images/cap.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/cap.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/cap_mini.png"
+  },
+  {
+    "number": 46,
+    "name": "Octakoi",
+    "slug": "octakoi",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Evil Octopus",
+    "dex_entry": "A corrupted sea beast that drags foes into the depths.",
+    "sprite": "/yano/nuumonsters/assets/images/octakoi.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/octakoi.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/octakoi_mini.png"
+  },
+  {
+    "number": 47,
+    "name": "Fluffers",
+    "slug": "fluffers",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 68,
+      "Defense": 42,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Fluffy Bunny",
+    "dex_entry": "A soft, energetic bunny that hops tirelessly across fields.",
+    "sprite": "/yano/nuumonsters/assets/images/fluffers.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/fluffers.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/fluffers_mini.png"
+  },
+  {
+    "number": 48,
+    "name": "Ghast",
+    "slug": "ghast",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 92,
+      "Defense": 50,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Swordwield Wisp",
+    "dex_entry": "A drifting spirit that wields a curved blade of condensed light.",
+    "sprite": "/yano/nuumonsters/assets/images/ghast.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/ghast.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/ghast_mini.png"
+  },
+  {
+    "number": 49,
+    "name": "Scythe",
+    "slug": "scythe",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 74,
+      "Defense": 50,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 68
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Crescent Blade",
+    "dex_entry": "A swift assassin whose attacks arc like a crescent moon.",
+    "sprite": "/yano/nuumonsters/assets/images/scythe.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/scythe.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/scythe_mini.png"
+  },
+  {
+    "number": 50,
+    "name": "Zip",
+    "slug": "zip",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Winged Seed",
+    "dex_entry": "A floating seedling that drifts on gentle currents before taking root.",
+    "sprite": "/yano/nuumonsters/assets/images/zip.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/zip.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/zip_mini.png"
+  },
+  {
+    "number": 51,
+    "name": "Slooth",
+    "slug": "slooth",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 100,
+      "Attack": 80,
+      "Defense": 65,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 45
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Poison Slug",
+    "dex_entry": "A slow-moving slug that leaves a corrosive trail behind it.",
+    "sprite": "/yano/nuumonsters/assets/images/slooth.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/slooth.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/slooth_mini.png"
+  },
+  {
+    "number": 52,
+    "name": "Sannin",
+    "slug": "sannin",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 130,
+      "Attack": 92,
+      "Defense": 88,
+      "Mgk. Atk": 50,
+      "Mgk. Def": 42,
+      "Speed": 30
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Lost Souls",
+    "dex_entry": "Three lost souls combined together into this creature.",
+    "sprite": "/yano/nuumonsters/assets/images/sannin.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/sannin.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/sannin_mini.png"
+  },
+  {
+    "number": 53,
+    "name": "Marley",
+    "slug": "marley",
+    "type": [
+      "Living"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Silent Observer",
+    "dex_entry": "A calm creature that studies everything before acting.",
+    "sprite": "/yano/nuumonsters/assets/images/marley.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/marley.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/marley_mini.png"
+  },
+  {
+    "number": 54,
+    "name": "Boshii",
+    "slug": "boshii",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 92,
+      "Defense": 42,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 88,
+      "Speed": 105
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Shadow Drifter",
+    "dex_entry": "A cloaked wanderer that slips between light and darkness.",
+    "sprite": "/yano/nuumonsters/assets/images/boshii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/boshii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/boshii_mini.png"
+  },
+  {
+    "number": 55,
+    "name": "Luuu",
+    "slug": "luuu",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 80,
+      "Defense": 35,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 105
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Flight Spirit",
+    "dex_entry": "A curious creatures that glides through the air silently.",
+    "sprite": "/yano/nuumonsters/assets/images/luuu.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/luuu.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/luuu_mini.png"
+  },
+  {
+    "number": 56,
+    "name": "Lanter",
+    "slug": "lanter",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Lantern Spirit",
+    "dex_entry": "A guiding light that appears to travelers in the dark.",
+    "sprite": "/yano/nuumonsters/assets/images/lanter.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/lanter.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/lanter_mini.png"
+  },
+  {
+    "number": 57,
+    "name": "Bobbl",
+    "slug": "bobbl",
+    "type": [
+      "Nature"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 80,
+      "Defense": 42,
+      "Mgk. Atk": 90,
+      "Mgk. Def": 72,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Jelly Wisp",
+    "dex_entry": "A bouncing, fruit-like jelly blob that reshapes itself when startled.",
+    "sprite": "/yano/nuumonsters/assets/images/bobbl.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/bobbl.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/bobbl_mini.png"
+  },
+  {
+    "number": 58,
+    "name": "Devin",
+    "slug": "devin",
+    "type": [
+      "Fairy"
+    ],
+    "base_stats": {
+      "Health": 100,
+      "Attack": 92,
+      "Defense": 65,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Dark Adept",
+    "dex_entry": "A brooding fighter who channels shadow into focused strikes.",
+    "sprite": "/yano/nuumonsters/assets/images/devin.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/devin.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/devin_mini.png"
+  },
+  {
+    "number": 59,
+    "name": "Crusch",
+    "slug": "crusch",
+    "type": [
+      "Ghoul"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Heavy Crusher",
+    "dex_entry": "A powerful brute that smashes through stone with ease.",
+    "sprite": "/yano/nuumonsters/assets/images/crusch.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/crusch.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/crusch_mini.png"
+  },
+  {
+    "number": 60,
+    "name": "Snel",
+    "slug": "snel",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 74,
+      "Defense": 35,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 90
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Swift Scout",
+    "dex_entry": "A nimble creature that darts ahead to survey danger.",
+    "sprite": "/yano/nuumonsters/assets/images/snel.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/snel.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/snel_mini.png"
+  },
+  {
+    "number": 61,
+    "name": "Shroo",
+    "slug": "shroo",
+    "type": [
+      "Neutral"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 68,
+      "Defense": 50,
+      "Mgk. Atk": 60,
+      "Mgk. Def": 50,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Poisonous Shroom",
+    "dex_entry": "A toxic fungus that releases spores when threatened.",
+    "sprite": "/yano/nuumonsters/assets/images/shroo.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/shroo.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/shroo_mini.png"
+  },
+  {
+    "number": 62,
+    "name": "Mamba",
+    "slug": "mamba",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 110,
+      "Attack": 80,
+      "Defense": 72,
+      "Mgk. Atk": 50,
+      "Mgk. Def": 42,
+      "Speed": 30
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Venom Fang",
+    "dex_entry": "A sleek predator whose bite paralyzes prey instantly.",
+    "sprite": "/yano/nuumonsters/assets/images/mamba.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/mamba.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/mamba_mini.png"
+  },
+  {
+    "number": 63,
+    "name": "Mii-mii",
+    "slug": "mii-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Blob Mimic",
+    "dex_entry": "A simple shapeshifter that copies nearby forms imperfectly.",
+    "sprite": "/yano/nuumonsters/assets/images/mii-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/mii-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/mii-mii_mini.png"
+  },
+  {
+    "number": 64,
+    "name": "Plum-mii",
+    "slug": "plum-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 68,
+      "Defense": 42,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Mimic Spirit",
+    "dex_entry": "A fruit-like spirit that disguises itself to avoid danger.",
+    "sprite": "/yano/nuumonsters/assets/images/plum-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/plum-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/plum-mii_mini.png"
+  },
+  {
+    "number": 65,
+    "name": "Win-mii",
+    "slug": "win-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Fan Mimic",
+    "dex_entry": "A hovering mimic that spins rapidly to create slicing winds.",
+    "sprite": "/yano/nuumonsters/assets/images/win-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/win-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/win-mii_mini.png"
+  },
+  {
+    "number": 66,
+    "name": "Pan-mii",
+    "slug": "pan-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 80,
+      "Defense": 58,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Toaster Mimic",
+    "dex_entry": "A mischievous mimic that snaps shut unexpectedly.",
+    "sprite": "/yano/nuumonsters/assets/images/pan-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/pan-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/pan-mii_mini.png"
+  },
+  {
+    "number": 67,
+    "name": "Tii-mii",
+    "slug": "tii-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 60,
+      "Attack": 74,
+      "Defense": 35,
+      "Mgk. Atk": 100,
+      "Mgk. Def": 80,
+      "Speed": 105
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Teapot Mimic",
+    "dex_entry": "A polite-looking mimic that erupts with steam when opened.",
+    "sprite": "/yano/nuumonsters/assets/images/tii-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/tii-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/tii-mii_mini.png"
+  },
+  {
+    "number": 68,
+    "name": "Swip-mii",
+    "slug": "swip-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 80,
+      "Attack": 80,
+      "Defense": 50,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Sword Mimic",
+    "dex_entry": "A blade-shaped mimic that lunges suddenly at close range.",
+    "sprite": "/yano/nuumonsters/assets/images/swip-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/swip-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/swip-mii_mini.png"
+  },
+  {
+    "number": 69,
+    "name": "Lamp-mii",
+    "slug": "lamp-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 70,
+      "Attack": 74,
+      "Defense": 42,
+      "Mgk. Atk": 80,
+      "Mgk. Def": 65,
+      "Speed": 82
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Lamp Mimix",
+    "dex_entry": "A glowing mimic that blinds foes with sudden bursts of light.",
+    "sprite": "/yano/nuumonsters/assets/images/lamp-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/lamp-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/lamp-mii_mini.png"
+  },
+  {
+    "number": 70,
+    "name": "Kii-mii",
+    "slug": "kii-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 90,
+      "Attack": 80,
+      "Defense": 58,
+      "Mgk. Atk": 70,
+      "Mgk. Def": 58,
+      "Speed": 60
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Key Mimic",
+    "dex_entry": "A small mimic that hides among tools and locks.",
+    "sprite": "/yano/nuumonsters/assets/images/kii-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/kii-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/kii-mii_mini.png"
+  },
+  {
+    "number": 71,
+    "name": "Dar-mii",
+    "slug": "dar-mii",
+    "type": [
+      "Mimic"
+    ],
+    "base_stats": {
+      "Health": 110,
+      "Attack": 116,
+      "Defense": 72,
+      "Mgk. Atk": 110,
+      "Mgk. Def": 88,
+      "Speed": 75
+    },
+    "stage": 1,
+    "evolves_at": null,
+    "evolves_from": null,
+    "evolves_to": [],
+    "classification": "Dragon Mimic",
+    "dex_entry": "A fearsome mimic that assumes the form of a miniature dragon to intimidate foes.",
+    "sprite": "/yano/nuumonsters/assets/images/dar-mii.png",
+    "sprite_native": "/yano/nuumonsters/assets/images/native/dar-mii.png",
+    "mini_sprite": "/yano/nuumonsters/assets/images/mini_sprites/dar-mii_mini.png"
+  }
+]

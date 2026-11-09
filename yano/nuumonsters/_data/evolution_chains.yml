@@ -1,0 +1,144 @@
+# Nuumonsters evolution chains, same layout as _data/evolution_chains.yml in the dokidex repo.
+# Nuumonsters have no evolutions, so every chain has one member (like Bundust in Quest).
+- members:
+  - name: "Asobi"
+- members:
+  - name: "Kusaro"
+- members:
+  - name: "Mizusan"
+- members:
+  - name: "Bagubi"
+- members:
+  - name: "Yachiro"
+- members:
+  - name: "Flappy"
+- members:
+  - name: "Sizzle"
+- members:
+  - name: "Reaper"
+- members:
+  - name: "Bombi"
+- members:
+  - name: "Ponti"
+- members:
+  - name: "Truble"
+- members:
+  - name: "Yoru"
+- members:
+  - name: "Vypr"
+- members:
+  - name: "Zuzu"
+- members:
+  - name: "Flake"
+- members:
+  - name: "Dandi"
+- members:
+  - name: "Nekobi"
+- members:
+  - name: "Yaro"
+- members:
+  - name: "Yshiro"
+- members:
+  - name: "Fang"
+- members:
+  - name: "Chisa"
+- members:
+  - name: "Dash"
+- members:
+  - name: "Tomi"
+- members:
+  - name: "Hiiro"
+- members:
+  - name: "Castr"
+- members:
+  - name: "Nevil"
+- members:
+  - name: "Yamero"
+- members:
+  - name: "Babi"
+- members:
+  - name: "Spindle"
+- members:
+  - name: "Adoyu"
+- members:
+  - name: "Gool"
+- members:
+  - name: "Gonn"
+- members:
+  - name: "Kii"
+- members:
+  - name: "Yire"
+- members:
+  - name: "Glutton"
+- members:
+  - name: "Korr"
+- members:
+  - name: "Snarkle"
+- members:
+  - name: "Gashimo"
+- members:
+  - name: "Octako"
+- members:
+  - name: "Mr Puff"
+- members:
+  - name: "Blun"
+- members:
+  - name: "Spook"
+- members:
+  - name: "Phii"
+- members:
+  - name: "Cho"
+- members:
+  - name: "Cap"
+- members:
+  - name: "Octakoi"
+- members:
+  - name: "Fluffers"
+- members:
+  - name: "Ghast"
+- members:
+  - name: "Scythe"
+- members:
+  - name: "Zip"
+- members:
+  - name: "Slooth"
+- members:
+  - name: "Sannin"
+- members:
+  - name: "Marley"
+- members:
+  - name: "Boshii"
+- members:
+  - name: "Luuu"
+- members:
+  - name: "Lanter"
+- members:
+  - name: "Bobbl"
+- members:
+  - name: "Devin"
+- members:
+  - name: "Crusch"
+- members:
+  - name: "Snel"
+- members:
+  - name: "Shroo"
+- members:
+  - name: "Mamba"
+- members:
+  - name: "Mii-mii"
+- members:
+  - name: "Plum-mii"
+- members:
+  - name: "Win-mii"
+- members:
+  - name: "Pan-mii"
+- members:
+  - name: "Tii-mii"
+- members:
+  - name: "Swip-mii"
+- members:
+  - name: "Lamp-mii"
+- members:
+  - name: "Kii-mii"
+- members:
+  - name: "Dar-mii"
