@@ -86,3 +86,40 @@ body.yano-dex #profile .monster-layout-row>.monster-image-container{background:t
 body.yano-dex #profile .monster-layout-row>.monster-info,body.yano-dex #profile .monster-layout-row>.stats-side{min-width:0!important;max-width:none!important;width:100%!important;grid-area:auto!important}
 body.yano-dex #profile .stats-side{height:fit-content!important;max-height:none!important;overflow:visible!important}
 @media(max-width:768px){body.yano-dex #profile .profile-navigation{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}body.yano-dex #profile .nav-arrow{width:28px;height:52px;font-size:30px}body.yano-dex #profile .profile-navigation>.monster-layout-row{display:flex!important;flex-direction:column!important;align-items:center!important}body.yano-dex #profile .monster-layout-row>div{width:100%!important}}
+
+/* Keep the Dokimon grid rhythm: consistent cards spanning the available row. */
+html body.yano-dex #dex-grid.dex-grid{
+ display:grid!important;
+ grid-template-columns:repeat(auto-fill,minmax(170px,1fr))!important;
+ gap:14px!important;
+ width:100%!important;
+ max-width:none!important;
+ align-items:stretch!important;
+ justify-items:stretch!important;
+}
+html body.yano-dex #dex-grid .dex-entry{
+ width:100%!important;
+ min-width:0!important;
+ max-width:none!important;
+ min-height:190px!important;
+ height:100%!important;
+ border:1px solid var(--type-glow,#789bc2)!important;
+ box-shadow:inset 0 1px 0 #ffffff22,0 5px 18px #0005,0 0 12px var(--type-glow,#789bc2)!important;
+}
+html body.yano-dex #dex-grid .dex-entry:hover{
+ box-shadow:0 12px 26px #0008,0 0 22px var(--type-glow,#789bc2)!important;
+}
+html body.yano-dex #dex-grid .dex-entry>a{
+ height:100%!important;
+ justify-content:space-between!important;
+}
+html body.yano-dex #dex-grid .dex-card-details{
+ width:100%!important;
+ margin-top:auto!important;
+}
+html body.yano-dex #dex-grid .dex-card-stage,
+html body.yano-dex #dex-grid .dex-card-types{display:none!important}
+@media(max-width:768px){
+ html body.yano-dex #dex-grid.dex-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ html body.yano-dex #dex-grid .dex-entry{min-height:170px!important}
+}
