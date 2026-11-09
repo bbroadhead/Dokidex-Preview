@@ -70,10 +70,41 @@ function tile(m){
  const pic=shiny.checked&&m.shiny_sprite?m.shiny_sprite:m.sprite;
  return '<article class="dex-entry" style="'+style(m)+'" data-name="'+esc(m.name)+'"><a href="'+url(m)+'"><div class="img-wrapper">'+img(pic,m.name,'monster-image small')+'</div><div class="dex-card-details"><span class="dex-card-number">#'+m.number+'</span><strong class="dex-card-name">'+esc(m.name)+'</strong></div></a></article>';
 }
+
+// Fit each monster name to a single line using its actual rendered width.
+// Re-run after filtering, viewport changes, and font loading.
+function fitCardNames(){
+ grid.querySelectorAll('.dex-card-name').forEach(label=>{
+  const available=label.getBoundingClientRect().width;
+  if(!available)return;
+  const base=14,min=8;
+  label.style.setProperty('font-size',base+'px','important');
+  const context=document.createElement('canvas').getContext('2d');
+  if(!context)return;
+  const computed=getComputedStyle(label);
+  const family=computed.fontFamily;
+  const weight=computed.fontWeight;
+  const text=label.textContent.trim();
+  let size=base;
+  for(;size>min;size-=.5){
+   context.font=weight+' '+size+'px '+family;
+   if(context.measureText(text).width<=available-2)break;
+  }
+  label.style.setProperty('font-size',Math.max(min,size)+'px','important');
+ });
+}
+let nameFitFrame=0;
+function scheduleCardNameFit(){
+ cancelAnimationFrame(nameFitFrame);
+ nameFitFrame=requestAnimationFrame(fitCardNames);
+}
+window.addEventListener('resize',scheduleCardNameFit);
+if(document.fonts?.ready)document.fonts.ready.then(scheduleCardNameFit);
+
 function render(){
  const q=search.value.trim().toLowerCase();
  const filtered=data.filter(m=>(m.name.toLowerCase().includes(q)||String(m.number).includes(q))&&[...activeTypes].every(t=>(m.type||[]).includes(t))&&(!stage.value||String(m.stage)===stage.value));
- summary.textContent=filtered.length;grid.innerHTML=filtered.map(tile).join('');
+ summary.textContent=filtered.length;grid.innerHTML=filtered.map(tile).join('');scheduleCardNameFit();
 }
 function navigate(){
  const m=data.find(x=>x.slug===new URLSearchParams(location.search).get('monster'));
