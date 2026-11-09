@@ -7,7 +7,7 @@ const title=game==='yami-kids'?'Yami Kids':'Nuumonsters';
 const $=id=>document.getElementById(id);
 const heading=$('heading'),grid=$('dex-grid'),profile=$('profile'),search=$('search'),stage=$('stage'),shiny=$('shiny'),summary=$('yv-visible-count'),typeFilters=$('type-filters');
 if(heading)heading.textContent=title+' Dex';document.title=title+' Dex | Yanoverse Multi-Dex';
-$('dex-home').href='?game='+game;
+
 document.querySelectorAll('[data-game]').forEach(a=>{const active=a.dataset.game===game;a.classList.toggle('is-selected',active);if(active)a.setAttribute('aria-current','page')});
 $('shiny-label').hidden=game!=='yami-kids';
 $('stage-filter').hidden=game==='nuumonsters';
