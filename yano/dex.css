@@ -1362,3 +1362,36 @@ html body.yano-dex #type-filters .type-btn{
   max-width:70px!important;
  }
 }
+
+/* Give compact mobile cards a little more width while retaining natural
+   centered wrapping: no fixed two-card rows or oversized side gutters. */
+@media(max-width:600px){
+ html body.yano-dex #dex-grid.dex-grid{
+  gap:7px!important;
+  padding:5px 2px!important;
+  justify-content:center!important;
+ }
+ html body.yano-dex #dex-grid.dex-grid>.dex-entry{
+  flex:0 0 102px!important;
+  width:102px!important;
+  min-width:102px!important;
+  max-width:102px!important;
+ }
+}
+html body.yano-dex #dex-grid.dex-grid>.dex-entry .dex-card-details{
+ box-sizing:border-box!important;
+ width:100%!important;
+ min-width:0!important;
+}
+html body.yano-dex #dex-grid.dex-grid>.dex-entry .dex-card-name{
+ display:block!important;
+ width:100%!important;
+ min-width:0!important;
+ white-space:nowrap!important;
+ overflow:hidden!important;
+ overflow-wrap:normal!important;
+ word-break:normal!important;
+ text-overflow:clip!important;
+ text-align:center!important;
+ line-height:1.15!important;
+}
