@@ -892,3 +892,22 @@ html body.yano-dex[data-theme="yami-kids"] #profile .evolution-wrapper .evo img{
   max-height:82px!important;
  }
 }
+
+/* Keep only a thin themed separator beneath the game selector. */
+html body.yano-dex[data-theme] header.site-header{
+ display:block!important;
+ width:100%!important;
+ max-width:1250px!important;
+ height:2px!important;
+ min-height:0!important;
+ margin:6px auto 12px!important;
+ padding:0!important;
+ border:0!important;
+ border-radius:0!important;
+ background:var(--game-border)!important;
+ background-image:none!important;
+ box-shadow:none!important;
+}
+html body.yano-dex[data-theme] header.site-header .site-nav{
+ display:none!important;
+}
