@@ -1,4 +1,27 @@
 (() => {
+  // Standardize original Dokidex evolution chains: place each evolution
+  // requirement below the arrow leading to the next monster.
+  const alignEvolutionLevels = () => {
+    document.querySelectorAll('.monster-profile .evolution-wrapper .evo-chain').forEach(chain => {
+      const nodes=[...chain.children];
+      for(let i=0;i<nodes.length-1;i++){
+        const stage=nodes[i], arrow=nodes[i+1];
+        if(!stage.querySelector('img') || arrow.querySelector('img')) continue;
+        const label=[...stage.querySelectorAll('div')].find(el=>/\\(\\s*Lv\\.?\\s*\\d+\\s*\\)/i.test(el.textContent) && !el.querySelector('div'));
+        if(!label) continue;
+        const match=label.textContent.match(/\\(\\s*Lv\\.?\\s*(\\d+)\\s*\\)/i);
+        if(!match) continue;
+        label.textContent=label.textContent.replace(match[0],'').trim();
+        arrow.classList.add('yv-evolution-transition');
+        const level=document.createElement('span');
+        level.className='yv-evolution-level';
+        level.textContent='Lv. '+match[1];
+        arrow.appendChild(level);
+      }
+    });
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',alignEvolutionLevels,{once:true});
+  else alignEvolutionLevels();
   // Apply the Deep Navy theme after page-local inline styles, which otherwise
   // override the shared stylesheet and leave the old blue palette visible.
   const applyQuestTheme = () => {
