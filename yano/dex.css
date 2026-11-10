@@ -1522,3 +1522,25 @@ html body.yano-dex #profile .monster-stats .yv-stat-value{
 html body.yano-dex #dex-grid.dex-grid>.dex-entry .dex-card-name{
  text-align:left!important;
 }
+
+/* Show both random evolution outcomes without changing linear chains. */
+html body.yano-dex #profile .evolution-wrapper .evo .yv-evo-branches{
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:8px!important;flex:0 0 auto!important;
+}
+html body.yano-dex #profile .evolution-wrapper .evo .yv-evo-branch{
+ display:flex!important;align-items:center!important;gap:8px!important;
+ padding:4px 8px!important;border:1px solid rgba(190,190,210,.2)!important;
+ border-radius:12px!important;background:rgba(15,22,34,.24)!important;
+}
+html body.yano-dex #profile .evolution-wrapper .evo .yv-evo-chance{
+ white-space:nowrap!important;font-size:13px!important;opacity:.85!important;
+}
+@media(max-width:600px){
+ html body.yano-dex #profile .evolution-wrapper .evo .yv-evo-branch{
+  gap:4px!important;padding:3px 5px!important;
+ }
+ html body.yano-dex #profile .evolution-wrapper .evo .yv-evo-chance{
+  font-size:11px!important;
+ }
+}
