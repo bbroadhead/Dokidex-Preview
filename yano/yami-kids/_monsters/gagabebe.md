@@ -18,11 +18,11 @@ description: ''
 short_description: "Guitar"
 long_description: "It loves haunting stores with lots of musical instruments."
 base_stats:
-- 150
+- 140
 - 115
 - 120
-- 160
-- 120
+- 150
 - 140
+- 130
 game: "Yami Kids"
 ---
