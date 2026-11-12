@@ -17,11 +17,11 @@ description: ''
 short_description: "Guitar"
 long_description: "A vengeful spirit with a guitar whose owner mistreated it."
 base_stats:
-- 120
-- 120
-- 100
-- 45
-- 90
-- 120
+- 150
+- 125
+- 140
+- 160
+- 155
+- 150
 game: "Yami Kids"
 ---
