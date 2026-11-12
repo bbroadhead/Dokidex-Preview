@@ -1035,12 +1035,12 @@
     ],
     "sin": "Sloth",
     "base_stats": {
-      "Health": 150,
+      "Health": 140,
       "Attack": 115,
       "Defense": 120,
-      "Mgk. Atk": 160,
-      "Mgk. Def": 120,
-      "Speed": 140
+      "Mgk. Atk": 150,
+      "Mgk. Def": 140,
+      "Speed": 130
     },
     "stage": 1,
     "evolves_at": 16,
@@ -1066,12 +1066,12 @@
     ],
     "sin": "Sloth",
     "base_stats": {
-      "Health": 120,
-      "Attack": 120,
-      "Defense": 100,
-      "Mgk. Atk": 45,
-      "Mgk. Def": 90,
-      "Speed": 120
+      "Health": 150,
+      "Attack": 125,
+      "Defense": 140,
+      "Mgk. Atk": 160,
+      "Mgk. Def": 155,
+      "Speed": 150
     },
     "stage": 2,
     "evolves_at": null,
